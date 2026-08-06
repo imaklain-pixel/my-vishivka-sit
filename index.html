@@ -7,7 +7,6 @@
     <meta name="description" content="Студия вышивки с 10-летним опытом. Индивидуальный дизайн, корпоративный мерч, шевроны и патчи.">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
     <style>
-        /* ---------- БАЗА ---------- */
         * {
             margin: 0;
             padding: 0;
@@ -29,8 +28,6 @@
         a:hover {
             color: #ff6b6b;
         }
-
-        /* ---------- ШАПКА ---------- */
         header {
             background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #2a0a3e 100%);
             padding: 18px 30px;
@@ -63,15 +60,9 @@
             animation: gradientShift 4s ease-in-out infinite;
         }
         @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .logo .diamond {
             color: #feca57;
@@ -112,8 +103,6 @@
         nav a.active {
             color: #feca57;
         }
-
-        /* ---------- ХЛЕБНЫЕ КРОШКИ ---------- */
         .breadcrumbs {
             max-width: 1100px;
             margin: 20px auto 0;
@@ -124,8 +113,6 @@
         .breadcrumbs span {
             color: #ccc;
         }
-
-        /* ---------- ОСНОВНОЙ КОНТЕНТ ---------- */
         .page-content {
             max-width: 1100px;
             margin: 20px auto 0;
@@ -141,14 +128,8 @@
             display: block;
         }
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .page h1 {
             font-size: 2.6em;
@@ -177,8 +158,6 @@
         .page p strong {
             color: #feca57;
         }
-
-        /* ---------- СЕТКИ И КАРТОЧКИ ---------- */
         .grid-2,
         .grid-3 {
             display: grid;
@@ -237,8 +216,6 @@
             font-size: 0.95em;
             box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
         }
-
-        /* ---------- ГЛАВНЫЙ ЭКРАН (HERO) ---------- */
         .hero-bg {
             background:
                 radial-gradient(ellipse at 20% 50%, rgba(106, 13, 173, 0.5) 0%, transparent 60%),
@@ -272,15 +249,9 @@
             animation: floatBg 20s ease-in-out infinite alternate;
         }
         @keyframes floatBg {
-            0% {
-                transform: scale(1) rotate(0deg);
-            }
-            50% {
-                transform: scale(1.1) rotate(2deg);
-            }
-            100% {
-                transform: scale(1) rotate(0deg);
-            }
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(2deg); }
+            100% { transform: scale(1) rotate(0deg); }
         }
         .hero-bg .hero-content {
             position: relative;
@@ -352,8 +323,6 @@
             flex-wrap: wrap;
             justify-content: center;
         }
-
-        /* ---------- ПОРТФОЛИО ---------- */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -381,11 +350,6 @@
             font-size: 4.5em;
             background: rgba(255, 255, 255, 0.03);
         }
-        .portfolio-item .image-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
         .portfolio-item .info {
             padding: 18px 20px 20px;
         }
@@ -408,8 +372,6 @@
             font-weight: 600;
             margin-top: 6px;
         }
-
-        /* ---------- О НАС ---------- */
         .about-features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -443,8 +405,6 @@
             font-size: 0.85em;
             margin: 0;
         }
-
-        /* ---------- КОНТАКТЫ ---------- */
         .contacts-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -492,14 +452,8 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
-        .btn-wa {
-            background: #25D366;
-        }
-        .btn-tg {
-            background: #0088cc;
-        }
-
-        /* ---------- КАРТА ---------- */
+        .btn-wa { background: #25D366; }
+        .btn-tg { background: #0088cc; }
         .map-container {
             border-radius: 16px;
             overflow: hidden;
@@ -514,8 +468,6 @@
             border: 0;
             display: block;
         }
-
-        /* ---------- ФОРМЫ ---------- */
         .form-container {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
@@ -599,7 +551,6 @@
         .form-checkbox label a:hover {
             color: #ff6b6b;
         }
-
         .btn-submit {
             padding: 16px 45px;
             background: linear-gradient(135deg, #ff6b6b, #e94560);
@@ -639,8 +590,6 @@
             color: #aaa;
             margin: 0;
         }
-
-        /* ---------- ОТЗЫВЫ ---------- */
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -698,8 +647,6 @@
             padding: 2px 14px;
             border-radius: 20px;
         }
-
-        /* ---------- ЮРИДИЧЕСКАЯ СТРАНИЦА ---------- */
         .legal-content {
             background: rgba(255, 255, 255, 0.04);
             border-radius: 16px;
@@ -732,8 +679,6 @@
             color: #feca57;
             font-weight: 600;
         }
-
-        /* ---------- ПОДВАЛ ---------- */
         footer {
             background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #2a0a3e 100%);
             color: #888;
@@ -794,73 +739,31 @@
             margin-top: 10px;
             line-height: 1.8;
         }
-
-        /* ---------- АДАПТАЦИЯ ---------- */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-            nav ul {
-                justify-content: center;
-            }
-            .contacts-grid {
-                grid-template-columns: 1fr;
-            }
-            .page h1 {
-                font-size: 2em;
-            }
-            .hero-bg h1 {
-                font-size: 2.4em;
-            }
-            .grid-2,
-            .grid-3 {
-                grid-template-columns: 1fr;
-            }
-            .map-container {
-                height: 200px;
-            }
-            .legal-content {
-                padding: 20px;
-            }
+            header { flex-direction: column; text-align: center; }
+            nav ul { justify-content: center; }
+            .contacts-grid { grid-template-columns: 1fr; }
+            .page h1 { font-size: 2em; }
+            .hero-bg h1 { font-size: 2.4em; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .map-container { height: 200px; }
+            .legal-content { padding: 20px; }
         }
         @media (max-width: 480px) {
-            .logo {
-                font-size: 1.2em;
-            }
-            nav ul {
-                gap: 12px;
-            }
-            nav a {
-                font-size: 0.8em;
-            }
-            .portfolio-item .image-wrap {
-                height: 140px;
-                font-size: 3em;
-            }
-            .page h1 {
-                font-size: 1.6em;
-                padding-left: 12px;
-            }
-            .form-container {
-                padding: 20px;
-            }
-            .map-container {
-                height: 160px;
-            }
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-legal {
-                flex-direction: column;
-                gap: 8px;
-            }
+            .logo { font-size: 1.2em; }
+            nav ul { gap: 12px; }
+            nav a { font-size: 0.8em; }
+            .portfolio-item .image-wrap { height: 140px; font-size: 3em; }
+            .page h1 { font-size: 1.6em; padding-left: 12px; }
+            .form-container { padding: 20px; }
+            .map-container { height: 160px; }
+            .reviews-grid { grid-template-columns: 1fr; }
+            .footer-legal { flex-direction: column; gap: 8px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ====== ШАПКА ====== -->
     <header>
         <div class="logo" onclick="navigateTo('home')">
             <span class="diamond">✦</span> <span>Вышивка Стиль</span>
@@ -878,15 +781,12 @@
         </nav>
     </header>
 
-    <!-- ====== ХЛЕБНЫЕ КРОШКИ ====== -->
     <div class="breadcrumbs">
         <span>📍</span> <span id="breadcrumbText">Главная</span>
     </div>
 
-    <!-- ====== ОСНОВНОЙ КОНТЕНТ ====== -->
     <div class="page-content">
 
-        <!-- ===== СТРАНИЦА: ГЛАВНАЯ ===== -->
         <div class="page active" id="page-home">
             <section class="hero-bg">
                 <div class="hero-content">
@@ -898,7 +798,6 @@
                     </div>
                 </div>
             </section>
-
             <h2>Почему нам доверяют</h2>
             <div class="grid-3">
                 <div class="card">
@@ -919,11 +818,9 @@
             </div>
         </div>
 
-        <!-- ===== СТРАНИЦА: УСЛУГИ ===== -->
         <div class="page" id="page-services">
             <h1>Наши услуги</h1>
             <p>10 лет опыта + новая студия = качественная вышивка в короткие сроки. Выполняем заказы любой сложности.</p>
-
             <div class="grid-2">
                 <div class="card">
                     <span class="icon">🎨</span>
@@ -946,11 +843,9 @@
             </div>
         </div>
 
-        <!-- ===== СТРАНИЦА: ПОРТФОЛИО ===== -->
         <div class="page" id="page-portfolio">
             <h1>Наши работы</h1>
             <p>Примеры вышивки, которые мы сделали для наших клиентов.</p>
-
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <div class="image-wrap">👕</div>
@@ -1003,11 +898,9 @@
             </div>
         </div>
 
-        <!-- ===== СТРАНИЦА: ОТЗЫВЫ ===== -->
         <div class="page" id="page-reviews">
             <h1>Отзывы наших клиентов</h1>
             <p>Мы только открыли студию, но уже получили первые отзывы. Оставьте свой — он пройдёт модерацию и появится на сайте.</p>
-
             <div class="reviews-grid" id="reviewsList">
                 <div class="review-card">
                     <div class="review-header">
@@ -1046,11 +939,9 @@
                     <span class="review-status">✓ Опубликовано</span>
                 </div>
             </div>
-
             <div class="form-container" id="reviewFormBlock">
                 <h3>✍️ Оставьте свой отзыв</h3>
                 <p class="form-subtitle">Расскажите о своём опыте — после модерации он появится на сайте</p>
-
                 <form id="reviewForm">
                     <div class="form-group">
                         <label for="reviewName">Ваше имя</label>
@@ -1070,15 +961,12 @@
                         <label for="reviewText">Ваш отзыв</label>
                         <textarea id="reviewText" placeholder="Что вам понравилось? Как прошёл заказ?" rows="4" required></textarea>
                     </div>
-
                     <div class="form-checkbox">
                         <input type="checkbox" id="reviewConsent" required>
                         <label for="reviewConsent">Я даю согласие на <a href="#" onclick="navigateTo('legal'); return false;">обработку персональных данных</a></label>
                     </div>
-
                     <button type="submit" class="btn-submit">Отправить на модерацию</button>
                 </form>
-
                 <div class="success-message" id="reviewSuccess">
                     <span class="check">✅</span>
                     <h3>Спасибо за отзыв!</h3>
@@ -1087,13 +975,11 @@
             </div>
         </div>
 
-        <!-- ===== СТРАНИЦА: О НАС ===== -->
         <div class="page" id="page-about">
             <h1>О студии</h1>
             <p><strong>Мы открыли новую студию, но за плечами — более 10 лет работы с вышивкой.</strong> За это время мы выполнили сотни заказов: от маленьких патчей до крупных корпоративных тиражей для известных брендов.</p>
             <p>Решение открыть собственную студию пришло, чтобы <strong>предложить клиентам ещё более высокое качество, прозрачные цены и короткие сроки</strong>. Мы работаем на современных машинах <strong>Barudan</strong> (Япония) и <strong>ZSK</strong> (Германия), используем нити <strong>Madeira</strong> и <strong>Gütermann</strong> — они не выгорают на солнце и не линяют после стирки.</p>
             <p>Каждый заказ — от первой примерки до финальной вышивки — мы контролируем лично. <strong>Вы получаете не просто вещь с рисунком, а продуманный до мелочей продукт.</strong></p>
-
             <div class="about-features">
                 <div class="item"><span class="icon">📅</span><h4>10+ лет опыта</h4><p>С 2014 года в индустрии вышивки</p></div>
                 <div class="item"><span class="icon">🔧</span><h4>Оборудование премиум-класса</h4><p>Barudan, ZSK — японские и немецкие машины</p></div>
@@ -1102,10 +988,8 @@
             </div>
         </div>
 
-        <!-- ===== СТРАНИЦА: ДОСТАВКА ===== -->
         <div class="page" id="page-delivery">
             <h1>Доставка и оплата</h1>
-
             <h2>🚚 Способы доставки</h2>
             <div class="grid-3">
                 <div class="card"><span class="icon">📦</span><h4 style="color:#fff;">СДЭК</h4><p style="color:#ccc;">от 1 дня</p><span class="price-tag" style="font-size:0.7em; margin-top:8px;">быстрая</span></div>
@@ -1115,29 +999,27 @@
                 <div class="card"><span class="icon">🛒</span><h4 style="color:#fff;">Wildberries</h4><p style="color:#ccc;">пункты выдачи</p><span class="price-tag" style="font-size:0.7em; margin-top:8px;">по всей РФ</span></div>
                 <div class="card"><span class="icon">🛍️</span><h4 style="color:#fff;">Ozon</h4><p style="color:#ccc;">пункты выдачи</p><span class="price-tag" style="font-size:0.7em; margin-top:8px;">по всей РФ</span></div>
             </div>
-
-            <h2 style="margin-top: 40px;">💳 Способы оплаты</h2>
+            <h2 style="margin-top: 40px;">💳 Оплата</h2>
             <div class="grid-3">
-                <div class="card"><span class="icon">💳</span><h4 style="color:#fff;">Банковская карта</h4><p style="color:#ccc;">Visa, Mastercard, МИР</p></div>
-                <div class="card"><span class="icon">📱</span><h4 style="color:#fff;">СБП</h4><p style="color:#ccc;">Система быстрых платежей</p></div>
-                <div class="card"><span class="icon">📲</span><h4 style="color:#fff;">Смартфон</h4><p style="color:#ccc;">Apple Pay, Google Pay</p></div>
-                <div class="card"><span class="icon">🏦</span><h4 style="color:#fff;">Безналичный расчёт</h4><p style="color:#ccc;">для юр. лиц и ИП</p></div>
-                <div class="card"><span class="icon">📦</span><h4 style="color:#fff;">Наложенный платёж</h4><p style="color:#ccc;">оплата при получении</p></div>
+                <div class="card" style="grid-column: 1 / -1;">
+                    <span class="icon">🧾</span>
+                    <h4 style="color:#fff;">Выставление счета</h4>
+                    <p style="color:#ccc;">Я — самозанятый, работаю официально. После согласования заказа я выставляю счёт через <strong>ВТБ Бизнес</strong>. Вы получаете чек и все документы.</p>
+                    <span class="price-tag" style="font-size:0.7em; margin-top:8px;">Официально</span>
+                </div>
             </div>
         </div>
 
-        <!-- ===== СТРАНИЦА: КОНТАКТЫ ===== -->
         <div class="page" id="page-contacts">
             <h1>Контакты</h1>
             <p>Свяжитесь с нами любым удобным способом — мы ответим в течение 15 минут в рабочее время.</p>
-
             <div class="contacts-grid">
                 <div class="info-block">
                     <ul style="list-style: none; padding: 0;">
                         <li><strong>📞 Телефон</strong> <a href="tel:+79014030785">+7 (901) 403-07-85</a></li>
                         <li><strong>✉️ Email</strong> <a href="mailto:imaklain@gmail.com">imaklain@gmail.com</a></li>
                         <li><strong>🕐 Режим работы</strong> Пн–Пт, 10:00 – 20:00</li>
-                        <li><strong>📍 Адрес</strong> Москва, ул. Примерная, д. 1</li>
+                        <li><strong>📍 Адрес</strong> Москва, ул. Исаковского, д. 20</li>
                         <li style="border-bottom: none;">
                             <strong>💬 Мессенджеры</strong>
                             <div class="messenger-links">
@@ -1149,18 +1031,16 @@
                 </div>
                 <div>
                     <div class="map-container">
-                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d&amp;source=constructor" allowfullscreen></iframe>
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d&amp;source=constructor&amp;text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" allowfullscreen></iframe>
                     </div>
                     <p style="font-size: 0.8em; color: #888; margin-top: 6px; text-align: right;">
-                        <a href="https://yandex.ru/maps/?text=Москва" target="_blank" style="color: #888; text-decoration: none;">Открыть в Яндекс.Картах →</a>
+                        <a href="https://yandex.ru/maps/?text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" target="_blank" style="color: #888; text-decoration: none;">Открыть в Яндекс.Картах →</a>
                     </p>
                 </div>
             </div>
-
             <div class="form-container" id="contactFormBlock">
                 <h3>📩 Напишите нам</h3>
                 <p class="form-subtitle">Оставьте сообщение, и мы свяжемся с вами</p>
-
                 <form id="contactForm">
                     <div class="form-group">
                         <label for="contactName">Ваше имя</label>
@@ -1174,15 +1054,12 @@
                         <label for="contactMessage">Сообщение</label>
                         <textarea id="contactMessage" placeholder="Что вы хотите вышить?" rows="4" required></textarea>
                     </div>
-
                     <div class="form-checkbox">
                         <input type="checkbox" id="contactConsent" required>
                         <label for="contactConsent">Я даю согласие на <a href="#" onclick="navigateTo('legal'); return false;">обработку персональных данных</a></label>
                     </div>
-
                     <button type="submit" class="btn-submit">Отправить сообщение</button>
                 </form>
-
                 <div class="success-message" id="contactSuccess">
                     <span class="check">✅</span>
                     <h3>Сообщение отправлено!</h3>
@@ -1191,43 +1068,28 @@
             </div>
         </div>
 
-        <!-- ===== СТРАНИЦА: ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ ===== -->
         <div class="page" id="page-legal">
             <h1>Юридическая информация</h1>
-
             <div class="legal-content">
-
                 <h3>1. Политика конфиденциальности</h3>
                 <p>Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта <span class="highlight">Вышивка Стиль</span> (далее — «Сайт»).</p>
-                <p><strong>1.1. Какие данные мы собираем</strong><br>
-                При заполнении форм на Сайте мы собираем: имя, номер телефона и текст сообщения/отзыва. Также мы можем получать данные, которые вы передаёте в мессенджерах (WhatsApp, Telegram) при общении с нами.</p>
-                <p><strong>1.2. Цели обработки данных</strong><br>
-                Ваши данные используются исключительно для:</p>
+                <p><strong>1.1. Какие данные мы собираем</strong><br>При заполнении форм на Сайте мы собираем: имя, номер телефона и текст сообщения/отзыва. Также мы можем получать данные, которые вы передаёте в мессенджерах (WhatsApp, Telegram) при общении с нами.</p>
+                <p><strong>1.2. Цели обработки данных</strong><br>Ваши данные используются исключительно для:</p>
                 <ul>
                     <li>связи с вами для расчёта стоимости вышивки;</li>
                     <li>уточнения деталей заказа;</li>
                     <li>информирования о статусе выполнения заказа;</li>
                     <li>публикации отзывов (с вашего согласия).</li>
                 </ul>
-                <p><strong>1.3. Передача данных третьим лицам</strong><br>
-                Мы не передаём ваши персональные данные третьим лицам, за исключением случаев, предусмотренных законодательством РФ.</p>
-                <p><strong>1.4. Хранение и защита данных</strong><br>
-                Ваши данные хранятся в защищённом виде в нашей внутренней системе и в мессенджерах, которые соответствуют требованиям безопасности. Мы не храним данные на бумажных носителях.</p>
-                <p><strong>1.5. Ваши права</strong><br>
-                Вы имеете право требовать удаления ваших данных из нашей системы, написав нам на email: <a href="mailto:imaklain@gmail.com">imaklain@gmail.com</a>.</p>
-                <p><strong>1.6. Изменения в политике</strong><br>
-                Мы оставляем за собой право обновлять данную политику при изменении законодательства или наших процессов. Актуальная версия всегда опубликована на этом Сайте.</p>
-
+                <p><strong>1.3. Передача данных третьим лицам</strong><br>Мы не передаём ваши персональные данные третьим лицам, за исключением случаев, предусмотренных законодательством РФ.</p>
+                <p><strong>1.4. Хранение и защита данных</strong><br>Ваши данные хранятся в защищённом виде в нашей внутренней системе и в мессенджерах, которые соответствуют требованиям безопасности. Мы не храним данные на бумажных носителях.</p>
+                <p><strong>1.5. Ваши права</strong><br>Вы имеете право требовать удаления ваших данных из нашей системы, написав нам на email: <a href="mailto:imaklain@gmail.com">imaklain@gmail.com</a>.</p>
+                <p><strong>1.6. Изменения в политике</strong><br>Мы оставляем за собой право обновлять данную политику при изменении законодательства или наших процессов. Актуальная версия всегда опубликована на этом Сайте.</p>
                 <h3>2. Пользовательское соглашение</h3>
-                <p><strong>2.1. Использование Сайта</strong><br>
-                Используя Сайт, вы соглашаетесь с условиями настоящего Соглашения. Если вы не согласны с условиями, пожалуйста, покиньте Сайт.</p>
-                <p><strong>2.2. Интеллектуальная собственность</strong><br>
-                Все материалы Сайта (тексты, дизайн, изображения) являются объектами интеллектуальной собственности и защищены законодательством РФ. Копирование материалов без согласия правообладателя запрещено.</p>
-                <p><strong>2.3. Ответственность</strong><br>
-                Администрация Сайта не несёт ответственности за убытки, возникшие в результате использования или невозможности использования Сайта, а также за действия пользователей, нарушающих условия Соглашения.</p>
-                <p><strong>2.4. Изменения</strong><br>
-                Администрация Сайта оставляет за собой право изменять условия Соглашения в любое время без предварительного уведомления. Актуальная версия всегда доступна на этом Сайте.</p>
-
+                <p><strong>2.1. Использование Сайта</strong><br>Используя Сайт, вы соглашаетесь с условиями настоящего Соглашения. Если вы не согласны с условиями, пожалуйста, покиньте Сайт.</p>
+                <p><strong>2.2. Интеллектуальная собственность</strong><br>Все материалы Сайта (тексты, дизайн, изображения) являются объектами интеллектуальной собственности и защищены законодательством РФ. Копирование материалов без согласия правообладателя запрещено.</p>
+                <p><strong>2.3. Ответственность</strong><br>Администрация Сайта не несёт ответственности за убытки, возникшие в результате использования или невозможности использования Сайта, а также за действия пользователей, нарушающих условия Соглашения.</p>
+                <p><strong>2.4. Изменения</strong><br>Администрация Сайта оставляет за собой право изменять условия Соглашения в любое время без предварительного уведомления. Актуальная версия всегда доступна на этом Сайте.</p>
                 <h3>3. Согласие на обработку персональных данных</h3>
                 <p>Отправляя форму на Сайте, вы даёте своё <span class="highlight">согласие на обработку персональных данных</span> в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</p>
                 <p>Вы подтверждаете, что:</p>
@@ -1237,28 +1099,21 @@
                     <li>согласие даётся на срок, необходимый для достижения целей обработки, но не более 5 лет;</li>
                     <li>вы можете отозвать согласие, направив письменное уведомление на email: <a href="mailto:imaklain@gmail.com">imaklain@gmail.com</a>.</li>
                 </ul>
-
                 <h3>4. Реквизиты самозанятого</h3>
                 <p><strong>Статус:</strong> Самозанятый (плательщик налога на профессиональный доход)</p>
                 <ul>
                     <li><strong>ФИО</strong> — Ёлдашев Максим Джорагелдиевич</li>
                     <li><strong>ИНН</strong> — 130100811452</li>
-                    <li><strong>Код вида документа</strong> — 21</li>
-                    <li><strong>Серия и номер документа</strong> — 4521 365261</li>
-                    <li><strong>Дата постановки на учёт</strong> — 01.08.2026</li>
-                    <li><strong>Налоговый орган</strong> — УФНС по Республике Мордовия</li>
                     <li><strong>Налоговый режим</strong> — Налог на профессиональный доход (НПД)</li>
                     <li><strong>Телефон</strong> — <a href="tel:+79014030785">+7 (901) 403-07-85</a></li>
                     <li><strong>Email</strong> — <a href="mailto:imaklain@gmail.com">imaklain@gmail.com</a></li>
                 </ul>
                 <p style="margin-top: 15px; color: #888; font-size: 0.85em;">Дата публикации: 06 августа 2026 г.</p>
-
             </div>
         </div>
 
     </div>
 
-    <!-- ====== ПОДВАЛ ====== -->
     <footer>
         <div class="footer-nav">
             <a onclick="navigateTo('home')">Главная</a>
@@ -1269,31 +1124,24 @@
             <a onclick="navigateTo('delivery')">Доставка</a>
             <a onclick="navigateTo('contacts')">Контакты</a>
         </div>
-
         <div class="footer-legal">
             <a href="#" onclick="navigateTo('legal'); return false;">Политика конфиденциальности</a>
             <a href="#" onclick="navigateTo('legal'); return false;">Пользовательское соглашение</a>
             <a href="#" onclick="navigateTo('legal'); return false;">Согласие на обработку данных</a>
         </div>
-
         <div class="footer-divider"></div>
-
         <p>© 2026 Вышивка Стиль. Все права защищены.</p>
         <p style="font-size: 0.85em; opacity: 0.8; margin-top: 8px;">
             <a href="mailto:imaklain@gmail.com">imaklain@gmail.com</a> ·
             <a href="tel:+79014030785">+7 (901) 403-07-85</a>
         </p>
-
         <div class="footer-req">
-            Самозанятый Ёлдашев Максим Джорагелдиевич · ИНН 130100811452 · Код документа: 21, серия 4521 № 365261
+            Самозанятый Ёлдашев Максим Джорагелдиевич · ИНН 130100811452
         </div>
     </footer>
 
-    <!-- ====== СКРИПТЫ ====== -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-
-            // ---------- НАВИГАЦИЯ ----------
             const navLinks = document.querySelectorAll('nav a[data-page]');
             const pages = {
                 home: document.getElementById('page-home'),
@@ -1306,7 +1154,6 @@
                 legal: document.getElementById('page-legal')
             };
             const breadcrumbText = document.getElementById('breadcrumbText');
-
             const pageNames = {
                 home: 'Главная',
                 services: 'Услуги',
@@ -1319,19 +1166,14 @@
             };
 
             window.navigateTo = function(pageId) {
-                Object.values(pages).forEach(p => {
-                    if (p) p.classList.remove('active');
-                });
+                Object.values(pages).forEach(p => { if (p) p.classList.remove('active'); });
                 if (pages[pageId]) pages[pageId].classList.add('active');
-
                 navLinks.forEach(link => {
                     link.classList.toggle('active', link.dataset.page === pageId);
                 });
-
                 if (breadcrumbText) {
                     breadcrumbText.textContent = pageNames[pageId] || pageId;
                 }
-
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             };
 
@@ -1343,7 +1185,6 @@
                 });
             });
 
-            // ---------- TELEGRAM БОТ ----------
             const BOT_TOKEN = '8313671080:AAGoXjlxoHPuDQ17DRn5IOthcaSNCPVloqw';
             const CHAT_ID = '782451090';
 
@@ -1369,7 +1210,6 @@
                 return trySend(0);
             }
 
-            // ---------- ФОРМА В КОНТАКТАХ ----------
             const contactForm = document.getElementById('contactForm');
             const contactName = document.getElementById('contactName');
             const contactPhone = document.getElementById('contactPhone');
@@ -1407,30 +1247,23 @@
 
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-
                     if (!contactConsent.checked) {
                         alert('Пожалуйста, дайте согласие на обработку персональных данных');
                         return;
                     }
-
                     const name = contactName.value.trim();
                     const phone = contactPhone.value.trim();
                     const message = contactMessage.value.trim();
-
                     const digits = phone.replace(/\D/g, '');
                     if (digits.length < 10) {
                         alert('Пожалуйста, введите корректный номер телефона');
                         return;
                     }
-
                     const text =
                         `📩 *Новое сообщение с сайта!*\n\n👤 *Имя:* ${name || 'Не указано'}\n📱 *Телефон:* ${phone}\n💬 *Сообщение:* ${message || '—'}\n📋 *Согласие на обработку:* Да\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
-
                     sendToTelegram(text).catch(() => {});
-
                     contactForm.style.display = 'none';
                     contactSuccess.style.display = 'block';
-
                     setTimeout(() => {
                         contactForm.style.display = 'block';
                         contactSuccess.style.display = 'none';
@@ -1439,7 +1272,6 @@
                 });
             }
 
-            // ---------- ФОРМА ОТЗЫВОВ ----------
             const reviewForm = document.getElementById('reviewForm');
             const reviewName = document.getElementById('reviewName');
             const reviewRating = document.getElementById('reviewRating');
@@ -1450,30 +1282,23 @@
             if (reviewForm) {
                 reviewForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-
                     if (!reviewConsent.checked) {
                         alert('Пожалуйста, дайте согласие на обработку персональных данных');
                         return;
                     }
-
                     const name = reviewName.value.trim();
                     const rating = reviewRating.value;
                     const text = reviewText.value.trim();
-
                     if (!name || !text) {
                         alert('Пожалуйста, заполните имя и текст отзыва');
                         return;
                     }
-
                     const stars = '⭐'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
                     const message =
                         `⭐ *Новый отзыв (требует модерации)!*\n\n👤 *Имя:* ${name}\n📊 *Оценка:* ${stars}\n💬 *Отзыв:* ${text}\n📋 *Согласие на обработку:* Да\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}\n\n⚠️ Для публикации скопируйте отзыв и добавьте в #reviewsList`;
-
                     sendToTelegram(message).catch(() => {});
-
                     reviewForm.style.display = 'none';
                     reviewSuccess.style.display = 'block';
-
                     setTimeout(() => {
                         reviewForm.style.display = 'block';
                         reviewSuccess.style.display = 'none';
@@ -1481,9 +1306,8 @@
                     }, 5000);
                 });
             }
-
         });
     </script>
 
 </body>
-</html>
+    </html>
