@@ -2,16 +2,10 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
-    <title>Вышивка Стиль | Студия вышивки в Москве</title>
-    <meta name="description" content="Студия вышивки с 10-летним опытом. Индивидуальный дизайн, корпоративный мерч, шевроны и патчи.">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вышивка Стиль | Студия вышивки</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
             color: #fff;
@@ -21,15 +15,10 @@
             display: flex;
             flex-direction: column;
         }
-        a {
-            color: #feca57;
-            text-decoration: none;
-        }
-        a:hover {
-            color: #ff6b6b;
-        }
+        a { color: #feca57; text-decoration: none; }
+        a:hover { color: #ff6b6b; }
         header {
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #2a0a3e 100%);
+            background: linear-gradient(135deg, #0a0a1a, #1a0a2e, #2a0a3e);
             padding: 18px 30px;
             display: flex;
             justify-content: space-between;
@@ -49,7 +38,6 @@
             letter-spacing: 4px;
             text-transform: uppercase;
             cursor: pointer;
-            text-shadow: 0 0 30px rgba(233, 69, 96, 0.3);
         }
         .logo span {
             background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff);
@@ -64,10 +52,7 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        .logo .diamond {
-            color: #feca57;
-            -webkit-text-fill-color: #feca57;
-        }
+        .logo .diamond { -webkit-text-fill-color: #feca57; }
         nav ul {
             list-style: none;
             display: flex;
@@ -76,42 +61,20 @@
         }
         nav a {
             color: #dfe6e9;
-            text-decoration: none;
             font-size: 0.95em;
             font-weight: 500;
-            transition: all 0.3s;
             padding: 5px 0;
             border-bottom: 2px solid transparent;
             cursor: pointer;
-            position: relative;
+            transition: 0.3s;
         }
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #ff6b6b, #feca57);
-            transition: width 0.3s;
-        }
-        nav a:hover::after,
-        nav a.active::after {
-            width: 100%;
-        }
-        nav a:hover,
-        nav a.active {
-            color: #feca57;
-        }
+        nav a:hover { color: #feca57; border-bottom-color: #feca57; }
         .breadcrumbs {
             max-width: 1100px;
             margin: 20px auto 0;
             padding: 0 20px;
             font-size: 0.85em;
             color: #888;
-        }
-        .breadcrumbs span {
-            color: #ccc;
         }
         .page-content {
             max-width: 1100px;
@@ -120,13 +83,8 @@
             flex: 1;
             width: 100%;
         }
-        .page {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-        .page.active {
-            display: block;
-        }
+        .page { display: none; animation: fadeIn 0.5s ease; }
+        .page.active { display: block; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -148,28 +106,20 @@
             font-weight: 300;
             margin: 30px 0 15px;
             color: #fff;
-            text-shadow: 0 0 20px rgba(233, 69, 96, 0.3);
         }
         .page p {
             color: #ddd;
             margin-bottom: 15px;
             font-size: 1.1em;
         }
-        .page p strong {
-            color: #feca57;
-        }
-        .grid-2,
-        .grid-3 {
+        .page p strong { color: #feca57; }
+        .grid-2, .grid-3 {
             display: grid;
             gap: 25px;
             margin-top: 20px;
         }
-        .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
-        .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
         .card {
             background: rgba(255, 255, 255, 0.06);
             backdrop-filter: blur(12px);
@@ -180,31 +130,14 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         .card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-10px);
             border-color: #ff6b6b;
             box-shadow: 0 12px 50px rgba(233, 69, 96, 0.3);
             background: rgba(255, 255, 255, 0.12);
         }
-        .card .icon {
-            font-size: 3em;
-            display: block;
-            margin-bottom: 12px;
-        }
-        .card h3 {
-            font-size: 1.3em;
-            color: #fff;
-            margin-bottom: 8px;
-        }
-        .card h4 {
-            font-size: 1.2em;
-            color: #fff;
-            margin-bottom: 4px;
-        }
-        .card p {
-            font-size: 0.95em;
-            color: #ccc;
-            margin: 0;
-        }
+        .card .icon { font-size: 3em; display: block; margin-bottom: 12px; }
+        .card h3 { font-size: 1.3em; color: #fff; margin-bottom: 8px; }
+        .card p { font-size: 0.95em; color: #ccc; margin: 0; }
         .card .price-tag {
             display: inline-block;
             margin-top: 14px;
@@ -217,49 +150,24 @@
             box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
         }
         .hero-bg {
-            background:
-                radial-gradient(ellipse at 20% 50%, rgba(106, 13, 173, 0.5) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 50%, rgba(0, 210, 255, 0.3) 0%, transparent 60%),
-                radial-gradient(ellipse at 50% 100%, rgba(233, 69, 96, 0.4) 0%, transparent 50%),
-                linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #2a0a3e 100%);
-            min-height: 75vh;
+            background: radial-gradient(ellipse at 20% 50%, rgba(106, 13, 173, 0.5), transparent 60%),
+                        radial-gradient(ellipse at 80% 50%, rgba(0, 210, 255, 0.3), transparent 60%),
+                        radial-gradient(ellipse at 50% 100%, rgba(233, 69, 96, 0.4), transparent 50%),
+                        linear-gradient(135deg, #0a0a1a, #1a0a2e, #2a0a3e);
+            min-height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 60px 20px;
-            color: white;
-            position: relative;
-            overflow: hidden;
             border-radius: 20px;
             margin-bottom: 30px;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://i5.storeland.net/2/3710/137093170/afacdb/vyshivalnye-nitki-madeira-rayon-40-1000m.png') center/cover no-repeat;
-            opacity: 0.12;
-            mix-blend-mode: screen;
-            animation: floatBg 20s ease-in-out infinite alternate;
-        }
-        @keyframes floatBg {
-            0% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.1) rotate(2deg); }
-            100% { transform: scale(1) rotate(0deg); }
-        }
-        .hero-bg .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
+        .hero-bg .hero-content { max-width: 800px; }
         .hero-bg h1 {
-            font-size: clamp(2.8em, 9vw, 5em);
+            font-size: clamp(2.8em, 9vw, 4.5em);
             font-weight: 200;
             letter-spacing: 3px;
             margin-bottom: 20px;
@@ -274,9 +182,8 @@
             animation: gradientShift 4s ease-in-out infinite;
         }
         .hero-bg p {
-            font-size: clamp(1.1em, 2.2vw, 1.5em);
+            font-size: clamp(1.1em, 2vw, 1.5em);
             color: #e0e0e0;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
             margin-bottom: 30px;
         }
         .btn-primary {
@@ -290,12 +197,12 @@
             font-weight: 800;
             cursor: pointer;
             box-shadow: 0 8px 40px rgba(233, 69, 96, 0.6);
-            transition: all 0.3s;
+            transition: 0.3s;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
         .btn-primary:hover {
-            transform: translateY(-4px) scale(1.05);
+            transform: translateY(-4px);
             box-shadow: 0 12px 60px rgba(233, 69, 96, 0.9);
         }
         .btn-secondary {
@@ -308,24 +215,18 @@
             font-size: 1em;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: 0.3s;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         .btn-secondary:hover {
             background: rgba(254, 202, 87, 0.15);
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(254, 202, 87, 0.2);
         }
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+        .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 25px;
             margin-top: 20px;
         }
@@ -333,35 +234,21 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             overflow: hidden;
-            transition: all 0.4s;
+            transition: 0.4s;
             border: 1px solid rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(8px);
+            text-align: center;
+            padding: 20px 15px;
         }
         .portfolio-item:hover {
             transform: translateY(-10px);
             border-color: #ff6b6b;
-            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.2);
         }
         .portfolio-item .image-wrap {
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4.5em;
-            background: rgba(255, 255, 255, 0.03);
+            font-size: 4em;
+            margin-bottom: 10px;
         }
-        .portfolio-item .info {
-            padding: 18px 20px 20px;
-        }
-        .portfolio-item .info h4 {
-            color: #fff;
-            font-size: 1.05em;
-            margin-bottom: 4px;
-        }
-        .portfolio-item .info .desc {
-            color: #aaa;
-            font-size: 0.85em;
-        }
+        .portfolio-item .info h4 { color: #fff; font-size: 1.05em; }
+        .portfolio-item .info .desc { color: #aaa; font-size: 0.85em; }
         .portfolio-item .info .tag {
             display: inline-block;
             background: rgba(255, 107, 107, 0.2);
@@ -385,26 +272,15 @@
             padding: 25px 20px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s;
+            transition: 0.3s;
         }
         .about-features .item:hover {
             border-color: #feca57;
             transform: translateY(-5px);
         }
-        .about-features .item .icon {
-            font-size: 2.8em;
-            display: block;
-            margin-bottom: 8px;
-        }
-        .about-features .item h4 {
-            color: #fff;
-            font-size: 1.05em;
-        }
-        .about-features .item p {
-            color: #aaa;
-            font-size: 0.85em;
-            margin: 0;
-        }
+        .about-features .item .icon { font-size: 2.8em; display: block; margin-bottom: 8px; }
+        .about-features .item h4 { color: #fff; font-size: 1.05em; }
+        .about-features .item p { color: #aaa; font-size: 0.85em; margin: 0; }
         .contacts-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -422,36 +298,16 @@
             width: 130px;
             display: inline-block;
         }
-        .contacts-grid .info-block li a {
-            color: #feca57;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .contacts-grid .info-block li a:hover {
-            color: #ff6b6b;
-        }
-        .messenger-links {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
+        .messenger-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
         .messenger-links a {
             display: inline-flex;
-            align-items: center;
-            gap: 8px;
             padding: 8px 22px;
             border-radius: 40px;
             color: #fff;
-            text-decoration: none;
             font-weight: 600;
-            font-size: 0.95em;
-            transition: all 0.3s;
+            transition: 0.3s;
         }
-        .messenger-links a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
+        .messenger-links a:hover { transform: translateY(-3px); }
         .btn-wa { background: #25D366; }
         .btn-tg { background: #0088cc; }
         .map-container {
@@ -460,14 +316,8 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
             height: 280px;
             width: 100%;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            display: block;
-        }
+        .map-container iframe { width: 100%; height: 100%; border: 0; }
         .form-container {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
@@ -475,20 +325,10 @@
             padding: 30px 35px;
             border: 1px solid rgba(255, 255, 255, 0.06);
             margin-top: 25px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
-        .form-container h3 {
-            font-size: 1.5em;
-            color: #fff;
-            margin-bottom: 8px;
-        }
-        .form-container .form-subtitle {
-            color: #aaa;
-            margin-bottom: 20px;
-        }
-        .form-group {
-            margin-bottom: 18px;
-        }
+        .form-container h3 { font-size: 1.5em; color: #fff; margin-bottom: 8px; }
+        .form-container .form-subtitle { color: #aaa; margin-bottom: 20px; }
+        .form-group { margin-bottom: 18px; }
         .form-group label {
             display: block;
             color: #ddd;
@@ -504,27 +344,18 @@
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 12px;
             font-size: 1em;
-            transition: all 0.3s;
-            outline: none;
             background: rgba(0, 0, 0, 0.3);
             color: #fff;
             font-family: inherit;
+            outline: none;
+            transition: 0.3s;
         }
         .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
+        .form-group textarea:focus {
             border-color: #ff6b6b;
-            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.15);
             background: rgba(0, 0, 0, 0.5);
         }
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        .form-group select option {
-            background: #1a1a2e;
-            color: #fff;
-        }
+        .form-group textarea { min-height: 100px; resize: vertical; }
         .form-checkbox {
             display: flex;
             align-items: flex-start;
@@ -539,18 +370,8 @@
             accent-color: #ff6b6b;
             cursor: pointer;
         }
-        .form-checkbox label {
-            color: #ccc;
-            font-size: 0.9em;
-            cursor: pointer;
-        }
-        .form-checkbox label a {
-            color: #feca57;
-            text-decoration: underline;
-        }
-        .form-checkbox label a:hover {
-            color: #ff6b6b;
-        }
+        .form-checkbox label { color: #ccc; font-size: 0.9em; cursor: pointer; }
+        .form-checkbox label a { color: #feca57; text-decoration: underline; }
         .btn-submit {
             padding: 16px 45px;
             background: linear-gradient(135deg, #ff6b6b, #e94560);
@@ -560,36 +381,21 @@
             font-size: 1.1em;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: 0.3s;
             letter-spacing: 1px;
-            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.4);
         }
         .btn-submit:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 40px rgba(233, 69, 96, 0.6);
-        }
-        .btn-submit:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
         }
         .success-message {
             display: none;
             text-align: center;
             padding: 25px;
         }
-        .success-message .check {
-            font-size: 3.5em;
-            display: block;
-        }
-        .success-message h3 {
-            color: #4caf50;
-            margin: 10px 0 4px;
-        }
-        .success-message p {
-            color: #aaa;
-            margin: 0;
-        }
+        .success-message .check { font-size: 3.5em; display: block; }
+        .success-message h3 { color: #4caf50; margin: 10px 0 4px; }
+        .success-message p { color: #aaa; margin: 0; }
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -602,7 +408,7 @@
             border-radius: 16px;
             padding: 25px;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s;
+            transition: 0.3s;
         }
         .review-card:hover {
             border-color: #feca57;
@@ -614,30 +420,11 @@
             gap: 12px;
             margin-bottom: 10px;
         }
-        .review-card .review-avatar {
-            font-size: 2.5em;
-        }
-        .review-card .review-name {
-            color: #fff;
-            font-weight: 700;
-            font-size: 1.05em;
-        }
-        .review-card .review-date {
-            color: #888;
-            font-size: 0.8em;
-        }
-        .review-card .review-text {
-            color: #ccc;
-            font-size: 0.95em;
-            margin: 0;
-            font-style: italic;
-        }
-        .review-card .review-stars {
-            color: #feca57;
-            letter-spacing: 2px;
-            margin-top: 8px;
-            font-size: 1.1em;
-        }
+        .review-card .review-avatar { font-size: 2.5em; }
+        .review-card .review-name { color: #fff; font-weight: 700; font-size: 1.05em; }
+        .review-card .review-date { color: #888; font-size: 0.8em; }
+        .review-card .review-text { color: #ccc; font-size: 0.95em; font-style: italic; margin: 0; }
+        .review-card .review-stars { color: #feca57; letter-spacing: 2px; margin-top: 8px; font-size: 1.1em; }
         .review-card .review-status {
             display: inline-block;
             margin-top: 10px;
@@ -654,47 +441,22 @@
             border: 1px solid rgba(255, 255, 255, 0.06);
             margin-top: 20px;
         }
-        .legal-content h3 {
-            color: #feca57;
-            font-size: 1.3em;
-            margin: 25px 0 10px;
-        }
-        .legal-content h3:first-of-type {
-            margin-top: 0;
-        }
-        .legal-content p,
-        .legal-content li {
-            color: #ccc;
-            font-size: 0.95em;
-            line-height: 1.7;
-        }
-        .legal-content ul {
-            padding-left: 25px;
-            margin: 10px 0 15px;
-        }
-        .legal-content li {
-            margin-bottom: 6px;
-        }
-        .legal-content .highlight {
-            color: #feca57;
-            font-weight: 600;
-        }
+        .legal-content h3 { color: #feca57; font-size: 1.3em; margin: 25px 0 10px; }
+        .legal-content h3:first-of-type { margin-top: 0; }
+        .legal-content p, .legal-content li { color: #ccc; font-size: 0.95em; line-height: 1.7; }
+        .legal-content ul { padding-left: 25px; margin: 10px 0 15px; }
+        .legal-content li { margin-bottom: 6px; }
+        .legal-content .highlight { color: #feca57; font-weight: 600; }
         footer {
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #2a0a3e 100%);
+            background: linear-gradient(135deg, #0a0a1a, #1a0a2e, #2a0a3e);
             color: #888;
             text-align: center;
             padding: 35px 20px 25px;
             margin-top: auto;
             border-top: 2px solid rgba(255, 107, 107, 0.2);
         }
-        footer a {
-            color: #feca57;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        footer a:hover {
-            color: #ff6b6b;
-        }
+        footer a { color: #feca57; transition: 0.3s; }
+        footer a:hover { color: #ff6b6b; }
         .footer-divider {
             width: 80px;
             height: 3px;
@@ -709,15 +471,8 @@
             flex-wrap: wrap;
             margin-bottom: 15px;
         }
-        .footer-nav a {
-            color: #ccc;
-            font-size: 0.9em;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        .footer-nav a:hover {
-            color: #feca57;
-        }
+        .footer-nav a { color: #ccc; font-size: 0.9em; cursor: pointer; }
+        .footer-nav a:hover { color: #feca57; }
         .footer-legal {
             display: flex;
             justify-content: center;
@@ -726,13 +481,8 @@
             margin: 12px 0 8px;
             font-size: 0.8em;
         }
-        .footer-legal a {
-            color: #777;
-            transition: color 0.3s;
-        }
-        .footer-legal a:hover {
-            color: #feca57;
-        }
+        .footer-legal a { color: #777; }
+        .footer-legal a:hover { color: #feca57; }
         .footer-req {
             font-size: 0.75em;
             color: #666;
@@ -753,7 +503,7 @@
             .logo { font-size: 1.2em; }
             nav ul { gap: 12px; }
             nav a { font-size: 0.8em; }
-            .portfolio-item .image-wrap { height: 140px; font-size: 3em; }
+            .portfolio-item .image-wrap { font-size: 3em; }
             .page h1 { font-size: 1.6em; padding-left: 12px; }
             .form-container { padding: 20px; }
             .map-container { height: 160px; }
@@ -787,14 +537,15 @@
 
     <div class="page-content">
 
+        <!-- ГЛАВНАЯ -->
         <div class="page active" id="page-home">
             <section class="hero-bg">
                 <div class="hero-content">
                     <h1>10 лет опыта —<br><strong>новая студия вышивки</strong></h1>
                     <p>Мы открыли собственную студию, чтобы делать вышивку ещё быстрее, качественнее и доступнее. Индивидуальные заказы, корпоративные тиражи — любой объём.</p>
                     <div class="hero-buttons">
-                        <button class="btn-primary" onclick="navigateTo('contacts')">Связаться с нами</button>
-                        <button class="btn-secondary" onclick="navigateTo('portfolio')">Смотреть работы</button>
+                        <button class="btn-primary" onclick="navigateTo('contacts')">Связаться</button>
+                        <button class="btn-secondary" onclick="navigateTo('portfolio')">Портфолио</button>
                     </div>
                 </div>
             </section>
@@ -808,58 +559,60 @@
                 <div class="card">
                     <span class="icon">🏢</span>
                     <h3>Новая студия</h3>
-                    <p>Современные машины Barudan и ZSK, нити Madeira</p>
+                    <p>Современное оборудование и качественные нити</p>
                 </div>
                 <div class="card">
                     <span class="icon">🚀</span>
                     <h3>От 1 заказа до тиража</h3>
-                    <p>Вышьем и одну футболку, и 500 курток — без потери качества</p>
+                    <p>Вышьем и одну вещь, и 500 — без потери качества</p>
                 </div>
             </div>
         </div>
 
+        <!-- УСЛУГИ -->
         <div class="page" id="page-services">
             <h1>Наши услуги</h1>
-            <p>10 лет опыта + новая студия = качественная вышивка в короткие сроки. Выполняем заказы любой сложности.</p>
+            <p>10 лет опыта + новая студия = качественная вышивка в короткие сроки.</p>
             <div class="grid-2">
                 <div class="card">
                     <span class="icon">🎨</span>
                     <h3>Индивидуальный дизайн</h3>
-                    <p>Вышьем ваш рисунок, надпись или логотип на худи, футболках, свитшотах. Работаем по вашему эскизу или создаём дизайн сами.</p>
+                    <p>Вышьем ваш рисунок, надпись или логотип. Работаем по вашему эскизу или создаём дизайн сами.</p>
                     <span class="price-tag">от 1500 ₽</span>
                 </div>
                 <div class="card">
                     <span class="icon">👔</span>
                     <h3>Корпоративный мерч</h3>
-                    <p>Брендирование униформы для бизнеса — от 1 шт. Вышивка логотипов, названий и слоганов на спецодежде и сувенирах.</p>
-                    <span class="price-tag">от 800 ₽/шт (скидки от 10 шт)</span>
+                    <p>Брендирование униформы для бизнеса — от 1 шт. Вышивка логотипов, названий, слоганов.</p>
+                    <span class="price-tag">от 800 ₽/шт</span>
                 </div>
                 <div class="card">
                     <span class="icon">🛡️</span>
                     <h3>Шевроны и патчи</h3>
-                    <p>Нашивки любой сложности — на липучке, термоплёнке или с пришивной основой. Идеально для спецодежды, формы и аксессуаров.</p>
+                    <p>Нашивки любой сложности — на липучке, термоплёнке или с пришивной основой.</p>
                     <span class="price-tag">от 300 ₽</span>
                 </div>
             </div>
         </div>
 
+        <!-- ПОРТФОЛИО -->
         <div class="page" id="page-portfolio">
             <h1>Наши работы</h1>
-            <p>Примеры вышивки, которые мы сделали для наших клиентов.</p>
+            <p>Примеры вышивки, которые мы сделали для наших клиентов. Фото работ добавлю позже.</p>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <div class="image-wrap">👕</div>
                     <div class="info">
                         <h4>Логотип на худи</h4>
-                        <div class="desc">Машинная вышивка, 15 000 стежков</div>
+                        <div class="desc">Машинная вышивка</div>
                         <span class="tag">#брендинг</span>
                     </div>
                 </div>
                 <div class="portfolio-item">
                     <div class="image-wrap">🧢</div>
                     <div class="info">
-                        <h4>Цветочный патч на кепку</h4>
-                        <div class="desc">Ручная доработка, 3 цвета нити</div>
+                        <h4>Вышивка на кепке</h4>
+                        <div class="desc">Индивидуальный дизайн</div>
                         <span class="tag">#аксессуары</span>
                     </div>
                 </div>
@@ -867,41 +620,42 @@
                     <div class="image-wrap">🧥</div>
                     <div class="info">
                         <h4>Корпоративные куртки</h4>
-                        <div class="desc">Тираж 50 шт, вышивка на спине</div>
+                        <div class="desc">Тиражная вышивка</div>
                         <span class="tag">#оптом</span>
                     </div>
                 </div>
                 <div class="portfolio-item">
                     <div class="image-wrap">🎒</div>
                     <div class="info">
-                        <h4>Именная вышивка на рюкзак</h4>
-                        <div class="desc">Индивидуальный шрифт, 2 цвета</div>
+                        <h4>Именная вышивка</h4>
+                        <div class="desc">На рюкзак</div>
                         <span class="tag">#персонализация</span>
                     </div>
                 </div>
                 <div class="portfolio-item">
                     <div class="image-wrap">🎽</div>
                     <div class="info">
-                        <h4>Животный принт на футболке</h4>
-                        <div class="desc">Вышивка по фото, 7 цветов</div>
+                        <h4>Принт на футболке</h4>
+                        <div class="desc">Многоцветная вышивка</div>
                         <span class="tag">#дизайн</span>
                     </div>
                 </div>
                 <div class="portfolio-item">
                     <div class="image-wrap">🛡️</div>
                     <div class="info">
-                        <h4>Шеврон для военной формы</h4>
-                        <div class="desc">Термоклеевая основа, плотная вышивка</div>
+                        <h4>Шеврон для формы</h4>
+                        <div class="desc">Термоклеевая основа</div>
                         <span class="tag">#шевроны</span>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- ОТЗЫВЫ -->
         <div class="page" id="page-reviews">
-            <h1>Отзывы наших клиентов</h1>
-            <p>Мы только открыли студию, но уже получили первые отзывы. Оставьте свой — он пройдёт модерацию и появится на сайте.</p>
-            <div class="reviews-grid" id="reviewsList">
+            <h1>Отзывы клиентов</h1>
+            <p>Мы только открыли студию, но уже получили первые отзывы. Оставьте свой — он пройдёт модерацию.</p>
+            <div class="reviews-grid">
                 <div class="review-card">
                     <div class="review-header">
                         <span class="review-avatar">👤</span>
@@ -911,7 +665,7 @@
                         </div>
                     </div>
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Заказывала вышивку на худи для всей семьи. Сделали всё быстро и очень аккуратно. Спасибо!"</p>
+                    <p class="review-text">"Заказывала вышивку на худи для всей семьи. Сделали всё быстро и аккуратно."</p>
                     <span class="review-status">✓ Опубликовано</span>
                 </div>
                 <div class="review-card">
@@ -923,7 +677,7 @@
                         </div>
                     </div>
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Партия шевронов для нашей команды. Отличное качество, держатся отлично. Рекомендую!"</p>
+                    <p class="review-text">"Партия шевронов для команды. Отличное качество, держатся отлично. Рекомендую!"</p>
                     <span class="review-status">✓ Опубликовано</span>
                 </div>
                 <div class="review-card">
@@ -935,12 +689,13 @@
                         </div>
                     </div>
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Делали логотип для моего бренда одежды. Получилось лучше, чем я ожидала. Буду заказывать ещё!"</p>
+                    <p class="review-text">"Делали логотип для моего бренда одежды. Получилось лучше, чем я ожидала!"</p>
                     <span class="review-status">✓ Опубликовано</span>
                 </div>
             </div>
-            <div class="form-container" id="reviewFormBlock">
-                <h3>✍️ Оставьте свой отзыв</h3>
+
+            <div class="form-container">
+                <h3>✍️ Оставьте отзыв</h3>
                 <p class="form-subtitle">Расскажите о своём опыте — после модерации он появится на сайте</p>
                 <form id="reviewForm">
                     <div class="form-group">
@@ -959,63 +714,65 @@
                     </div>
                     <div class="form-group">
                         <label for="reviewText">Ваш отзыв</label>
-                        <textarea id="reviewText" placeholder="Что вам понравилось? Как прошёл заказ?" rows="4" required></textarea>
+                        <textarea id="reviewText" placeholder="Что вам понравилось?" rows="4" required></textarea>
                     </div>
                     <div class="form-checkbox">
                         <input type="checkbox" id="reviewConsent" required>
-                        <label for="reviewConsent">Я даю согласие на <a href="#" onclick="navigateTo('legal'); return false;">обработку персональных данных</a></label>
+                        <label for="reviewConsent">Я даю согласие на <a href="#" onclick="navigateTo('legal'); return false;">обработку данных</a></label>
                     </div>
-                    <button type="submit" class="btn-submit">Отправить на модерацию</button>
+                    <button type="submit" class="btn-submit">Отправить</button>
                 </form>
                 <div class="success-message" id="reviewSuccess">
                     <span class="check">✅</span>
                     <h3>Спасибо за отзыв!</h3>
-                    <p>Он отправлен на модерацию и скоро появится на сайте</p>
+                    <p>Он отправлен на модерацию</p>
                 </div>
             </div>
         </div>
 
+        <!-- О НАС -->
         <div class="page" id="page-about">
             <h1>О студии</h1>
-            <p><strong>Мы открыли новую студию, но за плечами — более 10 лет работы с вышивкой.</strong> За это время мы выполнили сотни заказов: от маленьких патчей до крупных корпоративных тиражей для известных брендов.</p>
-            <p>Решение открыть собственную студию пришло, чтобы <strong>предложить клиентам ещё более высокое качество, прозрачные цены и короткие сроки</strong>. Мы работаем на современных машинах <strong>Barudan</strong> (Япония) и <strong>ZSK</strong> (Германия), используем нити <strong>Madeira</strong> и <strong>Gütermann</strong> — они не выгорают на солнце и не линяют после стирки.</p>
-            <p>Каждый заказ — от первой примерки до финальной вышивки — мы контролируем лично. <strong>Вы получаете не просто вещь с рисунком, а продуманный до мелочей продукт.</strong></p>
+            <p><strong>За плечами — более 10 лет работы с вышивкой.</strong> За это время мы выполнили сотни заказов: от маленьких патчей до крупных корпоративных тиражей.</p>
+            <p>Решение открыть собственную студию пришло, чтобы <strong>предложить клиентам ещё более высокое качество, прозрачные цены и короткие сроки</strong>. Мы работаем на современном оборудовании, используем только качественные нити — они не выгорают на солнце и не линяют после стирки.</p>
+            <p>Каждый заказ мы контролируем лично. <strong>Вы получаете не просто вещь с рисунком, а продуманный до мелочей продукт.</strong></p>
             <div class="about-features">
-                <div class="item"><span class="icon">📅</span><h4>10+ лет опыта</h4><p>С 2014 года в индустрии вышивки</p></div>
-                <div class="item"><span class="icon">🔧</span><h4>Оборудование премиум-класса</h4><p>Barudan, ZSK — японские и немецкие машины</p></div>
-                <div class="item"><span class="icon">🧶</span><h4>Только качественные нити</h4><p>Madeira, Gütermann — проверенные бренды</p></div>
-                <div class="item"><span class="icon">⭐</span><h4>От 1 до 1000+ заказов</h4><p>Работаем с любым тиражом</p></div>
+                <div class="item"><span class="icon">📅</span><h4>10+ лет опыта</h4><p>С 2014 года в индустрии</p></div>
+                <div class="item"><span class="icon">🔧</span><h4>Современное оборудование</h4><p>Качество на всех этапах</p></div>
+                <div class="item"><span class="icon">🧶</span><h4>Качественные нити</h4><p>Не выгорают и не линяют</p></div>
+                <div class="item"><span class="icon">⭐</span><h4>Любой объём</h4><p>От 1 до 1000+ заказов</p></div>
             </div>
         </div>
 
+        <!-- ДОСТАВКА И ОПЛАТА -->
         <div class="page" id="page-delivery">
             <h1>Доставка и оплата</h1>
-            <h2>🚚 Способы доставки</h2>
+            <h2>🚚 Доставка</h2>
             <div class="grid-3">
-                <div class="card"><span class="icon">📦</span><h4 style="color:#fff;">СДЭК</h4><p style="color:#ccc;">от 1 дня</p><span class="price-tag" style="font-size:0.7em; margin-top:8px;">быстрая</span></div>
-                <div class="card"><span class="icon">📱</span><h4 style="color:#fff;">Авито Доставка</h4><p style="color:#ccc;">защита сделки</p><span class="price-tag" style="font-size:0.7em; margin-top:8px;">безопасно</span></div>
-                <div class="card"><span class="icon">🚛</span><h4 style="color:#fff;">Яндекс Доставка</h4><p style="color:#ccc;">курьер до двери</p><span class="price-tag" style="font-size:0.7em; margin-top:8px;">от 2 ч</span></div>
-                <div class="card"><span class="icon">📬</span><h4 style="color:#fff;">Почта России</h4><p style="color:#ccc;">экономичная</p><span class="price-tag" style="font-size:0.7em; margin-top:8px;">от 3 дней</span></div>
-                <div class="card"><span class="icon">🛒</span><h4 style="color:#fff;">Wildberries</h4><p style="color:#ccc;">пункты выдачи</p><span class="price-tag" style="font-size:0.7em; margin-top:8px;">по всей РФ</span></div>
-                <div class="card"><span class="icon">🛍️</span><h4 style="color:#fff;">Ozon</h4><p style="color:#ccc;">пункты выдачи</p><span class="price-tag" style="font-size:0.7em; margin-top:8px;">по всей РФ</span></div>
+                <div class="card"><span class="icon">📦</span><h4>СДЭК</h4><p>от 1 дня</p></div>
+                <div class="card"><span class="icon">🚛</span><h4>Яндекс Доставка</h4><p>курьер до двери</p></div>
+                <div class="card"><span class="icon">📬</span><h4>Почта России</h4><p>экономичная</p></div>
+                <div class="card"><span class="icon">🛒</span><h4>Wildberries</h4><p>пункты выдачи</p></div>
+                <div class="card"><span class="icon">🛍️</span><h4>Ozon</h4><p>пункты выдачи</p></div>
             </div>
-            <h2 style="margin-top: 40px;">💳 Оплата</h2>
+            <h2>💳 Оплата</h2>
             <div class="grid-3">
                 <div class="card" style="grid-column: 1 / -1;">
                     <span class="icon">🧾</span>
-                    <h4 style="color:#fff;">Выставление счета</h4>
-                    <p style="color:#ccc;">Я — самозанятый, работаю официально. После согласования заказа я выставляю счёт через <strong>ВТБ Бизнес</strong>. Вы получаете чек и все документы.</p>
-                    <span class="price-tag" style="font-size:0.7em; margin-top:8px;">Официально</span>
+                    <h4>Официальный чек</h4>
+                    <p>Я работаю официально как самозанятый. После оплаты я оформляю чек через приложение «Мой налог» — вы получаете все документы.</p>
+                    <span class="price-tag">Официально</span>
                 </div>
             </div>
         </div>
 
+        <!-- КОНТАКТЫ -->
         <div class="page" id="page-contacts">
             <h1>Контакты</h1>
-            <p>Свяжитесь с нами любым удобным способом — мы ответим в течение 15 минут в рабочее время.</p>
+            <p>Свяжитесь с нами любым удобным способом — ответим в течение 15 минут.</p>
             <div class="contacts-grid">
                 <div class="info-block">
-                    <ul style="list-style: none; padding: 0;">
+                    <ul>
                         <li><strong>📞 Телефон</strong> <a href="tel:+79014030785">+7 (901) 403-07-85</a></li>
                         <li><strong>✉️ Email</strong> <a href="mailto:imaklain@gmail.com">imaklain@gmail.com</a></li>
                         <li><strong>🕐 Режим работы</strong> Пн–Пт, 10:00 – 20:00</li>
@@ -1034,11 +791,12 @@
                         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d&amp;source=constructor&amp;text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" allowfullscreen></iframe>
                     </div>
                     <p style="font-size: 0.8em; color: #888; margin-top: 6px; text-align: right;">
-                        <a href="https://yandex.ru/maps/?text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" target="_blank" style="color: #888; text-decoration: none;">Открыть в Яндекс.Картах →</a>
+                        <a href="https://yandex.ru/maps/?text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" target="_blank" style="color: #888;">Открыть в Яндекс.Картах →</a>
                     </p>
                 </div>
             </div>
-            <div class="form-container" id="contactFormBlock">
+
+            <div class="form-container">
                 <h3>📩 Напишите нам</h3>
                 <p class="form-subtitle">Оставьте сообщение, и мы свяжемся с вами</p>
                 <form id="contactForm">
@@ -1056,9 +814,9 @@
                     </div>
                     <div class="form-checkbox">
                         <input type="checkbox" id="contactConsent" required>
-                        <label for="contactConsent">Я даю согласие на <a href="#" onclick="navigateTo('legal'); return false;">обработку персональных данных</a></label>
+                        <label for="contactConsent">Я даю согласие на <a href="#" onclick="navigateTo('legal'); return false;">обработку данных</a></label>
                     </div>
-                    <button type="submit" class="btn-submit">Отправить сообщение</button>
+                    <button type="submit" class="btn-submit">Отправить</button>
                 </form>
                 <div class="success-message" id="contactSuccess">
                     <span class="check">✅</span>
@@ -1068,45 +826,30 @@
             </div>
         </div>
 
+        <!-- ЮРИДИЧЕСКАЯ -->
         <div class="page" id="page-legal">
             <h1>Юридическая информация</h1>
             <div class="legal-content">
                 <h3>1. Политика конфиденциальности</h3>
-                <p>Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта <span class="highlight">Вышивка Стиль</span> (далее — «Сайт»).</p>
-                <p><strong>1.1. Какие данные мы собираем</strong><br>При заполнении форм на Сайте мы собираем: имя, номер телефона и текст сообщения/отзыва. Также мы можем получать данные, которые вы передаёте в мессенджерах (WhatsApp, Telegram) при общении с нами.</p>
-                <p><strong>1.2. Цели обработки данных</strong><br>Ваши данные используются исключительно для:</p>
-                <ul>
-                    <li>связи с вами для расчёта стоимости вышивки;</li>
-                    <li>уточнения деталей заказа;</li>
-                    <li>информирования о статусе выполнения заказа;</li>
-                    <li>публикации отзывов (с вашего согласия).</li>
-                </ul>
-                <p><strong>1.3. Передача данных третьим лицам</strong><br>Мы не передаём ваши персональные данные третьим лицам, за исключением случаев, предусмотренных законодательством РФ.</p>
-                <p><strong>1.4. Хранение и защита данных</strong><br>Ваши данные хранятся в защищённом виде в нашей внутренней системе и в мессенджерах, которые соответствуют требованиям безопасности. Мы не храним данные на бумажных носителях.</p>
-                <p><strong>1.5. Ваши права</strong><br>Вы имеете право требовать удаления ваших данных из нашей системы, написав нам на email: <a href="mailto:imaklain@gmail.com">imaklain@gmail.com</a>.</p>
-                <p><strong>1.6. Изменения в политике</strong><br>Мы оставляем за собой право обновлять данную политику при изменении законодательства или наших процессов. Актуальная версия всегда опубликована на этом Сайте.</p>
+                <p>Настоящая Политика определяет порядок обработки и защиты персональных данных пользователей сайта <span class="highlight">Вышивка Стиль</span>.</p>
+                <p><strong>1.1. Какие данные мы собираем</strong><br>При заполнении форм мы собираем: имя, номер телефона и текст сообщения/отзыва.</p>
+                <p><strong>1.2. Цели обработки</strong><br>Данные используются для связи с вами, уточнения деталей заказа, публикации отзывов (с вашего согласия).</p>
+                <p><strong>1.3. Передача третьим лицам</strong><br>Мы не передаём данные третьим лицам, кроме случаев, предусмотренных законом.</p>
+                <p><strong>1.4. Ваши права</strong><br>Вы можете требовать удаления ваших данных, написав на email: imaklain@gmail.com.</p>
+
                 <h3>2. Пользовательское соглашение</h3>
-                <p><strong>2.1. Использование Сайта</strong><br>Используя Сайт, вы соглашаетесь с условиями настоящего Соглашения. Если вы не согласны с условиями, пожалуйста, покиньте Сайт.</p>
-                <p><strong>2.2. Интеллектуальная собственность</strong><br>Все материалы Сайта (тексты, дизайн, изображения) являются объектами интеллектуальной собственности и защищены законодательством РФ. Копирование материалов без согласия правообладателя запрещено.</p>
-                <p><strong>2.3. Ответственность</strong><br>Администрация Сайта не несёт ответственности за убытки, возникшие в результате использования или невозможности использования Сайта, а также за действия пользователей, нарушающих условия Соглашения.</p>
-                <p><strong>2.4. Изменения</strong><br>Администрация Сайта оставляет за собой право изменять условия Соглашения в любое время без предварительного уведомления. Актуальная версия всегда доступна на этом Сайте.</p>
-                <h3>3. Согласие на обработку персональных данных</h3>
-                <p>Отправляя форму на Сайте, вы даёте своё <span class="highlight">согласие на обработку персональных данных</span> в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</p>
-                <p>Вы подтверждаете, что:</p>
-                <ul>
-                    <li>указанные вами данные являются достоверными;</li>
-                    <li>вы даёте согласие на обработку данных (сбор, систематизацию, накопление, хранение, уточнение, использование, обезличивание, блокирование, уничтожение);</li>
-                    <li>согласие даётся на срок, необходимый для достижения целей обработки, но не более 5 лет;</li>
-                    <li>вы можете отозвать согласие, направив письменное уведомление на email: <a href="mailto:imaklain@gmail.com">imaklain@gmail.com</a>.</li>
-                </ul>
+                <p>Используя Сайт, вы соглашаетесь с условиями. Все материалы защищены законодательством РФ. Администрация не несёт ответственности за убытки, возникшие при использовании Сайта.</p>
+
+                <h3>3. Согласие на обработку данных</h3>
+                <p>Отправляя форму, вы даёте согласие на обработку персональных данных в соответствии с 152-ФЗ. Согласие даётся на срок до 5 лет.</p>
+
                 <h3>4. Реквизиты самозанятого</h3>
-                <p><strong>Статус:</strong> Самозанятый (плательщик налога на профессиональный доход)</p>
                 <ul>
-                    <li><strong>ФИО</strong> — Ёлдашев Максим Джорагелдиевич</li>
-                    <li><strong>ИНН</strong> — 130100811452</li>
-                    <li><strong>Налоговый режим</strong> — Налог на профессиональный доход (НПД)</li>
-                    <li><strong>Телефон</strong> — <a href="tel:+79014030785">+7 (901) 403-07-85</a></li>
-                    <li><strong>Email</strong> — <a href="mailto:imaklain@gmail.com">imaklain@gmail.com</a></li>
+                    <li><strong>Статус:</strong> Самозанятый (НПД)</li>
+                    <li><strong>ФИО:</strong> Ёлдашев Максим Джорагелдиевич</li>
+                    <li><strong>ИНН:</strong> 130100811452</li>
+                    <li><strong>Телефон:</strong> <a href="tel:+79014030785">+7 (901) 403-07-85</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:imaklain@gmail.com">imaklain@gmail.com</a></li>
                 </ul>
                 <p style="margin-top: 15px; color: #888; font-size: 0.85em;">Дата публикации: 06 августа 2026 г.</p>
             </div>
@@ -1127,7 +870,7 @@
         <div class="footer-legal">
             <a href="#" onclick="navigateTo('legal'); return false;">Политика конфиденциальности</a>
             <a href="#" onclick="navigateTo('legal'); return false;">Пользовательское соглашение</a>
-            <a href="#" onclick="navigateTo('legal'); return false;">Согласие на обработку данных</a>
+            <a href="#" onclick="navigateTo('legal'); return false;">Согласие на обработку</a>
         </div>
         <div class="footer-divider"></div>
         <p>© 2026 Вышивка Стиль. Все права защищены.</p>
@@ -1185,6 +928,7 @@
                 });
             });
 
+            // --- TELEGRAM БОТ ---
             const BOT_TOKEN = '8313671080:AAGoXjlxoHPuDQ17DRn5IOthcaSNCPVloqw';
             const CHAT_ID = '782451090';
 
@@ -1210,12 +954,9 @@
                 return trySend(0);
             }
 
+            // --- ФОРМА КОНТАКТОВ ---
             const contactForm = document.getElementById('contactForm');
-            const contactName = document.getElementById('contactName');
             const contactPhone = document.getElementById('contactPhone');
-            const contactMessage = document.getElementById('contactMessage');
-            const contactConsent = document.getElementById('contactConsent');
-            const contactSuccess = document.getElementById('contactSuccess');
 
             if (contactForm) {
                 contactPhone.addEventListener('input', function() {
@@ -1247,61 +988,63 @@
 
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    if (!contactConsent.checked) {
-                        alert('Пожалуйста, дайте согласие на обработку персональных данных');
+                    const name = document.getElementById('contactName').value.trim();
+                    const phone = document.getElementById('contactPhone').value.trim();
+                    const message = document.getElementById('contactMessage').value.trim();
+                    const consent = document.getElementById('contactConsent');
+
+                    if (!consent.checked) {
+                        alert('Дайте согласие на обработку данных');
                         return;
                     }
-                    const name = contactName.value.trim();
-                    const phone = contactPhone.value.trim();
-                    const message = contactMessage.value.trim();
-                    const digits = phone.replace(/\D/g, '');
-                    if (digits.length < 10) {
-                        alert('Пожалуйста, введите корректный номер телефона');
+                    if (phone.replace(/\D/g, '').length < 10) {
+                        alert('Введите корректный номер телефона');
                         return;
                     }
+
                     const text =
-                        `📩 *Новое сообщение с сайта!*\n\n👤 *Имя:* ${name || 'Не указано'}\n📱 *Телефон:* ${phone}\n💬 *Сообщение:* ${message || '—'}\n📋 *Согласие на обработку:* Да\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
+                        `📩 *Сообщение с сайта!*\n\n👤 *Имя:* ${name || 'Не указано'}\n📱 *Телефон:* ${phone}\n💬 *Сообщение:* ${message || '—'}\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
                     sendToTelegram(text).catch(() => {});
+
+                    document.getElementById('contactSuccess').style.display = 'block';
                     contactForm.style.display = 'none';
-                    contactSuccess.style.display = 'block';
                     setTimeout(() => {
                         contactForm.style.display = 'block';
-                        contactSuccess.style.display = 'none';
+                        document.getElementById('contactSuccess').style.display = 'none';
                         contactForm.reset();
                     }, 5000);
                 });
             }
 
+            // --- ФОРМА ОТЗЫВОВ ---
             const reviewForm = document.getElementById('reviewForm');
-            const reviewName = document.getElementById('reviewName');
-            const reviewRating = document.getElementById('reviewRating');
-            const reviewText = document.getElementById('reviewText');
-            const reviewConsent = document.getElementById('reviewConsent');
-            const reviewSuccess = document.getElementById('reviewSuccess');
-
             if (reviewForm) {
                 reviewForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    if (!reviewConsent.checked) {
-                        alert('Пожалуйста, дайте согласие на обработку персональных данных');
+                    const name = document.getElementById('reviewName').value.trim();
+                    const rating = document.getElementById('reviewRating').value;
+                    const text = document.getElementById('reviewText').value.trim();
+                    const consent = document.getElementById('reviewConsent');
+
+                    if (!consent.checked) {
+                        alert('Дайте согласие на обработку данных');
                         return;
                     }
-                    const name = reviewName.value.trim();
-                    const rating = reviewRating.value;
-                    const text = reviewText.value.trim();
                     if (!name || !text) {
-                        alert('Пожалуйста, заполните имя и текст отзыва');
+                        alert('Заполните имя и текст отзыва');
                         return;
                     }
+
                     const stars = '⭐'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
                     const message =
-                        `⭐ *Новый отзыв (требует модерации)!*\n\n👤 *Имя:* ${name}\n📊 *Оценка:* ${stars}\n💬 *Отзыв:* ${text}\n📋 *Согласие на обработку:* Да\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}\n\n⚠️ Для публикации скопируйте отзыв и добавьте в #reviewsList`;
+                        `⭐ *Новый отзыв (на модерацию)!*\n\n👤 *Имя:* ${name}\n📊 *Оценка:* ${stars}\n💬 *Отзыв:* ${text}\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
                     sendToTelegram(message).catch(() => {});
+
+                    document.getElementById('reviewSuccess').style.display = 'block';
                     reviewForm.style.display = 'none';
-                    reviewSuccess.style.display = 'block';
                     setTimeout(() => {
                         reviewForm.style.display = 'block';
-                        reviewSuccess.style.display = 'none';
+                        document.getElementById('reviewSuccess').style.display = 'none';
                         reviewForm.reset();
                     }, 5000);
                 });
@@ -1310,4 +1053,4 @@
     </script>
 
 </body>
-    </html>
+</html>
