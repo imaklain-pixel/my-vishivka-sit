@@ -272,6 +272,151 @@
             justify-content: center;
         }
 
+        /* ---------- МОДАЛЬНОЕ ОКНО ДЛЯ ФОРМЫ ---------- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            animation: fadeInModal 0.3s ease;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-content {
+            background: #1a1a2e;
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2em;
+            color: #888;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .modal-close:hover {
+            color: #ff6b6b;
+            transform: rotate(90deg);
+        }
+        .modal-content h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .modal-content .subtitle {
+            color: #aaa;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+        .modal-content .form-group {
+            margin-bottom: 18px;
+        }
+        .modal-content .form-group label {
+            display: block;
+            color: #ddd;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 0.95em;
+        }
+        .modal-content .form-group input,
+        .modal-content .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            font-size: 1em;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            outline: none;
+            transition: 0.3s;
+        }
+        .modal-content .form-group input:focus,
+        .modal-content .form-group textarea:focus {
+            border-color: #ff6b6b;
+            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.15);
+        }
+        .modal-content .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .modal-content .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #ff6b6b, #e94560);
+            color: #fff;
+            border: none;
+            border-radius: 60px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.4);
+        }
+        .modal-content .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.6);
+        }
+        .modal-content .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .modal-content .form-checkbox input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            margin-top: 2px;
+            accent-color: #ff6b6b;
+            cursor: pointer;
+        }
+        .modal-content .form-checkbox label {
+            color: #ccc;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+        .modal-content .form-checkbox label a {
+            color: #feca57;
+            text-decoration: underline;
+        }
+        .modal-content .success-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        .modal-content .success-message .check {
+            font-size: 3.5em;
+            display: block;
+        }
+        .modal-content .success-message h3 {
+            color: #4caf50;
+            margin: 10px 0 4px;
+        }
+        .modal-content .success-message p {
+            color: #aaa;
+            margin: 0;
+        }
+        @keyframes fadeInModal {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
         /* ---------- СТОЛБИКИ (КАТЕГОРИИ) В ПОРТФОЛИО ---------- */
         .category-grid {
             display: grid;
@@ -338,6 +483,7 @@
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: 0.3s;
+            cursor: pointer;
         }
         .gallery-item:hover {
             transform: scale(1.03);
@@ -354,6 +500,50 @@
             color: #ccc;
             font-size: 0.9em;
             text-align: center;
+        }
+
+        /* ---------- ЛАЙТБОКС ДЛЯ ФОТО ---------- */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 9998;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            animation: fadeInLightbox 0.3s ease;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.8em;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 9999;
+        }
+        .lightbox-close:hover {
+            color: #ff6b6b;
+            transform: rotate(90deg);
+        }
+        @keyframes fadeInLightbox {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         /* ---------- СЕТКИ И КАРТОЧКИ ---------- */
@@ -422,6 +612,7 @@
             border-radius: 8px;
             overflow: hidden;
             background: rgba(255, 255, 255, 0.03);
+            cursor: pointer;
         }
         .review-photo img {
             width: 100%;
@@ -441,6 +632,7 @@
             object-fit: cover;
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
         }
 
         /* ---------- КОНТАКТЫ ---------- */
@@ -606,7 +798,7 @@
             border-radius: 20px;
         }
 
-        /* ---------- ФОРМЫ ---------- */
+        /* ---------- ФОРМЫ (обычные, не модальные) ---------- */
         .form-container {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
@@ -880,6 +1072,13 @@
             .category-card .icon {
                 font-size: 3em;
             }
+            .lightbox img {
+                max-width: 95%;
+                max-height: 95%;
+            }
+            .modal-content {
+                padding: 25px;
+            }
         }
     </style>
 </head>
@@ -918,7 +1117,7 @@
                     <h1>10 лет опыта —<br><strong>новая студия вышивки</strong></h1>
                     <p>Мы открыли собственную студию, чтобы делать вышивку ещё быстрее, качественнее и доступнее. Индивидуальные заказы, корпоративные тиражи — любой объём.</p>
                     <div class="hero-buttons">
-                        <button class="btn-primary" onclick="navigateTo('contacts')">Связаться с нами</button>
+                        <button class="btn-primary" onclick="openModal()">Связаться с нами</button>
                         <button class="btn-secondary" onclick="navigateTo('portfolio')">Смотреть работы</button>
                     </div>
                 </div>
@@ -974,7 +1173,6 @@
             <h1>Наши работы</h1>
             <p>Выберите категорию, чтобы посмотреть фото.</p>
 
-            <!-- СТОЛБИКИ-КАТЕГОРИИ -->
             <div class="category-grid">
                 <div class="category-card" onclick="openCategory('hats')">
                     <span class="icon">🧢</span>
@@ -996,7 +1194,6 @@
                 </div>
             </div>
 
-            <!-- ГАЛЕРЕИ (скрыты по умолчанию) -->
             <div id="gallery-hats" class="gallery-grid"></div>
             <div id="gallery-patches" class="gallery-grid"></div>
             <div id="gallery-clothing" class="gallery-grid"></div>
@@ -1007,7 +1204,6 @@
             <h1>Отзывы наших клиентов</h1>
             <p>Мы только открыли студию, но уже получили первые отзывы. Оставьте свой — он пройдёт модерацию и появится на сайте.</p>
 
-            <!-- ГАЛЕРЕЯ ОТЗЫВОВ С ФОТО -->
             <div class="reviews-grid" id="reviewsList">
                 <div class="review-card">
                     <div class="review-header">
@@ -1019,8 +1215,8 @@
                     </div>
                     <div class="review-stars">★★★★★</div>
                     <p class="review-text">"Заказывала вышивку на худи для всей семьи. Сделали всё быстро и очень аккуратно. Спасибо!"</p>
-                    <div class="review-photo">
-                        <img src="https://imaklain-pixel.github.io/my-vishivka-sit/2024-11-12_12.10.11.jpg" alt="Фото отзыва" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px; margin-top: 10px;">
+                    <div class="review-photo" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/2024-11-12_12.10.11.jpg')">
+                        <img src="https://imaklain-pixel.github.io/my-vishivka-sit/2024-11-12_12.10.11.jpg" alt="Фото отзыва">
                     </div>
                     <span class="review-status">✓ Опубликовано</span>
                 </div>
@@ -1052,7 +1248,6 @@
                 </div>
             </div>
 
-            <!-- ФОРМА ОТЗЫВА С ФОТО -->
             <div class="form-container" id="reviewFormBlock">
                 <h3>✍️ Оставьте свой отзыв</h3>
                 <p class="form-subtitle">Расскажите о своём опыте — после модерации он появится на сайте</p>
@@ -1077,7 +1272,6 @@
                         <textarea id="reviewText" placeholder="Что вам понравилось? Как прошёл заказ?" rows="4" required></textarea>
                     </div>
 
-                    <!-- НОВОЕ: поле для загрузки фото -->
                     <div class="form-group">
                         <label for="reviewPhoto">📸 Прикрепите фото (необязательно)</label>
                         <input type="file" id="reviewPhoto" accept="image/*" multiple>
@@ -1143,7 +1337,7 @@
                     <ul>
                         <li><strong>📞 Телефон</strong> <a href="tel:+79014030785">+7 (901) 403-07-85</a></li>
                         <li><strong>✉️ Email</strong> <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a></li>
-                        <li><strong>🕐 Режим работы</strong> Пн–Пт, 9:00 – 20:00</li>
+                        <li><strong>🕐 Режим работы</strong> Пн–Пт, 10:00 – 20:00</li>
                         <li><strong>📍 Адрес</strong> Москва, ул. Исаковского, д. 20</li>
                         <li style="border-bottom: none;">
                             <strong>💬 Мессенджеры</strong>
@@ -1239,6 +1433,49 @@
         </div>
     </footer>
 
+    <!-- ====== МОДАЛЬНОЕ ОКНО ДЛЯ СВЯЗИ ====== -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">✕</span>
+            <h2>📩 Связаться с нами</h2>
+            <p class="subtitle">Оставьте сообщение, и мы ответим в ближайшее время.</p>
+
+            <form id="modalContactForm">
+                <div class="form-group">
+                    <label for="modalName">Ваше имя</label>
+                    <input type="text" id="modalName" placeholder="Например: Анна" required>
+                </div>
+                <div class="form-group">
+                    <label for="modalPhone">Телефон</label>
+                    <input type="tel" id="modalPhone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label for="modalMessage">Сообщение</label>
+                    <textarea id="modalMessage" placeholder="Что вы хотите вышить?" rows="4" required></textarea>
+                </div>
+
+                <div class="form-checkbox">
+                    <input type="checkbox" id="modalConsent" required>
+                    <label for="modalConsent">Я даю согласие на <a href="#" onclick="navigateTo('legal'); return false;">обработку персональных данных</a></label>
+                </div>
+
+                <button type="submit" class="btn-submit">Отправить сообщение</button>
+            </form>
+
+            <div class="success-message" id="modalSuccess">
+                <span class="check">✅</span>
+                <h3>Сообщение отправлено!</h3>
+                <p>Мы свяжемся с вами в ближайшее время</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== ЛАЙТБОКС ДЛЯ ФОТО ====== -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+        <img id="lightboxImage" src="" alt="Увеличенное фото" />
+    </div>
+
     <!-- ====== СКРИПТЫ ====== -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1289,6 +1526,32 @@
                 });
             });
 
+            // ---------- МОДАЛЬНОЕ ОКНО ----------
+            window.openModal = function() {
+                document.getElementById('contactModal').classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+
+            window.closeModal = function() {
+                document.getElementById('contactModal').classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            // Закрытие по клику на фон
+            document.getElementById('contactModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+
+            // Закрытие по Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                    closeLightbox();
+                }
+            });
+
             // ---------- ОТКРЫТИЕ КАТЕГОРИЙ В ПОРТФОЛИО ----------
             window.openCategory = function(category) {
                 document.querySelectorAll('.gallery-grid').forEach(el => {
@@ -1299,6 +1562,123 @@
                     target.classList.toggle('active');
                 }
             };
+
+            // ---------- ЛАЙТБОКС ----------
+            window.openLightbox = function(src) {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImage = document.getElementById('lightboxImage');
+                if (lightbox && lightboxImage) {
+                    lightboxImage.src = src;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            };
+
+            window.closeLightbox = function() {
+                const lightbox = document.getElementById('lightbox');
+                if (lightbox) {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            };
+
+            // ---------- TELEGRAM БОТ ----------
+            const BOT_TOKEN = '8313671080:AAGoXjlxoHPuDQ17DRn5IOthcaSNCPVloqw';
+            const CHAT_ID = '782451090';
+
+            function sendToTelegram(message) {
+                const apiUrls = [
+                    `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
+                    `https://telegram-bot-api.herokuapp.com/bot${BOT_TOKEN}/sendMessage`
+                ];
+
+                function trySend(index) {
+                    if (index >= apiUrls.length) return Promise.reject(new Error('API недоступны'));
+                    return fetch(apiUrls[index], {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ chat_id: CHAT_ID, text: message, parse_mode: 'Markdown' })
+                    })
+                    .then(response => {
+                        if (response.ok) return response;
+                        return trySend(index + 1);
+                    })
+                    .catch(() => trySend(index + 1));
+                }
+                return trySend(0);
+            }
+
+            // ---------- МОДАЛЬНАЯ ФОРМА ----------
+            const modalForm = document.getElementById('modalContactForm');
+            const modalName = document.getElementById('modalName');
+            const modalPhone = document.getElementById('modalPhone');
+            const modalMessage = document.getElementById('modalMessage');
+            const modalConsent = document.getElementById('modalConsent');
+            const modalSuccess = document.getElementById('modalSuccess');
+
+            if (modalForm) {
+                // Маска для телефона
+                modalPhone.addEventListener('input', function() {
+                    let val = this.value.replace(/\D/g, '');
+                    if (val.length > 0) {
+                        let formatted = '+7 (';
+                        if (val.length > 1) {
+                            formatted += val.substring(1, 4);
+                            if (val.length >= 4) {
+                                formatted += ') ';
+                                formatted += val.substring(4, 7);
+                                if (val.length >= 7) {
+                                    formatted += '-';
+                                    formatted += val.substring(7, 9);
+                                    if (val.length >= 9) {
+                                        formatted += '-';
+                                        formatted += val.substring(9, 11);
+                                    }
+                                }
+                            }
+                        } else {
+                            formatted += val;
+                        }
+                        this.value = formatted;
+                    } else {
+                        this.value = '';
+                    }
+                });
+
+                modalForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    if (!modalConsent.checked) {
+                        alert('Пожалуйста, дайте согласие на обработку персональных данных');
+                        return;
+                    }
+
+                    const name = modalName.value.trim();
+                    const phone = modalPhone.value.trim();
+                    const message = modalMessage.value.trim();
+
+                    const digits = phone.replace(/\D/g, '');
+                    if (digits.length < 10) {
+                        alert('Пожалуйста, введите корректный номер телефона');
+                        return;
+                    }
+
+                    const text =
+                        `📩 *Новое сообщение с сайта!*\n\n👤 *Имя:* ${name || 'Не указано'}\n📱 *Телефон:* ${phone}\n💬 *Сообщение:* ${message || '—'}\n📋 *Согласие на обработку:* Да\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
+
+                    sendToTelegram(text).catch(() => {});
+
+                    modalForm.style.display = 'none';
+                    modalSuccess.style.display = 'block';
+
+                    setTimeout(() => {
+                        modalForm.style.display = 'block';
+                        modalSuccess.style.display = 'none';
+                        modalForm.reset();
+                        closeModal();
+                    }, 3000);
+                });
+            }
 
             // ---------- ГАЛЕРЕЯ "КЕПКИ" ----------
             const hatsGallery = document.getElementById('gallery-hats');
@@ -1342,12 +1722,13 @@
                 hatsImages.forEach(src => {
                     const item = document.createElement('div');
                     item.className = 'gallery-item';
-                    item.innerHTML = `<img src="${src}" alt="Кепка"><div class="caption">Кепка с вышивкой</div>`;
+                    item.innerHTML =
+                        `<img src="${src}" alt="Кепка" onclick="openLightbox('${src}')"><div class="caption">Кепка с вышивкой</div>`;
                     hatsGallery.appendChild(item);
                 });
             }
 
-            // ---------- ГАЛЕРЕЯ "НАШИВКИ" ----------
+            // ---------- ГАЛЕРЕЯ "НАШИВКИ" (убраны фото 0135-0138) ----------
             const patchesGallery = document.getElementById('gallery-patches');
             if (patchesGallery) {
                 const patchesImages = [
@@ -1388,7 +1769,8 @@
                 patchesImages.forEach(src => {
                     const item = document.createElement('div');
                     item.className = 'gallery-item';
-                    item.innerHTML = `<img src="${src}" alt="Нашивка"><div class="caption">Нашивка / шеврон</div>`;
+                    item.innerHTML =
+                        `<img src="${src}" alt="Нашивка" onclick="openLightbox('${src}')"><div class="caption">Нашивка / шеврон</div>`;
                     patchesGallery.appendChild(item);
                 });
             }
@@ -1467,38 +1849,13 @@
                 clothingImages.forEach(src => {
                     const item = document.createElement('div');
                     item.className = 'gallery-item';
-                    item.innerHTML = `<img src="${src}" alt="Бренд на одежде"><div class="caption">Вышивка на одежде</div>`;
+                    item.innerHTML =
+                        `<img src="${src}" alt="Бренд на одежде" onclick="openLightbox('${src}')"><div class="caption">Вышивка на одежде</div>`;
                     clothingGallery.appendChild(item);
                 });
             }
 
-            // ---------- TELEGRAM БОТ ----------
-            const BOT_TOKEN = '8313671080:AAGoXjlxoHPuDQ17DRn5IOthcaSNCPVloqw';
-            const CHAT_ID = '782451090';
-
-            function sendToTelegram(message) {
-                const apiUrls = [
-                    `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
-                    `https://telegram-bot-api.herokuapp.com/bot${BOT_TOKEN}/sendMessage`
-                ];
-
-                function trySend(index) {
-                    if (index >= apiUrls.length) return Promise.reject(new Error('API недоступны'));
-                    return fetch(apiUrls[index], {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ chat_id: CHAT_ID, text: message, parse_mode: 'Markdown' })
-                    })
-                    .then(response => {
-                        if (response.ok) return response;
-                        return trySend(index + 1);
-                    })
-                    .catch(() => trySend(index + 1));
-                }
-                return trySend(0);
-            }
-
-            // ---------- ФОРМА ОТЗЫВОВ С ФОТО ----------
+            // ---------- ФОРМА ОТЗЫВОВ ----------
             const reviewForm = document.getElementById('reviewForm');
             const reviewName = document.getElementById('reviewName');
             const reviewRating = document.getElementById('reviewRating');
@@ -1508,7 +1865,7 @@
             const reviewSuccess = document.getElementById('reviewSuccess');
 
             if (reviewForm) {
-                reviewForm.addEventListener('submit', async function(e) {
+                reviewForm.addEventListener('submit', function(e) {
                     e.preventDefault();
 
                     if (!reviewConsent.checked) {
@@ -1553,76 +1910,7 @@
                 });
             }
 
-            // ---------- ФОРМА КОНТАКТОВ ----------
-            const contactForm = document.getElementById('contactForm');
-            const contactPhone = document.getElementById('contactPhone');
-            const contactSuccess = document.getElementById('contactSuccess');
-
-            if (contactForm) {
-                contactPhone.addEventListener('input', function() {
-                    let val = this.value.replace(/\D/g, '');
-                    if (val.length > 0) {
-                        let formatted = '+7 (';
-                        if (val.length > 1) {
-                            formatted += val.substring(1, 4);
-                            if (val.length >= 4) {
-                                formatted += ') ';
-                                formatted += val.substring(4, 7);
-                                if (val.length >= 7) {
-                                    formatted += '-';
-                                    formatted += val.substring(7, 9);
-                                    if (val.length >= 9) {
-                                        formatted += '-';
-                                        formatted += val.substring(9, 11);
-                                    }
-                                }
-                            }
-                        } else {
-                            formatted += val;
-                        }
-                        this.value = formatted;
-                    } else {
-                        this.value = '';
-                    }
-                });
-
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-
-                    const name = document.getElementById('contactName').value.trim();
-                    const phone = document.getElementById('contactPhone').value.trim();
-                    const message = document.getElementById('contactMessage').value.trim();
-                    const consent = document.getElementById('contactConsent');
-
-                    if (!consent.checked) {
-                        alert('Пожалуйста, дайте согласие на обработку персональных данных');
-                        return;
-                    }
-
-                    const digits = phone.replace(/\D/g, '');
-                    if (digits.length < 10) {
-                        alert('Пожалуйста, введите корректный номер телефона');
-                        return;
-                    }
-
-                    const text =
-                        `📩 *Новое сообщение с сайта!*\n\n👤 *Имя:* ${name || 'Не указано'}\n📱 *Телефон:* ${phone}\n💬 *Сообщение:* ${message || '—'}\n📋 *Согласие на обработку:* Да\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
-
-                    sendToTelegram(text).catch(() => {});
-
-                    contactForm.style.display = 'none';
-                    contactSuccess.style.display = 'block';
-
-                    setTimeout(() => {
-                        contactForm.style.display = 'block';
-                        contactSuccess.style.display = 'none';
-                        contactForm.reset();
-                    }, 5000);
-                });
-            }
-
         });
     </script>
-
 </body>
 </html>
