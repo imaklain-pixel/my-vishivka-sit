@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вышивка Стиль | Студия вышивки</title>
     <style>
-        /* ---------- ОСНОВНЫЕ СТИЛИ (сокращены для ясности) ---------- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; color: #fff; background: #0a0a1a; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
         a { color: #feca57; text-decoration: none; }
         a:hover { color: #ff6b6b; }
-        /* ---------- ШАПКА, ПОДВАЛ И ОСНОВНЫЕ БЛОКИ ---------- */
         header { background: linear-gradient(135deg, #0a0a1a, #1a0a2e, #2a0a3e); padding: 18px 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 4px 30px rgba(233, 69, 96, 0.3); border-bottom: 3px solid #ff6b6b; }
         .logo { font-size: 1.5em; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; cursor: pointer; }
         .logo span { background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff); background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; animation: gradientShift 4s ease-in-out infinite; }
@@ -18,7 +16,6 @@
         nav ul { list-style: none; display: flex; gap: 20px; flex-wrap: wrap; }
         nav a { color: #dfe6e9; font-size: 0.95em; font-weight: 500; padding: 5px 0; border-bottom: 2px solid transparent; cursor: pointer; transition: 0.3s; }
         nav a:hover { color: #feca57; border-bottom-color: #feca57; }
-        /* ---------- ОСНОВНОЙ КОНТЕНТ ---------- */
         .page-content { max-width: 1100px; margin: 20px auto 0; padding: 0 20px 60px; flex: 1; width: 100%; }
         .page { display: none; animation: fadeIn 0.5s ease; }
         .page.active { display: block; }
@@ -26,7 +23,6 @@
         .page h1 { font-size: 2.6em; font-weight: 300; margin-bottom: 15px; border-left: 5px solid #ff6b6b; padding-left: 20px; background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff); background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: gradientShift 5s ease-in-out infinite; }
         .page p { color: #ddd; margin-bottom: 15px; font-size: 1.1em; }
         .page p strong { color: #feca57; }
-        /* ---------- СЕТКИ И КАРТОЧКИ ---------- */
         .grid-2, .grid-3 { display: grid; gap: 25px; margin-top: 20px; }
         .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
         .grid-3 { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
@@ -171,36 +167,33 @@
             </div>
         </div>
 
-        <!-- ПОРТФОЛИО (с вашими фото) -->
+        <!-- ПОРТФОЛИО -->
         <div class="page" id="page-portfolio">
             <h1>Наши работы</h1>
             <p>Реальные примеры вышивки, которые мы сделали для наших клиентов.</p>
             <div class="portfolio-grid">
-                <!-- КЕПКИ -->
                 <div class="portfolio-item">
-                    <div class="image-wrap"><img src="img/hats/photo1.jpg" alt="Кепка с вышивкой" style="width:100%; height:100%; object-fit:cover;"></div>
+                    <div class="image-wrap"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/2024-11-12_12.10.11.jpg" alt="Кепка с вышивкой" style="width:100%; height:100%; object-fit:cover;"></div>
                     <div class="info"><h4>Кепка с логотипом</h4><div class="desc">Машинная вышивка</div><span class="tag">#кепки</span></div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="image-wrap"><img src="img/hats/photo2.jpg" alt="Именная кепка" style="width:100%; height:100%; object-fit:cover;"></div>
+                    <div class="image-wrap"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/2024-11-12_12.10.11_(1).jpg" alt="Именная кепка" style="width:100%; height:100%; object-fit:cover;"></div>
                     <div class="info"><h4>Именная кепка</h4><div class="desc">Индивидуальный дизайн</div><span class="tag">#кепки</span></div>
                 </div>
-                <!-- ВЫШИВКА -->
                 <div class="portfolio-item">
-                    <div class="image-wrap"><img src="img/embroidery/photo1.jpg" alt="Вышивка на худи" style="width:100%; height:100%; object-fit:cover;"></div>
+                    <div class="image-wrap"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0130.jpeg" alt="Вышивка на одежде" style="width:100%; height:100%; object-fit:cover;"></div>
                     <div class="info"><h4>Вышивка на худи</h4><div class="desc">Корпоративный заказ</div><span class="tag">#вышивка</span></div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="image-wrap"><img src="img/embroidery/photo2.jpg" alt="Логотип на футболке" style="width:100%; height:100%; object-fit:cover;"></div>
+                    <div class="image-wrap"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0128.jpeg" alt="Логотип на футболке" style="width:100%; height:100%; object-fit:cover;"></div>
                     <div class="info"><h4>Логотип на футболке</h4><div class="desc">Многоцветная вышивка</div><span class="tag">#вышивка</span></div>
                 </div>
-                <!-- НАШИВКИ -->
                 <div class="portfolio-item">
-                    <div class="image-wrap"><img src="img/patches/photo1.jpg" alt="Нашивка-шеврон" style="width:100%; height:100%; object-fit:cover;"></div>
+                    <div class="image-wrap"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0121.jpeg" alt="Нашивка-шеврон" style="width:100%; height:100%; object-fit:cover;"></div>
                     <div class="info"><h4>Шеврон на липучке</h4><div class="desc">Для спецодежды</div><span class="tag">#нашивки</span></div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="image-wrap"><img src="img/patches/photo2.jpg" alt="Патч с дизайном" style="width:100%; height:100%; object-fit:cover;"></div>
+                    <div class="image-wrap"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0120.jpeg" alt="Патч с дизайном" style="width:100%; height:100%; object-fit:cover;"></div>
                     <div class="info"><h4>Патч с принтом</h4><div class="desc">Термоклеевая основа</div><span class="tag">#нашивки</span></div>
                 </div>
             </div>
@@ -216,7 +209,7 @@
             </div>
         </div>
 
-        <!-- О СТУДИИ (БЕЗ НАЗВАНИЙ БРЕНДОВ) -->
+        <!-- О СТУДИИ -->
         <div class="page" id="page-about">
             <h1>О студии</h1>
             <p><strong>Мы открыли новую студию, но за плечами — более 10 лет работы с вышивкой.</strong> За это время мы выполнили сотни заказов: от маленьких патчей до крупных корпоративных тиражей для известных брендов.</p>
@@ -313,7 +306,6 @@
     </footer>
 
     <script>
-        // --- НАВИГАЦИЯ ---
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('nav a[data-page]');
             const pages = {
@@ -327,7 +319,16 @@
                 legal: document.getElementById('page-legal')
             };
             const breadcrumbText = document.getElementById('breadcrumbText');
-            const pageNames = { home: 'Главная', services: 'Услуги', portfolio: 'Портфолио', reviews: 'Отзывы', about: 'О нас', delivery: 'Доставка и оплата', contacts: 'Контакты', legal: 'Юридическая информация' };
+            const pageNames = {
+                home: 'Главная',
+                services: 'Услуги',
+                portfolio: 'Портфолио',
+                reviews: 'Отзывы',
+                about: 'О нас',
+                delivery: 'Доставка и оплата',
+                contacts: 'Контакты',
+                legal: 'Юридическая информация'
+            };
             window.navigateTo = function(pageId) {
                 Object.values(pages).forEach(p => { if (p) p.classList.remove('active'); });
                 if (pages[pageId]) pages[pageId].classList.add('active');
