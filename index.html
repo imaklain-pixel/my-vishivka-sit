@@ -16,11 +16,13 @@
         nav ul { list-style: none; display: flex; gap: 20px; flex-wrap: wrap; }
         nav a { color: #dfe6e9; font-size: 0.95em; font-weight: 500; padding: 5px 0; border-bottom: 2px solid transparent; cursor: pointer; transition: 0.3s; }
         nav a:hover { color: #feca57; border-bottom-color: #feca57; }
+        .breadcrumbs { max-width: 1100px; margin: 20px auto 0; padding: 0 20px; font-size: 0.85em; color: #888; }
         .page-content { max-width: 1100px; margin: 20px auto 0; padding: 0 20px 60px; flex: 1; width: 100%; }
         .page { display: none; animation: fadeIn 0.5s ease; }
         .page.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .page h1 { font-size: 2.6em; font-weight: 300; margin-bottom: 15px; border-left: 5px solid #ff6b6b; padding-left: 20px; background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff); background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: gradientShift 5s ease-in-out infinite; }
+        .page h2 { font-size: 2em; font-weight: 300; margin: 30px 0 15px; color: #fff; }
         .page p { color: #ddd; margin-bottom: 15px; font-size: 1.1em; }
         .page p strong { color: #feca57; }
         .grid-2, .grid-3 { display: grid; gap: 25px; margin-top: 20px; }
@@ -32,7 +34,8 @@
         .card h3 { font-size: 1.3em; color: #fff; margin-bottom: 8px; }
         .card p { font-size: 0.95em; color: #ccc; margin: 0; }
         .card .price-tag { display: inline-block; margin-top: 14px; background: linear-gradient(135deg, #ff6b6b, #e94560); color: #fff; padding: 6px 18px; border-radius: 30px; font-weight: 700; font-size: 0.95em; }
-        .hero-bg { background: radial-gradient(ellipse at 20% 50%, rgba(106, 13, 173, 0.5), transparent 60%), radial-gradient(ellipse at 80% 50%, rgba(0, 210, 255, 0.3), transparent 60%), radial-gradient(ellipse at 50% 100%, rgba(233, 69, 96, 0.4), transparent 50%), linear-gradient(135deg, #0a0a1a, #1a0a2e, #2a0a3e); min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 20px; border-radius: 20px; margin-bottom: 30px; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .hero-bg { background: radial-gradient(ellipse at 20% 50%, rgba(106, 13, 173, 0.5), transparent 60%), radial-gradient(ellipse at 80% 50%, rgba(0, 210, 255, 0.3), transparent 60%), radial-gradient(ellipse at 50% 100%, rgba(233, 69, 96, 0.4), transparent 50%), linear-gradient(135deg, #0a0a1a, #1a0a2e, #2a0a3e); min-height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 20px; border-radius: 20px; margin-bottom: 30px; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .hero-bg .hero-content { max-width: 800px; }
         .hero-bg h1 { font-size: clamp(2.8em, 9vw, 4.5em); font-weight: 200; letter-spacing: 3px; margin-bottom: 20px; text-shadow: 0 4px 40px rgba(0, 0, 0, 0.8); }
         .hero-bg h1 strong { background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff); background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; animation: gradientShift 4s ease-in-out infinite; }
         .hero-bg p { font-size: clamp(1.1em, 2vw, 1.5em); color: #e0e0e0; margin-bottom: 30px; }
@@ -41,15 +44,13 @@
         .btn-secondary { display: inline-block; padding: 16px 40px; background: transparent; color: #fff; border: 2px solid #feca57; border-radius: 60px; font-size: 1em; font-weight: 700; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
         .btn-secondary:hover { background: rgba(254, 202, 87, 0.15); transform: translateY(-3px); }
         .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 20px; }
-        .portfolio-item { background: rgba(255, 255, 255, 0.05); border-radius: 20px; overflow: hidden; transition: 0.4s; border: 1px solid rgba(255, 255, 255, 0.06); }
-        .portfolio-item:hover { transform: translateY(-10px); border-color: #ff6b6b; box-shadow: 0 12px 40px rgba(233, 69, 96, 0.2); }
-        .portfolio-item .image-wrap { height: 220px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.03); overflow: hidden; }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin-top: 20px; }
+        .portfolio-item { background: rgba(255, 255, 255, 0.03); border-radius: 12px; overflow: hidden; transition: 0.3s; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .portfolio-item:hover { transform: scale(1.02); border-color: #ff6b6b; box-shadow: 0 8px 30px rgba(233, 69, 96, 0.15); }
+        .portfolio-item .image-wrap { height: 220px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); overflow: hidden; }
         .portfolio-item .image-wrap img { width: 100%; height: 100%; object-fit: cover; }
-        .portfolio-item .info { padding: 18px 20px 20px; }
-        .portfolio-item .info h4 { color: #fff; font-size: 1.05em; margin-bottom: 4px; }
-        .portfolio-item .info .desc { color: #aaa; font-size: 0.85em; }
-        .portfolio-item .info .tag { display: inline-block; background: rgba(255, 107, 107, 0.2); color: #ff6b6b; font-size: 0.7em; padding: 3px 14px; border-radius: 30px; font-weight: 600; margin-top: 6px; }
+        .portfolio-item .info { padding: 12px 15px; }
+        .portfolio-item .info h4 { color: #fff; font-size: 0.95em; }
         .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
         .contacts-grid .info-block li { list-style: none; padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.06); color: #ccc; }
         .contacts-grid .info-block li strong { color: #fff; width: 130px; display: inline-block; }
@@ -60,33 +61,7 @@
         .btn-tg { background: #0088cc; }
         .map-container { border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); height: 280px; width: 100%; }
         .map-container iframe { width: 100%; height: 100%; border: 0; }
-        .form-container { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border-radius: 20px; padding: 30px 35px; border: 1px solid rgba(255, 255, 255, 0.06); margin-top: 25px; }
-        .form-container h3 { font-size: 1.5em; color: #fff; margin-bottom: 8px; }
-        .form-group { margin-bottom: 18px; }
-        .form-group label { display: block; color: #ddd; font-weight: 600; margin-bottom: 6px; font-size: 0.95em; }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 14px 18px; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; font-size: 1em; background: rgba(0, 0, 0, 0.3); color: #fff; font-family: inherit; outline: none; transition: 0.3s; }
-        .form-group input:focus, .form-group textarea:focus { border-color: #ff6b6b; background: rgba(0, 0, 0, 0.5); }
-        .form-group textarea { min-height: 100px; resize: vertical; }
-        .form-checkbox { display: flex; align-items: flex-start; gap: 10px; margin: 15px 0; }
-        .form-checkbox input[type="checkbox"] { width: 20px; height: 20px; min-width: 20px; margin-top: 2px; accent-color: #ff6b6b; cursor: pointer; }
-        .form-checkbox label { color: #ccc; font-size: 0.9em; cursor: pointer; }
-        .btn-submit { padding: 16px 45px; background: linear-gradient(135deg, #ff6b6b, #e94560); color: #fff; border: none; border-radius: 60px; font-size: 1.1em; font-weight: 700; cursor: pointer; transition: 0.3s; letter-spacing: 1px; }
-        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 40px rgba(233, 69, 96, 0.6); }
-        .success-message { display: none; text-align: center; padding: 25px; }
-        .success-message .check { font-size: 3.5em; display: block; }
-        .success-message h3 { color: #4caf50; margin: 10px 0 4px; }
-        .success-message p { color: #aaa; margin: 0; }
-        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; margin: 25px 0; }
-        .review-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(8px); border-radius: 16px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s; }
-        .review-card:hover { border-color: #feca57; transform: translateY(-5px); }
-        .review-card .review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-        .review-card .review-avatar { font-size: 2.5em; }
-        .review-card .review-name { color: #fff; font-weight: 700; font-size: 1.05em; }
-        .review-card .review-date { color: #888; font-size: 0.8em; }
-        .review-card .review-text { color: #ccc; font-size: 0.95em; font-style: italic; margin: 0; }
-        .review-card .review-stars { color: #feca57; letter-spacing: 2px; margin-top: 8px; font-size: 1.1em; }
-        .review-card .review-status { display: inline-block; margin-top: 10px; font-size: 0.7em; background: rgba(254, 202, 87, 0.15); color: #feca57; padding: 2px 14px; border-radius: 20px; }
-        .about-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 25px; }
+        .about-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; margin-top: 25px; }
         .about-features .item { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(8px); border-radius: 16px; padding: 25px 20px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s; }
         .about-features .item:hover { border-color: #feca57; transform: translateY(-5px); }
         .about-features .item .icon { font-size: 2.8em; display: block; margin-bottom: 8px; }
@@ -110,7 +85,6 @@
         .footer-legal a { color: #777; }
         .footer-legal a:hover { color: #feca57; }
         .footer-req { font-size: 0.75em; color: #666; margin-top: 10px; line-height: 1.8; }
-        .breadcrumbs { max-width: 1100px; margin: 20px auto 0; padding: 0 20px; font-size: 0.85em; color: #888; }
         @media (max-width: 768px) { header { flex-direction: column; text-align: center; } nav ul { justify-content: center; } .contacts-grid { grid-template-columns: 1fr; } .page h1 { font-size: 2em; } .hero-bg h1 { font-size: 2.4em; } .grid-2, .grid-3 { grid-template-columns: 1fr; } .map-container { height: 200px; } }
         @media (max-width: 480px) { .logo { font-size: 1.2em; } nav ul { gap: 12px; } nav a { font-size: 0.8em; } .portfolio-item .image-wrap { height: 160px; } .page h1 { font-size: 1.6em; padding-left: 12px; } }
     </style>
@@ -170,32 +144,9 @@
         <!-- ПОРТФОЛИО -->
         <div class="page" id="page-portfolio">
             <h1>Наши работы</h1>
-            <p>Реальные примеры вышивки, которые мы сделали для наших клиентов.</p>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="image-wrap"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/2024-11-12_12.10.11.jpg" alt="Кепка с вышивкой" style="width:100%; height:100%; object-fit:cover;"></div>
-                    <div class="info"><h4>Кепка с логотипом</h4><div class="desc">Машинная вышивка</div><span class="tag">#кепки</span></div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image-wrap"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/2024-11-12_12.10.11_(1).jpg" alt="Именная кепка" style="width:100%; height:100%; object-fit:cover;"></div>
-                    <div class="info"><h4>Именная кепка</h4><div class="desc">Индивидуальный дизайн</div><span class="tag">#кепки</span></div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image-wrap"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0130.jpeg" alt="Вышивка на одежде" style="width:100%; height:100%; object-fit:cover;"></div>
-                    <div class="info"><h4>Вышивка на худи</h4><div class="desc">Корпоративный заказ</div><span class="tag">#вышивка</span></div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image-wrap"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0128.jpeg" alt="Логотип на футболке" style="width:100%; height:100%; object-fit:cover;"></div>
-                    <div class="info"><h4>Логотип на футболке</h4><div class="desc">Многоцветная вышивка</div><span class="tag">#вышивка</span></div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image-wrap"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0121.jpeg" alt="Нашивка-шеврон" style="width:100%; height:100%; object-fit:cover;"></div>
-                    <div class="info"><h4>Шеврон на липучке</h4><div class="desc">Для спецодежды</div><span class="tag">#нашивки</span></div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image-wrap"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0120.jpeg" alt="Патч с дизайном" style="width:100%; height:100%; object-fit:cover;"></div>
-                    <div class="info"><h4>Патч с принтом</h4><div class="desc">Термоклеевая основа</div><span class="tag">#нашивки</span></div>
-                </div>
+            <p>Все фото наших работ.</p>
+            <div class="portfolio-grid" id="gallery">
+                <!-- Сюда будут добавлены фото через JavaScript -->
             </div>
         </div>
 
@@ -307,6 +258,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // НАВИГАЦИЯ
             const navLinks = document.querySelectorAll('nav a[data-page]');
             const pages = {
                 home: document.getElementById('page-home'),
@@ -343,6 +295,93 @@
                     if (pageId) navigateTo(pageId);
                 });
             });
+
+            // ГАЛЕРЕЯ
+            const gallery = document.getElementById('gallery');
+            if (gallery) {
+                const imageNames = [
+                    // Все ваши фото (кроме видео)
+                    "00248248-121e-45ab-8992-0c89eb6a3b3a.jpg",
+                    "00882fc1-9a8e-42fd-a657-48974bfbf71c (1).jpg",
+                    "2019-06-18 10-29-44.JPG",
+                    "2019-06-18 10-49-46.JPG",
+                    "2019-06-18 10-50-08.JPG",
+                    "2019-06-18 10-50-21.JPG",
+                    "2019-06-18 10-50-32.JPG",
+                    "2019-06-18 10-50-39.JPG",
+                    "2019-06-18 10-50-50.JPG",
+                    "2019-06-18 10-51-07.JPG",
+                    "2019-06-18 10-51-19.JPG",
+                    "2019-06-18 10-51-27.JPG",
+                    "2019-06-18 10-51-35.JPG",
+                    "2c8db411-5b0e-4133-bb15-674d8065c37c.jpg",
+                    "3e61c177-1b87-453a-b8b1-e6bf920b816d.jpg",
+                    "4d89e509-bb43-4eab-8ef9-c4afdc028268.jpg",
+                    "70da5507-fc93-4a47-9572-5a95024f5576.jpg",
+                    "8d68ce95-16ce-4c82-a154-06acebea1836.jpg",
+                    "9df882d5-a68a-42b2-8f47-57604a454539.jpg",
+                    "IMG_0446.HEIC",
+                    "IMG_0447.MOV.jpg",
+                    "IMG_0453.HEIC",
+                    "IMG_1018 (2).JPG",
+                    "IMG_1235.HEIC",
+                    "IMG_1239.HEIC",
+                    "IMG_20250908_181344297.jpg",
+                    "IMG_20250908_181348753.jpg",
+                    "IMG_20250928_101307602.jpg",
+                    "IMG_20250928_101314756.jpg",
+                    "IMG_20250928_125525389.jpg",
+                    "IMG_20250928_174732394_HDR.jpg",
+                    "IMG_20250928_174737677_HDR.jpg",
+                    "IMG_2059 (1).JPG",
+                    "IMG_4328.JPG",
+                    "IMG_9527.HEIC",
+                    "IMG_9528.HEIC",
+                    "IMG_9529.HEIC",
+                    "IMG_9611.HEIC",
+                    "IMG_9612.HEIC",
+                    "Screenshot_20260113-173753.png",
+                    "WhatsApp Image 2024-11-12 at 12.10.11 (1).jpeg",
+                    "Изображение WhatsApp 2024-11-12 от 12.10.11.jpeg",
+                    "Изображение WhatsApp 2024-11-14 в 15.59.34.jpeg",
+                    "Изображение WhatsApp 2024-11-14 в 15.59.35.jpeg",
+                    "WhatsApp Image 2024-11-15 at 16.58.31 (1).jpeg",
+                    "WhatsApp Image 2024-11-15 at 16.58.31 (2).jpeg",
+                    "Изображение WhatsApp 2024-11-15 в 16:58:31.jpeg",
+                    "b202d3bc-53b2-4482-8f7a-e9e4774f16b3.jpg",
+                    "b8e2c65e-440a-4204-bbe9-73ab7699d729.jpg",
+                    "bd81932b-ca22-404c-afb8-4db4f4309970.jpg",
+                    "c202f2f6-b360-41c6-8f21-75d89e03e36f.jpg",
+                    "cd394e9f-5cb3-4296-bed4-d14f420e1970 (2).jpg",
+                    "df8dbaca-ba7d-4ca5-b14d-58136bd3d6d8.jpg",
+                    "e94fa25f-8004-45fb-aaab-092526e9bf08.jpg"
+                ];
+
+                // Добавляем fancywork фото с 0001 по 0138 (кроме видео)
+                for (let i = 1; i <= 138; i++) {
+                    const num = String(i).padStart(4, '0');
+                    imageNames.push(`fancywork008-07082026-${num}.jpeg`);
+                }
+
+                imageNames.forEach(name => {
+                    // Пропускаем видеофайлы
+                    if (name.endsWith('.mp4') || name.includes('.mp4')) return;
+
+                    const item = document.createElement('div');
+                    item.className = 'portfolio-item';
+                    const img = document.createElement('img');
+                    img.src = `https://imaklain-pixel.github.io/my-vishivka-sit/${encodeURIComponent(name)}`;
+                    img.alt = 'Фото работы';
+                    img.style.width = '100%';
+                    img.style.height = '100%';
+                    img.style.objectFit = 'cover';
+                    const wrap = document.createElement('div');
+                    wrap.className = 'image-wrap';
+                    wrap.appendChild(img);
+                    item.appendChild(wrap);
+                    gallery.appendChild(item);
+                });
+            }
         });
     </script>
 </body>
