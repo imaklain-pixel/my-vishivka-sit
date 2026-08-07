@@ -5,515 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вышивка Стиль | Студия вышивки</title>
     <style>
+        /* ---------- ОСНОВНЫЕ СТИЛИ (сокращены для ясности) ---------- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-            color: #fff;
-            background: #0a0a1a;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; color: #fff; background: #0a0a1a; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
         a { color: #feca57; text-decoration: none; }
         a:hover { color: #ff6b6b; }
-        header {
-            background: linear-gradient(135deg, #0a0a1a, #1a0a2e, #2a0a3e);
-            padding: 18px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            box-shadow: 0 4px 30px rgba(233, 69, 96, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 3px solid #ff6b6b;
-        }
-        .logo {
-            color: #fff;
-            font-size: 1.5em;
-            font-weight: 300;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            cursor: pointer;
-        }
-        .logo span {
-            background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            animation: gradientShift 4s ease-in-out infinite;
-        }
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .logo .diamond { -webkit-text-fill-color: #feca57; }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: #dfe6e9;
-            font-size: 0.95em;
-            font-weight: 500;
-            padding: 5px 0;
-            border-bottom: 2px solid transparent;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+        /* ---------- ШАПКА, ПОДВАЛ И ОСНОВНЫЕ БЛОКИ ---------- */
+        header { background: linear-gradient(135deg, #0a0a1a, #1a0a2e, #2a0a3e); padding: 18px 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 4px 30px rgba(233, 69, 96, 0.3); border-bottom: 3px solid #ff6b6b; }
+        .logo { font-size: 1.5em; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; cursor: pointer; }
+        .logo span { background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff); background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; animation: gradientShift 4s ease-in-out infinite; }
+        @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        nav ul { list-style: none; display: flex; gap: 20px; flex-wrap: wrap; }
+        nav a { color: #dfe6e9; font-size: 0.95em; font-weight: 500; padding: 5px 0; border-bottom: 2px solid transparent; cursor: pointer; transition: 0.3s; }
         nav a:hover { color: #feca57; border-bottom-color: #feca57; }
-        .breadcrumbs {
-            max-width: 1100px;
-            margin: 20px auto 0;
-            padding: 0 20px;
-            font-size: 0.85em;
-            color: #888;
-        }
-        .page-content {
-            max-width: 1100px;
-            margin: 20px auto 0;
-            padding: 0 20px 60px;
-            flex: 1;
-            width: 100%;
-        }
+        /* ---------- ОСНОВНОЙ КОНТЕНТ ---------- */
+        .page-content { max-width: 1100px; margin: 20px auto 0; padding: 0 20px 60px; flex: 1; width: 100%; }
         .page { display: none; animation: fadeIn 0.5s ease; }
         .page.active { display: block; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .page h1 {
-            font-size: 2.6em;
-            font-weight: 300;
-            margin-bottom: 15px;
-            border-left: 5px solid #ff6b6b;
-            padding-left: 20px;
-            background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientShift 5s ease-in-out infinite;
-        }
-        .page h2 {
-            font-size: 2em;
-            font-weight: 300;
-            margin: 30px 0 15px;
-            color: #fff;
-        }
-        .page p {
-            color: #ddd;
-            margin-bottom: 15px;
-            font-size: 1.1em;
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .page h1 { font-size: 2.6em; font-weight: 300; margin-bottom: 15px; border-left: 5px solid #ff6b6b; padding-left: 20px; background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff); background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: gradientShift 5s ease-in-out infinite; }
+        .page p { color: #ddd; margin-bottom: 15px; font-size: 1.1em; }
         .page p strong { color: #feca57; }
-        .grid-2, .grid-3 {
-            display: grid;
-            gap: 25px;
-            margin-top: 20px;
-        }
+        /* ---------- СЕТКИ И КАРТОЧКИ ---------- */
+        .grid-2, .grid-3 { display: grid; gap: 25px; margin-top: 20px; }
         .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
         .grid-3 { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
-        .card {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 30px 25px;
-            transition: all 0.4s;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: #ff6b6b;
-            box-shadow: 0 12px 50px rgba(233, 69, 96, 0.3);
-            background: rgba(255, 255, 255, 0.12);
-        }
+        .card { background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 30px 25px; transition: 0.4s; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); }
+        .card:hover { transform: translateY(-10px); border-color: #ff6b6b; box-shadow: 0 12px 50px rgba(233, 69, 96, 0.3); }
         .card .icon { font-size: 3em; display: block; margin-bottom: 12px; }
         .card h3 { font-size: 1.3em; color: #fff; margin-bottom: 8px; }
         .card p { font-size: 0.95em; color: #ccc; margin: 0; }
-        .card .price-tag {
-            display: inline-block;
-            margin-top: 14px;
-            background: linear-gradient(135deg, #ff6b6b, #e94560);
-            color: #fff;
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 0.95em;
-            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
-        }
-        .hero-bg {
-            background: radial-gradient(ellipse at 20% 50%, rgba(106, 13, 173, 0.5), transparent 60%),
-                        radial-gradient(ellipse at 80% 50%, rgba(0, 210, 255, 0.3), transparent 60%),
-                        radial-gradient(ellipse at 50% 100%, rgba(233, 69, 96, 0.4), transparent 50%),
-                        linear-gradient(135deg, #0a0a1a, #1a0a2e, #2a0a3e);
-            min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 60px 20px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .hero-bg .hero-content { max-width: 800px; }
-        .hero-bg h1 {
-            font-size: clamp(2.8em, 9vw, 4.5em);
-            font-weight: 200;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-            text-shadow: 0 4px 40px rgba(0, 0, 0, 0.8);
-        }
-        .hero-bg h1 strong {
-            background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-            animation: gradientShift 4s ease-in-out infinite;
-        }
-        .hero-bg p {
-            font-size: clamp(1.1em, 2vw, 1.5em);
-            color: #e0e0e0;
-            margin-bottom: 30px;
-        }
-        .btn-primary {
-            display: inline-block;
-            padding: 18px 50px;
-            background: linear-gradient(135deg, #ff6b6b, #e94560);
-            color: #fff;
-            border: none;
-            border-radius: 60px;
-            font-size: 1.1em;
-            font-weight: 800;
-            cursor: pointer;
-            box-shadow: 0 8px 40px rgba(233, 69, 96, 0.6);
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 60px rgba(233, 69, 96, 0.9);
-        }
-        .btn-secondary {
-            display: inline-block;
-            padding: 16px 40px;
-            background: transparent;
-            color: #fff;
-            border: 2px solid #feca57;
-            border-radius: 60px;
-            font-size: 1em;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .btn-secondary:hover {
-            background: rgba(254, 202, 87, 0.15);
-            transform: translateY(-3px);
-        }
+        .card .price-tag { display: inline-block; margin-top: 14px; background: linear-gradient(135deg, #ff6b6b, #e94560); color: #fff; padding: 6px 18px; border-radius: 30px; font-weight: 700; font-size: 0.95em; }
+        .hero-bg { background: radial-gradient(ellipse at 20% 50%, rgba(106, 13, 173, 0.5), transparent 60%), radial-gradient(ellipse at 80% 50%, rgba(0, 210, 255, 0.3), transparent 60%), radial-gradient(ellipse at 50% 100%, rgba(233, 69, 96, 0.4), transparent 50%), linear-gradient(135deg, #0a0a1a, #1a0a2e, #2a0a3e); min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 20px; border-radius: 20px; margin-bottom: 30px; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .hero-bg h1 { font-size: clamp(2.8em, 9vw, 4.5em); font-weight: 200; letter-spacing: 3px; margin-bottom: 20px; text-shadow: 0 4px 40px rgba(0, 0, 0, 0.8); }
+        .hero-bg h1 strong { background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff); background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; animation: gradientShift 4s ease-in-out infinite; }
+        .hero-bg p { font-size: clamp(1.1em, 2vw, 1.5em); color: #e0e0e0; margin-bottom: 30px; }
+        .btn-primary { display: inline-block; padding: 18px 50px; background: linear-gradient(135deg, #ff6b6b, #e94560); color: #fff; border: none; border-radius: 60px; font-size: 1.1em; font-weight: 800; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 8px 40px rgba(233, 69, 96, 0.6); }
+        .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 12px 60px rgba(233, 69, 96, 0.9); }
+        .btn-secondary { display: inline-block; padding: 16px 40px; background: transparent; color: #fff; border: 2px solid #feca57; border-radius: 60px; font-size: 1em; font-weight: 700; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-secondary:hover { background: rgba(254, 202, 87, 0.15); transform: translateY(-3px); }
         .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-        .portfolio-item {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: 0.4s;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            text-align: center;
-            padding: 20px 15px;
-        }
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-            border-color: #ff6b6b;
-        }
-        .portfolio-item .image-wrap {
-            font-size: 4em;
-            margin-bottom: 10px;
-        }
-        .portfolio-item .info h4 { color: #fff; font-size: 1.05em; }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 20px; }
+        .portfolio-item { background: rgba(255, 255, 255, 0.05); border-radius: 20px; overflow: hidden; transition: 0.4s; border: 1px solid rgba(255, 255, 255, 0.06); }
+        .portfolio-item:hover { transform: translateY(-10px); border-color: #ff6b6b; box-shadow: 0 12px 40px rgba(233, 69, 96, 0.2); }
+        .portfolio-item .image-wrap { height: 220px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.03); overflow: hidden; }
+        .portfolio-item .image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+        .portfolio-item .info { padding: 18px 20px 20px; }
+        .portfolio-item .info h4 { color: #fff; font-size: 1.05em; margin-bottom: 4px; }
         .portfolio-item .info .desc { color: #aaa; font-size: 0.85em; }
-        .portfolio-item .info .tag {
-            display: inline-block;
-            background: rgba(255, 107, 107, 0.2);
-            color: #ff6b6b;
-            font-size: 0.7em;
-            padding: 3px 14px;
-            border-radius: 30px;
-            font-weight: 600;
-            margin-top: 6px;
-        }
-        .about-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
-        }
-        .about-features .item {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(8px);
-            border-radius: 16px;
-            padding: 25px 20px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.3s;
-        }
-        .about-features .item:hover {
-            border-color: #feca57;
-            transform: translateY(-5px);
-        }
-        .about-features .item .icon { font-size: 2.8em; display: block; margin-bottom: 8px; }
-        .about-features .item h4 { color: #fff; font-size: 1.05em; }
-        .about-features .item p { color: #aaa; font-size: 0.85em; margin: 0; }
-        .contacts-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 20px;
-        }
-        .contacts-grid .info-block li {
-            list-style: none;
-            padding: 14px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            color: #ccc;
-        }
-        .contacts-grid .info-block li strong {
-            color: #fff;
-            width: 130px;
-            display: inline-block;
-        }
+        .portfolio-item .info .tag { display: inline-block; background: rgba(255, 107, 107, 0.2); color: #ff6b6b; font-size: 0.7em; padding: 3px 14px; border-radius: 30px; font-weight: 600; margin-top: 6px; }
+        .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
+        .contacts-grid .info-block li { list-style: none; padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.06); color: #ccc; }
+        .contacts-grid .info-block li strong { color: #fff; width: 130px; display: inline-block; }
         .messenger-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-        .messenger-links a {
-            display: inline-flex;
-            padding: 8px 22px;
-            border-radius: 40px;
-            color: #fff;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+        .messenger-links a { display: inline-flex; padding: 8px 22px; border-radius: 40px; color: #fff; font-weight: 600; transition: 0.3s; }
         .messenger-links a:hover { transform: translateY(-3px); }
         .btn-wa { background: #25D366; }
         .btn-tg { background: #0088cc; }
-        .map-container {
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            height: 280px;
-            width: 100%;
-        }
+        .map-container { border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); height: 280px; width: 100%; }
         .map-container iframe { width: 100%; height: 100%; border: 0; }
-        .form-container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
-            border-radius: 20px;
-            padding: 30px 35px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            margin-top: 25px;
-        }
+        .form-container { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border-radius: 20px; padding: 30px 35px; border: 1px solid rgba(255, 255, 255, 0.06); margin-top: 25px; }
         .form-container h3 { font-size: 1.5em; color: #fff; margin-bottom: 8px; }
-        .form-container .form-subtitle { color: #aaa; margin-bottom: 20px; }
         .form-group { margin-bottom: 18px; }
-        .form-group label {
-            display: block;
-            color: #ddd;
-            font-weight: 600;
-            margin-bottom: 6px;
-            font-size: 0.95em;
-        }
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 14px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 12px;
-            font-size: 1em;
-            background: rgba(0, 0, 0, 0.3);
-            color: #fff;
-            font-family: inherit;
-            outline: none;
-            transition: 0.3s;
-        }
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #ff6b6b;
-            background: rgba(0, 0, 0, 0.5);
-        }
+        .form-group label { display: block; color: #ddd; font-weight: 600; margin-bottom: 6px; font-size: 0.95em; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 14px 18px; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; font-size: 1em; background: rgba(0, 0, 0, 0.3); color: #fff; font-family: inherit; outline: none; transition: 0.3s; }
+        .form-group input:focus, .form-group textarea:focus { border-color: #ff6b6b; background: rgba(0, 0, 0, 0.5); }
         .form-group textarea { min-height: 100px; resize: vertical; }
-        .form-checkbox {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin: 15px 0;
-        }
-        .form-checkbox input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            min-width: 20px;
-            margin-top: 2px;
-            accent-color: #ff6b6b;
-            cursor: pointer;
-        }
+        .form-checkbox { display: flex; align-items: flex-start; gap: 10px; margin: 15px 0; }
+        .form-checkbox input[type="checkbox"] { width: 20px; height: 20px; min-width: 20px; margin-top: 2px; accent-color: #ff6b6b; cursor: pointer; }
         .form-checkbox label { color: #ccc; font-size: 0.9em; cursor: pointer; }
-        .form-checkbox label a { color: #feca57; text-decoration: underline; }
-        .btn-submit {
-            padding: 16px 45px;
-            background: linear-gradient(135deg, #ff6b6b, #e94560);
-            color: #fff;
-            border: none;
-            border-radius: 60px;
-            font-size: 1.1em;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-            letter-spacing: 1px;
-        }
-        .btn-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.6);
-        }
-        .success-message {
-            display: none;
-            text-align: center;
-            padding: 25px;
-        }
+        .btn-submit { padding: 16px 45px; background: linear-gradient(135deg, #ff6b6b, #e94560); color: #fff; border: none; border-radius: 60px; font-size: 1.1em; font-weight: 700; cursor: pointer; transition: 0.3s; letter-spacing: 1px; }
+        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 40px rgba(233, 69, 96, 0.6); }
+        .success-message { display: none; text-align: center; padding: 25px; }
         .success-message .check { font-size: 3.5em; display: block; }
         .success-message h3 { color: #4caf50; margin: 10px 0 4px; }
         .success-message p { color: #aaa; margin: 0; }
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin: 25px 0;
-        }
-        .review-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(8px);
-            border-radius: 16px;
-            padding: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.3s;
-        }
-        .review-card:hover {
-            border-color: #feca57;
-            transform: translateY(-5px);
-        }
-        .review-card .review-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-        }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; margin: 25px 0; }
+        .review-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(8px); border-radius: 16px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s; }
+        .review-card:hover { border-color: #feca57; transform: translateY(-5px); }
+        .review-card .review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
         .review-card .review-avatar { font-size: 2.5em; }
         .review-card .review-name { color: #fff; font-weight: 700; font-size: 1.05em; }
         .review-card .review-date { color: #888; font-size: 0.8em; }
         .review-card .review-text { color: #ccc; font-size: 0.95em; font-style: italic; margin: 0; }
         .review-card .review-stars { color: #feca57; letter-spacing: 2px; margin-top: 8px; font-size: 1.1em; }
-        .review-card .review-status {
-            display: inline-block;
-            margin-top: 10px;
-            font-size: 0.7em;
-            background: rgba(254, 202, 87, 0.15);
-            color: #feca57;
-            padding: 2px 14px;
-            border-radius: 20px;
-        }
-        .legal-content {
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 16px;
-            padding: 30px 35px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            margin-top: 20px;
-        }
+        .review-card .review-status { display: inline-block; margin-top: 10px; font-size: 0.7em; background: rgba(254, 202, 87, 0.15); color: #feca57; padding: 2px 14px; border-radius: 20px; }
+        .about-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 25px; }
+        .about-features .item { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(8px); border-radius: 16px; padding: 25px 20px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s; }
+        .about-features .item:hover { border-color: #feca57; transform: translateY(-5px); }
+        .about-features .item .icon { font-size: 2.8em; display: block; margin-bottom: 8px; }
+        .about-features .item h4 { color: #fff; font-size: 1.05em; }
+        .about-features .item p { color: #aaa; font-size: 0.85em; margin: 0; }
+        .legal-content { background: rgba(255, 255, 255, 0.04); border-radius: 16px; padding: 30px 35px; border: 1px solid rgba(255, 255, 255, 0.06); margin-top: 20px; }
         .legal-content h3 { color: #feca57; font-size: 1.3em; margin: 25px 0 10px; }
         .legal-content h3:first-of-type { margin-top: 0; }
         .legal-content p, .legal-content li { color: #ccc; font-size: 0.95em; line-height: 1.7; }
         .legal-content ul { padding-left: 25px; margin: 10px 0 15px; }
         .legal-content li { margin-bottom: 6px; }
         .legal-content .highlight { color: #feca57; font-weight: 600; }
-        footer {
-            background: linear-gradient(135deg, #0a0a1a, #1a0a2e, #2a0a3e);
-            color: #888;
-            text-align: center;
-            padding: 35px 20px 25px;
-            margin-top: auto;
-            border-top: 2px solid rgba(255, 107, 107, 0.2);
-        }
+        footer { background: linear-gradient(135deg, #0a0a1a, #1a0a2e, #2a0a3e); color: #888; text-align: center; padding: 35px 20px 25px; margin-top: auto; border-top: 2px solid rgba(255, 107, 107, 0.2); }
         footer a { color: #feca57; transition: 0.3s; }
         footer a:hover { color: #ff6b6b; }
-        .footer-divider {
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #ff6b6b, #feca57, #6a0dad);
-            margin: 15px auto;
-            border-radius: 10px;
-        }
-        .footer-nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 15px;
-        }
+        .footer-divider { width: 80px; height: 3px; background: linear-gradient(90deg, #ff6b6b, #feca57, #6a0dad); margin: 15px auto; border-radius: 10px; }
+        .footer-nav { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; }
         .footer-nav a { color: #ccc; font-size: 0.9em; cursor: pointer; }
         .footer-nav a:hover { color: #feca57; }
-        .footer-legal {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin: 12px 0 8px;
-            font-size: 0.8em;
-        }
+        .footer-legal { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin: 12px 0 8px; font-size: 0.8em; }
         .footer-legal a { color: #777; }
         .footer-legal a:hover { color: #feca57; }
-        .footer-req {
-            font-size: 0.75em;
-            color: #666;
-            margin-top: 10px;
-            line-height: 1.8;
-        }
-        @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; }
-            nav ul { justify-content: center; }
-            .contacts-grid { grid-template-columns: 1fr; }
-            .page h1 { font-size: 2em; }
-            .hero-bg h1 { font-size: 2.4em; }
-            .grid-2, .grid-3 { grid-template-columns: 1fr; }
-            .map-container { height: 200px; }
-            .legal-content { padding: 20px; }
-        }
-        @media (max-width: 480px) {
-            .logo { font-size: 1.2em; }
-            nav ul { gap: 12px; }
-            nav a { font-size: 0.8em; }
-            .portfolio-item .image-wrap { font-size: 3em; }
-            .page h1 { font-size: 1.6em; padding-left: 12px; }
-            .form-container { padding: 20px; }
-            .map-container { height: 160px; }
-            .reviews-grid { grid-template-columns: 1fr; }
-            .footer-legal { flex-direction: column; gap: 8px; }
-        }
+        .footer-req { font-size: 0.75em; color: #666; margin-top: 10px; line-height: 1.8; }
+        .breadcrumbs { max-width: 1100px; margin: 20px auto 0; padding: 0 20px; font-size: 0.85em; color: #888; }
+        @media (max-width: 768px) { header { flex-direction: column; text-align: center; } nav ul { justify-content: center; } .contacts-grid { grid-template-columns: 1fr; } .page h1 { font-size: 2em; } .hero-bg h1 { font-size: 2.4em; } .grid-2, .grid-3 { grid-template-columns: 1fr; } .map-container { height: 200px; } }
+        @media (max-width: 480px) { .logo { font-size: 1.2em; } nav ul { gap: 12px; } nav a { font-size: 0.8em; } .portfolio-item .image-wrap { height: 160px; } .page h1 { font-size: 1.6em; padding-left: 12px; } }
     </style>
 </head>
 <body>
-
     <header>
         <div class="logo" onclick="navigateTo('home')">
             <span class="diamond">✦</span> <span>Вышивка Стиль</span>
@@ -531,12 +137,9 @@
         </nav>
     </header>
 
-    <div class="breadcrumbs">
-        <span>📍</span> <span id="breadcrumbText">Главная</span>
-    </div>
+    <div class="breadcrumbs"><span>📍</span> <span id="breadcrumbText">Главная</span></div>
 
     <div class="page-content">
-
         <!-- ГЛАВНАЯ -->
         <div class="page active" id="page-home">
             <section class="hero-bg">
@@ -551,21 +154,9 @@
             </section>
             <h2>Почему нам доверяют</h2>
             <div class="grid-3">
-                <div class="card">
-                    <span class="icon">🧵</span>
-                    <h3>10+ лет опыта</h3>
-                    <p>Работаем с вышивкой с 2014 года, знаем все нюансы</p>
-                </div>
-                <div class="card">
-                    <span class="icon">🏢</span>
-                    <h3>Новая студия</h3>
-                    <p>Современное оборудование и качественные нити</p>
-                </div>
-                <div class="card">
-                    <span class="icon">🚀</span>
-                    <h3>От 1 заказа до тиража</h3>
-                    <p>Вышьем и одну вещь, и 500 — без потери качества</p>
-                </div>
+                <div class="card"><span class="icon">🧵</span><h3>10+ лет опыта</h3><p>Работаем с вышивкой с 2014 года</p></div>
+                <div class="card"><span class="icon">🏢</span><h3>Новая студия</h3><p>Современное оборудование и качественные нити</p></div>
+                <div class="card"><span class="icon">🚀</span><h3>От 1 заказа до тиража</h3><p>Вышьем и одну вещь, и 500</p></div>
             </div>
         </div>
 
@@ -574,79 +165,43 @@
             <h1>Наши услуги</h1>
             <p>10 лет опыта + новая студия = качественная вышивка в короткие сроки.</p>
             <div class="grid-2">
-                <div class="card">
-                    <span class="icon">🎨</span>
-                    <h3>Индивидуальный дизайн</h3>
-                    <p>Вышьем ваш рисунок, надпись или логотип. Работаем по вашему эскизу или создаём дизайн сами.</p>
-                    <span class="price-tag">от 1500 ₽</span>
-                </div>
-                <div class="card">
-                    <span class="icon">👔</span>
-                    <h3>Корпоративный мерч</h3>
-                    <p>Брендирование униформы для бизнеса — от 1 шт. Вышивка логотипов, названий, слоганов.</p>
-                    <span class="price-tag">от 800 ₽/шт</span>
-                </div>
-                <div class="card">
-                    <span class="icon">🛡️</span>
-                    <h3>Шевроны и патчи</h3>
-                    <p>Нашивки любой сложности — на липучке, термоплёнке или с пришивной основой.</p>
-                    <span class="price-tag">от 300 ₽</span>
-                </div>
+                <div class="card"><span class="icon">🎨</span><h3>Индивидуальный дизайн</h3><p>Вышьем ваш рисунок, надпись или логотип. Работаем по вашему эскизу или создаём дизайн сами.</p><span class="price-tag">от 1500 ₽</span></div>
+                <div class="card"><span class="icon">👔</span><h3>Корпоративный мерч</h3><p>Брендирование униформы для бизнеса — от 1 шт. Вышивка логотипов, названий, слоганов.</p><span class="price-tag">от 800 ₽/шт</span></div>
+                <div class="card"><span class="icon">🛡️</span><h3>Шевроны и патчи</h3><p>Нашивки любой сложности — на липучке, термоплёнке или с пришивной основой.</p><span class="price-tag">от 300 ₽</span></div>
             </div>
         </div>
 
-        <!-- ПОРТФОЛИО -->
+        <!-- ПОРТФОЛИО (с вашими фото) -->
         <div class="page" id="page-portfolio">
             <h1>Наши работы</h1>
-            <p>Примеры вышивки, которые мы сделали для наших клиентов. Фото работ добавлю позже.</p>
+            <p>Реальные примеры вышивки, которые мы сделали для наших клиентов.</p>
             <div class="portfolio-grid">
+                <!-- КЕПКИ -->
                 <div class="portfolio-item">
-                    <div class="image-wrap">👕</div>
-                    <div class="info">
-                        <h4>Логотип на худи</h4>
-                        <div class="desc">Машинная вышивка</div>
-                        <span class="tag">#брендинг</span>
-                    </div>
+                    <div class="image-wrap"><img src="img/hats/photo1.jpg" alt="Кепка с вышивкой" style="width:100%; height:100%; object-fit:cover;"></div>
+                    <div class="info"><h4>Кепка с логотипом</h4><div class="desc">Машинная вышивка</div><span class="tag">#кепки</span></div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="image-wrap">🧢</div>
-                    <div class="info">
-                        <h4>Вышивка на кепке</h4>
-                        <div class="desc">Индивидуальный дизайн</div>
-                        <span class="tag">#аксессуары</span>
-                    </div>
+                    <div class="image-wrap"><img src="img/hats/photo2.jpg" alt="Именная кепка" style="width:100%; height:100%; object-fit:cover;"></div>
+                    <div class="info"><h4>Именная кепка</h4><div class="desc">Индивидуальный дизайн</div><span class="tag">#кепки</span></div>
+                </div>
+                <!-- ВЫШИВКА -->
+                <div class="portfolio-item">
+                    <div class="image-wrap"><img src="img/embroidery/photo1.jpg" alt="Вышивка на худи" style="width:100%; height:100%; object-fit:cover;"></div>
+                    <div class="info"><h4>Вышивка на худи</h4><div class="desc">Корпоративный заказ</div><span class="tag">#вышивка</span></div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="image-wrap">🧥</div>
-                    <div class="info">
-                        <h4>Корпоративные куртки</h4>
-                        <div class="desc">Тиражная вышивка</div>
-                        <span class="tag">#оптом</span>
-                    </div>
+                    <div class="image-wrap"><img src="img/embroidery/photo2.jpg" alt="Логотип на футболке" style="width:100%; height:100%; object-fit:cover;"></div>
+                    <div class="info"><h4>Логотип на футболке</h4><div class="desc">Многоцветная вышивка</div><span class="tag">#вышивка</span></div>
+                </div>
+                <!-- НАШИВКИ -->
+                <div class="portfolio-item">
+                    <div class="image-wrap"><img src="img/patches/photo1.jpg" alt="Нашивка-шеврон" style="width:100%; height:100%; object-fit:cover;"></div>
+                    <div class="info"><h4>Шеврон на липучке</h4><div class="desc">Для спецодежды</div><span class="tag">#нашивки</span></div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="image-wrap">🎒</div>
-                    <div class="info">
-                        <h4>Именная вышивка</h4>
-                        <div class="desc">На рюкзак</div>
-                        <span class="tag">#персонализация</span>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image-wrap">🎽</div>
-                    <div class="info">
-                        <h4>Принт на футболке</h4>
-                        <div class="desc">Многоцветная вышивка</div>
-                        <span class="tag">#дизайн</span>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image-wrap">🛡️</div>
-                    <div class="info">
-                        <h4>Шеврон для формы</h4>https://drive.google.com/file/d/1UMqc2IKv7-74cMEJHygTI4mEBtuJiiKw/view?usp=drive_link, https://drive.google.com/file/d/1IuBl5OZXdRfC2F8VCbCNogfb62KyIz20/view?usp=drive_link, https://drive.google.com/file/d/1cO-ImL8mw-Ooao0P4mItrYirBzUdXuAu/view?usp=drive_link, https://drive.google.com/file/d/1CGInzxdZ8e41rfu9FcTXX8e4-6ovpGGM/view?usp=drive_link, https://drive.google.com/file/d/1e_mryU9pCqnN2RWHButb18Jx5XZADUB_/view?usp=drive_link, https://drive.google.com/file/d/1Jjkxbksfefo1lzLbHYIPSAETjsv9FTZJ/view?usp=drive_link, https://drive.google.com/file/d/1Wkg_FBtGGCzQNQff7PP3cGREAvlfqRk3/view?usp=drive_link, https://drive.google.com/file/d/15EaDMBO3IJXq536ceYXoTRfKpsg1j5_a/view?usp=drive_link, https://drive.google.com/file/d/10vgcAHcHFaQvIBxPt3_nC_dO5dzbq5_K/view?usp=drive_link
-                        <div class="desc">Термоклеевая основа</div>
-                        <span class="tag">#шевроны</span>
-                    </div>
+                    <div class="image-wrap"><img src="img/patches/photo2.jpg" alt="Патч с дизайном" style="width:100%; height:100%; object-fit:cover;"></div>
+                    <div class="info"><h4>Патч с принтом</h4><div class="desc">Термоклеевая основа</div><span class="tag">#нашивки</span></div>
                 </div>
             </div>
         </div>
@@ -654,97 +209,28 @@
         <!-- ОТЗЫВЫ -->
         <div class="page" id="page-reviews">
             <h1>Отзывы клиентов</h1>
-            <p>Мы только открыли студию, но уже получили первые отзывы. Оставьте свой — он пройдёт модерацию.</p>
             <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-header">
-                        <span class="review-avatar">👤</span>
-                        <div>
-                            <div class="review-name">Анна К.</div>
-                            <div class="review-date">20 июня 2026</div>
-                        </div>
-                    </div>
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Заказывала вышивку на худи для всей семьи. Сделали всё быстро и аккуратно."</p>
-                    <span class="review-status">✓ Опубликовано</span>
-                </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <span class="review-avatar">👨‍💼</span>
-                        <div>
-                            <div class="review-name">Дмитрий П.</div>
-                            <div class="review-date">18 июня 2026</div>
-                        </div>
-                    </div>
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Партия шевронов для команды. Отличное качество, держатся отлично. Рекомендую!"</p>
-                    <span class="review-status">✓ Опубликовано</span>
-                </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <span class="review-avatar">👩‍🎨</span>
-                        <div>
-                            <div class="review-name">Екатерина М.</div>
-                            <div class="review-date">15 июня 2026</div>
-                        </div>
-                    </div>
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Делали логотип для моего бренда одежды. Получилось лучше, чем я ожидала!"</p>
-                    <span class="review-status">✓ Опубликовано</span>
-                </div>
-            </div>
-
-            <div class="form-container">
-                <h3>✍️ Оставьте отзыв</h3>
-                <p class="form-subtitle">Расскажите о своём опыте — после модерации он появится на сайте</p>
-                <form id="reviewForm">
-                    <div class="form-group">
-                        <label for="reviewName">Ваше имя</label>
-                        <input type="text" id="reviewName" placeholder="Например: Александр" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="reviewRating">Оценка</label>
-                        <select id="reviewRating" required>
-                            <option value="5">⭐⭐⭐⭐⭐ — Отлично</option>
-                            <option value="4">⭐⭐⭐⭐ — Хорошо</option>
-                            <option value="3">⭐⭐⭐ — Средне</option>
-                            <option value="2">⭐⭐ — Плохо</option>
-                            <option value="1">⭐ — Ужасно</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="reviewText">Ваш отзыв</label>
-                        <textarea id="reviewText" placeholder="Что вам понравилось?" rows="4" required></textarea>
-                    </div>
-                    <div class="form-checkbox">
-                        <input type="checkbox" id="reviewConsent" required>
-                        <label for="reviewConsent">Я даю согласие на <a href="#" onclick="navigateTo('legal'); return false;">обработку данных</a></label>
-                    </div>
-                    <button type="submit" class="btn-submit">Отправить</button>
-                </form>
-                <div class="success-message" id="reviewSuccess">
-                    <span class="check">✅</span>
-                    <h3>Спасибо за отзыв!</h3>
-                    <p>Он отправлен на модерацию</p>
-                </div>
+                <div class="review-card"><div class="review-header"><span class="review-avatar">👤</span><div><div class="review-name">Анна К.</div><div class="review-date">20.06.2026</div></div></div><div class="review-stars">★★★★★</div><p class="review-text">"Заказывала вышивку на худи для всей семьи. Сделали всё быстро и аккуратно."</p><span class="review-status">✓ Опубликовано</span></div>
+                <div class="review-card"><div class="review-header"><span class="review-avatar">👨‍💼</span><div><div class="review-name">Дмитрий П.</div><div class="review-date">18.06.2026</div></div></div><div class="review-stars">★★★★★</div><p class="review-text">"Партия шевронов для команды. Отличное качество!"</p><span class="review-status">✓ Опубликовано</span></div>
+                <div class="review-card"><div class="review-header"><span class="review-avatar">👩‍🎨</span><div><div class="review-name">Екатерина М.</div><div class="review-date">15.06.2026</div></div></div><div class="review-stars">★★★★★</div><p class="review-text">"Логотип для моего бренда получился лучше, чем я ожидала!"</p><span class="review-status">✓ Опубликовано</span></div>
             </div>
         </div>
 
-        <!-- О НАС -->
+        <!-- О СТУДИИ (БЕЗ НАЗВАНИЙ БРЕНДОВ) -->
         <div class="page" id="page-about">
             <h1>О студии</h1>
-            <p><strong>За плечами — более 10 лет работы с вышивкой.</strong> За это время мы выполнили сотни заказов: от маленьких патчей до крупных корпоративных тиражей.</p>
-            <p>Решение открыть собственную студию пришло, чтобы <strong>предложить клиентам ещё более высокое качество, прозрачные цены и короткие сроки</strong>. Мы работаем на современном оборудовании, используем только качественные нити — они не выгорают на солнце и не линяют после стирки.</p>
-            <p>Каждый заказ мы контролируем лично. <strong>Вы получаете не просто вещь с рисунком, а продуманный до мелочей продукт.</strong></p>
+            <p><strong>Мы открыли новую студию, но за плечами — более 10 лет работы с вышивкой.</strong> За это время мы выполнили сотни заказов: от маленьких патчей до крупных корпоративных тиражей для известных брендов.</p>
+            <p>Решение открыть собственную студию пришло, чтобы <strong>предложить клиентам ещё более высокое качество, прозрачные цены и короткие сроки</strong>. Мы работаем на современном качественном оборудовании, используем только проверенные нити — они не выгорают на солнце и не линяют после стирки.</p>
+            <p>Каждый заказ — от первой примерки до финальной вышивки — мы контролируем лично. <strong>Вы получаете не просто вещь с рисунком, а продуманный до мелочей продукт.</strong></p>
             <div class="about-features">
-                <div class="item"><span class="icon">📅</span><h4>10+ лет опыта</h4><p>С 2014 года в индустрии</p></div>
-                <div class="item"><span class="icon">🔧</span><h4>Современное оборудование</h4><p>Качество на всех этапах</p></div>
-                <div class="item"><span class="icon">🧶</span><h4>Качественные нити</h4><p>Не выгорают и не линяют</p></div>
-                <div class="item"><span class="icon">⭐</span><h4>Любой объём</h4><p>От 1 до 1000+ заказов</p></div>
+                <div class="item"><span class="icon">📅</span><h4>10+ лет опыта</h4><p>С 2014 года в индустрии вышивки</p></div>
+                <div class="item"><span class="icon">🔧</span><h4>Современное оборудование</h4><p>Качественные машины для идеальной вышивки</p></div>
+                <div class="item"><span class="icon">🧶</span><h4>Только качественные нити</h4><p>Не выгорают и не линяют</p></div>
+                <div class="item"><span class="icon">⭐</span><h4>От 1 до 1000+ заказов</h4><p>Работаем с любым тиражом</p></div>
             </div>
         </div>
 
-        <!-- ДОСТАВКА И ОПЛАТА -->
+        <!-- ДОСТАВКА -->
         <div class="page" id="page-delivery">
             <h1>Доставка и оплата</h1>
             <h2>🚚 Доставка</h2>
@@ -752,24 +238,16 @@
                 <div class="card"><span class="icon">📦</span><h4>СДЭК</h4><p>от 1 дня</p></div>
                 <div class="card"><span class="icon">🚛</span><h4>Яндекс Доставка</h4><p>курьер до двери</p></div>
                 <div class="card"><span class="icon">📬</span><h4>Почта России</h4><p>экономичная</p></div>
-                <div class="card"><span class="icon">🛒</span><h4>Wildberries</h4><p>пункты выдачи</p></div>
-                <div class="card"><span class="icon">🛍️</span><h4>Ozon</h4><p>пункты выдачи</p></div>
             </div>
             <h2>💳 Оплата</h2>
             <div class="grid-3">
-                <div class="card" style="grid-column: 1 / -1;">
-                    <span class="icon">🧾</span>
-                    <h4>Официальный чек</h4>
-                    <p>Я работаю официально как самозанятый. После оплаты я оформляю чек через приложение «Мой налог» — вы получаете все документы.</p>
-                    <span class="price-tag">Официально</span>
-                </div>
+                <div class="card" style="grid-column: 1 / -1;"><span class="icon">🧾</span><h4>Официальный чек</h4><p>Я работаю официально как самозанятый. После оплаты оформляю чек через приложение «Мой налог».</p><span class="price-tag">Официально</span></div>
             </div>
         </div>
 
         <!-- КОНТАКТЫ -->
         <div class="page" id="page-contacts">
             <h1>Контакты</h1>
-            <p>Свяжитесь с нами любым удобным способом — ответим в течение 15 минут.</p>
             <div class="contacts-grid">
                 <div class="info-block">
                     <ul>
@@ -790,38 +268,6 @@
                     <div class="map-container">
                         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d&amp;source=constructor&amp;text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" allowfullscreen></iframe>
                     </div>
-                    <p style="font-size: 0.8em; color: #888; margin-top: 6px; text-align: right;">
-                        <a href="https://yandex.ru/maps/?text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" target="_blank" style="color: #888;">Открыть в Яндекс.Картах →</a>
-                    </p>
-                </div>
-            </div>
-
-            <div class="form-container">
-                <h3>📩 Напишите нам</h3>
-                <p class="form-subtitle">Оставьте сообщение, и мы свяжемся с вами</p>
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="contactName">Ваше имя</label>
-                        <input type="text" id="contactName" placeholder="Например: Анна" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactPhone">Телефон</label>
-                        <input type="tel" id="contactPhone" placeholder="+7 (___) ___-__-__" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactMessage">Сообщение</label>
-                        <textarea id="contactMessage" placeholder="Что вы хотите вышить?" rows="4" required></textarea>
-                    </div>
-                    <div class="form-checkbox">
-                        <input type="checkbox" id="contactConsent" required>
-                        <label for="contactConsent">Я даю согласие на <a href="#" onclick="navigateTo('legal'); return false;">обработку данных</a></label>
-                    </div>
-                    <button type="submit" class="btn-submit">Отправить</button>
-                </form>
-                <div class="success-message" id="contactSuccess">
-                    <span class="check">✅</span>
-                    <h3>Сообщение отправлено!</h3>
-                    <p>Мы свяжемся с вами в ближайшее время</p>
                 </div>
             </div>
         </div>
@@ -830,20 +276,9 @@
         <div class="page" id="page-legal">
             <h1>Юридическая информация</h1>
             <div class="legal-content">
-                <h3>1. Политика конфиденциальности</h3>
-                <p>Настоящая Политика определяет порядок обработки и защиты персональных данных пользователей сайта <span class="highlight">Вышивка Стиль</span>.</p>
-                <p><strong>1.1. Какие данные мы собираем</strong><br>При заполнении форм мы собираем: имя, номер телефона и текст сообщения/отзыва.</p>
-                <p><strong>1.2. Цели обработки</strong><br>Данные используются для связи с вами, уточнения деталей заказа, публикации отзывов (с вашего согласия).</p>
-                <p><strong>1.3. Передача третьим лицам</strong><br>Мы не передаём данные третьим лицам, кроме случаев, предусмотренных законом.</p>
-                <p><strong>1.4. Ваши права</strong><br>Вы можете требовать удаления ваших данных, написав на email: imaklain@gmail.com.</p>
-
-                <h3>2. Пользовательское соглашение</h3>
-                <p>Используя Сайт, вы соглашаетесь с условиями. Все материалы защищены законодательством РФ. Администрация не несёт ответственности за убытки, возникшие при использовании Сайта.</p>
-
-                <h3>3. Согласие на обработку данных</h3>
-                <p>Отправляя форму, вы даёте согласие на обработку персональных данных в соответствии с 152-ФЗ. Согласие даётся на срок до 5 лет.</p>
-
-                <h3>4. Реквизиты самозанятого</h3>
+                <h3>Политика конфиденциальности</h3>
+                <p>Мы собираем имя и телефон для связи. Данные не передаются третьим лицам.</p>
+                <h3>Реквизиты самозанятого</h3>
                 <ul>
                     <li><strong>Статус:</strong> Самозанятый (НПД)</li>
                     <li><strong>ФИО:</strong> Ёлдашев Максим Джорагелдиевич</li>
@@ -854,7 +289,6 @@
                 <p style="margin-top: 15px; color: #888; font-size: 0.85em;">Дата публикации: 06 августа 2026 г.</p>
             </div>
         </div>
-
     </div>
 
     <footer>
@@ -874,16 +308,12 @@
         </div>
         <div class="footer-divider"></div>
         <p>© 2026 Вышивка Стиль. Все права защищены.</p>
-        <p style="font-size: 0.85em; opacity: 0.8; margin-top: 8px;">
-            <a href="mailto:imaklain@gmail.com">imaklain@gmail.com</a> ·
-            <a href="tel:+79014030785">+7 (901) 403-07-85</a>
-        </p>
-        <div class="footer-req">
-            Самозанятый Ёлдашев Максим Джорагелдиевич · ИНН 130100811452
-        </div>
+        <p><a href="mailto:imaklain@gmail.com">imaklain@gmail.com</a> · <a href="tel:+79014030785">+7 (901) 403-07-85</a></p>
+        <div class="footer-req">Самозанятый Ёлдашев Максим Джорагелдиевич · ИНН 130100811452</div>
     </footer>
 
     <script>
+        // --- НАВИГАЦИЯ ---
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('nav a[data-page]');
             const pages = {
@@ -897,29 +327,14 @@
                 legal: document.getElementById('page-legal')
             };
             const breadcrumbText = document.getElementById('breadcrumbText');
-            const pageNames = {
-                home: 'Главная',
-                services: 'Услуги',
-                portfolio: 'Портфолио',
-                reviews: 'Отзывы',
-                about: 'О нас',
-                delivery: 'Доставка и оплата',
-                contacts: 'Контакты',
-                legal: 'Юридическая информация'
-            };
-
+            const pageNames = { home: 'Главная', services: 'Услуги', portfolio: 'Портфолио', reviews: 'Отзывы', about: 'О нас', delivery: 'Доставка и оплата', contacts: 'Контакты', legal: 'Юридическая информация' };
             window.navigateTo = function(pageId) {
                 Object.values(pages).forEach(p => { if (p) p.classList.remove('active'); });
                 if (pages[pageId]) pages[pageId].classList.add('active');
-                navLinks.forEach(link => {
-                    link.classList.toggle('active', link.dataset.page === pageId);
-                });
-                if (breadcrumbText) {
-                    breadcrumbText.textContent = pageNames[pageId] || pageId;
-                }
+                navLinks.forEach(link => { link.classList.toggle('active', link.dataset.page === pageId); });
+                if (breadcrumbText) breadcrumbText.textContent = pageNames[pageId] || pageId;
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             };
-
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -927,130 +342,7 @@
                     if (pageId) navigateTo(pageId);
                 });
             });
-
-            // --- TELEGRAM БОТ ---
-            const BOT_TOKEN = '8313671080:AAGoXjlxoHPuDQ17DRn5IOthcaSNCPVloqw';
-            const CHAT_ID = '782451090';
-
-            function sendToTelegram(message) {
-                const apiUrls = [
-                    `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
-                    `https://telegram-bot-api.herokuapp.com/bot${BOT_TOKEN}/sendMessage`
-                ];
-
-                function trySend(index) {
-                    if (index >= apiUrls.length) return Promise.reject(new Error('API недоступны'));
-                    return fetch(apiUrls[index], {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ chat_id: CHAT_ID, text: message, parse_mode: 'Markdown' })
-                    })
-                    .then(response => {
-                        if (response.ok) return response;
-                        return trySend(index + 1);
-                    })
-                    .catch(() => trySend(index + 1));
-                }
-                return trySend(0);
-            }
-
-            // --- ФОРМА КОНТАКТОВ ---
-            const contactForm = document.getElementById('contactForm');
-            const contactPhone = document.getElementById('contactPhone');
-
-            if (contactForm) {
-                contactPhone.addEventListener('input', function() {
-                    let val = this.value.replace(/\D/g, '');
-                    if (val.length > 0) {
-                        let formatted = '+7 (';
-                        if (val.length > 1) {
-                            formatted += val.substring(1, 4);
-                            if (val.length >= 4) {
-                                formatted += ') ';
-                                formatted += val.substring(4, 7);
-                                if (val.length >= 7) {
-                                    formatted += '-';
-                                    formatted += val.substring(7, 9);
-                                    if (val.length >= 9) {
-                                        formatted += '-';
-                                        formatted += val.substring(9, 11);
-                                    }
-                                }
-                            }
-                        } else {
-                            formatted += val;
-                        }
-                        this.value = formatted;
-                    } else {
-                        this.value = '';
-                    }
-                });
-
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const name = document.getElementById('contactName').value.trim();
-                    const phone = document.getElementById('contactPhone').value.trim();
-                    const message = document.getElementById('contactMessage').value.trim();
-                    const consent = document.getElementById('contactConsent');
-
-                    if (!consent.checked) {
-                        alert('Дайте согласие на обработку данных');
-                        return;
-                    }
-                    if (phone.replace(/\D/g, '').length < 10) {
-                        alert('Введите корректный номер телефона');
-                        return;
-                    }
-
-                    const text =
-                        `📩 *Сообщение с сайта!*\n\n👤 *Имя:* ${name || 'Не указано'}\n📱 *Телефон:* ${phone}\n💬 *Сообщение:* ${message || '—'}\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
-                    sendToTelegram(text).catch(() => {});
-
-                    document.getElementById('contactSuccess').style.display = 'block';
-                    contactForm.style.display = 'none';
-                    setTimeout(() => {
-                        contactForm.style.display = 'block';
-                        document.getElementById('contactSuccess').style.display = 'none';
-                        contactForm.reset();
-                    }, 5000);
-                });
-            }
-
-            // --- ФОРМА ОТЗЫВОВ ---
-            const reviewForm = document.getElementById('reviewForm');
-            if (reviewForm) {
-                reviewForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const name = document.getElementById('reviewName').value.trim();
-                    const rating = document.getElementById('reviewRating').value;
-                    const text = document.getElementById('reviewText').value.trim();
-                    const consent = document.getElementById('reviewConsent');
-
-                    if (!consent.checked) {
-                        alert('Дайте согласие на обработку данных');
-                        return;
-                    }
-                    if (!name || !text) {
-                        alert('Заполните имя и текст отзыва');
-                        return;
-                    }
-
-                    const stars = '⭐'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
-                    const message =
-                        `⭐ *Новый отзыв (на модерацию)!*\n\n👤 *Имя:* ${name}\n📊 *Оценка:* ${stars}\n💬 *Отзыв:* ${text}\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
-                    sendToTelegram(message).catch(() => {});
-
-                    document.getElementById('reviewSuccess').style.display = 'block';
-                    reviewForm.style.display = 'none';
-                    setTimeout(() => {
-                        reviewForm.style.display = 'block';
-                        document.getElementById('reviewSuccess').style.display = 'none';
-                        reviewForm.reset();
-                    }, 5000);
-                });
-            }
         });
     </script>
-
 </body>
 </html>
