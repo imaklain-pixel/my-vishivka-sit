@@ -370,7 +370,7 @@
             justify-content: center;
         }
 
-        /* ---------- СЧЁТЧИК ДОВОЛЬНЫХ КЛИЕНТОВ ---------- */
+        /* ---------- СЧЁТЧИК ---------- */
         .counter-block {
             display: flex;
             justify-content: center;
@@ -734,53 +734,65 @@
             }
         }
 
-        /* ---------- ПОРТФОЛИО (КАРУСЕЛЬ) ---------- */
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
+        /* ---------- ПОРТФОЛИО (КАТЕГОРИИ) ---------- */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .category-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 20px;
-            margin-top: 20px;
-        }
-        .carousel-track {
-            display: flex;
-            transition: transform 0.6s ease;
-        }
-        .carousel-slide {
-            min-width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            padding: 10px 0;
-        }
-        .carousel-slide .gallery-item {
-            flex: 0 0 calc(33.333% - 20px);
-            min-width: 200px;
-        }
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            border: none;
-            font-size: 2em;
-            padding: 12px 18px;
+            padding: 30px 20px;
+            text-align: center;
             cursor: pointer;
-            border-radius: 50%;
-            transition: 0.3s;
-            z-index: 5;
+            transition: all 0.4s;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
-        .carousel-btn:hover {
-            background: rgba(255, 107, 107, 0.6);
+        .category-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #ff6b6b;
+            box-shadow: 0 12px 50px rgba(233, 69, 96, 0.3);
+            background: rgba(255, 255, 255, 0.12);
         }
-        .carousel-btn.prev {
-            left: 10px;
+        .category-card .icon {
+            font-size: 4em;
+            display: block;
+            margin-bottom: 15px;
         }
-        .carousel-btn.next {
-            right: 10px;
+        .category-card h3 {
+            font-size: 1.5em;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .category-card p {
+            color: #aaa;
+            font-size: 0.95em;
+            margin: 0;
+        }
+        .category-card .badge {
+            display: inline-block;
+            margin-top: 12px;
+            background: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+            padding: 4px 16px;
+            border-radius: 30px;
+            font-size: 0.8em;
+            font-weight: 600;
         }
 
+        .gallery-grid {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .gallery-grid.active {
+            display: grid;
+        }
         .gallery-item {
             background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
@@ -916,7 +928,7 @@
             box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
         }
 
-        /* ---------- ОТЗЫВЫ ---------- */
+        /* ---------- ОТЗЫВЫ (БЕЗ ФОТО) ---------- */
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -973,19 +985,6 @@
             color: #feca57;
             padding: 2px 14px;
             border-radius: 20px;
-        }
-        .review-photo {
-            margin-top: 10px;
-            border-radius: 8px;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.03);
-            cursor: pointer;
-        }
-        .review-photo img {
-            width: 100%;
-            max-height: 200px;
-            object-fit: cover;
-            display: block;
         }
 
         /* ---------- КОНТАКТЫ ---------- */
@@ -1430,11 +1429,6 @@
         }
 
         /* ---------- АДАПТАЦИЯ ---------- */
-        @media (max-width: 1024px) {
-            .carousel-slide .gallery-item {
-                flex: 0 0 calc(50% - 20px);
-            }
-        }
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -1474,13 +1468,6 @@
             }
             .floating-messengers .messenger-btn {
                 padding: 12px;
-            }
-            .carousel-slide .gallery-item {
-                flex: 0 0 calc(50% - 20px);
-            }
-            .carousel-btn {
-                font-size: 1.2em;
-                padding: 8px 12px;
             }
         }
         @media (max-width: 480px) {
@@ -1527,9 +1514,6 @@
             }
             .counter-item .number {
                 font-size: 2em;
-            }
-            .carousel-slide .gallery-item {
-                flex: 0 0 calc(100% - 20px);
             }
             .scroll-top {
                 width: 40px;
@@ -1792,21 +1776,38 @@
             </div>
         </div>
 
-        <!-- ===== ПОРТФОЛИО (КАРУСЕЛЬ) ===== -->
+        <!-- ===== ПОРТФОЛИО (КАТЕГОРИИ) ===== -->
         <div class="page" id="page-portfolio">
             <h1>Наши работы</h1>
-            <p>Фото наших работ — листайте карусель</p>
+            <p>Выберите категорию, чтобы посмотреть фото.</p>
 
-            <div class="carousel-container">
-                <div class="carousel-track" id="carouselTrack">
-                    <!-- Слайды будут добавлены через JavaScript -->
+            <div class="category-grid">
+                <div class="category-card" onclick="openCategory('hats')">
+                    <span class="icon">🧢</span>
+                    <h3>Кепки</h3>
+                    <p>Вышивка на кепках</p>
+                    <span class="badge">Открыть →</span>
                 </div>
-                <button class="carousel-btn prev" onclick="moveCarousel(-1)">‹</button>
-                <button class="carousel-btn next" onclick="moveCarousel(1)">›</button>
+                <div class="category-card" onclick="openCategory('patches')">
+                    <span class="icon">🛡️</span>
+                    <h3>Нашивки</h3>
+                    <p>Шевроны, патчи, нашивки</p>
+                    <span class="badge">Открыть →</span>
+                </div>
+                <div class="category-card" onclick="openCategory('clothing')">
+                    <span class="icon">👕</span>
+                    <h3>Бренд на одежде</h3>
+                    <p>Худи, футболки, куртки</p>
+                    <span class="badge">Открыть →</span>
+                </div>
             </div>
+
+            <div id="gallery-hats" class="gallery-grid"></div>
+            <div id="gallery-patches" class="gallery-grid"></div>
+            <div id="gallery-clothing" class="gallery-grid"></div>
         </div>
 
-        <!-- ===== ОТЗЫВЫ ===== -->
+        <!-- ===== ОТЗЫВЫ (БЕЗ ФОТО) ===== -->
         <div class="page" id="page-reviews">
             <h1>Отзывы наших клиентов</h1>
             <p>Мы только открыли студию, но уже получили первые отзывы. Оставьте свой — он пройдёт модерацию и появится на сайте.</p>
@@ -1822,9 +1823,6 @@
                     </div>
                     <div class="review-stars">★★★★★</div>
                     <p class="review-text">"Заказывала вышивку на худи для всей семьи. Сделали всё быстро и очень аккуратно. Спасибо!"</p>
-                    <div class="review-photo" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/2024-11-12_12.10.11.jpg')">
-                        <img src="https://imaklain-pixel.github.io/my-vishivka-sit/2024-11-12_12.10.11.jpg" alt="Фото отзыва">
-                    </div>
                     <span class="review-status">✓ Опубликовано</span>
                 </div>
 
@@ -2086,7 +2084,7 @@
         </div>
     </div>
 
-    <!-- ====== ВСПЛЫВАЮЩИЙ ПОПАП (через 15 секунд) ====== -->
+    <!-- ====== ВСПЛЫВАЮЩИЙ ПОПАП ====== -->
     <div class="modal-overlay" id="popupModal">
         <div class="modal-content">
             <span class="modal-close" onclick="closePopup()">✕</span>
@@ -2515,87 +2513,180 @@
                 document.getElementById('calcContact').value = '';
             };
 
-            // ---------- КАРУСЕЛЬ ПОРТФОЛИО ----------
-            const track = document.getElementById('carouselTrack');
-            const allImages = [
-                'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-12%20at%2012.10.11%20(1).jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-12%20at%2012.10.11.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0001.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0002.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0004.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0005.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0006.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0010.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0014.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0015.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0016.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0018.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0019.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0020.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0024.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0067.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0068.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0096.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0097.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0102.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0106.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0107.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0108.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0109.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0110.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0113.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0115.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0116.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0118.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0120.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0121.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0128.jpeg',
-                'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0130.jpeg'
-            ];
+            // ---------- ПОРТФОЛИО (КАТЕГОРИИ) ----------
+            const hatsGallery = document.getElementById('gallery-hats');
+            if (hatsGallery) {
+                const hatsImages = [
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-12%20at%2012.10.11%20(1).jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-12%20at%2012.10.11.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0001.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0002.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0004.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0005.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0006.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0010.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0014.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0015.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0016.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0018.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0019.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0020.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0024.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0067.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0068.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0096.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0097.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0102.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0106.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0107.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0108.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0109.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0110.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0113.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0115.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0116.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0118.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0120.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0121.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0128.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0130.jpeg'
+                ];
 
-            let currentSlide = 0;
-            const itemsPerSlide = 3;
-
-            function renderCarousel() {
-                track.innerHTML = '';
-                const totalSlides = Math.ceil(allImages.length / itemsPerSlide);
-
-                for (let i = 0; i < totalSlides; i++) {
-                    const slide = document.createElement('div');
-                    slide.className = 'carousel-slide';
-
-                    const start = i * itemsPerSlide;
-                    const end = Math.min(start + itemsPerSlide, allImages.length);
-
-                    for (let j = start; j < end; j++) {
-                        const item = document.createElement('div');
-                        item.className = 'gallery-item';
-                        item.innerHTML =
-                            `<img src="${allImages[j]}" alt="Работа" onclick="openLightbox('${allImages[j]}')"><div class="caption">Наша работа</div>`;
-                        slide.appendChild(item);
-                    }
-
-                    track.appendChild(slide);
-                }
-
-                updateCarousel();
+                hatsImages.forEach(src => {
+                    const item = document.createElement('div');
+                    item.className = 'gallery-item';
+                    item.innerHTML =
+                        `<img src="${src}" alt="Кепка" onclick="openLightbox('${src}')"><div class="caption">Кепка с вышивкой</div>`;
+                    hatsGallery.appendChild(item);
+                });
             }
 
-            function updateCarousel() {
-                const slides = track.querySelectorAll('.carousel-slide');
-                if (slides.length === 0) return;
-                const offset = -currentSlide * 100;
-                track.style.transform = `translateX(${offset}%)`;
+            // ---------- ГАЛЕРЕЯ "НАШИВКИ" ----------
+            const patchesGallery = document.getElementById('gallery-patches');
+            if (patchesGallery) {
+                const patchesImages = [
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0131.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0127.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0111.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0093.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0079.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0069.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0064.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0049.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0030.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0023.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0022.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0017.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0013.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0012.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0011.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0009.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0008.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0007.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/e94fa25f-8004-45fb-aaab-092526e9bf08.jpg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/df8dbaca-ba7d-4ca5-b14d-58136bd3d6d8.jpg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/cd394e9f-5cb3-4296-bed4-d14f420e1970%20(2).jpg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/c202f2f6-b360-41c6-8f21-75d89e03e36f.jpg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/b202d3bc-53b2-4482-8f7a-e9e4774f16b3.jpg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-14%20at%2015.59.35.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/IMG_4328.JPG',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/IMG_2059%20(1).JPG',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/IMG_20250928_174737677_HDR.jpg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/IMG_1018%20(2).JPG',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/9df882d5-a68a-42b2-8f47-57604a454539.jpg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/8d68ce95-16ce-4c82-a154-06acebea1836.jpg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/70da5507-fc93-4a47-9572-5a95024f5576.jpg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/00882fc1-9a8e-42fd-a657-48974bfbf71c%20(1).jpg'
+                ];
+
+                patchesImages.forEach(src => {
+                    const item = document.createElement('div');
+                    item.className = 'gallery-item';
+                    item.innerHTML =
+                        `<img src="${src}" alt="Нашивка" onclick="openLightbox('${src}')"><div class="caption">Нашивка / шеврон</div>`;
+                    patchesGallery.appendChild(item);
+                });
             }
 
-            window.moveCarousel = function(direction) {
-                const slides = track.querySelectorAll('.carousel-slide');
-                if (slides.length === 0) return;
-                currentSlide = (currentSlide + direction + slides.length) % slides.length;
-                updateCarousel();
-            };
+            // ---------- ГАЛЕРЕЯ "БРЕНД НА ОДЕЖДЕ" ----------
+            const clothingGallery = document.getElementById('gallery-clothing');
+            if (clothingGallery) {
+                const clothingImages = [
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0134.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0133.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0132.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0131.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0123.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0122.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0114.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0105.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0104.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0103.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0100.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0099.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0098.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0092.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0091.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0089.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0088.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0087.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0086.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0085.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0082.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0080.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0077.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0076.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0075.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0074.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0073.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0072.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0071.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0070.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0065.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0063.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0062.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0061.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0060.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0059.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0058.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0057.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0056.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0055.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0052.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0051.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0050.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0048.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0046.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0045.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0044.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0042.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0041.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0040.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0039.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0037.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0036.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0035.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0034.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0032.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0029.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0028.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0026.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-15%20at%2016.58.31.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-15%20at%2016.58.31%20(2).jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-15%20at%2016.58.31%20(1).jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-14%20at%2015.59.34.jpeg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/IMG_20250928_125525389.jpg',
+                    'https://imaklain-pixel.github.io/my-vishivka-sit/IMG_20250908_181348753.jpg'
+                ];
 
-            renderCarousel();
+                clothingImages.forEach(src => {
+                    const item = document.createElement('div');
+                    item.className = 'gallery-item';
+                    item.innerHTML =
+                        `<img src="${src}" alt="Бренд на одежде" onclick="openLightbox('${src}')"><div class="caption">Вышивка на одежде</div>`;
+                    clothingGallery.appendChild(item);
+                });
+            }
 
             // ---------- ФОРМА ОТЗЫВОВ ----------
             const reviewForm = document.getElementById('reviewForm');
@@ -2651,6 +2742,17 @@
                     }, 5000);
                 });
             }
+
+            // ---------- ОТКРЫТИЕ КАТЕГОРИЙ ----------
+            window.openCategory = function(category) {
+                document.querySelectorAll('.gallery-grid').forEach(el => {
+                    el.classList.remove('active');
+                });
+                const target = document.getElementById('gallery-' + category);
+                if (target) {
+                    target.classList.toggle('active');
+                }
+            };
 
         });
     </script>
