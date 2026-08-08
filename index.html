@@ -1642,7 +1642,7 @@
         </a>
     </div>
 
-    <!-- ====== ШАПКА ====== -->
+    <!-- ====== ШАПКА (без "Услуги") ====== -->
     <header id="header">
         <div class="logo" onclick="navigateTo('home')">
             <span class="diamond">✦</span> <span>Вышивка Стиль</span>
@@ -1651,7 +1651,6 @@
             <nav>
                 <ul>
                     <li><a class="active" data-page="home">Главная</a></li>
-                    <li><a data-page="services">Услуги</a></li>
                     <li><a data-page="portfolio">Портфолио</a></li>
                     <li><a data-page="reviews">Отзывы</a></li>
                     <li><a data-page="about">О нас</a></li>
@@ -1886,32 +1885,6 @@
                     <span class="icon">🚀</span>
                     <h3>От 1 заказа до тиража</h3>
                     <p>Вышьем и одну футболку, и 500 курток — без потери качества</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== УСЛУГИ ===== -->
-        <div class="page" id="page-services">
-            <h1>Наши услуги</h1>
-            <p>10 лет опыта + новая студия = качественная вышивка в короткие сроки. Выполняем заказы любой сложности.</p>
-            <div class="grid-2">
-                <div class="card animate-on-scroll">
-                    <span class="icon">🎨</span>
-                    <h3>Индивидуальный дизайн</h3>
-                    <p>Вышьем ваш рисунок, надпись или логотип на худи, футболках, свитшотах. Работаем по вашему эскизу или создаём дизайн сами.</p>
-                    <span class="price-tag">от 1500 ₽</span>
-                </div>
-                <div class="card animate-on-scroll">
-                    <span class="icon">👔</span>
-                    <h3>Корпоративный мерч</h3>
-                    <p>Брендирование униформы для бизнеса — от 1 шт. Вышивка логотипов, названий и слоганов на спецодежде и сувенирах.</p>
-                    <span class="price-tag">от 800 ₽/шт (скидки от 10 шт)</span>
-                </div>
-                <div class="card animate-on-scroll">
-                    <span class="icon">🛡️</span>
-                    <h3>Шевроны и патчи</h3>
-                    <p>Нашивки любой сложности — на липучке, термоплёнке или с пришивной основой. Идеально для спецодежды, формы и аксессуаров.</p>
-                    <span class="price-tag">от 300 ₽</span>
                 </div>
             </div>
         </div>
@@ -2167,7 +2140,6 @@
     <footer>
         <div class="footer-nav">
             <a onclick="navigateTo('home')">Главная</a>
-            <a onclick="navigateTo('services')">Услуги</a>
             <a onclick="navigateTo('portfolio')">Портфолио</a>
             <a onclick="navigateTo('reviews')">Отзывы</a>
             <a onclick="navigateTo('about')">О нас</a>
@@ -2304,7 +2276,6 @@
             const navLinks = document.querySelectorAll('nav a[data-page]');
             const pages = {
                 home: document.getElementById('page-home'),
-                services: document.getElementById('page-services'),
                 portfolio: document.getElementById('page-portfolio'),
                 reviews: document.getElementById('page-reviews'),
                 about: document.getElementById('page-about'),
@@ -2315,7 +2286,6 @@
             const breadcrumbText = document.getElementById('breadcrumbText');
             const pageNames = {
                 home: 'Главная',
-                services: 'Услуги',
                 portfolio: 'Портфолио',
                 reviews: 'Отзывы',
                 about: 'О нас',
