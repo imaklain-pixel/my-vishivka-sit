@@ -398,7 +398,7 @@
             font-size: 0.9em;
         }
 
-        /* ---------- КАЛЬКУЛЯТОР (УЛУЧШЕННЫЙ) ---------- */
+        /* ---------- КАЛЬКУЛЯТОР (С ВАШЕЙ ЦЕНОВОЙ СЕТКОЙ) ---------- */
         .calculator-block {
             background: rgba(255, 255, 255, 0.04);
             border-radius: 24px;
@@ -420,7 +420,6 @@
             color: #aaa;
             margin-bottom: 25px;
         }
-        /* ВКЛАДКИ КАЛЬКУЛЯТОРА */
         .calc-tabs {
             display: flex;
             justify-content: center;
@@ -1831,7 +1830,7 @@
                 ⭐ <strong>Итог:</strong> вы получаете качественную вышивку без сюрпризов
             </p>
 
-            <!-- ===== КАЛЬКУЛЯТОР (УЛУЧШЕННЫЙ) ===== -->
+            <!-- ===== КАЛЬКУЛЯТОР (С ВАШЕЙ ЦЕНОВОЙ СЕТКОЙ) ===== -->
             <div class="calculator-block animate-on-scroll">
                 <h2>🧮 Рассчитайте стоимость вышивки</h2>
                 <p class="subtitle">Выберите свой тип заказа и параметры</p>
@@ -1871,7 +1870,7 @@
                     </div>
                     <div class="calc-result">
                         <span class="label">Примерная стоимость:</span>
-                        <span class="price" id="calcResult">от 800 ₽</span>
+                        <span class="price" id="calcResult">от 1500 ₽</span>
                         <span style="font-size: 0.8em; color: #888; display: block;">* Точный расчёт после согласования</span>
                     </div>
                     <button onclick="sendCalcRequest()" class="btn-primary" style="width: 100%;">🚀 Отправить заявку на расчёт</button>
@@ -2586,32 +2585,47 @@
                 });
             }
 
-            // ---------- КАЛЬКУЛЯТОР (УЛУЧШЕННЫЙ) ----------
+            // ---------- КАЛЬКУЛЯТОР (С ВАШЕЙ ЦЕНОВОЙ СЕТКОЙ) ----------
             window.calculatePrice = function() {
                 const type = document.getElementById('calcType').value;
                 const quantity = parseInt(document.getElementById('calcQuantity').value) || 1;
                 const complexity = document.getElementById('calcComplexity').value;
 
-                const typePrices = {
-                    futbolka: 500,
-                    hudi: 800,
-                    kepka: 600,
-                    kurtka: 1200,
-                    other: 700
+                // Стоимость стежка в зависимости от тиража
+                let stitchPrice = 0;
+                if (quantity >= 1 && quantity <= 2) stitchPrice = 0.051;
+                else if (quantity >= 3 && quantity <= 6) stitchPrice = 0.035;
+                else if (quantity >= 7 && quantity <= 20) stitchPrice = 0.033;
+                else if (quantity >= 21 && quantity <= 40) stitchPrice = 0.032;
+                else if (quantity >= 41 && quantity <= 100) stitchPrice = 0.030;
+                else if (quantity >= 101 && quantity <= 300) stitchPrice = 0.027;
+                else if (quantity >= 301 && quantity <= 500) stitchPrice = 0.024;
+                else if (quantity >= 501 && quantity <= 1000) stitchPrice = 0.022;
+                else stitchPrice = 0.020; // от 1001+
+
+                // Количество стежков в зависимости от типа и сложности
+                const typeStitches = {
+                    futbolka: 3000,
+                    hudi: 4000,
+                    kepka: 2500,
+                    kurtka: 5000,
+                    other: 3500
                 };
-                let basePrice = typePrices[type] || 700;
+                let baseStitches = typeStitches[type] || 3000;
 
                 const complexityMultiplier = {
                     simple: 1,
-                    medium: 1.5,
-                    hard: 2.5
+                    medium: 1.8,
+                    hard: 3
                 };
 
-                let total = basePrice * complexityMultiplier[complexity] * quantity;
-                if (quantity >= 10) total *= 0.85;
-                if (quantity >= 50) total *= 0.7;
+                const totalStitches = Math.round(baseStitches * complexityMultiplier[complexity]);
+                let total = totalStitches * stitchPrice * quantity;
 
-                return Math.round(total);
+                // Минимальная стоимость за заказ (для малых тиражей)
+                const minOrderPrice = 1500;
+
+                return Math.round(Math.max(total, minOrderPrice));
             };
 
             window.updatePrice = function() {
