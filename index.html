@@ -398,108 +398,101 @@
             font-size: 0.9em;
         }
 
-        /* ---------- КАЛЬКУЛЯТОР (С ВАШЕЙ ЦЕНОВОЙ СЕТКОЙ) ---------- */
-        .calculator-block {
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 24px;
-            padding: 40px 30px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        /* ---------- ТАРИФЫ ---------- */
+        .pricing-block {
             margin: 40px 0;
             text-align: center;
-            transition: 0.5s;
         }
-        .calculator-block:hover {
-            border-color: #ff6b6b;
-            box-shadow: 0 8px 40px rgba(233, 69, 96, 0.1);
-        }
-        .calculator-block h2 {
+        .pricing-block h2 {
             font-size: 2em;
             margin-bottom: 10px;
         }
-        .calculator-block .subtitle {
+        .pricing-subtitle {
             color: #aaa;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
-        .calc-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 25px;
-        }
-        .calc-tab {
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 30px;
-            color: #aaa;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 0.9em;
-            font-weight: 600;
-        }
-        .calc-tab:hover {
-            background: rgba(255, 255, 255, 0.08);
-            color: #fff;
-        }
-        .calc-tab.active {
-            background: #ff6b6b;
-            border-color: #ff6b6b;
-            color: #fff;
-            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.3);
-        }
-        .calc-form {
-            max-width: 500px;
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
             margin: 0 auto;
+        }
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            padding: 30px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s;
+            cursor: pointer;
             text-align: left;
+            display: flex;
+            flex-direction: column;
         }
-        .calc-form .form-group {
-            margin-bottom: 18px;
-        }
-        .calc-form .form-group label {
-            color: #ddd;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 6px;
-        }
-        .calc-form .form-group select,
-        .calc-form .form-group input {
-            width: 100%;
-            padding: 14px 18px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            background: rgba(0, 0, 0, 0.3);
-            color: #fff;
-            font-size: 1em;
-            outline: none;
-            transition: 0.3s;
-        }
-        .calc-form .form-group select:focus,
-        .calc-form .form-group input:focus {
+        .pricing-card:hover {
+            transform: translateY(-10px);
             border-color: #ff6b6b;
-            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.15);
+            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.15);
+            background: rgba(255, 255, 255, 0.07);
         }
-        .calc-result {
-            text-align: center;
-            padding: 15px;
-            background: rgba(255, 107, 107, 0.08);
-            border-radius: 12px;
-            margin-bottom: 18px;
-            border: 1px solid rgba(255, 107, 107, 0.15);
+        .pricing-header {
+            margin-bottom: 15px;
         }
-        .calc-result .label {
-            color: #888;
+        .pricing-header h3 {
+            font-size: 1.3em;
+            color: #fff;
+            margin-bottom: 4px;
         }
-        .calc-result .price {
+        .pricing-header .price {
             font-size: 1.8em;
             font-weight: 800;
             color: #feca57;
-            display: block;
+            display: inline-block;
         }
-        .calc-result .price small {
-            font-size: 0.5em;
-            font-weight: 400;
-            color: #888;
+        .pricing-header .badge {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 1.2em;
+        }
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 15px;
+            flex-grow: 1;
+        }
+        .pricing-features li {
+            padding: 6px 0;
+            color: #ccc;
+            font-size: 0.9em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        .pricing-desc {
+            color: #aaa;
+            font-size: 0.95em;
+            font-style: italic;
+            margin: 10px 0 15px;
+        }
+        .btn-order {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #ff6b6b, #e94560);
+            color: #fff;
+            border: none;
+            border-radius: 40px;
+            font-size: 1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            align-self: center;
+            width: 100%;
+        }
+        .btn-order:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.4);
         }
 
         /* ---------- СХЕМА РАБОТЫ ---------- */
@@ -733,7 +726,8 @@
             font-size: 0.95em;
         }
         .modal-content .form-group input,
-        .modal-content .form-group textarea {
+        .modal-content .form-group textarea,
+        .modal-content .form-group select {
             width: 100%;
             padding: 14px 18px;
             border: 1px solid rgba(255, 255, 255, 0.12);
@@ -745,31 +739,14 @@
             transition: 0.3s;
         }
         .modal-content .form-group input:focus,
-        .modal-content .form-group textarea:focus {
+        .modal-content .form-group textarea:focus,
+        .modal-content .form-group select:focus {
             border-color: #ff6b6b;
             box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.15);
         }
         .modal-content .form-group textarea {
             resize: vertical;
             min-height: 80px;
-        }
-        .modal-content .btn-submit {
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #ff6b6b, #e94560);
-            color: #fff;
-            border: none;
-            border-radius: 60px;
-            font-size: 1.1em;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-            letter-spacing: 1px;
-            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.4);
-        }
-        .modal-content .btn-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.6);
         }
         .modal-content .form-checkbox {
             display: flex;
@@ -793,6 +770,24 @@
         .modal-content .form-checkbox label a {
             color: #feca57;
             text-decoration: underline;
+        }
+        .modal-content .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #ff6b6b, #e94560);
+            color: #fff;
+            border: none;
+            border-radius: 60px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.4);
+        }
+        .modal-content .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.6);
         }
         .modal-content .success-message {
             display: none;
@@ -1557,12 +1552,8 @@
             .floating-messengers .messenger-btn {
                 padding: 12px;
             }
-            .calc-tabs {
-                gap: 8px;
-            }
-            .calc-tab {
-                font-size: 0.8em;
-                padding: 8px 14px;
+            .pricing-grid {
+                grid-template-columns: 1fr;
             }
         }
         @media (max-width: 480px) {
@@ -1620,14 +1611,6 @@
             .scheme-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
-            }
-            .calc-tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-            .calc-tab {
-                width: 100%;
-                text-align: center;
             }
         }
     </style>
@@ -1830,50 +1813,60 @@
                 ⭐ <strong>Итог:</strong> вы получаете качественную вышивку без сюрпризов
             </p>
 
-            <!-- ===== КАЛЬКУЛЯТОР (С ВАШЕЙ ЦЕНОВОЙ СЕТКОЙ) ===== -->
-            <div class="calculator-block animate-on-scroll">
-                <h2>🧮 Рассчитайте стоимость вышивки</h2>
-                <p class="subtitle">Выберите свой тип заказа и параметры</p>
+            <!-- ===== ТАРИФЫ ===== -->
+            <div class="pricing-block animate-on-scroll">
+                <h2>Стоимость вышивки</h2>
+                <p class="pricing-subtitle">Выберите свой тип заказа</p>
 
-                <div class="calc-tabs">
-                    <button class="calc-tab active" data-tab="individual">Индивидуальный</button>
-                    <button class="calc-tab" data-tab="small">Мелкий опт (2–12 шт)</button>
-                    <button class="calc-tab" data-tab="large">Крупный опт (от 13 шт)</button>
-                </div>
+                <div class="pricing-grid">
+                    <!-- Индивидуальная вышивка -->
+                    <div class="pricing-card" onclick="openPricingForm('individual')">
+                        <div class="pricing-header">
+                            <h3>Индивидуальная вышивка</h3>
+                            <div class="price">от 1500 ₽</div>
+                            <span class="badge">⭐</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✅ Вышивка от 500 ₽ (если в заказе всего одно изделие)</li>
+                            <li>✅ Разработка программы для вышивки от 1000 ₽ (разрабатывается по готовому изображению один раз и может использоваться в дальнейших заказах)</li>
+                            <li>✅ Срок изготовления 1-2 дня</li>
+                        </ul>
+                        <p class="pricing-desc">Идеально для подарка или воплощения творческой идеи.</p>
+                        <button class="btn-order" onclick="event.stopPropagation(); openPricingForm('individual')">Заказать</button>
+                    </div>
 
-                <div class="calc-form" id="calcForm">
-                    <div class="form-group">
-                        <label>👕 Тип изделия</label>
-                        <select id="calcType">
-                            <option value="futbolka">Футболка</option>
-                            <option value="hudi">Худи / Свитшот</option>
-                            <option value="kepka">Кепка</option>
-                            <option value="kurtka">Куртка</option>
-                            <option value="other">Другое</option>
-                        </select>
+                    <!-- Мелкий опт -->
+                    <div class="pricing-card" onclick="openPricingForm('small')">
+                        <div class="pricing-header">
+                            <h3>Мелкий опт</h3>
+                            <div class="price">от 2500 ₽</div>
+                            <span class="badge">⭐⭐</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✅ Вышивка от 1500 ₽ за весь тираж (если в заказе 2-12 изделий)</li>
+                            <li>✅ Разработка программы для вышивки от 1000 ₽ (разрабатывается по готовому изображению один раз и может использоваться в дальнейших заказах)</li>
+                            <li>✅ Срок изготовления 1-3 дня</li>
+                        </ul>
+                        <p class="pricing-desc">Отлично подходит для корпоративов и промо-акций.</p>
+                        <button class="btn-order" onclick="event.stopPropagation(); openPricingForm('small')">Заказать</button>
                     </div>
-                    <div class="form-group">
-                        <label>📦 Количество</label>
-                        <input type="number" id="calcQuantity" value="1" min="1" max="1">
+
+                    <!-- Крупный опт -->
+                    <div class="pricing-card" onclick="openPricingForm('large')">
+                        <div class="pricing-header">
+                            <h3>Крупный опт</h3>
+                            <div class="price">Договорная</div>
+                            <span class="badge">⭐⭐⭐</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✅ Вышивка партии от 13 изделий</li>
+                            <li>✅ Разработка программы для вышивки от 1000 ₽ или бесплатно (разрабатывается по готовому изображению один раз и может использоваться в дальнейших заказах)</li>
+                            <li>✅ Срок изготовления обговаривается</li>
+                            <li>✅ Гибкие условия</li>
+                        </ul>
+                        <p class="pricing-desc">Для серьёзной работы.</p>
+                        <button class="btn-order" onclick="event.stopPropagation(); openPricingForm('large')">Заказать</button>
                     </div>
-                    <div class="form-group">
-                        <label>🎯 Сложность вышивки</label>
-                        <select id="calcComplexity">
-                            <option value="simple">Простая (надпись, маленький логотип)</option>
-                            <option value="medium" selected>Средняя (логотип средней сложности)</option>
-                            <option value="hard">Высокая (многоцветный рисунок, фото)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>📱 Ваш телефон или почта</label>
-                        <input type="text" id="calcContact" placeholder="+7 (___) ___-__-__">
-                    </div>
-                    <div class="calc-result">
-                        <span class="label">Примерная стоимость:</span>
-                        <span class="price" id="calcResult">от 1500 ₽</span>
-                        <span style="font-size: 0.8em; color: #888; display: block;">* Точный расчёт после согласования</span>
-                    </div>
-                    <button onclick="sendCalcRequest()" class="btn-primary" style="width: 100%;">🚀 Отправить заявку на расчёт</button>
                 </div>
             </div>
 
@@ -2254,6 +2247,49 @@
         </div>
     </div>
 
+    <!-- ====== ФОРМА ЗАЯВКИ ИЗ ТАРИФОВ ====== -->
+    <div class="modal-overlay" id="pricingModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closePricingModal()">✕</span>
+            <h2 id="pricingModalTitle">📩 Заказать вышивку</h2>
+            <p class="subtitle" id="pricingModalSubtitle">Оставьте контакты, и я свяжусь с вами</p>
+
+            <form id="pricingForm">
+                <div class="form-group">
+                    <label for="pricingName">Ваше имя</label>
+                    <input type="text" id="pricingName" placeholder="Например: Анна" required>
+                </div>
+                <div class="form-group">
+                    <label for="pricingPhone">📱 Номер телефона (или почта)</label>
+                    <input type="tel" id="pricingPhone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label for="pricingType">👕 Тип изделия</label>
+                    <select id="pricingType">
+                        <option value="Футболка">Футболка</option>
+                        <option value="Худи / Свитшот">Худи / Свитшот</option>
+                        <option value="Кепка">Кепка</option>
+                        <option value="Куртка">Куртка</option>
+                        <option value="Другое">Другое</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pricingQuantity">📦 Количество</label>
+                    <input type="number" id="pricingQuantity" value="1" min="1" max="1000" required>
+                </div>
+                <div class="form-group">
+                    <label for="pricingMessage">✏️ Дополнительная информация (необязательно)</label>
+                    <textarea id="pricingMessage" placeholder="Например: логотип компании, срочный заказ" rows="3"></textarea>
+                </div>
+                <div class="form-checkbox">
+                    <input type="checkbox" id="pricingConsent" required>
+                    <label for="pricingConsent">Я даю согласие на <a href="#" onclick="navigateTo('legal'); return false;">обработку персональных данных</a></label>
+                </div>
+                <button type="submit" class="btn-submit">🚀 Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
     <!-- ====== ЛАЙТБОКС ДЛЯ ФОТО ====== -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
         <span class="lightbox-close" onclick="closeLightbox()">✕</span>
@@ -2403,6 +2439,54 @@
                 }
             });
 
+            // ---------- ФОРМА ИЗ ТАРИФОВ ----------
+            let selectedTariff = '';
+
+            window.openPricingForm = function(tariff) {
+                selectedTariff = tariff;
+                const modal = document.getElementById('pricingModal');
+                const title = document.getElementById('pricingModalTitle');
+                const subtitle = document.getElementById('pricingModalSubtitle');
+
+                const tariffNames = {
+                    individual: 'Индивидуальная вышивка',
+                    small: 'Мелкий опт (2–12 шт)',
+                    large: 'Крупный опт (от 13 шт)'
+                };
+
+                title.textContent = `📩 Заказать: ${tariffNames[tariff]}`;
+                subtitle.textContent = 'Оставьте контакты, и я свяжусь с вами для уточнения деталей';
+
+                const quantityInput = document.getElementById('pricingQuantity');
+                if (tariff === 'individual') {
+                    quantityInput.value = 1;
+                    quantityInput.min = 1;
+                    quantityInput.max = 1;
+                } else if (tariff === 'small') {
+                    quantityInput.value = 2;
+                    quantityInput.min = 2;
+                    quantityInput.max = 12;
+                } else if (tariff === 'large') {
+                    quantityInput.value = 13;
+                    quantityInput.min = 13;
+                    quantityInput.max = 1000;
+                }
+
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+
+            window.closePricingModal = function() {
+                document.getElementById('pricingModal').classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            document.getElementById('pricingModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closePricingModal();
+                }
+            });
+
             // ---------- ЛАЙТБОКС ----------
             window.openLightbox = function(src) {
                 const lightbox = document.getElementById('lightbox');
@@ -2426,6 +2510,7 @@
                 if (e.key === 'Escape') {
                     closeModal();
                     closePopup();
+                    closePricingModal();
                     closeLightbox();
                 }
             });
@@ -2585,122 +2670,51 @@
                 });
             }
 
-            // ---------- КАЛЬКУЛЯТОР (С ВАШЕЙ ЦЕНОВОЙ СЕТКОЙ) ----------
-            window.calculatePrice = function() {
-                const type = document.getElementById('calcType').value;
-                const quantity = parseInt(document.getElementById('calcQuantity').value) || 1;
-                const complexity = document.getElementById('calcComplexity').value;
+            // ---------- ФОРМА ИЗ ТАРИФОВ (ОТПРАВКА) ----------
+            document.getElementById('pricingForm').addEventListener('submit', function(e) {
+                e.preventDefault();
 
-                // Стоимость стежка в зависимости от тиража
-                let stitchPrice = 0;
-                if (quantity >= 1 && quantity <= 2) stitchPrice = 0.051;
-                else if (quantity >= 3 && quantity <= 6) stitchPrice = 0.035;
-                else if (quantity >= 7 && quantity <= 20) stitchPrice = 0.033;
-                else if (quantity >= 21 && quantity <= 40) stitchPrice = 0.032;
-                else if (quantity >= 41 && quantity <= 100) stitchPrice = 0.030;
-                else if (quantity >= 101 && quantity <= 300) stitchPrice = 0.027;
-                else if (quantity >= 301 && quantity <= 500) stitchPrice = 0.024;
-                else if (quantity >= 501 && quantity <= 1000) stitchPrice = 0.022;
-                else stitchPrice = 0.020; // от 1001+
+                const name = document.getElementById('pricingName').value.trim();
+                const phone = document.getElementById('pricingPhone').value.trim();
+                const type = document.getElementById('pricingType').value;
+                const quantity = document.getElementById('pricingQuantity').value;
+                const message = document.getElementById('pricingMessage').value.trim();
+                const consent = document.getElementById('pricingConsent');
 
-                // Количество стежков в зависимости от типа и сложности
-                const typeStitches = {
-                    futbolka: 3000,
-                    hudi: 4000,
-                    kepka: 2500,
-                    kurtka: 5000,
-                    other: 3500
-                };
-                let baseStitches = typeStitches[type] || 3000;
-
-                const complexityMultiplier = {
-                    simple: 1,
-                    medium: 1.8,
-                    hard: 3
-                };
-
-                const totalStitches = Math.round(baseStitches * complexityMultiplier[complexity]);
-                let total = totalStitches * stitchPrice * quantity;
-
-                // Минимальная стоимость за заказ (для малых тиражей)
-                const minOrderPrice = 1500;
-
-                return Math.round(Math.max(total, minOrderPrice));
-            };
-
-            window.updatePrice = function() {
-                const result = document.getElementById('calcResult');
-                if (result) {
-                    result.textContent = `от ${calculatePrice()} ₽`;
-                }
-            };
-
-            document.querySelectorAll('#calcType, #calcQuantity, #calcComplexity').forEach(el => {
-                el.addEventListener('change', updatePrice);
-                el.addEventListener('input', updatePrice);
-            });
-            updatePrice();
-
-            // ВКЛАДКИ КАЛЬКУЛЯТОРА
-            const tabs = document.querySelectorAll('.calc-tab');
-            const quantityInput = document.getElementById('calcQuantity');
-
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    tabs.forEach(t => t.classList.remove('active'));
-                    this.classList.add('active');
-
-                    const tabName = this.dataset.tab;
-                    if (tabName === 'individual') {
-                        quantityInput.value = 1;
-                        quantityInput.min = 1;
-                        quantityInput.max = 1;
-                    } else if (tabName === 'small') {
-                        quantityInput.value = 2;
-                        quantityInput.min = 2;
-                        quantityInput.max = 12;
-                    } else if (tabName === 'large') {
-                        quantityInput.value = 13;
-                        quantityInput.min = 13;
-                        quantityInput.max = 1000;
-                    }
-                    updatePrice();
-                });
-            });
-
-            window.sendCalcRequest = function() {
-                const contact = document.getElementById('calcContact').value.trim();
-                if (!contact) {
-                    alert('Пожалуйста, укажите телефон или почту для отправки расчёта');
+                if (!consent.checked) {
+                    alert('Пожалуйста, дайте согласие на обработку персональных данных');
                     return;
                 }
 
-                const type = document.getElementById('calcType').value;
-                const quantity = document.getElementById('calcQuantity').value;
-                const complexity = document.getElementById('calcComplexity').value;
-                const price = calculatePrice();
+                const digits = phone.replace(/\D/g, '');
+                if (digits.length < 10) {
+                    alert('Пожалуйста, введите корректный номер телефона');
+                    return;
+                }
 
-                const typeLabels = {
-                    futbolka: 'Футболка',
-                    hudi: 'Худи/Свитшот',
-                    kepka: 'Кепка',
-                    kurtka: 'Куртка',
-                    other: 'Другое'
-                };
-                const complexityLabels = {
-                    simple: 'Простая',
-                    medium: 'Средняя',
-                    hard: 'Высокая'
+                const tariffNames = {
+                    individual: 'Индивидуальная вышивка',
+                    small: 'Мелкий опт (2–12 шт)',
+                    large: 'Крупный опт (от 13 шт)'
                 };
 
-                const message =
-                    `📊 *Заявка с калькулятора вышивки!*\n\n👕 *Тип:* ${typeLabels[type] || type}\n📦 *Количество:* ${quantity} шт.\n🎯 *Сложность:* ${complexityLabels[complexity] || complexity}\n💰 *Примерная цена:* ${price} ₽\n📱 *Контакт:* ${contact}\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
+                const text =
+                    `📩 *Заявка с тарифа!*\n\n` +
+                    `🏷️ *Тариф:* ${tariffNames[selectedTariff]}\n` +
+                    `👤 *Имя:* ${name || 'Не указано'}\n` +
+                    `📱 *Телефон:* ${phone}\n` +
+                    `👕 *Тип изделия:* ${type}\n` +
+                    `📦 *Количество:* ${quantity} шт.\n` +
+                    `💬 *Дополнительно:* ${message || '—'}\n` +
+                    `📋 *Согласие на обработку:* Да\n` +
+                    `🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
 
-                sendToTelegram(message).catch(() => {});
+                sendToTelegram(text).catch(() => {});
 
-                alert('✅ Заявка отправлена! Я свяжусь с вами с точным расчётом.');
-                document.getElementById('calcContact').value = '';
-            };
+                alert('✅ Заявка отправлена! Я свяжусь с вами в ближайшее время.');
+                closePricingModal();
+                this.reset();
+            });
 
             // ---------- ПОРТФОЛИО (КАТЕГОРИИ) ----------
             const hatsGallery = document.getElementById('gallery-hats');
