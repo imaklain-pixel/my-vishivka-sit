@@ -398,7 +398,7 @@
             font-size: 0.9em;
         }
 
-        /* ---------- КАЛЬКУЛЯТОР ---------- */
+        /* ---------- КАЛЬКУЛЯТОР (УЛУЧШЕННЫЙ) ---------- */
         .calculator-block {
             background: rgba(255, 255, 255, 0.04);
             border-radius: 24px;
@@ -419,6 +419,35 @@
         .calculator-block .subtitle {
             color: #aaa;
             margin-bottom: 25px;
+        }
+        /* ВКЛАДКИ КАЛЬКУЛЯТОРА */
+        .calc-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+        .calc-tab {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
+            color: #aaa;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        .calc-tab:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+        .calc-tab.active {
+            background: #ff6b6b;
+            border-color: #ff6b6b;
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.3);
         }
         .calc-form {
             max-width: 500px;
@@ -472,6 +501,66 @@
             font-size: 0.5em;
             font-weight: 400;
             color: #888;
+        }
+
+        /* ---------- СХЕМА РАБОТЫ ---------- */
+        .work-scheme {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            margin: 40px 0;
+            text-align: center;
+        }
+        .work-scheme h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .scheme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .scheme-step {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 16px;
+            padding: 25px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+            position: relative;
+        }
+        .scheme-step:hover {
+            border-color: #ff6b6b;
+            transform: translateY(-5px);
+        }
+        .scheme-step .step-number {
+            display: inline-block;
+            background: #ff6b6b;
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: 800;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 50%;
+            margin-bottom: 12px;
+        }
+        .scheme-step .step-icon {
+            font-size: 2.8em;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .scheme-step h4 {
+            color: #fff;
+            font-size: 1.1em;
+            margin-bottom: 6px;
+        }
+        .scheme-step p {
+            color: #aaa;
+            font-size: 0.9em;
+            margin: 0;
         }
 
         /* ---------- ЛИПКИЙ БЛОК ---------- */
@@ -541,7 +630,7 @@
             font-style: normal;
         }
 
-        /* ---------- РАСКРЫТИЕ КОНТРОЛЯ КАЧЕСТВА ---------- */
+        /* ---------- РАСКРЫТИЕ КОНТРОЛЯ ---------- */
         .quality-details {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -734,7 +823,7 @@
             }
         }
 
-        /* ---------- ПОРТФОЛИО (КАТЕГОРИИ) ---------- */
+        /* ---------- ПОРТФОЛИО ---------- */
         .category-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -928,7 +1017,7 @@
             box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
         }
 
-        /* ---------- ОТЗЫВЫ (БЕЗ ФОТО) ---------- */
+        /* ---------- ОТЗЫВЫ ---------- */
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1351,7 +1440,7 @@
             box-shadow: 0 6px 30px rgba(233, 69, 96, 0.6);
         }
 
-        /* ---------- ПЛАВАЮЩИЕ МЕССЕНДЖЕРЫ (СЛЕВА) ---------- */
+        /* ---------- ПЛАВАЮЩИЕ МЕССЕНДЖЕРЫ ---------- */
         .floating-messengers {
             position: fixed;
             bottom: 25px;
@@ -1469,6 +1558,13 @@
             .floating-messengers .messenger-btn {
                 padding: 12px;
             }
+            .calc-tabs {
+                gap: 8px;
+            }
+            .calc-tab {
+                font-size: 0.8em;
+                padding: 8px 14px;
+            }
         }
         @media (max-width: 480px) {
             .logo {
@@ -1522,26 +1618,33 @@
                 bottom: 80px;
                 left: 15px;
             }
+            .scheme-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .calc-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            .calc-tab {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ====== ПЛАВАЮЩИЕ МЕССЕНДЖЕРЫ (СЛЕВА) ====== -->
+    <!-- ====== ПЛАВАЮЩИЕ МЕССЕНДЖЕРЫ ====== -->
     <div class="floating-messengers">
-        <!-- WHATSAPP -->
         <a href="https://wa.me/79014030785" target="_blank" class="messenger-btn wa" aria-label="WhatsApp">
             <svg viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.069-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.149-.43.05-.197-.099-.832-.308-1.584-.984-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.445-1.076-.612-1.47-.16-.38-.323-.319-.445-.319-.114 0-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.711 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
             <span class="label">WhatsApp</span>
         </a>
-
-        <!-- TELEGRAM (НОВЫЙ НОМЕР) -->
         <a href="https://t.me/+79776975580" target="_blank" class="messenger-btn tg" aria-label="Telegram">
             <svg viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.243 3.306-1.878 3.382-1.904.077-.026.178-.058.246.015.07.072.06.19-.022.34-.176.32-1.173 1.15-1.767 1.706-.15.14-.256.244-.258.27-.006.032.092.063.209.102.341.116.735.273 1.052.451.148.083.264.123.374.114.077-.006.174-.038.267-.14.244-.27 1.03-1.16 1.645-1.874.615-.714.793-1.178.808-1.356.006-.112-.015-.205-.1-.256-.124-.073-.36-.104-.518-.104-.32 0-.898.19-1.139.38z"/></svg>
             <span class="label">Telegram</span>
         </a>
-
-        <!-- MAX -->
         <a href="https://max.ru/79014030785" target="_blank" class="messenger-btn max" aria-label="MAX">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
                 <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
@@ -1551,8 +1654,6 @@
             </svg>
             <span class="label">MAX</span>
         </a>
-
-        <!-- INSTAGRAM -->
         <a href="https://www.instagram.com/fancywork008/" target="_blank" class="messenger-btn ig" aria-label="Instagram">
             <svg viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.703.01 5.556 0 5.829 0 8s.01 2.444.048 3.297c.04.853.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.943.372C5.556 15.99 5.829 16 8 16s2.444-.01 3.297-.048c.853-.04 1.433-.174 1.942-.372a3.9 3.9 0 0 0 1.417-.923c.445-.445.719-.89.923-1.417.198-.51.333-1.09.372-1.943C15.99 10.444 16 10.171 16 8s-.01-2.444-.048-3.297c-.04-.853-.174-1.433-.372-1.942a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.09-.333-1.943-.372C10.444.01 10.171 0 8 0zm0 1.441c2.136 0 2.39.008 3.233.047.78.036 1.203.166 1.485.276.374.146.645.318.92.593.275.275.447.546.593.92.11.282.24.705.276 1.485.039.843.047 1.097.047 3.233s-.008 2.39-.047 3.233c-.036.78-.166 1.203-.276 1.485-.146.374-.318.645-.593.92-.275.275-.546.447-.92.593-.282.11-.705.24-1.485.276-.843.039-1.097.047-3.233.047s-2.39-.008-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.593 2.5 2.5 0 0 1-.593-.92c-.11-.282-.24-.705-.276-1.485-.039-.843-.047-1.097-.047-3.233s.008-2.39.047-3.233c.036-.78.166-1.203.276-1.485.146-.374.318-.645.593-.92.275-.275.546-.447.92-.593.282-.11.705-.24 1.485-.276.843-.039 1.097-.047 3.233-.047zm0 2.452a3.497 3.497 0 1 0 0 6.994 3.497 3.497 0 0 0 0-6.994zm0 1.441a2.056 2.056 0 1 1 0 4.112 2.056 2.056 0 0 1 0-4.112zm4.058-.716a.817.817 0 1 1-1.634 0 .817.817 0 0 1 1.634 0z"/></svg>
             <span class="label">Instagram</span>
@@ -1610,7 +1711,7 @@
         <div class="page active" id="page-home">
             <section class="hero-bg">
                 <div class="hero-content">
-                    <h1>Вышивка на заказ <br><strong>от 1 штуки до опта</strong></h1>
+                    <h1>Вышивка на заказ <br><strong>от 1 штуки с гарантией качества</strong></h1>
 
                     <div class="utp-facts">
                         <span class="fact">✅ Трёхуровневый контроль качества</span>
@@ -1674,6 +1775,38 @@
                 </div>
             </div>
 
+            <!-- ===== СХЕМА РАБОТЫ ===== -->
+            <div class="work-scheme animate-on-scroll">
+                <h2>Как мы работаем</h2>
+                <p style="color: #aaa; margin-bottom: 30px;">4 простых шага к вашей идеальной вышивке</p>
+                <div class="scheme-grid">
+                    <div class="scheme-step">
+                        <div class="step-number">1</div>
+                        <span class="step-icon">📩</span>
+                        <h4>Заявка</h4>
+                        <p>Вы оставляете заявку на сайте, в мессенджере или по телефону.</p>
+                    </div>
+                    <div class="scheme-step">
+                        <div class="step-number">2</div>
+                        <span class="step-icon">🤝</span>
+                        <h4>Детали и цена</h4>
+                        <p>Мы обсуждаем дизайн, тираж, сроки и фиксируем стоимость.</p>
+                    </div>
+                    <div class="scheme-step">
+                        <div class="step-number">3</div>
+                        <span class="step-icon">🎨</span>
+                        <h4>Разработка дизайна</h4>
+                        <p>Мы готовим макет вышивки и утверждаем его с вами.</p>
+                    </div>
+                    <div class="scheme-step">
+                        <div class="step-number">4</div>
+                        <span class="step-icon">🚀</span>
+                        <h4>Выполнение заказа</h4>
+                        <p>Вышиваем ваш заказ в срок и доставляем удобным способом.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- ===== РАСКРЫТИЕ КОНТРОЛЯ ===== -->
             <h2>Трёхуровневый контроль качества — это честно и надёжно</h2>
             <p style="margin-bottom: 10px;">Мы проверяем каждый заказ на всех этапах, чтобы вы получили идеальный результат.</p>
@@ -1698,11 +1831,18 @@
                 ⭐ <strong>Итог:</strong> вы получаете качественную вышивку без сюрпризов
             </p>
 
-            <!-- ===== КАЛЬКУЛЯТОР ===== -->
+            <!-- ===== КАЛЬКУЛЯТОР (УЛУЧШЕННЫЙ) ===== -->
             <div class="calculator-block animate-on-scroll">
                 <h2>🧮 Рассчитайте стоимость вышивки</h2>
-                <p class="subtitle">Выберите параметры, и я пришлю вам примерную цену</p>
-                <div class="calc-form">
+                <p class="subtitle">Выберите свой тип заказа и параметры</p>
+
+                <div class="calc-tabs">
+                    <button class="calc-tab active" data-tab="individual">Индивидуальный</button>
+                    <button class="calc-tab" data-tab="small">Мелкий опт (2–12 шт)</button>
+                    <button class="calc-tab" data-tab="large">Крупный опт (от 13 шт)</button>
+                </div>
+
+                <div class="calc-form" id="calcForm">
                     <div class="form-group">
                         <label>👕 Тип изделия</label>
                         <select id="calcType">
@@ -1715,7 +1855,7 @@
                     </div>
                     <div class="form-group">
                         <label>📦 Количество</label>
-                        <input type="number" id="calcQuantity" value="1" min="1" max="1000">
+                        <input type="number" id="calcQuantity" value="1" min="1" max="1">
                     </div>
                     <div class="form-group">
                         <label>🎯 Сложность вышивки</label>
@@ -1732,6 +1872,7 @@
                     <div class="calc-result">
                         <span class="label">Примерная стоимость:</span>
                         <span class="price" id="calcResult">от 800 ₽</span>
+                        <span style="font-size: 0.8em; color: #888; display: block;">* Точный расчёт после согласования</span>
                     </div>
                     <button onclick="sendCalcRequest()" class="btn-primary" style="width: 100%;">🚀 Отправить заявку на расчёт</button>
                 </div>
@@ -1783,7 +1924,7 @@
             </div>
         </div>
 
-        <!-- ===== ПОРТФОЛИО (КАТЕГОРИИ) ===== -->
+        <!-- ===== ПОРТФОЛИО ===== -->
         <div class="page" id="page-portfolio">
             <h1>Наши работы</h1>
             <p>Выберите категорию, чтобы посмотреть фото.</p>
@@ -1814,7 +1955,7 @@
             <div id="gallery-clothing" class="gallery-grid"></div>
         </div>
 
-        <!-- ===== ОТЗЫВЫ (БЕЗ ФОТО) ===== -->
+        <!-- ===== ОТЗЫВЫ ===== -->
         <div class="page" id="page-reviews">
             <h1>Отзывы наших клиентов</h1>
             <p>Мы только открыли студию, но уже получили первые отзывы. Оставьте свой — он пройдёт модерацию и появится на сайте.</p>
@@ -2180,7 +2321,7 @@
                 }
             });
 
-            // ---------- КНОПКА НАВЕРХ ----------
+            // ---------- КНОПКА "НАВЕРХ" ----------
             const scrollBtn = document.getElementById('scrollTopBtn');
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 400) {
@@ -2445,7 +2586,7 @@
                 });
             }
 
-            // ---------- КАЛЬКУЛЯТОР ----------
+            // ---------- КАЛЬКУЛЯТОР (УЛУЧШЕННЫЙ) ----------
             window.calculatePrice = function() {
                 const type = document.getElementById('calcType').value;
                 const quantity = parseInt(document.getElementById('calcQuantity').value) || 1;
@@ -2485,6 +2626,33 @@
                 el.addEventListener('input', updatePrice);
             });
             updatePrice();
+
+            // ВКЛАДКИ КАЛЬКУЛЯТОРА
+            const tabs = document.querySelectorAll('.calc-tab');
+            const quantityInput = document.getElementById('calcQuantity');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const tabName = this.dataset.tab;
+                    if (tabName === 'individual') {
+                        quantityInput.value = 1;
+                        quantityInput.min = 1;
+                        quantityInput.max = 1;
+                    } else if (tabName === 'small') {
+                        quantityInput.value = 2;
+                        quantityInput.min = 2;
+                        quantityInput.max = 12;
+                    } else if (tabName === 'large') {
+                        quantityInput.value = 13;
+                        quantityInput.min = 13;
+                        quantityInput.max = 1000;
+                    }
+                    updatePrice();
+                });
+            });
 
             window.sendCalcRequest = function() {
                 const contact = document.getElementById('calcContact').value.trim();
@@ -2763,6 +2931,5 @@
 
         });
     </script>
-
 </body>
 </html>
