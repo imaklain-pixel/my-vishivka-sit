@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <title>Вышивка Стиль | Студия вышивки</title>
     <style>
         /* ---------- БАЗА ---------- */
@@ -12,96 +12,83 @@
             box-sizing: border-box;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-            color: #fff;
-            background: #0a0a1a;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f8f6f2;
+            color: #2d2a24;
             line-height: 1.6;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
         a {
-            color: #feca57;
+            color: #e94e77;
             text-decoration: none;
+            transition: color 0.2s;
         }
         a:hover {
-            color: #ff6b6b;
+            color: #d43b64;
         }
 
-        /* ---------- ШАПКА ---------- */
+        /* ---------- ШАПКА (СВЕТЛАЯ) ---------- */
         header {
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #2a0a3e 100%);
-            padding: 18px 30px;
+            background: rgba(255, 253, 250, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 14px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 10px;
-            box-shadow: 0 4px 30px rgba(233, 69, 96, 0.3);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 3px solid #ff6b6b;
+            border-bottom: 1px solid rgba(233, 78, 119, 0.15);
             transition: all 0.3s;
         }
-        header.scrolled {
-            background: rgba(10, 10, 26, 0.92);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.6);
-        }
         .logo {
-            color: #fff;
-            font-size: 1.5em;
-            font-weight: 300;
-            letter-spacing: 4px;
-            text-transform: uppercase;
+            color: #2d2a24;
+            font-size: 1.4em;
+            font-weight: 600;
+            letter-spacing: -0.5px;
             cursor: pointer;
-            text-shadow: 0 0 30px rgba(233, 69, 96, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
         .logo span {
-            background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff);
-            background-size: 300% 300%;
+            background: linear-gradient(135deg, #e94e77, #f5a623);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            animation: gradientShift 4s ease-in-out infinite;
-        }
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            font-weight: 700;
         }
         .logo .diamond {
-            color: #feca57;
-            -webkit-text-fill-color: #feca57;
+            color: #f5a623;
+            -webkit-text-fill-color: #f5a623;
+            font-size: 0.8em;
         }
 
         .nav-wrapper {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 12px;
             flex-wrap: wrap;
         }
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 14px;
             flex-wrap: wrap;
         }
         nav a {
-            color: #dfe6e9;
-            font-size: 0.95em;
+            color: #4a4640;
+            font-size: 0.9em;
             font-weight: 500;
-            padding: 5px 0;
+            padding: 4px 0;
             border-bottom: 2px solid transparent;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.25s;
             position: relative;
         }
         nav a::after {
@@ -111,7 +98,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #ff6b6b, #feca57);
+            background: linear-gradient(90deg, #e94e77, #f5a623);
             transition: width 0.3s;
         }
         nav a:hover::after,
@@ -120,71 +107,56 @@
         }
         nav a:hover,
         nav a.active {
-            color: #feca57;
+            color: #e94e77;
         }
 
         .social-header {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
         }
         .social-header a {
-            color: #ccc;
-            transition: 0.3s;
+            color: #6b6560;
+            transition: 0.25s;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(233, 78, 119, 0.06);
+            border: 1px solid rgba(233, 78, 119, 0.08);
         }
         .social-header a:hover {
-            color: #fff;
-            transform: scale(1.1);
-            border-color: #ff6b6b;
-        }
-        .social-header .ig:hover {
-            background: radial-gradient(circle at 30% 30%, #fdf497, #fdf497 25%, #fd5949 50%, #d6249f 75%, #285aeb 100%);
-            border-color: transparent;
-        }
-        .social-header .wa:hover {
-            background: #25D366;
-            border-color: transparent;
-        }
-        .social-header .tg:hover {
-            background: #0088cc;
-            border-color: transparent;
-        }
-        .social-header .max:hover {
-            background: linear-gradient(135deg, #1a1a2e, #6a0dad);
-            border-color: transparent;
+            color: #e94e77;
+            transform: scale(1.05);
+            border-color: #e94e77;
+            background: rgba(233, 78, 119, 0.1);
         }
         .social-header svg {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             fill: currentColor;
         }
 
         /* ---------- ОСНОВНОЙ КОНТЕНТ ---------- */
         .breadcrumbs {
             max-width: 1100px;
-            margin: 20px auto 0;
+            margin: 16px auto 0;
             padding: 0 20px;
-            font-size: 0.85em;
-            color: #888;
+            font-size: 0.8em;
+            color: #9a9490;
         }
         .page-content {
             max-width: 1100px;
-            margin: 20px auto 0;
+            margin: 12px auto 0;
             padding: 0 20px 60px;
             flex: 1;
             width: 100%;
         }
         .page {
             display: none;
-            animation: fadeIn 0.6s ease;
+            animation: fadeIn 0.5s ease;
         }
         .page.active {
             display: block;
@@ -192,7 +164,7 @@
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -200,52 +172,43 @@
             }
         }
         .page h1 {
-            font-size: 2.6em;
-            font-weight: 300;
-            margin-bottom: 15px;
-            border-left: 5px solid #ff6b6b;
-            padding-left: 20px;
-            background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientShift 5s ease-in-out infinite;
+            font-size: 2.2em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #2d2a24;
+            letter-spacing: -0.5px;
         }
         .page h2 {
-            font-size: 2em;
-            font-weight: 300;
-            margin: 30px 0 15px;
-            color: #fff;
-            text-shadow: 0 0 20px rgba(233, 69, 96, 0.3);
+            font-size: 1.6em;
+            font-weight: 600;
+            margin: 30px 0 12px;
+            color: #2d2a24;
         }
         .page p {
-            color: #ddd;
-            margin-bottom: 15px;
-            font-size: 1.1em;
+            color: #4a4640;
+            margin-bottom: 14px;
+            font-size: 1em;
         }
         .page p strong {
-            color: #feca57;
+            color: #e94e77;
         }
 
-        /* ---------- ГЛАВНЫЙ ЭКРАН С НИТКАМИ ---------- */
+        /* ---------- ГЛАВНЫЙ ЭКРАН (СВЕТЛЫЙ) ---------- */
         .hero-bg {
-            background: radial-gradient(ellipse at 20% 50%, rgba(106, 13, 173, 0.5) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 50%, rgba(0, 210, 255, 0.3) 0%, transparent 60%),
-                radial-gradient(ellipse at 50% 100%, rgba(233, 69, 96, 0.4) 0%, transparent 50%),
-                linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #2a0a3e 100%);
-            min-height: 75vh;
+            background: linear-gradient(145deg, #fff9f5 0%, #fff3ed 50%, #fce9e0 100%);
+            min-height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 60px 20px;
-            color: white;
+            padding: 50px 20px;
+            border-radius: 24px;
+            margin-bottom: 30px;
             position: relative;
             overflow: hidden;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(233, 78, 119, 0.08);
+            box-shadow: 0 4px 30px rgba(233, 78, 119, 0.06);
         }
         .hero-bg::before {
             content: '';
@@ -255,416 +218,411 @@
             right: 0;
             bottom: 0;
             background: url('https://i5.storeland.net/2/3710/137093170/afacdb/vyshivalnye-nitki-madeira-rayon-40-1000m.png') center/cover no-repeat;
-            opacity: 0.12;
-            mix-blend-mode: screen;
-            animation: floatBg 20s ease-in-out infinite alternate;
+            opacity: 0.04;
+            mix-blend-mode: multiply;
+            animation: floatBg 25s ease-in-out infinite alternate;
         }
         @keyframes floatBg {
             0% {
-                transform: scale(1) rotate(0deg);
-            }
-            50% {
-                transform: scale(1.1) rotate(2deg);
+                transform: scale(1) rotate(-1deg);
             }
             100% {
-                transform: scale(1) rotate(0deg);
+                transform: scale(1.05) rotate(1deg);
             }
         }
         .hero-bg .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 700px;
         }
         .hero-bg h1 {
-            font-size: clamp(2.8em, 9vw, 5em);
-            font-weight: 200;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-            text-shadow: 0 4px 40px rgba(0, 0, 0, 0.8);
+            font-size: clamp(2.4em, 7vw, 4em);
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+            color: #2d2a24;
         }
         .hero-bg h1 strong {
-            background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff);
-            background-size: 300% 300%;
+            background: linear-gradient(135deg, #e94e77, #f5a623);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 900;
-            animation: gradientShift 4s ease-in-out infinite;
         }
         .hero-bg p {
-            font-size: clamp(1.1em, 2.2vw, 1.5em);
-            color: #e0e0e0;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
-            margin-bottom: 30px;
+            font-size: clamp(1em, 1.8vw, 1.3em);
+            color: #4a4640;
+            margin-bottom: 24px;
+            opacity: 0.9;
         }
 
         .utp-facts {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
-            margin: 25px 0 20px;
+            gap: 10px;
+            margin: 16px 0 20px;
         }
         .utp-facts .fact {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 10px 20px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 107, 107, 0.25);
-            font-size: 0.9em;
-            color: #ddd;
-            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 6px 18px;
+            border-radius: 40px;
+            border: 1px solid rgba(233, 78, 119, 0.12);
+            font-size: 0.85em;
+            color: #4a4640;
+            transition: 0.25s;
+            font-weight: 500;
         }
         .utp-facts .fact:hover {
-            border-color: #feca57;
-            transform: scale(1.05);
-            background: rgba(255, 255, 255, 0.08);
+            border-color: #e94e77;
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
         }
         .utp-facts .fact.gold {
-            border-color: rgba(254, 202, 87, 0.3);
+            border-color: rgba(245, 166, 35, 0.3);
         }
         .utp-facts .fact.purple {
-            border-color: rgba(106, 13, 173, 0.5);
+            border-color: rgba(180, 100, 200, 0.25);
         }
 
         .btn-primary {
             display: inline-block;
-            padding: 18px 50px;
-            background: linear-gradient(135deg, #ff6b6b, #e94560);
-            color: #fff;
+            padding: 16px 44px;
+            background: linear-gradient(135deg, #e94e77, #d43b64);
+            color: #fff !important;
             border: none;
-            border-radius: 60px;
-            font-size: 1.1em;
-            font-weight: 800;
-            cursor: pointer;
-            box-shadow: 0 8px 40px rgba(233, 69, 96, 0.6);
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .btn-primary:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 12px 60px rgba(233, 69, 96, 0.9);
-        }
-        .btn-secondary {
-            display: inline-block;
-            padding: 16px 40px;
-            background: transparent;
-            color: #fff;
-            border: 2px solid #feca57;
             border-radius: 60px;
             font-size: 1em;
             font-weight: 700;
             cursor: pointer;
+            box-shadow: 0 6px 24px rgba(233, 78, 119, 0.25);
             transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            text-transform: none;
+            letter-spacing: 0.3px;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 32px rgba(233, 78, 119, 0.35);
+        }
+        .btn-secondary {
+            display: inline-block;
+            padding: 14px 36px;
+            background: transparent;
+            color: #2d2a24;
+            border: 2px solid #e94e77;
+            border-radius: 60px;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
         }
         .btn-secondary:hover {
-            background: rgba(254, 202, 87, 0.15);
+            background: rgba(233, 78, 119, 0.06);
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(254, 202, 87, 0.2);
+            box-shadow: 0 6px 20px rgba(233, 78, 119, 0.1);
         }
         .hero-buttons {
             display: flex;
-            gap: 20px;
+            gap: 16px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
-        /* ---------- СЧЁТЧИК ---------- */
+        /* ---------- СЧЁТЧИК (СВЕТЛЫЙ) ---------- */
         .counter-block {
             display: flex;
             justify-content: center;
             gap: 40px;
             flex-wrap: wrap;
-            margin: 30px 0;
-            padding: 30px 20px;
-            background: rgba(255, 255, 255, 0.03);
+            margin: 20px 0 30px;
+            padding: 24px 20px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(233, 78, 119, 0.06);
         }
         .counter-item {
             text-align: center;
         }
         .counter-item .number {
-            font-size: 2.5em;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ff6b6b, #feca57);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #e94e77;
             display: block;
+            line-height: 1.2;
         }
         .counter-item .label {
-            color: #aaa;
-            font-size: 0.9em;
+            color: #6b6560;
+            font-size: 0.85em;
+            font-weight: 500;
         }
 
-        /* ---------- ТАРИФЫ ---------- */
+        /* ---------- ТАРИФЫ (СВЕТЛЫЕ КАРТОЧКИ) ---------- */
         .pricing-block {
-            margin: 40px 0;
+            margin: 30px 0;
             text-align: center;
         }
         .pricing-block h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
+            font-size: 1.8em;
+            margin-bottom: 6px;
         }
         .pricing-subtitle {
-            color: #aaa;
-            margin-bottom: 30px;
+            color: #6b6560;
+            margin-bottom: 24px;
         }
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
             max-width: 1100px;
             margin: 0 auto;
         }
         .pricing-card {
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(8px);
+            background: #ffffff;
             border-radius: 20px;
-            padding: 30px 25px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.4s;
+            padding: 28px 24px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s;
             cursor: pointer;
             text-align: left;
             display: flex;
             flex-direction: column;
         }
         .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: #ff6b6b;
-            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.15);
-            background: rgba(255, 255, 255, 0.07);
-        }
-        .pricing-header {
-            margin-bottom: 15px;
+            transform: translateY(-6px);
+            border-color: #e94e77;
+            box-shadow: 0 12px 40px rgba(233, 78, 119, 0.08);
         }
         .pricing-header h3 {
-            font-size: 1.3em;
-            color: #fff;
-            margin-bottom: 4px;
+            font-size: 1.2em;
+            color: #2d2a24;
+            margin-bottom: 2px;
         }
         .pricing-header .price {
-            font-size: 1.8em;
-            font-weight: 800;
-            color: #feca57;
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #e94e77;
             display: inline-block;
         }
         .pricing-header .badge {
             display: inline-block;
-            margin-left: 10px;
-            font-size: 1.2em;
+            margin-left: 8px;
+            font-size: 1em;
         }
         .pricing-features {
             list-style: none;
             padding: 0;
-            margin: 10px 0 15px;
+            margin: 12px 0 14px;
             flex-grow: 1;
         }
         .pricing-features li {
-            padding: 6px 0;
-            color: #ccc;
+            padding: 5px 0;
+            color: #4a4640;
             font-size: 0.9em;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
         }
         .pricing-features li:last-child {
             border-bottom: none;
         }
         .pricing-desc {
-            color: #aaa;
-            font-size: 0.95em;
+            color: #6b6560;
+            font-size: 0.9em;
             font-style: italic;
-            margin: 10px 0 15px;
+            margin: 6px 0 14px;
         }
         .btn-order {
             display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #ff6b6b, #e94560);
-            color: #fff;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #e94e77, #d43b64);
+            color: #fff !important;
             border: none;
             border-radius: 40px;
-            font-size: 1em;
-            font-weight: 700;
+            font-size: 0.95em;
+            font-weight: 600;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.25s;
             align-self: center;
             width: 100%;
+            text-align: center;
         }
         .btn-order:hover {
             transform: scale(1.02);
-            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.4);
+            box-shadow: 0 6px 20px rgba(233, 78, 119, 0.25);
         }
 
         /* ---------- СХЕМА РАБОТЫ ---------- */
         .work-scheme {
-            background: rgba(255, 255, 255, 0.03);
+            background: #ffffff;
             border-radius: 24px;
-            padding: 40px 30px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            margin: 40px 0;
+            padding: 32px 24px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+            margin: 30px 0;
             text-align: center;
         }
         .work-scheme h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
+            font-size: 1.6em;
+            margin-bottom: 6px;
         }
         .scheme-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
             max-width: 900px;
-            margin: 0 auto;
+            margin: 20px auto 0;
         }
         .scheme-step {
-            background: rgba(255, 255, 255, 0.04);
+            background: #f8f6f2;
             border-radius: 16px;
-            padding: 25px 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.3s;
-            position: relative;
+            padding: 20px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: 0.25s;
         }
         .scheme-step:hover {
-            border-color: #ff6b6b;
-            transform: translateY(-5px);
+            border-color: #e94e77;
+            transform: translateY(-4px);
+            background: #fff;
         }
         .scheme-step .step-number {
             display: inline-block;
-            background: #ff6b6b;
+            background: #e94e77;
             color: #fff;
-            font-size: 1.2em;
-            font-weight: 800;
-            width: 36px;
-            height: 36px;
-            line-height: 36px;
+            font-size: 1em;
+            font-weight: 700;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
             border-radius: 50%;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .scheme-step .step-icon {
-            font-size: 2.8em;
+            font-size: 2.2em;
             display: block;
-            margin-bottom: 8px;
-        }
-        .scheme-step h4 {
-            color: #fff;
-            font-size: 1.1em;
             margin-bottom: 6px;
         }
+        .scheme-step h4 {
+            color: #2d2a24;
+            font-size: 1em;
+            margin-bottom: 4px;
+        }
         .scheme-step p {
-            color: #aaa;
-            font-size: 0.9em;
+            color: #6b6560;
+            font-size: 0.85em;
             margin: 0;
         }
 
-        /* ---------- ЛИПКИЙ БЛОК ---------- */
+        /* ---------- ЛИПКИЙ БЛОК (WHY US) ---------- */
         .why-us {
-            background: rgba(255, 255, 255, 0.03);
+            background: #ffffff;
             border-radius: 24px;
-            padding: 40px 30px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            margin: 30px 0;
+            padding: 32px 24px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+            margin: 24px 0;
             text-align: center;
-            transition: 0.5s;
+            transition: 0.3s;
         }
         .why-us:hover {
-            border-color: #feca57;
+            border-color: rgba(233, 78, 119, 0.1);
         }
         .why-us h2 {
-            font-size: 2em;
-            margin-bottom: 25px;
+            font-size: 1.6em;
+            margin-bottom: 20px;
         }
         .why-us-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
             max-width: 900px;
             margin: 0 auto;
         }
         .why-us-item {
-            background: rgba(255, 255, 255, 0.04);
+            background: #f8f6f2;
             border-radius: 16px;
-            padding: 25px 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.4s;
+            padding: 22px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: 0.25s;
         }
         .why-us-item:hover {
-            border-color: #ff6b6b;
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.08);
+            border-color: #e94e77;
+            transform: translateY(-4px);
+            background: #fff;
         }
         .why-us-item .icon {
-            font-size: 2.8em;
+            font-size: 2.2em;
             display: block;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
         .why-us-item h4 {
-            color: #fff;
-            font-size: 1.1em;
-            margin-bottom: 6px;
+            color: #2d2a24;
+            font-size: 1em;
+            margin-bottom: 4px;
         }
         .why-us-item p {
-            color: #aaa;
-            font-size: 0.9em;
+            color: #6b6560;
+            font-size: 0.85em;
             margin: 0;
         }
         .why-us .owner-quote {
-            margin-top: 25px;
-            padding: 20px;
-            background: rgba(255, 107, 107, 0.08);
+            margin-top: 20px;
+            padding: 18px 22px;
+            background: rgba(233, 78, 119, 0.04);
             border-radius: 16px;
-            border-left: 4px solid #ff6b6b;
+            border-left: 4px solid #e94e77;
             text-align: left;
             font-style: italic;
-            color: #ddd;
-            font-size: 1.05em;
+            color: #4a4640;
+            font-size: 1em;
         }
         .why-us .owner-quote strong {
-            color: #feca57;
+            color: #e94e77;
             font-style: normal;
         }
 
         /* ---------- РАСКРЫТИЕ КОНТРОЛЯ ---------- */
         .quality-details {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 16px;
         }
         .quality-step {
-            background: rgba(255, 255, 255, 0.04);
+            background: #ffffff;
             border-radius: 16px;
-            padding: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 22px 20px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
             text-align: center;
-            transition: 0.4s;
+            transition: 0.25s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
         }
         .quality-step:hover {
-            border-color: #feca57;
-            transform: translateY(-5px);
+            border-color: #f5a623;
+            transform: translateY(-4px);
         }
         .quality-step .num {
             display: inline-block;
-            background: #ff6b6b;
+            background: #f5a623;
             color: #fff;
-            font-size: 1.4em;
-            font-weight: 800;
-            width: 45px;
-            height: 45px;
-            line-height: 45px;
+            font-size: 1.2em;
+            font-weight: 700;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
             border-radius: 50%;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .quality-step h4 {
-            color: #fff;
-            font-size: 1.15em;
-            margin-bottom: 8px;
+            color: #2d2a24;
+            font-size: 1em;
+            margin-bottom: 6px;
         }
         .quality-step p {
-            color: #aaa;
-            font-size: 0.9em;
+            color: #6b6560;
+            font-size: 0.85em;
             margin: 0;
         }
 
-        /* ---------- МОДАЛЬНОЕ ОКНО ---------- */
+        /* ---------- МОДАЛЬНОЕ ОКНО (СВЕТЛОЕ) ---------- */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -672,144 +630,147 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
             z-index: 9999;
             justify-content: center;
             align-items: center;
-            backdrop-filter: blur(5px);
-            animation: fadeInModal 0.3s ease;
+            animation: fadeInModal 0.25s ease;
         }
         .modal-overlay.active {
             display: flex;
         }
         .modal-content {
-            background: #1a1a2e;
+            background: #ffffff;
             border-radius: 24px;
-            padding: 40px;
-            max-width: 500px;
-            width: 90%;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            padding: 32px 28px;
+            max-width: 480px;
+            width: 92%;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
             position: relative;
         }
         .modal-close {
             position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 2em;
-            color: #888;
+            top: 12px;
+            right: 18px;
+            font-size: 1.6em;
+            color: #9a9490;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.25s;
         }
         .modal-close:hover {
-            color: #ff6b6b;
+            color: #e94e77;
             transform: rotate(90deg);
         }
         .modal-content h2 {
-            font-size: 1.8em;
-            margin-bottom: 10px;
-            color: #fff;
+            font-size: 1.4em;
+            margin-bottom: 6px;
+            color: #2d2a24;
         }
         .modal-content .subtitle {
-            color: #aaa;
-            margin-bottom: 25px;
-            font-size: 0.95em;
+            color: #6b6560;
+            margin-bottom: 20px;
+            font-size: 0.9em;
         }
         .modal-content .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
         .modal-content .form-group label {
             display: block;
-            color: #ddd;
+            color: #4a4640;
             font-weight: 600;
-            margin-bottom: 6px;
-            font-size: 0.95em;
+            margin-bottom: 4px;
+            font-size: 0.9em;
         }
         .modal-content .form-group input,
         .modal-content .form-group textarea,
         .modal-content .form-group select {
             width: 100%;
-            padding: 14px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 12px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 12px;
             font-size: 1em;
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
+            background: #f8f6f2;
+            color: #2d2a24;
             outline: none;
-            transition: 0.3s;
+            transition: 0.25s;
+            font-family: inherit;
         }
         .modal-content .form-group input:focus,
         .modal-content .form-group textarea:focus,
         .modal-content .form-group select:focus {
-            border-color: #ff6b6b;
-            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.15);
+            border-color: #e94e77;
+            box-shadow: 0 0 0 4px rgba(233, 78, 119, 0.08);
+            background: #fff;
         }
         .modal-content .form-group textarea {
             resize: vertical;
-            min-height: 80px;
+            min-height: 70px;
         }
-        .modal-content .form-checkbox {
+        .form-checkbox {
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            margin: 15px 0;
+            margin: 14px 0;
         }
-        .modal-content .form-checkbox input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            min-width: 20px;
-            margin-top: 2px;
-            accent-color: #ff6b6b;
+        .form-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            margin-top: 3px;
+            accent-color: #e94e77;
             cursor: pointer;
         }
-        .modal-content .form-checkbox label {
-            color: #ccc;
-            font-size: 0.9em;
+        .form-checkbox label {
+            color: #4a4640;
+            font-size: 0.85em;
             cursor: pointer;
         }
-        .modal-content .form-checkbox label a {
-            color: #feca57;
+        .form-checkbox label a {
+            color: #e94e77;
             text-decoration: underline;
         }
         .modal-content .btn-submit {
             width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #ff6b6b, #e94560);
+            padding: 14px;
+            background: linear-gradient(135deg, #e94e77, #d43b64);
             color: #fff;
             border: none;
             border-radius: 60px;
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 700;
             cursor: pointer;
-            transition: 0.3s;
-            letter-spacing: 1px;
-            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.4);
+            transition: 0.25s;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 20px rgba(233, 78, 119, 0.2);
         }
         .modal-content .btn-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(233, 78, 119, 0.3);
         }
         .modal-content .success-message {
             display: none;
             text-align: center;
-            padding: 20px;
+            padding: 16px;
         }
         .modal-content .success-message .check {
-            font-size: 3.5em;
+            font-size: 3em;
             display: block;
         }
         .modal-content .success-message h3 {
-            color: #4caf50;
-            margin: 10px 0 4px;
+            color: #2d2a24;
+            margin: 8px 0 4px;
         }
         .modal-content .success-message p {
-            color: #aaa;
+            color: #6b6560;
             margin: 0;
         }
         @keyframes fadeInModal {
             from {
                 opacity: 0;
-                transform: scale(0.9);
+                transform: scale(0.95);
             }
             to {
                 opacity: 1;
@@ -820,88 +781,88 @@
         /* ---------- ПОРТФОЛИО ---------- */
         .category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 30px 0;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
         }
         .category-card {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.04);
             border-radius: 20px;
-            padding: 30px 20px;
+            padding: 24px 18px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.4s;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
         }
         .category-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: #ff6b6b;
-            box-shadow: 0 12px 50px rgba(233, 69, 96, 0.3);
-            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-6px);
+            border-color: #e94e77;
+            box-shadow: 0 8px 32px rgba(233, 78, 119, 0.06);
         }
         .category-card .icon {
-            font-size: 4em;
+            font-size: 3em;
             display: block;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         .category-card h3 {
-            font-size: 1.5em;
-            color: #fff;
-            margin-bottom: 8px;
+            font-size: 1.1em;
+            color: #2d2a24;
+            margin-bottom: 4px;
         }
         .category-card p {
-            color: #aaa;
-            font-size: 0.95em;
+            color: #6b6560;
+            font-size: 0.85em;
             margin: 0;
         }
         .category-card .badge {
             display: inline-block;
-            margin-top: 12px;
-            background: rgba(255, 107, 107, 0.2);
-            color: #ff6b6b;
+            margin-top: 10px;
+            background: rgba(233, 78, 119, 0.06);
+            color: #e94e77;
             padding: 4px 16px;
             border-radius: 30px;
-            font-size: 0.8em;
+            font-size: 0.75em;
             font-weight: 600;
         }
 
         .gallery-grid {
             display: none;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
         }
         .gallery-grid.active {
             display: grid;
         }
         .gallery-item {
-            background: rgba(255, 255, 255, 0.03);
+            background: #ffffff;
             border-radius: 12px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: 0.25s;
             cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
         }
         .gallery-item:hover {
-            transform: scale(1.03);
-            border-color: #ff6b6b;
+            transform: scale(1.02);
+            border-color: #e94e77;
         }
         .gallery-item img {
             width: 100%;
-            height: 200px;
+            height: 160px;
             object-fit: cover;
             display: block;
         }
         .gallery-item .caption {
-            padding: 10px 12px;
-            color: #ccc;
-            font-size: 0.9em;
+            padding: 8px 10px;
+            color: #4a4640;
+            font-size: 0.8em;
             text-align: center;
+            background: #faf8f5;
         }
 
-        /* ---------- ЛАЙТБОКС ---------- */
+        /* ---------- ЛАЙТБОКС (СВЕТЛЫЙ) ---------- */
         .lightbox {
             display: none;
             position: fixed;
@@ -909,41 +870,43 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.92);
+            background: rgba(255, 253, 250, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             z-index: 9998;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            animation: fadeInLightbox 0.3s ease;
+            animation: fadeInLightbox 0.25s ease;
         }
         .lightbox.active {
             display: flex;
         }
         .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 92%;
+            max-height: 88%;
             object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
         }
         .lightbox-close {
             position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 2.8em;
-            color: #fff;
+            top: 16px;
+            right: 24px;
+            font-size: 2.4em;
+            color: #4a4640;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.25s;
             z-index: 9999;
         }
         .lightbox-close:hover {
-            color: #ff6b6b;
+            color: #e94e77;
             transform: rotate(90deg);
         }
         @keyframes fadeInLightbox {
             from {
                 opacity: 0;
-                transform: scale(0.9);
+                transform: scale(0.95);
             }
             to {
                 opacity: 1;
@@ -951,171 +914,162 @@
             }
         }
 
-        /* ---------- СЕТКИ И КАРТОЧКИ ---------- */
+        /* ---------- СЕТКИ И КАРТОЧКИ (СВЕТЛЫЕ) ---------- */
         .grid-2,
         .grid-3 {
             display: grid;
-            gap: 25px;
-            margin-top: 20px;
+            gap: 20px;
+            margin-top: 16px;
         }
         .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         }
         .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         }
         .card {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.04);
             border-radius: 20px;
-            padding: 30px 25px;
-            transition: all 0.4s;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            padding: 24px 20px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
         }
         .card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: #ff6b6b;
-            box-shadow: 0 12px 50px rgba(233, 69, 96, 0.3);
-            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-6px);
+            border-color: #e94e77;
+            box-shadow: 0 8px 32px rgba(233, 78, 119, 0.06);
         }
         .card .icon {
-            font-size: 3em;
+            font-size: 2.4em;
             display: block;
-            margin-bottom: 12px;
-        }
-        .card h3 {
-            font-size: 1.3em;
-            color: #fff;
             margin-bottom: 8px;
         }
+        .card h3 {
+            font-size: 1.1em;
+            color: #2d2a24;
+            margin-bottom: 4px;
+        }
         .card h4 {
-            font-size: 1.2em;
-            color: #fff;
+            font-size: 1em;
+            color: #2d2a24;
             margin-bottom: 4px;
         }
         .card p {
-            font-size: 0.95em;
-            color: #ccc;
+            font-size: 0.9em;
+            color: #6b6560;
             margin: 0;
         }
         .card .price-tag {
             display: inline-block;
-            margin-top: 14px;
-            background: linear-gradient(135deg, #ff6b6b, #e94560);
+            margin-top: 12px;
+            background: linear-gradient(135deg, #e94e77, #d43b64);
             color: #fff;
-            padding: 6px 18px;
+            padding: 4px 18px;
             border-radius: 30px;
-            font-weight: 700;
-            font-size: 0.95em;
-            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
+            font-weight: 600;
+            font-size: 0.85em;
+            box-shadow: 0 4px 16px rgba(233, 78, 119, 0.15);
         }
 
         /* ---------- ОТЗЫВЫ ---------- */
         .reviews-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 25px 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
         }
         .review-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(8px);
+            background: #ffffff;
             border-radius: 16px;
-            padding: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s;
+            padding: 22px 20px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: 0.25s;
         }
         .review-card:hover {
-            border-color: #feca57;
-            transform: translateY(-5px);
+            border-color: #f5a623;
+            transform: translateY(-4px);
         }
         .review-card .review-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
+            gap: 10px;
+            margin-bottom: 8px;
         }
         .review-card .review-avatar {
-            font-size: 2.5em;
+            font-size: 2em;
         }
         .review-card .review-name {
-            color: #fff;
-            font-weight: 700;
-            font-size: 1.05em;
+            color: #2d2a24;
+            font-weight: 600;
+            font-size: 0.95em;
         }
         .review-card .review-date {
-            color: #888;
-            font-size: 0.8em;
+            color: #9a9490;
+            font-size: 0.7em;
         }
         .review-card .review-text {
-            color: #ccc;
-            font-size: 0.95em;
-            margin: 0;
+            color: #4a4640;
+            font-size: 0.9em;
+            margin: 6px 0;
             font-style: italic;
         }
         .review-card .review-stars {
-            color: #feca57;
+            color: #f5a623;
             letter-spacing: 2px;
-            margin-top: 8px;
-            font-size: 1.1em;
+            font-size: 1em;
         }
         .review-card .review-status {
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 8px;
             font-size: 0.7em;
-            background: rgba(254, 202, 87, 0.15);
-            color: #feca57;
+            background: rgba(245, 166, 35, 0.08);
+            color: #b8860b;
             padding: 2px 14px;
             border-radius: 20px;
+            font-weight: 500;
         }
 
         /* ---------- КОНТАКТЫ ---------- */
         .contacts-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 20px;
+            gap: 30px;
+            margin-top: 16px;
         }
         .contacts-grid .info-block li {
             list-style: none;
-            padding: 14px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            color: #ccc;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            color: #4a4640;
         }
         .contacts-grid .info-block li strong {
-            color: #fff;
-            width: 130px;
+            color: #2d2a24;
+            width: 120px;
             display: inline-block;
-        }
-        .contacts-grid .info-block li a {
-            color: #feca57;
-            transition: color 0.3s;
-        }
-        .contacts-grid .info-block li a:hover {
-            color: #ff6b6b;
         }
         .messenger-links {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
-            margin-top: 10px;
+            margin-top: 8px;
         }
         .messenger-links a {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 8px 22px;
+            gap: 6px;
+            padding: 6px 18px;
             border-radius: 40px;
             color: #fff;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95em;
-            transition: all 0.3s;
+            font-size: 0.85em;
+            transition: 0.25s;
         }
         .messenger-links a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
         }
         .btn-wa {
             background: #25D366;
@@ -1124,7 +1078,7 @@
             background: #0088cc;
         }
         .btn-ig {
-            background: radial-gradient(circle at 30% 30%, #fdf497, #fdf497 25%, #fd5949 50%, #d6249f 75%, #285aeb 100%);
+            background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f);
         }
         .btn-max {
             background: linear-gradient(135deg, #1a1a2e, #6a0dad);
@@ -1133,10 +1087,10 @@
         .map-container {
             border-radius: 16px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            height: 280px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            height: 220px;
             width: 100%;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
         }
         .map-container iframe {
             width: 100%;
@@ -1148,281 +1102,273 @@
         /* ---------- О НАС ---------- */
         .about-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
         }
         .about-features .item {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(8px);
+            background: #ffffff;
             border-radius: 16px;
-            padding: 25px 20px;
+            padding: 20px 16px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: 0.25s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
         }
         .about-features .item:hover {
-            border-color: #feca57;
-            transform: translateY(-5px);
+            border-color: #f5a623;
+            transform: translateY(-4px);
         }
         .about-features .item .icon {
-            font-size: 2.8em;
+            font-size: 2.2em;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .about-features .item h4 {
-            color: #fff;
-            font-size: 1.05em;
+            color: #2d2a24;
+            font-size: 0.95em;
         }
         .about-features .item p {
-            color: #aaa;
-            font-size: 0.85em;
+            color: #6b6560;
+            font-size: 0.8em;
             margin: 0;
         }
 
-        /* ---------- ФОРМЫ ---------- */
+        /* ---------- ФОРМЫ (СВЕТЛЫЕ) ---------- */
         .form-container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
+            background: #ffffff;
             border-radius: 20px;
-            padding: 30px 35px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            margin-top: 25px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            padding: 28px 24px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+            margin-top: 20px;
         }
         .form-container h3 {
-            font-size: 1.5em;
-            color: #fff;
-            margin-bottom: 8px;
+            font-size: 1.3em;
+            color: #2d2a24;
+            margin-bottom: 4px;
         }
         .form-container .form-subtitle {
-            color: #aaa;
-            margin-bottom: 20px;
+            color: #6b6560;
+            margin-bottom: 16px;
         }
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
         .form-group label {
             display: block;
-            color: #ddd;
+            color: #4a4640;
             font-weight: 600;
-            margin-bottom: 6px;
-            font-size: 0.95em;
+            margin-bottom: 4px;
+            font-size: 0.9em;
         }
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 14px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 12px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 12px;
             font-size: 1em;
-            transition: all 0.3s;
+            transition: 0.25s;
             outline: none;
-            background: rgba(0, 0, 0, 0.3);
-            color: #fff;
+            background: #f8f6f2;
+            color: #2d2a24;
             font-family: inherit;
         }
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
-            border-color: #ff6b6b;
-            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.15);
-            background: rgba(0, 0, 0, 0.5);
+            border-color: #e94e77;
+            box-shadow: 0 0 0 4px rgba(233, 78, 119, 0.06);
+            background: #fff;
         }
         .form-group textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 80px;
         }
         .form-group select option {
-            background: #1a1a2e;
-            color: #fff;
+            background: #fff;
+            color: #2d2a24;
         }
         .form-group input[type="file"] {
             padding: 10px;
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px dashed rgba(255, 255, 255, 0.2);
+            background: #f8f6f2;
+            border: 1px dashed rgba(0, 0, 0, 0.1);
         }
         .form-checkbox {
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            margin: 15px 0;
+            margin: 14px 0;
         }
         .form-checkbox input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            min-width: 20px;
-            margin-top: 2px;
-            accent-color: #ff6b6b;
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            margin-top: 3px;
+            accent-color: #e94e77;
             cursor: pointer;
         }
         .form-checkbox label {
-            color: #ccc;
-            font-size: 0.9em;
+            color: #4a4640;
+            font-size: 0.85em;
             cursor: pointer;
         }
         .form-checkbox label a {
-            color: #feca57;
+            color: #e94e77;
             text-decoration: underline;
         }
-        .form-checkbox label a:hover {
-            color: #ff6b6b;
-        }
         .btn-submit {
-            padding: 16px 45px;
-            background: linear-gradient(135deg, #ff6b6b, #e94560);
+            padding: 14px 40px;
+            background: linear-gradient(135deg, #e94e77, #d43b64);
             color: #fff;
             border: none;
             border-radius: 60px;
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s;
-            letter-spacing: 1px;
-            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.4);
+            transition: 0.25s;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 20px rgba(233, 78, 119, 0.15);
         }
         .btn-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.6);
-        }
-        .btn-submit:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(233, 78, 119, 0.25);
         }
         .success-message {
             display: none;
             text-align: center;
-            padding: 25px;
+            padding: 20px;
         }
         .success-message .check {
-            font-size: 3.5em;
+            font-size: 3em;
             display: block;
         }
         .success-message h3 {
-            color: #4caf50;
-            margin: 10px 0 4px;
+            color: #2d2a24;
+            margin: 8px 0 4px;
         }
         .success-message p {
-            color: #aaa;
+            color: #6b6560;
             margin: 0;
         }
 
         /* ---------- ЮРИДИЧЕСКАЯ ---------- */
         .legal-content {
-            background: rgba(255, 255, 255, 0.04);
+            background: #ffffff;
             border-radius: 16px;
-            padding: 30px 35px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            margin-top: 20px;
+            padding: 24px 28px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            margin-top: 16px;
         }
         .legal-content h3 {
-            color: #feca57;
-            font-size: 1.3em;
-            margin: 25px 0 10px;
+            color: #e94e77;
+            font-size: 1.1em;
+            margin: 20px 0 8px;
         }
         .legal-content h3:first-of-type {
             margin-top: 0;
         }
         .legal-content p,
         .legal-content li {
-            color: #ccc;
-            font-size: 0.95em;
+            color: #4a4640;
+            font-size: 0.9em;
             line-height: 1.7;
         }
         .legal-content ul {
-            padding-left: 25px;
-            margin: 10px 0 15px;
+            padding-left: 20px;
+            margin: 6px 0 12px;
         }
         .legal-content li {
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
         .legal-content .highlight {
-            color: #feca57;
+            color: #e94e77;
             font-weight: 600;
         }
 
-        /* ---------- ПОДВАЛ ---------- */
+        /* ---------- ПОДВАЛ (СВЕТЛЫЙ) ---------- */
         footer {
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #2a0a3e 100%);
-            color: #888;
+            background: #ffffff;
+            color: #6b6560;
             text-align: center;
-            padding: 35px 20px 25px;
+            padding: 28px 20px 22px;
             margin-top: auto;
-            border-top: 2px solid rgba(255, 107, 107, 0.2);
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
         }
         footer a {
-            color: #feca57;
-            transition: color 0.3s;
+            color: #e94e77;
+            transition: color 0.2s;
         }
         footer a:hover {
-            color: #ff6b6b;
+            color: #d43b64;
         }
         .footer-divider {
-            width: 80px;
+            width: 60px;
             height: 3px;
-            background: linear-gradient(90deg, #ff6b6b, #feca57, #6a0dad);
-            margin: 15px auto;
+            background: linear-gradient(90deg, #e94e77, #f5a623);
+            margin: 12px auto;
             border-radius: 10px;
         }
         .footer-nav {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 16px;
             flex-wrap: wrap;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         .footer-nav a {
-            color: #ccc;
-            font-size: 0.9em;
+            color: #4a4640;
+            font-size: 0.85em;
             cursor: pointer;
-            transition: color 0.3s;
+            transition: color 0.2s;
         }
         .footer-nav a:hover {
-            color: #feca57;
+            color: #e94e77;
         }
         .footer-legal {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
-            margin: 12px 0 8px;
-            font-size: 0.8em;
+            margin: 10px 0 6px;
+            font-size: 0.75em;
         }
         .footer-legal a {
-            color: #777;
-            transition: color 0.3s;
+            color: #9a9490;
+            transition: color 0.2s;
         }
         .footer-legal a:hover {
-            color: #feca57;
+            color: #e94e77;
         }
         .footer-req {
-            font-size: 0.75em;
-            color: #666;
-            margin-top: 10px;
-            line-height: 1.8;
+            font-size: 0.7em;
+            color: #9a9490;
+            margin-top: 8px;
+            line-height: 1.6;
         }
 
         /* ---------- КНОПКА "НАВЕРХ" ---------- */
         .scroll-top {
             position: fixed;
             bottom: 100px;
-            left: 25px;
-            background: linear-gradient(135deg, #ff6b6b, #e94560);
-            color: #fff;
-            border: none;
+            left: 20px;
+            background: #ffffff;
+            color: #e94e77;
+            border: 1px solid rgba(233, 78, 119, 0.15);
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 1.5em;
+            width: 48px;
+            height: 48px;
+            font-size: 1.4em;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
             transition: 0.3s;
             z-index: 999;
             opacity: 0;
             visibility: hidden;
-            transform: translateY(20px);
+            transform: translateY(16px);
         }
         .scroll-top.visible {
             opacity: 1;
@@ -1430,33 +1376,35 @@
             transform: translateY(0);
         }
         .scroll-top:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(233, 69, 96, 0.6);
+            transform: scale(1.08);
+            background: #e94e77;
+            color: #fff;
+            box-shadow: 0 6px 24px rgba(233, 78, 119, 0.2);
         }
 
-        /* ---------- ПЛАВАЮЩИЕ МЕССЕНДЖЕРЫ ---------- */
+        /* ---------- ПЛАВАЮЩИЕ МЕССЕНДЖЕРЫ (СВЕТЛЫЕ) ---------- */
         .floating-messengers {
             position: fixed;
-            bottom: 25px;
-            left: 25px;
+            bottom: 24px;
+            left: 24px;
             z-index: 9999;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             align-items: flex-start;
         }
         .floating-messengers .messenger-btn {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             color: #fff;
-            padding: 10px 18px 10px 14px;
+            padding: 8px 16px 8px 12px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95em;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            transition: 0.3s;
+            font-size: 0.85em;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            transition: 0.25s;
             border: none;
             cursor: pointer;
         }
@@ -1464,58 +1412,43 @@
             transform: scale(1.05);
         }
         .floating-messengers .messenger-btn svg {
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
             fill: currentColor;
         }
         .floating-messengers .messenger-btn .label {
-            font-size: 0.9em;
+            font-size: 0.8em;
         }
         .floating-messengers .messenger-btn.wa {
             background: #25D366;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-        }
-        .floating-messengers .messenger-btn.wa:hover {
-            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
         }
         .floating-messengers .messenger-btn.tg {
             background: #0088cc;
-            box-shadow: 0 4px 20px rgba(0, 136, 204, 0.4);
-        }
-        .floating-messengers .messenger-btn.tg:hover {
-            box-shadow: 0 6px 30px rgba(0, 136, 204, 0.6);
         }
         .floating-messengers .messenger-btn.ig {
-            background: radial-gradient(circle at 30% 30%, #fdf497, #fdf497 25%, #fd5949 50%, #d6249f 75%, #285aeb 100%);
-            box-shadow: 0 4px 20px rgba(214, 36, 159, 0.4);
-        }
-        .floating-messengers .messenger-btn.ig:hover {
-            box-shadow: 0 6px 30px rgba(214, 36, 159, 0.6);
+            background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f);
         }
         .floating-messengers .messenger-btn.max {
             background: linear-gradient(135deg, #1a1a2e, #6a0dad);
-            box-shadow: 0 4px 20px rgba(106, 13, 173, 0.4);
-        }
-        .floating-messengers .messenger-btn.max:hover {
-            box-shadow: 0 6px 30px rgba(106, 13, 173, 0.6);
         }
 
         /* ---------- АНИМАЦИЯ ПОЯВЛЕНИЯ ---------- */
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
         .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* ---------- АДАПТАЦИЯ ---------- */
+        /* ---------- АДАПТАЦИЯ (МОБИЛЬНАЯ) ---------- */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 text-align: center;
+                padding: 12px 16px;
             }
             .nav-wrapper {
                 flex-direction: column;
@@ -1523,6 +1456,10 @@
             }
             nav ul {
                 justify-content: center;
+                gap: 10px;
+            }
+            nav a {
+                font-size: 0.8em;
             }
             .social-header {
                 justify-content: center;
@@ -1531,86 +1468,102 @@
                 grid-template-columns: 1fr;
             }
             .page h1 {
-                font-size: 2em;
+                font-size: 1.8em;
             }
             .hero-bg h1 {
-                font-size: 2.4em;
+                font-size: 2em;
             }
             .grid-2,
             .grid-3 {
                 grid-template-columns: 1fr;
             }
             .map-container {
-                height: 200px;
+                height: 180px;
             }
             .legal-content {
-                padding: 20px;
+                padding: 18px;
             }
             .floating-messengers .messenger-btn .label {
                 display: none;
             }
             .floating-messengers .messenger-btn {
-                padding: 12px;
+                padding: 10px;
             }
             .pricing-grid {
                 grid-template-columns: 1fr;
             }
-        }
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 1.2em;
+            .counter-block {
+                gap: 24px;
+                padding: 18px 12px;
             }
-            nav ul {
-                gap: 12px;
-            }
-            nav a {
-                font-size: 0.8em;
-            }
-            .page h1 {
-                font-size: 1.6em;
-                padding-left: 12px;
-            }
-            .gallery-item img {
-                height: 150px;
-            }
-            .lightbox img {
-                max-width: 95%;
-                max-height: 95%;
-            }
-            .modal-content {
-                padding: 25px;
-            }
-            .utp-facts .fact {
-                font-size: 0.8em;
-                padding: 6px 14px;
-            }
-            .social-header a {
-                width: 30px;
-                height: 30px;
-            }
-            .social-header svg {
-                width: 15px;
-                height: 15px;
+            .counter-item .number {
+                font-size: 1.8em;
             }
             .why-us-grid {
                 grid-template-columns: 1fr;
             }
-            .counter-block {
-                gap: 20px;
+            .scheme-grid {
+                grid-template-columns: 1fr;
             }
-            .counter-item .number {
-                font-size: 2em;
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            }
+            .gallery-item img {
+                height: 130px;
+            }
+            .modal-content {
+                padding: 24px 18px;
+            }
+        }
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.1em;
+            }
+            nav ul {
+                gap: 8px;
+            }
+            nav a {
+                font-size: 0.75em;
+            }
+            .page h1 {
+                font-size: 1.4em;
+            }
+            .hero-bg h1 {
+                font-size: 1.6em;
+            }
+            .social-header a {
+                width: 28px;
+                height: 28px;
+            }
+            .social-header svg {
+                width: 14px;
+                height: 14px;
+            }
+            .btn-primary {
+                padding: 14px 28px;
+                font-size: 0.9em;
+            }
+            .btn-secondary {
+                padding: 12px 24px;
+                font-size: 0.85em;
             }
             .scroll-top {
                 width: 40px;
                 height: 40px;
                 font-size: 1.2em;
                 bottom: 80px;
-                left: 15px;
+                left: 14px;
             }
-            .scheme-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
+            .floating-messengers {
+                left: 14px;
+                bottom: 16px;
+            }
+            .floating-messengers .messenger-btn {
+                padding: 8px;
+            }
+            .floating-messengers .messenger-btn svg {
+                width: 20px;
+                height: 20px;
             }
         }
     </style>
@@ -1628,7 +1581,7 @@
             <span class="label">Telegram</span>
         </a>
         <a href="https://max.ru/79014030785" target="_blank" class="messenger-btn max" aria-label="MAX">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                 <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
                 <path d="M12 6v6l4 2"/>
                 <circle cx="8" cy="10" r="1.5"/>
@@ -1642,7 +1595,7 @@
         </a>
     </div>
 
-    <!-- ====== ШАПКА (без "Услуги") ====== -->
+    <!-- ====== ШАПКА ====== -->
     <header id="header">
         <div class="logo" onclick="navigateTo('home')">
             <span class="diamond">✦</span> <span>Вышивка Стиль</span>
@@ -1669,7 +1622,7 @@
                     <svg viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.243 3.306-1.878 3.382-1.904.077-.026.178-.058.246.015.07.072.06.19-.022.34-.176.32-1.173 1.15-1.767 1.706-.15.14-.256.244-.258.27-.006.032.092.063.209.102.341.116.735.273 1.052.451.148.083.264.123.374.114.077-.006.174-.038.267-.14.244-.27 1.03-1.16 1.645-1.874.615-.714.793-1.178.808-1.356.006-.112-.015-.205-.1-.256-.124-.073-.36-.104-.518-.104-.32 0-.898.19-1.139.38z"/></svg>
                 </a>
                 <a href="https://max.ru/79014030785" target="_blank" class="max" aria-label="MAX">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
                         <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
                         <path d="M12 6v6l4 2"/>
                         <circle cx="8" cy="10" r="1.5"/>
@@ -1692,16 +1645,13 @@
         <div class="page active" id="page-home">
             <section class="hero-bg">
                 <div class="hero-content">
-                    <h1>Вышивка на заказ <br><strong>от 1 штуки с гарантией качества</strong></h1>
-
+                    <h1>Вышивка на заказ <br><strong>от 1 штуки с гарантией</strong></h1>
                     <div class="utp-facts">
-                        <span class="fact">✅ Трёхуровневый контроль качества</span>
+                        <span class="fact">✅ Трёхуровневый контроль</span>
                         <span class="fact gold">⏱ Вернём деньги при задержке</span>
                         <span class="fact purple">📄 Полный пакет документов</span>
                     </div>
-
-                    <p style="margin-bottom: 20px;">Единичные заказы и опт. Бесплатный расчёт за 15 минут.</p>
-
+                    <p>Единичные заказы и опт. Бесплатный расчёт за 15 минут.</p>
                     <div class="hero-buttons">
                         <button class="btn-primary" onclick="openModal()">💬 Заказать вышивку</button>
                         <button class="btn-secondary" onclick="navigateTo('portfolio')">Смотреть работы</button>
@@ -1732,12 +1682,12 @@
                     <div class="why-us-item">
                         <span class="icon">✅</span>
                         <h4>Гарантия качества</h4>
-                        <p>Трёхуровневый контроль — вы получаете идеальный результат</p>
+                        <p>Трёхуровневый контроль — идеальный результат</p>
                     </div>
                     <div class="why-us-item">
                         <span class="icon">⏱</span>
                         <h4>Гарантия срока</h4>
-                        <p>Вернём деньги, если опоздаем с заказом</p>
+                        <p>Вернём деньги, если опоздаем</p>
                     </div>
                     <div class="why-us-item">
                         <span class="icon">💰</span>
@@ -1747,7 +1697,7 @@
                     <div class="why-us-item">
                         <span class="icon">🧵</span>
                         <h4>От 1 штуки до опта</h4>
-                        <p>Работаем без минимального тиража</p>
+                        <p>Без минимального тиража</p>
                     </div>
                 </div>
                 <div class="owner-quote">
@@ -1759,81 +1709,79 @@
             <!-- ===== СХЕМА РАБОТЫ ===== -->
             <div class="work-scheme animate-on-scroll">
                 <h2>Как мы работаем</h2>
-                <p style="color: #aaa; margin-bottom: 30px;">4 простых шага к вашей идеальной вышивке</p>
+                <p style="color: #6b6560; margin-bottom: 20px;">4 простых шага к вашей идеальной вышивке</p>
                 <div class="scheme-grid">
                     <div class="scheme-step">
                         <div class="step-number">1</div>
                         <span class="step-icon">📩</span>
                         <h4>Заявка</h4>
-                        <p>Вы оставляете заявку на сайте, в мессенджере или по телефону.</p>
+                        <p>Оставляете заявку на сайте или в мессенджере</p>
                     </div>
                     <div class="scheme-step">
                         <div class="step-number">2</div>
                         <span class="step-icon">🤝</span>
                         <h4>Детали и цена</h4>
-                        <p>Мы обсуждаем дизайн, тираж, сроки и фиксируем стоимость.</p>
+                        <p>Обсуждаем дизайн, тираж, сроки и фиксируем стоимость</p>
                     </div>
                     <div class="scheme-step">
                         <div class="step-number">3</div>
                         <span class="step-icon">🎨</span>
                         <h4>Разработка дизайна</h4>
-                        <p>Мы готовим макет вышивки и утверждаем его с вами.</p>
+                        <p>Готовим макет и утверждаем его с вами</p>
                     </div>
                     <div class="scheme-step">
                         <div class="step-number">4</div>
                         <span class="step-icon">🚀</span>
                         <h4>Выполнение заказа</h4>
-                        <p>Вышиваем ваш заказ в срок и доставляем удобным способом.</p>
+                        <p>Вышиваем заказ в срок и доставляем удобным способом</p>
                     </div>
                 </div>
             </div>
 
             <!-- ===== РАСКРЫТИЕ КОНТРОЛЯ ===== -->
-            <h2>Трёхуровневый контроль качества — это честно и надёжно</h2>
-            <p style="margin-bottom: 10px;">Мы проверяем каждый заказ на всех этапах, чтобы вы получили идеальный результат.</p>
+            <h2>Трёхуровневый контроль качества</h2>
+            <p style="margin-bottom: 10px;">Проверяем каждый заказ на всех этапах.</p>
             <div class="quality-details">
                 <div class="quality-step animate-on-scroll">
                     <div class="num">1</div>
                     <h4>Входной контроль</h4>
-                    <p>Проверяем материалы и эскиз до начала работы. Убеждаемся, что всё совпадает.</p>
+                    <p>Проверяем материалы и эскиз до начала работы</p>
                 </div>
                 <div class="quality-step animate-on-scroll">
                     <div class="num">2</div>
                     <h4>Промежуточный контроль</h4>
-                    <p>Смотрим за процессом: проверяем натяжение, плотность и цвета на каждом этапе.</p>
+                    <p>Смотрим за процессом: натяжение, плотность, цвета</p>
                 </div>
                 <div class="quality-step animate-on-scroll">
                     <div class="num">3</div>
                     <h4>Финальный контроль</h4>
-                    <p>Проверяем готовую работу под разным светом. Если есть недочёты — переделываем сразу.</p>
+                    <p>Проверяем готовую работу под разным светом</p>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 20px; font-size: 1.1em; color: #feca57;">
-                ⭐ <strong>Итог:</strong> вы получаете качественную вышивку без сюрпризов
+            <p style="text-align: center; margin-top: 16px; font-weight: 600; color: #e94e77;">
+                ⭐ Итог: вы получаете качественную вышивку без сюрпризов
             </p>
 
             <!-- ===== ТАРИФЫ ===== -->
             <div class="pricing-block animate-on-scroll">
                 <h2>Стоимость вышивки</h2>
                 <p class="pricing-subtitle">Выберите свой тип заказа</p>
-
                 <div class="pricing-grid">
-                    <!-- Индивидуальная вышивка -->
+                    <!-- Индивидуальная -->
                     <div class="pricing-card" onclick="openPricingForm('individual')">
                         <div class="pricing-header">
-                            <h3>Индивидуальная вышивка</h3>
+                            <h3>Индивидуальная</h3>
                             <div class="price">от 1500 ₽</div>
                             <span class="badge">⭐</span>
                         </div>
                         <ul class="pricing-features">
-                            <li>✅ Вышивка от 500 ₽ (если в заказе всего одно изделие)</li>
-                            <li>✅ Разработка программы для вышивки от 1000 ₽ (разрабатывается по готовому изображению один раз и может использоваться в дальнейших заказах)</li>
-                            <li>✅ Срок изготовления 1-2 дня</li>
+                            <li>✅ Вышивка от 500 ₽</li>
+                            <li>✅ Разработка программы от 1000 ₽</li>
+                            <li>✅ Срок 1-2 дня</li>
                         </ul>
-                        <p class="pricing-desc">Идеально для подарка или воплощения творческой идеи.</p>
+                        <p class="pricing-desc">Идеально для подарка или творческой идеи.</p>
                         <button class="btn-order" onclick="event.stopPropagation(); openPricingForm('individual')">Заказать</button>
                     </div>
-
                     <!-- Мелкий опт -->
                     <div class="pricing-card" onclick="openPricingForm('small')">
                         <div class="pricing-header">
@@ -1842,14 +1790,13 @@
                             <span class="badge">⭐⭐</span>
                         </div>
                         <ul class="pricing-features">
-                            <li>✅ Вышивка от 1500 ₽ за весь тираж (если в заказе 2-12 изделий)</li>
-                            <li>✅ Разработка программы для вышивки от 1000 ₽ (разрабатывается по готовому изображению один раз и может использоваться в дальнейших заказах)</li>
-                            <li>✅ Срок изготовления 1-3 дня</li>
+                            <li>✅ Вышивка от 1500 ₽</li>
+                            <li>✅ Разработка программы от 1000 ₽</li>
+                            <li>✅ Срок 1-3 дня</li>
                         </ul>
-                        <p class="pricing-desc">Отлично подходит для корпоративов и промо-акций.</p>
+                        <p class="pricing-desc">Для корпоративов и промо-акций.</p>
                         <button class="btn-order" onclick="event.stopPropagation(); openPricingForm('small')">Заказать</button>
                     </div>
-
                     <!-- Крупный опт -->
                     <div class="pricing-card" onclick="openPricingForm('large')">
                         <div class="pricing-header">
@@ -1858,10 +1805,9 @@
                             <span class="badge">⭐⭐⭐</span>
                         </div>
                         <ul class="pricing-features">
-                            <li>✅ Вышивка партии от 13 изделий</li>
-                            <li>✅ Разработка программы для вышивки от 1000 ₽ или бесплатно (разрабатывается по готовому изображению один раз и может использоваться в дальнейших заказах)</li>
-                            <li>✅ Срок изготовления обговаривается</li>
-                            <li>✅ Гибкие условия</li>
+                            <li>✅ Партия от 13 изделий</li>
+                            <li>✅ Разработка программы от 1000 ₽</li>
+                            <li>✅ Срок обговаривается</li>
                         </ul>
                         <p class="pricing-desc">Для серьёзной работы.</p>
                         <button class="btn-order" onclick="event.stopPropagation(); openPricingForm('large')">Заказать</button>
@@ -1869,12 +1815,12 @@
                 </div>
             </div>
 
-            <h2 style="margin-top: 40px;">Почему нам доверяют</h2>
+            <h2 style="margin-top: 30px;">Почему нам доверяют</h2>
             <div class="grid-3">
                 <div class="card animate-on-scroll">
                     <span class="icon">🧵</span>
                     <h3>10+ лет опыта</h3>
-                    <p>Работаем с вышивкой с 2014 года, знаем все нюансы</p>
+                    <p>Работаем с вышивкой с 2014 года</p>
                 </div>
                 <div class="card animate-on-scroll">
                     <span class="icon">🏢</span>
@@ -1884,7 +1830,7 @@
                 <div class="card animate-on-scroll">
                     <span class="icon">🚀</span>
                     <h3>От 1 заказа до тиража</h3>
-                    <p>Вышьем и одну футболку, и 500 курток — без потери качества</p>
+                    <p>Вышьем и одну футболку, и 500 курток</p>
                 </div>
             </div>
         </div>
@@ -1893,7 +1839,6 @@
         <div class="page" id="page-portfolio">
             <h1>Наши работы</h1>
             <p>Выберите категорию, чтобы посмотреть фото.</p>
-
             <div class="category-grid">
                 <div class="category-card" onclick="openCategory('hats')">
                     <span class="icon">🧢</span>
@@ -1914,7 +1859,6 @@
                     <span class="badge">Открыть →</span>
                 </div>
             </div>
-
             <div id="gallery-hats" class="gallery-grid"></div>
             <div id="gallery-patches" class="gallery-grid"></div>
             <div id="gallery-clothing" class="gallery-grid"></div>
@@ -1922,9 +1866,8 @@
 
         <!-- ===== ОТЗЫВЫ ===== -->
         <div class="page" id="page-reviews">
-            <h1>Отзывы наших клиентов</h1>
-            <p>Мы только открыли студию, но уже получили первые отзывы. Оставьте свой — он пройдёт модерацию и появится на сайте.</p>
-
+            <h1>Отзывы клиентов</h1>
+            <p>Мы только открыли студию, но уже получили первые отзывы. Оставьте свой!</p>
             <div class="reviews-grid" id="reviewsList">
                 <div class="review-card animate-on-scroll">
                     <div class="review-header">
@@ -1938,7 +1881,6 @@
                     <p class="review-text">"Заказывала вышивку на худи для всей семьи. Сделали всё быстро и очень аккуратно. Спасибо!"</p>
                     <span class="review-status">✓ Опубликовано</span>
                 </div>
-
                 <div class="review-card animate-on-scroll">
                     <div class="review-header">
                         <span class="review-avatar">👨‍💼</span>
@@ -1951,7 +1893,6 @@
                     <p class="review-text">"Партия шевронов для нашей команды. Отличное качество, держатся отлично. Рекомендую!"</p>
                     <span class="review-status">✓ Опубликовано</span>
                 </div>
-
                 <div class="review-card animate-on-scroll">
                     <div class="review-header">
                         <span class="review-avatar">👩‍🎨</span>
@@ -1961,7 +1902,7 @@
                         </div>
                     </div>
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Делали логотип для моего бренда одежды. Получилось лучше, чем я ожидала. Буду заказывать ещё!"</p>
+                    <p class="review-text">"Делали логотип для моего бренда одежды. Получилось лучше, чем я ожидала."</p>
                     <span class="review-status">✓ Опубликовано</span>
                 </div>
             </div>
@@ -1969,7 +1910,6 @@
             <div class="form-container animate-on-scroll" id="reviewFormBlock">
                 <h3>✍️ Оставьте свой отзыв</h3>
                 <p class="form-subtitle">Расскажите о своём опыте — после модерации он появится на сайте</p>
-
                 <form id="reviewForm" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="reviewName">Ваше имя</label>
@@ -1989,21 +1929,17 @@
                         <label for="reviewText">Ваш отзыв</label>
                         <textarea id="reviewText" placeholder="Что вам понравилось? Как прошёл заказ?" rows="4" required></textarea>
                     </div>
-
                     <div class="form-group">
                         <label for="reviewPhoto">📸 Прикрепите фото (необязательно)</label>
                         <input type="file" id="reviewPhoto" accept="image/*" multiple>
-                        <p style="font-size: 0.8em; color: #888; margin-top: 5px;">Вы можете загрузить до 5 фото</p>
+                        <p style="font-size: 0.75em; color: #9a9490; margin-top: 4px;">Вы можете загрузить до 5 фото</p>
                     </div>
-
                     <div class="form-checkbox">
                         <input type="checkbox" id="reviewConsent" required>
                         <label for="reviewConsent">Я даю согласие на <a href="#" onclick="navigateTo('legal'); return false;">обработку персональных данных</a></label>
                     </div>
-
                     <button type="submit" class="btn-submit">Отправить на модерацию</button>
                 </form>
-
                 <div class="success-message" id="reviewSuccess">
                     <span class="check">✅</span>
                     <h3>Спасибо за отзыв!</h3>
@@ -2019,10 +1955,10 @@
             <p>Решение открыть собственную студию пришло, чтобы <strong>предложить клиентам ещё более высокое качество, прозрачные цены и короткие сроки</strong>. Мы работаем на современном качественном оборудовании, используем только проверенные нити — они не выгорают на солнце и не линяют после стирки.</p>
             <p>Каждый заказ — от первой примерки до финальной вышивки — мы контролируем лично. <strong>Вы получаете не просто вещь с рисунком, а продуманный до мелочей продукт.</strong></p>
             <div class="about-features">
-                <div class="item animate-on-scroll"><span class="icon">📅</span><h4>10+ лет опыта</h4><p>С 2014 года в индустрии вышивки</p></div>
-                <div class="item animate-on-scroll"><span class="icon">🔧</span><h4>Современное оборудование</h4><p>Качественные машины для идеальной вышивки</p></div>
+                <div class="item animate-on-scroll"><span class="icon">📅</span><h4>10+ лет опыта</h4><p>С 2014 года в индустрии</p></div>
+                <div class="item animate-on-scroll"><span class="icon">🔧</span><h4>Современное оборудование</h4><p>Качественные машины</p></div>
                 <div class="item animate-on-scroll"><span class="icon">🧶</span><h4>Только качественные нити</h4><p>Не выгорают и не линяют</p></div>
-                <div class="item animate-on-scroll"><span class="icon">⭐</span><h4>От 1 до 1000+ заказов</h4><p>Работаем с любым тиражом</p></div>
+                <div class="item animate-on-scroll"><span class="icon">⭐</span><h4>От 1 до 1000+ заказов</h4><p>Любой тираж</p></div>
             </div>
         </div>
 
@@ -2035,23 +1971,22 @@
                 <div class="card animate-on-scroll"><span class="icon">🚛</span><h4>Яндекс Доставка</h4><p>курьер до двери</p></div>
                 <div class="card animate-on-scroll"><span class="icon">📬</span><h4>Почта России</h4><p>экономичная</p></div>
             </div>
-
             <h2>💳 Оплата</h2>
             <div class="grid-3">
                 <div class="card animate-on-scroll" style="grid-column: 1 / -1;">
                     <span class="icon">🧾</span>
                     <h4>Официальная работа с юрлицами и физлицами</h4>
-                    <p style="color: #ccc; margin-top: 10px;">
+                    <p style="color: #4a4640; margin-top: 8px;">
                         🤝 Работаю как самозанятый по закону № 422-ФЗ. Сотрудничество с компаниями (юрлицами и ИП) проходит просто и прозрачно:
                     </p>
-                    <ul style="list-style: none; padding: 0; text-align: left; margin: 10px 0; color: #ddd; font-size: 0.95em;">
-                        <li style="padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">📄 <strong>Заключаем договор</strong> (ГПХ) — официальное сотрудничество.</li>
-                        <li style="padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">💰 <strong>Выставляю счёт</strong> на оплату по вашим реквизитам.</li>
-                        <li style="padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">📆 <strong>Вы оплачиваете</strong> безналичным переводом.</li>
-                        <li style="padding: 6px 0;">🧾 <strong>Предоставляю чек</strong> из приложения «Мой налог» для вашей бухгалтерии.</li>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin: 8px 0; color: #4a4640; font-size: 0.9em;">
+                        <li style="padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,0.04);">📄 <strong>Заключаем договор</strong> (ГПХ)</li>
+                        <li style="padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,0.04);">💰 <strong>Выставляю счёт</strong> на оплату</li>
+                        <li style="padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,0.04);">📆 <strong>Вы оплачиваете</strong> безналичным переводом</li>
+                        <li style="padding: 4px 0;">🧾 <strong>Предоставляю чек</strong> из приложения «Мой налог»</li>
                     </ul>
-                    <p style="color: #ccc; margin-top: 10px;">Для физических лиц — оплата любым удобным способом с оформлением официального чека.</p>
-                    <span class="price-tag" style="margin-top: 15px;">Работаю официально</span>
+                    <p style="color: #4a4640; margin-top: 8px;">Для физических лиц — оплата любым способом с чеком.</p>
+                    <span class="price-tag" style="margin-top: 12px;">Работаю официально</span>
                 </div>
             </div>
         </div>
@@ -2082,8 +2017,8 @@
                     <div class="map-container">
                         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d&amp;source=constructor&amp;text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" allowfullscreen></iframe>
                     </div>
-                    <p style="font-size: 0.8em; color: #888; margin-top: 6px; text-align: right;">
-                        <a href="https://yandex.ru/maps/?text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" target="_blank" style="color: #888; text-decoration: none;">Открыть в Яндекс.Картах →</a>
+                    <p style="font-size: 0.7em; color: #9a9490; margin-top: 4px; text-align: right;">
+                        <a href="https://yandex.ru/maps/?text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" target="_blank" style="color: #9a9490;">Открыть в Яндекс.Картах →</a>
                     </p>
                 </div>
             </div>
@@ -2130,7 +2065,7 @@
                     <li><strong>Телефон</strong> — <a href="tel:+79014030785">+7 (901) 403-07-85</a></li>
                     <li><strong>Email</strong> — <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a></li>
                 </ul>
-                <p style="margin-top: 15px; color: #888; font-size: 0.85em;">Дата публикации: 06 августа 2026 г.</p>
+                <p style="margin-top: 12px; color: #9a9490; font-size: 0.8em;">Дата публикации: 06 августа 2026 г.</p>
             </div>
         </div>
 
@@ -2153,7 +2088,7 @@
         </div>
         <div class="footer-divider"></div>
         <p>© 2026 Вышивка Стиль. Все права защищены.</p>
-        <p style="font-size: 0.85em; opacity: 0.8; margin-top: 8px;">
+        <p style="font-size: 0.8em; opacity: 0.8; margin-top: 6px;">
             <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a> ·
             <a href="tel:+79014030785">+7 (901) 403-07-85</a>
         </p>
@@ -2171,7 +2106,6 @@
             <span class="modal-close" onclick="closeModal()">✕</span>
             <h2>📩 Заказать вышивку</h2>
             <p class="subtitle">Оставьте телефон и описание — я свяжусь с вами.</p>
-
             <form id="modalContactForm">
                 <div class="form-group">
                     <label for="modalPhone">📱 Номер телефона (или почта)</label>
@@ -2187,7 +2121,6 @@
                 </div>
                 <button type="submit" class="btn-submit">🚀 Отправить заявку</button>
             </form>
-
             <div class="success-message" id="modalSuccess">
                 <span class="check">✅</span>
                 <h3>Заявка отправлена!</h3>
@@ -2200,9 +2133,8 @@
     <div class="modal-overlay" id="popupModal">
         <div class="modal-content">
             <span class="modal-close" onclick="closePopup()">✕</span>
-            <h2>🎁 Получите бесплатный расчёт!</h2>
-            <p class="subtitle">Оставьте телефон — я пришлю точную стоимость вашей вышивки за 15 минут.</p>
-
+            <h2>🎁 Бесплатный расчёт!</h2>
+            <p class="subtitle">Оставьте телефон — я пришлю точную стоимость за 15 минут.</p>
             <form id="popupForm">
                 <div class="form-group">
                     <label for="popupPhone">📱 Ваш телефон</label>
@@ -2210,7 +2142,6 @@
                 </div>
                 <button type="submit" class="btn-submit">🚀 Получить расчёт</button>
             </form>
-
             <div class="success-message" id="popupSuccess">
                 <span class="check">✅</span>
                 <h3>Спасибо!</h3>
@@ -2225,7 +2156,6 @@
             <span class="modal-close" onclick="closePricingModal()">✕</span>
             <h2 id="pricingModalTitle">📩 Заказать вышивку</h2>
             <p class="subtitle" id="pricingModalSubtitle">Оставьте контакты, и я свяжусь с вами</p>
-
             <form id="pricingForm">
                 <div class="form-group">
                     <label for="pricingName">Ваше имя</label>
@@ -2250,7 +2180,7 @@
                     <input type="number" id="pricingQuantity" value="1" min="1" max="1000" required>
                 </div>
                 <div class="form-group">
-                    <label for="pricingMessage">✏️ Дополнительная информация (необязательно)</label>
+                    <label for="pricingMessage">✏️ Дополнительно (необязательно)</label>
                     <textarea id="pricingMessage" placeholder="Например: логотип компании, срочный заказ" rows="3"></textarea>
                 </div>
                 <div class="form-checkbox">
@@ -2316,16 +2246,6 @@
                 });
             });
 
-            // ---------- ПРОЗРАЧНАЯ ШАПКА ----------
-            const header = document.getElementById('header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-
             // ---------- КНОПКА "НАВЕРХ" ----------
             const scrollBtn = document.getElementById('scrollTopBtn');
             window.addEventListener('scroll', function() {
@@ -2344,7 +2264,7 @@
                         entry.target.classList.add('visible');
                     }
                 });
-            }, { threshold: 0.15 });
+            }, { threshold: 0.12 });
 
             animateElements.forEach(el => observer.observe(el));
 
@@ -2355,7 +2275,7 @@
                     if (entry.isIntersecting) {
                         const target = parseInt(entry.target.dataset.count);
                         let current = 0;
-                        const increment = Math.ceil(target / 60);
+                        const increment = Math.ceil(target / 50);
                         const timer = setInterval(() => {
                             current += increment;
                             if (current >= target) {
@@ -2363,7 +2283,7 @@
                                 clearInterval(timer);
                             }
                             entry.target.textContent = current;
-                        }, 20);
+                        }, 18);
                         counterObserver.unobserve(entry.target);
                     }
                 });
@@ -2396,7 +2316,7 @@
                     document.body.style.overflow = 'hidden';
                     popupShown = true;
                 }
-            }, 15000);
+            }, 18000);
 
             window.closePopup = function() {
                 document.getElementById('popupModal').classList.remove('active');
@@ -2564,7 +2484,7 @@
                     }
 
                     const text =
-                        `📩 *Новая заявка с сайта!*\n\n📱 *Телефон:* ${phone}\n💬 *Описание:* ${message || '—'}\n📋 *Согласие на обработку:* Да\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
+                        `📩 *Новая заявка с сайта!*\n\n📱 *Телефон:* ${phone}\n💬 *Описание:* ${message || '—'}\n📋 *Согласие:* Да\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
 
                     sendToTelegram(text).catch(() => {});
 
@@ -2676,7 +2596,7 @@
                     `👕 *Тип изделия:* ${type}\n` +
                     `📦 *Количество:* ${quantity} шт.\n` +
                     `💬 *Дополнительно:* ${message || '—'}\n` +
-                    `📋 *Согласие на обработку:* Да\n` +
+                    `📋 *Согласие:* Да\n` +
                     `🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
 
                 sendToTelegram(text).catch(() => {});
@@ -2891,7 +2811,7 @@
 
                     const stars = '⭐'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
                     let message =
-                        `⭐ *Новый отзыв (требует модерации)!*\n\n👤 *Имя:* ${name}\n📊 *Оценка:* ${stars}\n💬 *Отзыв:* ${text}\n📋 *Согласие на обработку:* Да\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
+                        `⭐ *Новый отзыв (требует модерации)!*\n\n👤 *Имя:* ${name}\n📊 *Оценка:* ${stars}\n💬 *Отзыв:* ${text}\n📋 *Согласие:* Да\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
 
                     if (files.length > 0) {
                         message += `\n📸 *Фото:* ${files.length} шт.`;
