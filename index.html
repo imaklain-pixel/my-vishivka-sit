@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Вышивка Стиль | Студия вышивки</title>
+    <title>Манофактура Вышивки | Студия вышивки</title>
     <style>
-        /* ---------- БАЗА ---------- */
+        /* ---------- БАЗА (СВЕТЛАЯ ТЕМА) ---------- */
         * {
             margin: 0;
             padding: 0;
@@ -13,31 +13,31 @@
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-            color: #fff;
-            background: #0a0a1a;
+            color: #1a1a2e;
+            background: #f5f5f7;
             line-height: 1.6;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
         a {
-            color: #feca57;
+            color: #e94560;
             text-decoration: none;
         }
         a:hover {
             color: #ff6b6b;
         }
 
-        /* ---------- ШАПКА ---------- */
+        /* ---------- ШАПКА (СВЕТЛАЯ) ---------- */
         header {
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #2a0a3e 100%);
+            background: #ffffff;
             padding: 18px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 10px;
-            box-shadow: 0 4px 30px rgba(233, 69, 96, 0.3);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -45,18 +45,17 @@
             transition: all 0.3s;
         }
         header.scrolled {
-            background: rgba(10, 10, 26, 0.92);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(12px);
-            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
         }
         .logo {
-            color: #fff;
+            color: #1a1a2e;
             font-size: 1.5em;
             font-weight: 300;
             letter-spacing: 4px;
             text-transform: uppercase;
             cursor: pointer;
-            text-shadow: 0 0 30px rgba(233, 69, 96, 0.3);
         }
         .logo span {
             background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff);
@@ -95,7 +94,7 @@
             flex-wrap: wrap;
         }
         nav a {
-            color: #dfe6e9;
+            color: #333;
             font-size: 0.95em;
             font-weight: 500;
             padding: 5px 0;
@@ -120,7 +119,7 @@
         }
         nav a:hover,
         nav a.active {
-            color: #feca57;
+            color: #e94560;
         }
 
         .social-header {
@@ -129,7 +128,7 @@
             gap: 12px;
         }
         .social-header a {
-            color: #ccc;
+            color: #666;
             transition: 0.3s;
             display: flex;
             align-items: center;
@@ -137,13 +136,13 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.06);
         }
         .social-header a:hover {
             color: #fff;
             transform: scale(1.1);
-            border-color: #ff6b6b;
+            border-color: transparent;
         }
         .social-header .ig:hover {
             background: radial-gradient(circle at 30% 30%, #fdf497, #fdf497 25%, #fd5949 50%, #d6249f 75%, #285aeb 100%);
@@ -215,24 +214,23 @@
             font-size: 2em;
             font-weight: 300;
             margin: 30px 0 15px;
-            color: #fff;
-            text-shadow: 0 0 20px rgba(233, 69, 96, 0.3);
+            color: #1a1a2e;
         }
         .page p {
-            color: #ddd;
+            color: #444;
             margin-bottom: 15px;
             font-size: 1.1em;
         }
         .page p strong {
-            color: #feca57;
+            color: #e94560;
         }
 
-        /* ---------- ГЛАВНЫЙ ЭКРАН С НИТКАМИ ---------- */
+        /* ---------- ГЛАВНЫЙ ЭКРАН (СВЕТЛЫЙ) ---------- */
         .hero-bg {
-            background: radial-gradient(ellipse at 20% 50%, rgba(106, 13, 173, 0.5) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 50%, rgba(0, 210, 255, 0.3) 0%, transparent 60%),
-                radial-gradient(ellipse at 50% 100%, rgba(233, 69, 96, 0.4) 0%, transparent 50%),
-                linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #2a0a3e 100%);
+            background: radial-gradient(ellipse at 20% 50%, rgba(106, 13, 173, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(0, 210, 255, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 100%, rgba(233, 69, 96, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, #f5f5f7 0%, #ffffff 50%, #f0f0f5 100%);
             min-height: 75vh;
             display: flex;
             flex-direction: column;
@@ -240,12 +238,12 @@
             align-items: center;
             text-align: center;
             padding: 60px 20px;
-            color: white;
+            color: #1a1a2e;
             position: relative;
             overflow: hidden;
             border-radius: 20px;
             margin-bottom: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.04);
         }
         .hero-bg::before {
             content: '';
@@ -255,8 +253,8 @@
             right: 0;
             bottom: 0;
             background: url('https://i5.storeland.net/2/3710/137093170/afacdb/vyshivalnye-nitki-madeira-rayon-40-1000m.png') center/cover no-repeat;
-            opacity: 0.12;
-            mix-blend-mode: screen;
+            opacity: 0.05;
+            mix-blend-mode: multiply;
             animation: floatBg 20s ease-in-out infinite alternate;
         }
         @keyframes floatBg {
@@ -280,7 +278,7 @@
             font-weight: 200;
             letter-spacing: 3px;
             margin-bottom: 20px;
-            text-shadow: 0 4px 40px rgba(0, 0, 0, 0.8);
+            color: #1a1a2e;
         }
         .hero-bg h1 strong {
             background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff);
@@ -292,8 +290,7 @@
         }
         .hero-bg p {
             font-size: clamp(1.1em, 2.2vw, 1.5em);
-            color: #e0e0e0;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+            color: #555;
             margin-bottom: 30px;
         }
 
@@ -305,24 +302,26 @@
             margin: 25px 0 20px;
         }
         .utp-facts .fact {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
             padding: 10px 20px;
             border-radius: 30px;
-            border: 1px solid rgba(255, 107, 107, 0.25);
+            border: 1px solid rgba(233, 69, 96, 0.2);
             font-size: 0.9em;
-            color: #ddd;
+            color: #333;
             transition: 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
         }
         .utp-facts .fact:hover {
-            border-color: #feca57;
+            border-color: #e94560;
             transform: scale(1.05);
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.9);
         }
         .utp-facts .fact.gold {
-            border-color: rgba(254, 202, 87, 0.3);
+            border-color: rgba(254, 202, 87, 0.4);
         }
         .utp-facts .fact.purple {
-            border-color: rgba(106, 13, 173, 0.5);
+            border-color: rgba(106, 13, 173, 0.2);
         }
 
         .btn-primary {
@@ -335,21 +334,22 @@
             font-size: 1.1em;
             font-weight: 800;
             cursor: pointer;
-            box-shadow: 0 8px 40px rgba(233, 69, 96, 0.6);
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.25);
             transition: all 0.3s;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
         .btn-primary:hover {
             transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 12px 60px rgba(233, 69, 96, 0.9);
+            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.35);
         }
         .btn-secondary {
             display: inline-block;
             padding: 16px 40px;
-            background: transparent;
-            color: #fff;
-            border: 2px solid #feca57;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            color: #1a1a2e;
+            border: 2px solid #e94560;
             border-radius: 60px;
             font-size: 1em;
             font-weight: 700;
@@ -359,9 +359,9 @@
             letter-spacing: 1px;
         }
         .btn-secondary:hover {
-            background: rgba(254, 202, 87, 0.15);
+            background: rgba(233, 69, 96, 0.08);
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(254, 202, 87, 0.2);
+            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.1);
         }
         .hero-buttons {
             display: flex;
@@ -378,9 +378,10 @@
             flex-wrap: wrap;
             margin: 30px 0;
             padding: 30px 20px;
-            background: rgba(255, 255, 255, 0.03);
+            background: #ffffff;
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
         }
         .counter-item {
             text-align: center;
@@ -394,7 +395,7 @@
             display: block;
         }
         .counter-item .label {
-            color: #aaa;
+            color: #666;
             font-size: 0.9em;
         }
 
@@ -406,9 +407,10 @@
         .pricing-block h2 {
             font-size: 2em;
             margin-bottom: 10px;
+            color: #1a1a2e;
         }
         .pricing-subtitle {
-            color: #aaa;
+            color: #666;
             margin-bottom: 30px;
         }
         .pricing-grid {
@@ -419,35 +421,35 @@
             margin: 0 auto;
         }
         .pricing-card {
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(8px);
+            background: #ffffff;
             border-radius: 20px;
             padding: 30px 25px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             transition: all 0.4s;
             cursor: pointer;
             text-align: left;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
         .pricing-card:hover {
             transform: translateY(-10px);
-            border-color: #ff6b6b;
-            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.15);
-            background: rgba(255, 255, 255, 0.07);
+            border-color: #e94560;
+            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.1);
+            background: #ffffff;
         }
         .pricing-header {
             margin-bottom: 15px;
         }
         .pricing-header h3 {
             font-size: 1.3em;
-            color: #fff;
+            color: #1a1a2e;
             margin-bottom: 4px;
         }
         .pricing-header .price {
             font-size: 1.8em;
             font-weight: 800;
-            color: #feca57;
+            color: #e94560;
             display: inline-block;
         }
         .pricing-header .badge {
@@ -463,15 +465,15 @@
         }
         .pricing-features li {
             padding: 6px 0;
-            color: #ccc;
+            color: #555;
             font-size: 0.9em;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
         }
         .pricing-features li:last-child {
             border-bottom: none;
         }
         .pricing-desc {
-            color: #aaa;
+            color: #666;
             font-size: 0.95em;
             font-style: italic;
             margin: 10px 0 15px;
@@ -492,21 +494,23 @@
         }
         .btn-order:hover {
             transform: scale(1.02);
-            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.4);
+            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.3);
         }
 
         /* ---------- СХЕМА РАБОТЫ ---------- */
         .work-scheme {
-            background: rgba(255, 255, 255, 0.03);
+            background: #ffffff;
             border-radius: 24px;
             padding: 40px 30px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             margin: 40px 0;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
         .work-scheme h2 {
             font-size: 2em;
             margin-bottom: 10px;
+            color: #1a1a2e;
         }
         .scheme-grid {
             display: grid;
@@ -516,20 +520,20 @@
             margin: 0 auto;
         }
         .scheme-step {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(0, 0, 0, 0.02);
             border-radius: 16px;
             padding: 25px 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.04);
             transition: 0.3s;
             position: relative;
         }
         .scheme-step:hover {
-            border-color: #ff6b6b;
+            border-color: #e94560;
             transform: translateY(-5px);
         }
         .scheme-step .step-number {
             display: inline-block;
-            background: #ff6b6b;
+            background: #e94560;
             color: #fff;
             font-size: 1.2em;
             font-weight: 800;
@@ -545,25 +549,26 @@
             margin-bottom: 8px;
         }
         .scheme-step h4 {
-            color: #fff;
+            color: #1a1a2e;
             font-size: 1.1em;
             margin-bottom: 6px;
         }
         .scheme-step p {
-            color: #aaa;
+            color: #666;
             font-size: 0.9em;
             margin: 0;
         }
 
         /* ---------- ЛИПКИЙ БЛОК ---------- */
         .why-us {
-            background: rgba(255, 255, 255, 0.03);
+            background: #ffffff;
             border-radius: 24px;
             padding: 40px 30px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             margin: 30px 0;
             text-align: center;
             transition: 0.5s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
         .why-us:hover {
             border-color: #feca57;
@@ -571,6 +576,7 @@
         .why-us h2 {
             font-size: 2em;
             margin-bottom: 25px;
+            color: #1a1a2e;
         }
         .why-us-grid {
             display: grid;
@@ -580,16 +586,16 @@
             margin: 0 auto;
         }
         .why-us-item {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(0, 0, 0, 0.02);
             border-radius: 16px;
             padding: 25px 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.04);
             transition: 0.4s;
         }
         .why-us-item:hover {
-            border-color: #ff6b6b;
+            border-color: #e94560;
             transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(0, 0, 0, 0.04);
         }
         .why-us-item .icon {
             font-size: 2.8em;
@@ -597,32 +603,32 @@
             margin-bottom: 12px;
         }
         .why-us-item h4 {
-            color: #fff;
+            color: #1a1a2e;
             font-size: 1.1em;
             margin-bottom: 6px;
         }
         .why-us-item p {
-            color: #aaa;
+            color: #666;
             font-size: 0.9em;
             margin: 0;
         }
         .why-us .owner-quote {
             margin-top: 25px;
             padding: 20px;
-            background: rgba(255, 107, 107, 0.08);
+            background: rgba(233, 69, 96, 0.05);
             border-radius: 16px;
-            border-left: 4px solid #ff6b6b;
+            border-left: 4px solid #e94560;
             text-align: left;
             font-style: italic;
-            color: #ddd;
+            color: #444;
             font-size: 1.05em;
         }
         .why-us .owner-quote strong {
-            color: #feca57;
+            color: #e94560;
             font-style: normal;
         }
 
-        /* ---------- РАСКРЫТИЕ КОНТРОЛЯ ---------- */
+        /* ---------- КОНТРОЛЬ КАЧЕСТВА ---------- */
         .quality-details {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -630,12 +636,13 @@
             margin-top: 20px;
         }
         .quality-step {
-            background: rgba(255, 255, 255, 0.04);
+            background: #ffffff;
             border-radius: 16px;
             padding: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             text-align: center;
             transition: 0.4s;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
         }
         .quality-step:hover {
             border-color: #feca57;
@@ -643,7 +650,7 @@
         }
         .quality-step .num {
             display: inline-block;
-            background: #ff6b6b;
+            background: #e94560;
             color: #fff;
             font-size: 1.4em;
             font-weight: 800;
@@ -654,12 +661,12 @@
             margin-bottom: 12px;
         }
         .quality-step h4 {
-            color: #fff;
+            color: #1a1a2e;
             font-size: 1.15em;
             margin-bottom: 8px;
         }
         .quality-step p {
-            color: #aaa;
+            color: #666;
             font-size: 0.9em;
             margin: 0;
         }
@@ -672,7 +679,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 9999;
             justify-content: center;
             align-items: center;
@@ -683,13 +690,13 @@
             display: flex;
         }
         .modal-content {
-            background: #1a1a2e;
+            background: #ffffff;
             border-radius: 24px;
             padding: 40px;
             max-width: 500px;
             width: 90%;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
             position: relative;
         }
         .modal-close {
@@ -702,16 +709,16 @@
             transition: 0.3s;
         }
         .modal-close:hover {
-            color: #ff6b6b;
+            color: #e94560;
             transform: rotate(90deg);
         }
         .modal-content h2 {
             font-size: 1.8em;
             margin-bottom: 10px;
-            color: #fff;
+            color: #1a1a2e;
         }
         .modal-content .subtitle {
-            color: #aaa;
+            color: #666;
             margin-bottom: 25px;
             font-size: 0.95em;
         }
@@ -720,7 +727,7 @@
         }
         .modal-content .form-group label {
             display: block;
-            color: #ddd;
+            color: #444;
             font-weight: 600;
             margin-bottom: 6px;
             font-size: 0.95em;
@@ -730,46 +737,23 @@
         .modal-content .form-group select {
             width: 100%;
             padding: 14px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(0, 0, 0, 0.12);
             border-radius: 12px;
             font-size: 1em;
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
+            background: #f5f5f7;
+            color: #1a1a2e;
             outline: none;
             transition: 0.3s;
         }
         .modal-content .form-group input:focus,
         .modal-content .form-group textarea:focus,
         .modal-content .form-group select:focus {
-            border-color: #ff6b6b;
-            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.15);
+            border-color: #e94560;
+            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.08);
         }
         .modal-content .form-group textarea {
             resize: vertical;
             min-height: 80px;
-        }
-        .modal-content .form-checkbox {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin: 15px 0;
-        }
-        .modal-content .form-checkbox input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            min-width: 20px;
-            margin-top: 2px;
-            accent-color: #ff6b6b;
-            cursor: pointer;
-        }
-        .modal-content .form-checkbox label {
-            color: #ccc;
-            font-size: 0.9em;
-            cursor: pointer;
-        }
-        .modal-content .form-checkbox label a {
-            color: #feca57;
-            text-decoration: underline;
         }
         .modal-content .btn-submit {
             width: 100%;
@@ -783,11 +767,34 @@
             cursor: pointer;
             transition: 0.3s;
             letter-spacing: 1px;
-            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.4);
+            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.3);
         }
         .modal-content .btn-submit:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.6);
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.4);
+        }
+        .modal-content .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .modal-content .form-checkbox input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            margin-top: 2px;
+            accent-color: #e94560;
+            cursor: pointer;
+        }
+        .modal-content .form-checkbox label {
+            color: #555;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+        .modal-content .form-checkbox label a {
+            color: #e94560;
+            text-decoration: underline;
         }
         .modal-content .success-message {
             display: none;
@@ -799,11 +806,11 @@
             display: block;
         }
         .modal-content .success-message h3 {
-            color: #4caf50;
+            color: #2ecc71;
             margin: 10px 0 4px;
         }
         .modal-content .success-message p {
-            color: #aaa;
+            color: #666;
             margin: 0;
         }
         @keyframes fadeInModal {
@@ -825,21 +832,21 @@
             margin: 30px 0;
         }
         .category-card {
-            background: rgba(255, 255, 255, 0.06);
+            background: #ffffff;
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             border-radius: 20px;
             padding: 30px 20px;
             text-align: center;
             cursor: pointer;
             transition: all 0.4s;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
         .category-card:hover {
             transform: translateY(-10px) scale(1.02);
-            border-color: #ff6b6b;
-            box-shadow: 0 12px 50px rgba(233, 69, 96, 0.3);
-            background: rgba(255, 255, 255, 0.12);
+            border-color: #e94560;
+            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.08);
+            background: #ffffff;
         }
         .category-card .icon {
             font-size: 4em;
@@ -848,19 +855,19 @@
         }
         .category-card h3 {
             font-size: 1.5em;
-            color: #fff;
+            color: #1a1a2e;
             margin-bottom: 8px;
         }
         .category-card p {
-            color: #aaa;
+            color: #666;
             font-size: 0.95em;
             margin: 0;
         }
         .category-card .badge {
             display: inline-block;
             margin-top: 12px;
-            background: rgba(255, 107, 107, 0.2);
-            color: #ff6b6b;
+            background: rgba(233, 69, 96, 0.08);
+            color: #e94560;
             padding: 4px 16px;
             border-radius: 30px;
             font-size: 0.8em;
@@ -877,16 +884,17 @@
             display: grid;
         }
         .gallery-item {
-            background: rgba(255, 255, 255, 0.03);
+            background: #ffffff;
             border-radius: 12px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             transition: 0.3s;
             cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
         }
         .gallery-item:hover {
             transform: scale(1.03);
-            border-color: #ff6b6b;
+            border-color: #e94560;
         }
         .gallery-item img {
             width: 100%;
@@ -896,7 +904,7 @@
         }
         .gallery-item .caption {
             padding: 10px 12px;
-            color: #ccc;
+            color: #555;
             font-size: 0.9em;
             text-align: center;
         }
@@ -965,19 +973,18 @@
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
         }
         .card {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
             border-radius: 20px;
             padding: 30px 25px;
             transition: all 0.4s;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
         .card:hover {
             transform: translateY(-10px) scale(1.02);
-            border-color: #ff6b6b;
-            box-shadow: 0 12px 50px rgba(233, 69, 96, 0.3);
-            background: rgba(255, 255, 255, 0.12);
+            border-color: #e94560;
+            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.08);
+            background: #ffffff;
         }
         .card .icon {
             font-size: 3em;
@@ -986,17 +993,17 @@
         }
         .card h3 {
             font-size: 1.3em;
-            color: #fff;
+            color: #1a1a2e;
             margin-bottom: 8px;
         }
         .card h4 {
             font-size: 1.2em;
-            color: #fff;
+            color: #1a1a2e;
             margin-bottom: 4px;
         }
         .card p {
             font-size: 0.95em;
-            color: #ccc;
+            color: #555;
             margin: 0;
         }
         .card .price-tag {
@@ -1008,7 +1015,7 @@
             border-radius: 30px;
             font-weight: 700;
             font-size: 0.95em;
-            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.2);
         }
 
         /* ---------- ОТЗЫВЫ ---------- */
@@ -1019,12 +1026,12 @@
             margin: 25px 0;
         }
         .review-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(8px);
+            background: #ffffff;
             border-radius: 16px;
             padding: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             transition: all 0.3s;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
         }
         .review-card:hover {
             border-color: #feca57;
@@ -1040,7 +1047,7 @@
             font-size: 2.5em;
         }
         .review-card .review-name {
-            color: #fff;
+            color: #1a1a2e;
             font-weight: 700;
             font-size: 1.05em;
         }
@@ -1049,7 +1056,7 @@
             font-size: 0.8em;
         }
         .review-card .review-text {
-            color: #ccc;
+            color: #555;
             font-size: 0.95em;
             margin: 0;
             font-style: italic;
@@ -1064,8 +1071,8 @@
             display: inline-block;
             margin-top: 10px;
             font-size: 0.7em;
-            background: rgba(254, 202, 87, 0.15);
-            color: #feca57;
+            background: rgba(233, 69, 96, 0.08);
+            color: #e94560;
             padding: 2px 14px;
             border-radius: 20px;
         }
@@ -1080,16 +1087,16 @@
         .contacts-grid .info-block li {
             list-style: none;
             padding: 14px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            color: #ccc;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            color: #555;
         }
         .contacts-grid .info-block li strong {
-            color: #fff;
+            color: #1a1a2e;
             width: 130px;
             display: inline-block;
         }
         .contacts-grid .info-block li a {
-            color: #feca57;
+            color: #e94560;
             transition: color 0.3s;
         }
         .contacts-grid .info-block li a:hover {
@@ -1115,7 +1122,7 @@
         }
         .messenger-links a:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         .btn-wa {
             background: #25D366;
@@ -1133,10 +1140,10 @@
         .map-container {
             border-radius: 16px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.08);
             height: 280px;
             width: 100%;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
         .map-container iframe {
             width: 100%;
@@ -1153,13 +1160,13 @@
             margin-top: 25px;
         }
         .about-features .item {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(8px);
+            background: #ffffff;
             border-radius: 16px;
             padding: 25px 20px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
         }
         .about-features .item:hover {
             border-color: #feca57;
@@ -1171,32 +1178,31 @@
             margin-bottom: 8px;
         }
         .about-features .item h4 {
-            color: #fff;
+            color: #1a1a2e;
             font-size: 1.05em;
         }
         .about-features .item p {
-            color: #aaa;
+            color: #666;
             font-size: 0.85em;
             margin: 0;
         }
 
         /* ---------- ФОРМЫ ---------- */
         .form-container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
+            background: #ffffff;
             border-radius: 20px;
             padding: 30px 35px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             margin-top: 25px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
         .form-container h3 {
             font-size: 1.5em;
-            color: #fff;
+            color: #1a1a2e;
             margin-bottom: 8px;
         }
         .form-container .form-subtitle {
-            color: #aaa;
+            color: #666;
             margin-bottom: 20px;
         }
         .form-group {
@@ -1204,7 +1210,7 @@
         }
         .form-group label {
             display: block;
-            color: #ddd;
+            color: #444;
             font-weight: 600;
             margin-bottom: 6px;
             font-size: 0.95em;
@@ -1214,34 +1220,34 @@
         .form-group select {
             width: 100%;
             padding: 14px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(0, 0, 0, 0.12);
             border-radius: 12px;
             font-size: 1em;
             transition: all 0.3s;
             outline: none;
-            background: rgba(0, 0, 0, 0.3);
-            color: #fff;
+            background: #f5f5f7;
+            color: #1a1a2e;
             font-family: inherit;
         }
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
-            border-color: #ff6b6b;
-            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.15);
-            background: rgba(0, 0, 0, 0.5);
+            border-color: #e94560;
+            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.08);
+            background: #ffffff;
         }
         .form-group textarea {
             resize: vertical;
             min-height: 100px;
         }
         .form-group select option {
-            background: #1a1a2e;
-            color: #fff;
+            background: #ffffff;
+            color: #1a1a2e;
         }
         .form-group input[type="file"] {
             padding: 10px;
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px dashed rgba(255, 255, 255, 0.2);
+            background: #f5f5f7;
+            border: 1px dashed rgba(0, 0, 0, 0.15);
         }
         .form-checkbox {
             display: flex;
@@ -1254,16 +1260,16 @@
             height: 20px;
             min-width: 20px;
             margin-top: 2px;
-            accent-color: #ff6b6b;
+            accent-color: #e94560;
             cursor: pointer;
         }
         .form-checkbox label {
-            color: #ccc;
+            color: #555;
             font-size: 0.9em;
             cursor: pointer;
         }
         .form-checkbox label a {
-            color: #feca57;
+            color: #e94560;
             text-decoration: underline;
         }
         .form-checkbox label a:hover {
@@ -1280,11 +1286,11 @@
             cursor: pointer;
             transition: all 0.3s;
             letter-spacing: 1px;
-            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.4);
+            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.3);
         }
         .btn-submit:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.6);
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.4);
         }
         .btn-submit:disabled {
             opacity: 0.5;
@@ -1301,24 +1307,25 @@
             display: block;
         }
         .success-message h3 {
-            color: #4caf50;
+            color: #2ecc71;
             margin: 10px 0 4px;
         }
         .success-message p {
-            color: #aaa;
+            color: #666;
             margin: 0;
         }
 
         /* ---------- ЮРИДИЧЕСКАЯ ---------- */
         .legal-content {
-            background: rgba(255, 255, 255, 0.04);
+            background: #ffffff;
             border-radius: 16px;
             padding: 30px 35px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             margin-top: 20px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
         }
         .legal-content h3 {
-            color: #feca57;
+            color: #e94560;
             font-size: 1.3em;
             margin: 25px 0 10px;
         }
@@ -1327,7 +1334,7 @@
         }
         .legal-content p,
         .legal-content li {
-            color: #ccc;
+            color: #555;
             font-size: 0.95em;
             line-height: 1.7;
         }
@@ -1339,21 +1346,21 @@
             margin-bottom: 6px;
         }
         .legal-content .highlight {
-            color: #feca57;
+            color: #e94560;
             font-weight: 600;
         }
 
         /* ---------- ПОДВАЛ ---------- */
         footer {
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #2a0a3e 100%);
-            color: #888;
+            background: #ffffff;
+            color: #666;
             text-align: center;
             padding: 35px 20px 25px;
             margin-top: auto;
-            border-top: 2px solid rgba(255, 107, 107, 0.2);
+            border-top: 2px solid rgba(233, 69, 96, 0.15);
         }
         footer a {
-            color: #feca57;
+            color: #e94560;
             transition: color 0.3s;
         }
         footer a:hover {
@@ -1374,13 +1381,13 @@
             margin-bottom: 15px;
         }
         .footer-nav a {
-            color: #ccc;
+            color: #444;
             font-size: 0.9em;
             cursor: pointer;
             transition: color 0.3s;
         }
         .footer-nav a:hover {
-            color: #feca57;
+            color: #e94560;
         }
         .footer-legal {
             display: flex;
@@ -1391,15 +1398,15 @@
             font-size: 0.8em;
         }
         .footer-legal a {
-            color: #777;
+            color: #888;
             transition: color 0.3s;
         }
         .footer-legal a:hover {
-            color: #feca57;
+            color: #e94560;
         }
         .footer-req {
             font-size: 0.75em;
-            color: #666;
+            color: #888;
             margin-top: 10px;
             line-height: 1.8;
         }
@@ -1417,7 +1424,7 @@
             height: 50px;
             font-size: 1.5em;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
+            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.3);
             transition: 0.3s;
             z-index: 999;
             opacity: 0;
@@ -1431,7 +1438,7 @@
         }
         .scroll-top:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(233, 69, 96, 0.6);
+            box-shadow: 0 6px 30px rgba(233, 69, 96, 0.4);
         }
 
         /* ---------- ПЛАВАЮЩИЕ МЕССЕНДЖЕРЫ ---------- */
@@ -1455,7 +1462,7 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95em;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             transition: 0.3s;
             border: none;
             cursor: pointer;
@@ -1473,31 +1480,31 @@
         }
         .floating-messengers .messenger-btn.wa {
             background: #25D366;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
         }
         .floating-messengers .messenger-btn.wa:hover {
-            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
         }
         .floating-messengers .messenger-btn.tg {
             background: #0088cc;
-            box-shadow: 0 4px 20px rgba(0, 136, 204, 0.4);
+            box-shadow: 0 4px 20px rgba(0, 136, 204, 0.3);
         }
         .floating-messengers .messenger-btn.tg:hover {
-            box-shadow: 0 6px 30px rgba(0, 136, 204, 0.6);
+            box-shadow: 0 6px 30px rgba(0, 136, 204, 0.4);
         }
         .floating-messengers .messenger-btn.ig {
             background: radial-gradient(circle at 30% 30%, #fdf497, #fdf497 25%, #fd5949 50%, #d6249f 75%, #285aeb 100%);
-            box-shadow: 0 4px 20px rgba(214, 36, 159, 0.4);
+            box-shadow: 0 4px 20px rgba(214, 36, 159, 0.3);
         }
         .floating-messengers .messenger-btn.ig:hover {
-            box-shadow: 0 6px 30px rgba(214, 36, 159, 0.6);
+            box-shadow: 0 6px 30px rgba(214, 36, 159, 0.4);
         }
         .floating-messengers .messenger-btn.max {
             background: linear-gradient(135deg, #1a1a2e, #6a0dad);
-            box-shadow: 0 4px 20px rgba(106, 13, 173, 0.4);
+            box-shadow: 0 4px 20px rgba(106, 13, 173, 0.3);
         }
         .floating-messengers .messenger-btn.max:hover {
-            box-shadow: 0 6px 30px rgba(106, 13, 173, 0.6);
+            box-shadow: 0 6px 30px rgba(106, 13, 173, 0.4);
         }
 
         /* ---------- АНИМАЦИЯ ПОЯВЛЕНИЯ ---------- */
@@ -1642,10 +1649,10 @@
         </a>
     </div>
 
-    <!-- ====== ШАПКА (без "Услуги") ====== -->
+    <!-- ====== ШАПКА ====== -->
     <header id="header">
         <div class="logo" onclick="navigateTo('home')">
-            <span class="diamond">✦</span> <span>Вышивка Стиль</span>
+            <span class="diamond">✦</span> <span>Манофактура Вышивки</span>
         </div>
         <div class="nav-wrapper">
             <nav>
@@ -1759,7 +1766,7 @@
             <!-- ===== СХЕМА РАБОТЫ ===== -->
             <div class="work-scheme animate-on-scroll">
                 <h2>Как мы работаем</h2>
-                <p style="color: #aaa; margin-bottom: 30px;">4 простых шага к вашей идеальной вышивке</p>
+                <p style="color: #666; margin-bottom: 30px;">4 простых шага к вашей идеальной вышивке</p>
                 <div class="scheme-grid">
                     <div class="scheme-step">
                         <div class="step-number">1</div>
@@ -1808,7 +1815,7 @@
                     <p>Проверяем готовую работу под разным светом. Если есть недочёты — переделываем сразу.</p>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 20px; font-size: 1.1em; color: #feca57;">
+            <p style="text-align: center; margin-top: 20px; font-size: 1.1em; color: #e94560;">
                 ⭐ <strong>Итог:</strong> вы получаете качественную вышивку без сюрпризов
             </p>
 
@@ -1993,7 +2000,7 @@
                     <div class="form-group">
                         <label for="reviewPhoto">📸 Прикрепите фото (необязательно)</label>
                         <input type="file" id="reviewPhoto" accept="image/*" multiple>
-                        <p style="font-size: 0.8em; color: #888; margin-top: 5px;">Вы можете загрузить до 5 фото</p>
+                        <p style="font-size: 0.8em; color: #666; margin-top: 5px;">Вы можете загрузить до 5 фото</p>
                     </div>
 
                     <div class="form-checkbox">
@@ -2041,16 +2048,16 @@
                 <div class="card animate-on-scroll" style="grid-column: 1 / -1;">
                     <span class="icon">🧾</span>
                     <h4>Официальная работа с юрлицами и физлицами</h4>
-                    <p style="color: #ccc; margin-top: 10px;">
+                    <p style="color: #555; margin-top: 10px;">
                         🤝 Работаю как самозанятый по закону № 422-ФЗ. Сотрудничество с компаниями (юрлицами и ИП) проходит просто и прозрачно:
                     </p>
-                    <ul style="list-style: none; padding: 0; text-align: left; margin: 10px 0; color: #ddd; font-size: 0.95em;">
-                        <li style="padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">📄 <strong>Заключаем договор</strong> (ГПХ) — официальное сотрудничество.</li>
-                        <li style="padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">💰 <strong>Выставляю счёт</strong> на оплату по вашим реквизитам.</li>
-                        <li style="padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">📆 <strong>Вы оплачиваете</strong> безналичным переводом.</li>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin: 10px 0; color: #555; font-size: 0.95em;">
+                        <li style="padding: 6px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.05);">📄 <strong>Заключаем договор</strong> (ГПХ) — официальное сотрудничество.</li>
+                        <li style="padding: 6px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.05);">💰 <strong>Выставляю счёт</strong> на оплату по вашим реквизитам.</li>
+                        <li style="padding: 6px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.05);">📆 <strong>Вы оплачиваете</strong> безналичным переводом.</li>
                         <li style="padding: 6px 0;">🧾 <strong>Предоставляю чек</strong> из приложения «Мой налог» для вашей бухгалтерии.</li>
                     </ul>
-                    <p style="color: #ccc; margin-top: 10px;">Для физических лиц — оплата любым удобным способом с оформлением официального чека.</p>
+                    <p style="color: #555; margin-top: 10px;">Для физических лиц — оплата любым удобным способом с оформлением официального чека.</p>
                     <span class="price-tag" style="margin-top: 15px;">Работаю официально</span>
                 </div>
             </div>
@@ -2094,7 +2101,7 @@
             <h1>Юридическая информация</h1>
             <div class="legal-content">
                 <h3>1. Политика конфиденциальности</h3>
-                <p>Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта <span class="highlight">Вышивка Стиль</span> (далее — «Сайт»).</p>
+                <p>Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта <span class="highlight">Манофактура Вышивки</span> (далее — «Сайт»).</p>
                 <p><strong>1.1. Какие данные мы собираем</strong><br>При заполнении форм на Сайте мы собираем: имя, номер телефона и текст сообщения/отзыва. Также мы можем получать данные, которые вы передаёте в мессенджерах (WhatsApp, Telegram) при общении с нами.</p>
                 <p><strong>1.2. Цели обработки данных</strong><br>Ваши данные используются исключительно для:</p>
                 <ul>
@@ -2152,7 +2159,7 @@
             <a href="#" onclick="navigateTo('legal'); return false;">Согласие на обработку данных</a>
         </div>
         <div class="footer-divider"></div>
-        <p>© 2026 Вышивка Стиль. Все права защищены.</p>
+        <p>© 2026 Манофактура Вышивки. Все права защищены.</p>
         <p style="font-size: 0.85em; opacity: 0.8; margin-top: 8px;">
             <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a> ·
             <a href="tel:+79014030785">+7 (901) 403-07-85</a>
