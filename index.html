@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Мануфактура Вышивки | Студия вышивки</title>
-    <!-- Подключение красивого шрифта для логотипа -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+    <title>Манофактура Вышивки | Студия вышивки</title>
     <style>
         /* ---------- БАЗА (СВЕТЛАЯ ТЕМА) ---------- */
         * {
@@ -52,33 +50,35 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
         }
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6em;
-            font-weight: 700;
-            letter-spacing: 2px;
             color: #1a1a2e;
+            font-size: 1.5em;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
-        .logo .icon {
-            font-size: 1.4em;
-            line-height: 1;
-            color: #e94560;
-        }
-        .logo .highlight {
-            background: linear-gradient(135deg, #e94560, #feca57);
+        .logo span {
+            background: linear-gradient(135deg, #ff6b6b, #feca57, #6a0dad, #00d2ff);
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            animation: gradientShift 4s ease-in-out infinite;
         }
-        .logo .sub {
-            font-size: 0.5em;
-            font-weight: 400;
-            letter-spacing: 4px;
-            color: #888;
-            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-            -webkit-text-fill-color: #888;
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .logo .diamond {
+            color: #feca57;
+            -webkit-text-fill-color: #feca57;
         }
 
         .nav-wrapper {
@@ -166,7 +166,7 @@
             fill: currentColor;
         }
 
-        /* ---------- ОСТАЛЬНЫЕ СТИЛИ (светлая тема) ---------- */
+        /* ---------- ОСНОВНОЙ КОНТЕНТ ---------- */
         .breadcrumbs {
             max-width: 1100px;
             margin: 20px auto 0;
@@ -223,17 +223,6 @@
         }
         .page p strong {
             color: #e94560;
-        }
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
         }
 
         /* ---------- ГЛАВНЫЙ ЭКРАН (СВЕТЛЫЙ) ---------- */
@@ -1577,10 +1566,6 @@
         @media (max-width: 480px) {
             .logo {
                 font-size: 1.2em;
-                letter-spacing: 1px;
-            }
-            .logo .sub {
-                font-size: 0.45em;
             }
             nav ul {
                 gap: 12px;
@@ -1667,9 +1652,7 @@
     <!-- ====== ШАПКА ====== -->
     <header id="header">
         <div class="logo" onclick="navigateTo('home')">
-            <span class="icon">🧵</span>
-            <span class="highlight">Мануфактура</span>
-            <span style="font-size: 0.7em; color: #888; font-weight: 400;">Вышивки</span>
+            <span class="diamond">✦</span> <span>Манофактура Вышивки</span>
         </div>
         <div class="nav-wrapper">
             <nav>
@@ -2118,7 +2101,7 @@
             <h1>Юридическая информация</h1>
             <div class="legal-content">
                 <h3>1. Политика конфиденциальности</h3>
-                <p>Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта <span class="highlight">Мануфактура Вышивки</span> (далее — «Сайт»).</p>
+                <p>Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта <span class="highlight">Манофактура Вышивки</span> (далее — «Сайт»).</p>
                 <p><strong>1.1. Какие данные мы собираем</strong><br>При заполнении форм на Сайте мы собираем: имя, номер телефона и текст сообщения/отзыва. Также мы можем получать данные, которые вы передаёте в мессенджерах (WhatsApp, Telegram) при общении с нами.</p>
                 <p><strong>1.2. Цели обработки данных</strong><br>Ваши данные используются исключительно для:</p>
                 <ul>
@@ -2176,7 +2159,7 @@
             <a href="#" onclick="navigateTo('legal'); return false;">Согласие на обработку данных</a>
         </div>
         <div class="footer-divider"></div>
-        <p>© 2026 Мануфактура Вышивки. Все права защищены.</p>
+        <p>© 2026 Манофактура Вышивки. Все права защищены.</p>
         <p style="font-size: 0.85em; opacity: 0.8; margin-top: 8px;">
             <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a> ·
             <a href="tel:+79014030785">+7 (901) 403-07-85</a>
