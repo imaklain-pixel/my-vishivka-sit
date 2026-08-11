@@ -3,54 +3,41 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Вышивка Стиль — современная студия вышивки</title>
-    
-    <!-- Современный шрифт -->
+    <title>Стиль Вышивки — Создаём шедевры с душой</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
     <style>
         /* ============================================
-                   CSS ПЕРЕМЕННЫЕ (современный подход)
+                   CSS ПЕРЕМЕННЫЕ
                    ============================================ */
         :root {
-            /* Цвета */
-            --color-primary: #007AFF;
-            --color-primary-light: #409CFF;
-            --color-primary-dark: #0055CC;
-            --color-secondary: #5856D6;
-            --color-accent: #FF2D55;
-            --color-gold: #FFCC00;
-            
-            --color-bg: #F2F2F7;
-            --color-bg-card: rgba(255, 255, 255, 0.72);
-            --color-text: #1C1C1E;
-            --color-text-secondary: #8E8E93;
-            
-            /* Тени */
+            --color-primary: #8B5CF6;
+            --color-primary-light: #A78BFA;
+            --color-primary-dark: #7C3AED;
+            --color-secondary: #6D28D9;
+            --color-accent: #EC4899;
+            --color-gold: #F59E0B;
+            --color-bg: #F5F3FF;
+            --color-text: #1E1B4B;
+            --color-text-secondary: #6B7280;
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
             --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
-            
-            /* Размытие */
+            --shadow-xl: 0 30px 80px rgba(0, 0, 0, 0.12);
             --blur-bg: blur(24px);
-            
-            /* Радиусы */
             --radius-sm: 12px;
             --radius-md: 16px;
             --radius-lg: 24px;
+            --radius-xl: 32px;
             --radius-full: 9999px;
-            
-            /* Отступы */
             --space-xs: 4px;
             --space-sm: 8px;
             --space-md: 16px;
             --space-lg: 24px;
             --space-xl: 32px;
             --space-2xl: 48px;
-            
-            /* Шрифты */
+            --space-3xl: 64px;
             --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
@@ -62,11 +49,9 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: var(--font-family);
             background: var(--color-bg);
@@ -76,18 +61,15 @@
             display: flex;
             flex-direction: column;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
-
         a {
             color: var(--color-primary);
             text-decoration: none;
-            transition: color 0.2s;
         }
         a:hover {
             color: var(--color-primary-dark);
         }
-
         img {
             max-width: 100%;
             display: block;
@@ -97,31 +79,31 @@
                    КОНТЕЙНЕР
                    ============================================ */
         .container {
-            max-width: 1120px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 var(--space-md);
             width: 100%;
         }
 
         /* ============================================
-                   ШАПКА (iOS-стиль)
+                   ШАПКА
                    ============================================ */
         .header {
             position: sticky;
             top: 0;
-            z-index: 100;
-            background: rgba(242, 242, 247, 0.78);
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: var(--blur-bg);
             -webkit-backdrop-filter: var(--blur-bg);
             border-bottom: 1px solid rgba(0, 0, 0, 0.04);
             padding: var(--space-sm) 0;
             transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
         }
-
         .header.scrolled {
-            background: rgba(242, 242, 247, 0.92);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-md);
         }
-
         .header-inner {
             display: flex;
             justify-content: space-between;
@@ -129,10 +111,9 @@
             flex-wrap: wrap;
             gap: var(--space-sm);
         }
-
         .logo {
-            font-size: 1.15rem;
-            font-weight: 700;
+            font-size: 1.1rem;
+            font-weight: 800;
             letter-spacing: -0.5px;
             cursor: pointer;
             display: flex;
@@ -168,17 +149,15 @@
             gap: var(--space-md);
             flex-wrap: wrap;
         }
-
         .nav-list {
             list-style: none;
             display: flex;
             gap: var(--space-sm);
             flex-wrap: wrap;
         }
-
         .nav-link {
             color: var(--color-text-secondary);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 500;
             padding: 4px 0;
             border-bottom: 2px solid transparent;
@@ -244,8 +223,43 @@
             fill: currentColor;
         }
 
+        /* Мобильное меню */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--color-text);
+            cursor: pointer;
+            padding: 4px;
+        }
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                padding: var(--space-md) 0;
+                gap: var(--space-sm);
+            }
+            .nav-list.open {
+                display: flex;
+            }
+            .nav {
+                flex-direction: column;
+                width: 100%;
+                align-items: stretch;
+            }
+            .social-icons {
+                justify-content: center;
+                padding: var(--space-sm) 0;
+            }
+        }
+
         /* ============================================
-                   КНОПКИ (iOS Glassmorphism)
+                   КНОПКИ
                    ============================================ */
         .btn {
             display: inline-flex;
@@ -266,24 +280,24 @@
             -webkit-backdrop-filter: var(--blur-bg);
             color: var(--color-primary);
             box-shadow: var(--shadow-sm);
-            width: 100%;
-            max-width: 320px;
             position: relative;
             overflow: hidden;
+            width: 100%;
+            max-width: 320px;
         }
         .btn::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(0, 122, 255, 0.04), rgba(88, 86, 214, 0.04));
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.04), rgba(109, 40, 217, 0.04));
             opacity: 0;
             transition: opacity 0.3s;
         }
         .btn:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 30px rgba(0, 122, 255, 0.1);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.1);
             background: rgba(255, 255, 255, 0.6);
-            border-color: rgba(0, 122, 255, 0.15);
+            border-color: rgba(139, 92, 246, 0.15);
         }
         .btn:hover::before {
             opacity: 1;
@@ -299,42 +313,55 @@
         }
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.5);
-            border-color: rgba(0, 122, 255, 0.1);
+            border-color: rgba(139, 92, 246, 0.1);
+        }
+
+        .btn-primary-solid {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: #fff !important;
+            border: none;
+            box-shadow: 0 4px 24px rgba(139, 92, 246, 0.25);
+        }
+        .btn-primary-solid:hover {
+            box-shadow: 0 8px 40px rgba(139, 92, 246, 0.35);
+            border: none;
+            transform: translateY(-3px) scale(1.02);
+            color: #fff !important;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--color-gold), #D97706);
+            color: #fff !important;
+            border: none;
+            box-shadow: 0 4px 24px rgba(245, 158, 11, 0.25);
+        }
+        .btn-gold:hover {
+            box-shadow: 0 8px 40px rgba(245, 158, 11, 0.35);
+            border: none;
+            transform: translateY(-3px) scale(1.02);
+            color: #fff !important;
         }
 
         .btn-sm {
             padding: 10px 20px;
             font-size: 0.85rem;
         }
-
         .btn-block {
             width: 100%;
             max-width: 100%;
         }
 
         /* ============================================
-                   ХЛЕБНЫЕ КРОШКИ
-                   ============================================ */
-        .breadcrumbs {
-            font-size: 0.8rem;
-            color: var(--color-text-secondary);
-            padding: var(--space-md) 0 var(--space-sm);
-        }
-        .breadcrumbs span {
-            color: var(--color-text);
-        }
-
-        /* ============================================
-                   СТРАНИЦЫ
+                   СТРАНИЦЫ (SPA)
                    ============================================ */
         .page {
             display: none;
             animation: fadeUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: var(--space-lg) 0;
         }
         .page.active {
             display: block;
         }
-
         @keyframes fadeUp {
             from {
                 opacity: 0;
@@ -348,52 +375,56 @@
 
         .page-title {
             font-size: 2.2rem;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: -0.5px;
-            margin-bottom: var(--space-md);
-            padding-left: var(--space-md);
-            border-left: 4px solid var(--color-primary);
+            margin-bottom: var(--space-sm);
+            color: var(--color-text);
+        }
+        .page-title .highlight {
             background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
-            background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: gradientMove 5s ease-in-out infinite;
         }
-
         .page-subtitle {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin: var(--space-xl) 0 var(--space-md);
-            color: var(--color-text);
-            letter-spacing: -0.3px;
-        }
-
-        .page-text {
+            font-size: 1.2rem;
             color: var(--color-text-secondary);
-            margin-bottom: var(--space-md);
-            font-size: 1rem;
+            margin-bottom: var(--space-xl);
             max-width: 700px;
         }
-        .page-text strong {
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
             color: var(--color-text);
+            text-align: center;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-xl);
+            font-size: 1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* ============================================
                    ГЕРОЙ
                    ============================================ */
         .hero {
-            background: radial-gradient(ellipse at 20% 40%, rgba(0, 122, 255, 0.04) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 60%, rgba(88, 86, 214, 0.04) 0%, transparent 60%),
-                radial-gradient(ellipse at 50% 100%, rgba(255, 45, 85, 0.04) 0%, transparent 50%),
+            background: radial-gradient(ellipse at 20% 40%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 60%, rgba(109, 40, 217, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 100%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
                 var(--color-bg);
-            border-radius: var(--radius-lg);
-            padding: var(--space-2xl) var(--space-lg);
+            border-radius: var(--radius-xl);
+            padding: var(--space-3xl) var(--space-lg);
             margin-bottom: var(--space-xl);
             text-align: center;
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(0, 0, 0, 0.03);
-            min-height: 60vh;
+            min-height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -415,17 +446,15 @@
                 transform: scale(1.05) rotate(0.5deg);
             }
         }
-
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 720px;
+            max-width: 800px;
         }
-
         .hero-title {
-            font-size: clamp(2.2rem, 6vw, 3.8rem);
-            font-weight: 700;
-            letter-spacing: -1px;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -1.5px;
             line-height: 1.1;
             margin-bottom: var(--space-md);
             color: var(--color-text);
@@ -437,13 +466,14 @@
             -webkit-text-fill-color: transparent;
             animation: gradientMove 4s ease-in-out infinite;
         }
-
         .hero-desc {
-            font-size: clamp(1rem, 1.4vw, 1.2rem);
+            font-size: clamp(1rem, 1.4vw, 1.25rem);
             color: var(--color-text-secondary);
             margin-bottom: var(--space-lg);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
-
         .hero-badges {
             display: flex;
             flex-wrap: wrap;
@@ -452,12 +482,12 @@
             margin-bottom: var(--space-lg);
         }
         .hero-badge {
-            padding: 6px 16px;
+            padding: 6px 18px;
             background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: var(--radius-full);
-            border: 1px solid rgba(0, 122, 255, 0.08);
+            border: 1px solid rgba(139, 92, 246, 0.08);
             font-size: 0.8rem;
             font-weight: 500;
             color: var(--color-text-secondary);
@@ -469,10 +499,13 @@
             transform: translateY(-2px);
         }
         .hero-badge.gold {
-            border-color: rgba(255, 204, 0, 0.2);
+            border-color: rgba(245, 158, 11, 0.2);
         }
         .hero-badge.purple {
-            border-color: rgba(175, 82, 222, 0.15);
+            border-color: rgba(139, 92, 246, 0.15);
+        }
+        .hero-badge.pink {
+            border-color: rgba(236, 72, 153, 0.15);
         }
 
         .hero-actions {
@@ -481,32 +514,33 @@
             gap: var(--space-sm);
             align-items: center;
             width: 100%;
-            max-width: 360px;
+            max-width: 400px;
             margin: 0 auto;
         }
 
         /* ============================================
-                   СЧЁТЧИК
+                   СТАТИСТИКА
                    ============================================ */
         .stats {
             display: flex;
             justify-content: center;
             gap: var(--space-xl);
             flex-wrap: wrap;
-            padding: var(--space-lg);
-            background: rgba(255, 255, 255, 0.5);
+            padding: var(--space-xl);
+            background: rgba(255, 255, 255, 0.6);
             backdrop-filter: var(--blur-bg);
             -webkit-backdrop-filter: var(--blur-bg);
             border-radius: var(--radius-md);
             border: 1px solid rgba(255, 255, 255, 0.3);
             margin: var(--space-lg) 0;
+            box-shadow: var(--shadow-sm);
         }
         .stat-item {
             text-align: center;
         }
         .stat-number {
-            font-size: 2.4rem;
-            font-weight: 800;
+            font-size: 2.6rem;
+            font-weight: 900;
             background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -514,13 +548,13 @@
             line-height: 1.1;
         }
         .stat-label {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--color-text-secondary);
             font-weight: 500;
         }
 
         /* ============================================
-                   КАРТОЧКИ (Glassmorphism)
+                   КАРТОЧКИ
                    ============================================ */
         .card {
             background: rgba(255, 255, 255, 0.5);
@@ -536,17 +570,16 @@
             transform: translateY(-6px);
             background: rgba(255, 255, 255, 0.7);
             box-shadow: var(--shadow-md);
-            border-color: rgba(0, 122, 255, 0.1);
+            border-color: rgba(139, 92, 246, 0.1);
         }
-
         .card-icon {
-            font-size: 2.6rem;
+            font-size: 2.8rem;
             display: block;
             margin-bottom: var(--space-sm);
         }
         .card-title {
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 4px;
             color: var(--color-text);
         }
@@ -569,336 +602,405 @@
             grid-template-columns: 1fr;
             gap: var(--space-md);
         }
+        .grid-4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+        }
+
+        @media (min-width: 600px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+            .grid-3 {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .grid-4 {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+            .hero-actions {
+                flex-direction: row;
+                max-width: 500px;
+            }
+            .btn {
+                width: auto;
+            }
+        }
 
         /* ============================================
-                   ТАРИФЫ
+                   ТРЁХУРОВНЕВЫЙ КОНТРОЛЬ КАЧЕСТВА
                    ============================================ */
-        .pricing-grid {
+        .quality-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            margin: var(--space-xl) 0;
+            position: relative;
+        }
+        .quality-steps::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 60px;
+            bottom: 60px;
+            width: 3px;
+            background: linear-gradient(180deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+            opacity: 0.2;
+        }
+        @media (min-width: 768px) {
+            .quality-steps {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: var(--space-xl);
+            }
+            .quality-steps::before {
+                display: none;
+            }
+        }
+
+        .quality-step {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-md);
+            padding: var(--space-xl);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+            transition: all 0.35s;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+        .quality-step:hover {
+            transform: translateY(-6px);
+            border-color: rgba(139, 92, 246, 0.15);
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: var(--shadow-md);
+        }
+        .quality-step .step-num {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 900;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            margin-bottom: var(--space-md);
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
+        }
+        .quality-step .step-icon {
+            font-size: 2.8rem;
+            display: block;
+            margin-bottom: var(--space-sm);
+        }
+        .quality-step h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+        .quality-step p {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin: var(--space-sm) 0 0;
+        }
+        .quality-step .step-badge {
+            display: inline-block;
+            margin-top: var(--space-sm);
+            padding: 2px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: rgba(139, 92, 246, 0.06);
+            color: var(--color-primary);
+        }
+
+        /* ============================================
+                   ПРОЦЕСС СОЗДАНИЯ ШЕДЕВРА
+                   ============================================ */
+        .process-timeline {
+            position: relative;
+            padding: var(--space-lg) 0;
+        }
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-gold));
+            opacity: 0.15;
+        }
+        @media (min-width: 768px) {
+            .process-timeline::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .process-item {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+            position: relative;
+            padding-left: 60px;
+        }
+        @media (min-width: 768px) {
+            .process-item {
+                flex-direction: row;
+                align-items: flex-start;
+                padding-left: 0;
+            }
+            .process-item:nth-child(odd) {
+                flex-direction: row-reverse;
+            }
+            .process-item:nth-child(odd) .process-content {
+                text-align: right;
+            }
+            .process-item .process-content {
+                width: 42%;
+                padding: 0 var(--space-lg);
+            }
+            .process-item .process-marker {
+                width: 16%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .process-marker {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .process-marker .marker {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
+            flex-shrink: 0;
+            z-index: 2;
+        }
+        .process-marker .marker.gold {
+            background: linear-gradient(135deg, var(--color-gold), #D97706);
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2);
+        }
+        .process-marker .marker.pink {
+            background: linear-gradient(135deg, var(--color-accent), #DB2777);
+            box-shadow: 0 4px 20px rgba(236, 72, 153, 0.2);
+        }
+
+        .process-content {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.35s;
+            flex: 1;
+        }
+        .process-content:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.1);
+            box-shadow: var(--shadow-md);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .process-content h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: var(--space-xs);
+        }
+        .process-content .process-icon {
+            font-size: 1.8rem;
+            margin-right: var(--space-sm);
+        }
+        .process-content p {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+        .process-content .time-badge {
+            display: inline-block;
+            margin-top: var(--space-sm);
+            padding: 2px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: rgba(139, 92, 246, 0.06);
+            color: var(--color-primary);
+        }
+
+        /* ============================================
+                   УСЛУГИ (от шевронов до премиум)
+                   ============================================ */
+        .services-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: var(--space-md);
-            max-width: 520px;
-            margin: 0 auto;
+        }
+        @media (min-width: 600px) {
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (min-width: 900px) {
+            .services-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
         }
 
-        .pricing-card {
+        .service-card {
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: var(--blur-bg);
             -webkit-backdrop-filter: var(--blur-bg);
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: var(--radius-md);
-            padding: var(--space-lg);
-            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            cursor: pointer;
+            padding: var(--space-xl);
+            text-align: center;
+            transition: all 0.35s;
             box-shadow: var(--shadow-sm);
-            text-align: left;
-            display: flex;
-            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
         }
-        .pricing-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(0, 122, 255, 0.15);
-            box-shadow: var(--shadow-md);
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(139, 92, 246, 0.15);
+            box-shadow: var(--shadow-lg);
             background: rgba(255, 255, 255, 0.7);
         }
-
-        .pricing-name {
-            font-size: 1.1rem;
-            font-weight: 600;
+        .service-card .service-icon {
+            font-size: 3.2rem;
+            display: block;
+            margin-bottom: var(--space-sm);
+        }
+        .service-card .service-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--space-sm);
+        }
+        .service-card .service-tag.basic {
+            background: rgba(139, 92, 246, 0.08);
+            color: var(--color-primary);
+        }
+        .service-card .service-tag.medium {
+            background: rgba(245, 158, 11, 0.08);
+            color: var(--color-gold);
+        }
+        .service-card .service-tag.premium {
+            background: rgba(236, 72, 153, 0.08);
+            color: var(--color-accent);
+        }
+        .service-card h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
             color: var(--color-text);
+            margin-bottom: 4px;
         }
-        .pricing-price {
-            font-size: 1.5rem;
+        .service-card .service-price {
+            font-size: 1.3rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--color-primary);
+            margin: var(--space-sm) 0;
         }
-        .pricing-badge {
-            font-size: 0.9rem;
-            margin-left: 4px;
+        .service-card .service-price span {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--color-text-secondary);
         }
-        .pricing-features {
+        .service-card p {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin: 0 0 var(--space-md);
+        }
+        .service-card .service-features {
             list-style: none;
             padding: 0;
+            text-align: left;
             margin: var(--space-sm) 0 var(--space-md);
-            flex-grow: 1;
         }
-        .pricing-features li {
+        .service-card .service-features li {
             padding: 4px 0;
             font-size: 0.85rem;
             color: var(--color-text-secondary);
             border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-        }
-        .pricing-features li:last-child {
-            border-bottom: none;
-        }
-        .pricing-desc {
-            font-size: 0.85rem;
-            color: var(--color-text-secondary);
-            font-style: italic;
-            margin-bottom: var(--space-md);
-        }
-
-        /* ============================================
-                   СХЕМА РАБОТЫ
-                   ============================================ */
-        .scheme-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-md);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .scheme-step {
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-radius: var(--radius-sm);
-            padding: var(--space-lg) var(--space-md);
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s;
-        }
-        .scheme-step:hover {
-            border-color: rgba(0, 122, 255, 0.1);
-            transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.5);
-        }
-        .scheme-step .num {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            color: #fff;
-            font-size: 0.9rem;
-            font-weight: 700;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            border-radius: 50%;
-            margin-bottom: var(--space-sm);
-        }
-        .scheme-step .icon {
-            font-size: 2rem;
-            display: block;
-            margin-bottom: 4px;
-        }
-        .scheme-step h4 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--color-text);
-        }
-        .scheme-step p {
-            font-size: 0.8rem;
-            color: var(--color-text-secondary);
-            margin: 0;
-        }
-
-        /* ============================================
-                   ПОЧЕМУ МЫ
-                   ============================================ */
-        .why-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-md);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .why-item {
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-radius: var(--radius-sm);
-            padding: var(--space-lg) var(--space-md);
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s;
-        }
-        .why-item:hover {
-            border-color: rgba(0, 122, 255, 0.1);
-            transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.5);
-        }
-        .why-item .icon {
-            font-size: 2rem;
-            display: block;
-            margin-bottom: 4px;
-        }
-        .why-item h4 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--color-text);
-        }
-        .why-item p {
-            font-size: 0.8rem;
-            color: var(--color-text-secondary);
-            margin: 0;
-        }
-
-        .quote-block {
-            margin-top: var(--space-lg);
-            padding: var(--space-md) var(--space-lg);
-            background: rgba(0, 122, 255, 0.04);
-            border-radius: var(--radius-sm);
-            border-left: 4px solid var(--color-primary);
-            text-align: left;
-            font-style: italic;
-            color: var(--color-text-secondary);
-            font-size: 0.95rem;
-        }
-        .quote-block strong {
-            color: var(--color-text);
-            font-style: normal;
-        }
-
-        /* ============================================
-                   КОНТРОЛЬ КАЧЕСТВА
-                   ============================================ */
-        .quality-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-md);
-        }
-        .quality-item {
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: var(--blur-bg);
-            -webkit-backdrop-filter: var(--blur-bg);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: var(--radius-sm);
-            padding: var(--space-lg);
-            text-align: center;
-            transition: all 0.3s;
-            box-shadow: var(--shadow-sm);
-        }
-        .quality-item:hover {
-            border-color: rgba(255, 204, 0, 0.2);
-            transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.7);
-        }
-        .quality-item .num {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            color: #fff;
-            font-size: 1.1rem;
-            font-weight: 700;
-            width: 36px;
-            height: 36px;
-            line-height: 36px;
-            border-radius: 50%;
-            margin-bottom: var(--space-sm);
-        }
-        .quality-item h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--color-text);
-        }
-        .quality-item p {
-            font-size: 0.85rem;
-            color: var(--color-text-secondary);
-            margin: 0;
-        }
-
-        /* ============================================
-                   ОТЗЫВЫ
-                   ============================================ */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-md);
-        }
-        .review-card {
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: var(--blur-bg);
-            -webkit-backdrop-filter: var(--blur-bg);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: var(--radius-sm);
-            padding: var(--space-lg);
-            transition: all 0.3s;
-            box-shadow: var(--shadow-sm);
-        }
-        .review-card:hover {
-            border-color: rgba(255, 204, 0, 0.15);
-            transform: translateY(-4px);
-            background: rgba(255, 255, 255, 0.7);
-        }
-        .review-header {
             display: flex;
             align-items: center;
-            gap: var(--space-sm);
-            margin-bottom: var(--space-sm);
+            gap: 6px;
         }
-        .review-avatar {
-            font-size: 2rem;
+        .service-card .service-features li:last-child {
+            border-bottom: none;
         }
-        .review-name {
-            font-weight: 600;
-            color: var(--color-text);
-            font-size: 0.95rem;
-        }
-        .review-date {
-            font-size: 0.7rem;
-            color: var(--color-text-secondary);
-        }
-        .review-stars {
-            color: var(--color-gold);
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-        }
-        .review-text {
-            font-size: 0.9rem;
-            color: var(--color-text-secondary);
-            font-style: italic;
-            margin: 4px 0;
-        }
-        .review-status {
-            display: inline-block;
-            margin-top: var(--space-sm);
-            font-size: 0.65rem;
-            background: rgba(0, 122, 255, 0.06);
+        .service-card .service-features li .check {
             color: var(--color-primary);
-            padding: 2px 12px;
-            border-radius: var(--radius-full);
-            font-weight: 500;
+            font-weight: 700;
         }
 
         /* ============================================
-                   ФОРМЫ
+                   КАЛЬКУЛЯТОР
                    ============================================ */
-        .form-container {
+        .calculator-wrap {
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: var(--blur-bg);
             -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: var(--radius-md);
-            padding: var(--space-lg);
-            margin-top: var(--space-lg);
             box-shadow: var(--shadow-sm);
+            margin: var(--space-xl) 0;
         }
-        .form-container h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--color-text);
+        .calculator-wrap h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
             margin-bottom: 4px;
+            color: var(--color-text);
         }
-        .form-container .form-subtitle {
+        .calculator-wrap .calc-subtitle {
             color: var(--color-text-secondary);
-            margin-bottom: var(--space-md);
-            font-size: 0.9rem;
+            margin-bottom: var(--space-lg);
         }
 
-        .form-group {
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+        @media (min-width: 768px) {
+            .calc-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .calc-group {
             margin-bottom: var(--space-md);
         }
-        .form-group label {
+        .calc-group label {
             display: block;
             font-weight: 600;
             font-size: 0.85rem;
             color: var(--color-text);
             margin-bottom: 4px;
         }
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+        .calc-group input,
+        .calc-group select {
             width: 100%;
             padding: 12px 16px;
             border: 1px solid rgba(0, 0, 0, 0.06);
@@ -912,254 +1014,186 @@
             transition: all 0.25s;
             outline: none;
         }
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
+        .calc-group input:focus,
+        .calc-group select:focus {
             border-color: var(--color-primary);
-            box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.06);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.06);
             background: rgba(255, 255, 255, 0.8);
         }
-        .form-group textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-        .form-group input[type="file"] {
-            padding: 10px;
-            border: 1px dashed rgba(0, 0, 0, 0.08);
-        }
 
-        .form-checkbox {
+        .calc-result-box {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-md);
+            padding: var(--space-xl);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+            min-height: 300px;
             display: flex;
-            align-items: flex-start;
-            gap: var(--space-sm);
-            margin: var(--space-md) 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-        .form-checkbox input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            min-width: 18px;
-            margin-top: 3px;
-            accent-color: var(--color-primary);
-            cursor: pointer;
+        .calc-result-box .result-placeholder {
+            color: var(--color-text-secondary);
         }
-        .form-checkbox label {
+        .calc-result-box .result-placeholder .big-icon {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: var(--space-md);
+            opacity: 0.3;
+        }
+        .calc-result-box .result-content {
+            display: none;
+            width: 100%;
+            animation: resultPop 0.6s ease;
+        }
+        .calc-result-box .result-content.active {
+            display: block;
+        }
+        @keyframes resultPop {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .calc-result-box .result-price {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+        .calc-result-box .result-label {
             font-size: 0.85rem;
             color: var(--color-text-secondary);
-            cursor: pointer;
         }
-        .form-checkbox label a {
-            color: var(--color-primary);
-            text-decoration: underline;
-        }
-
-        .success-message {
-            display: none;
-            text-align: center;
-            padding: var(--space-lg);
-        }
-        .success-message .check {
-            font-size: 3rem;
-            display: block;
-        }
-        .success-message h3 {
-            color: #34C759;
-            margin: var(--space-sm) 0 4px;
-        }
-        .success-message p {
+        .calc-result-box .result-details {
+            margin: var(--space-md) 0;
+            padding: var(--space-md);
+            background: rgba(139, 92, 246, 0.04);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
             color: var(--color-text-secondary);
-            margin: 0;
+        }
+        .calc-result-box .result-details span {
+            color: var(--color-text);
+            font-weight: 600;
         }
 
         /* ============================================
-                   КОНТАКТЫ
+                   ПОРТФОЛИО (3 КАТЕГОРИИ)
                    ============================================ */
-        .contacts-grid {
+        .categories {
             display: grid;
             grid-template-columns: 1fr;
-            gap: var(--space-lg);
-            margin-top: var(--space-md);
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
         }
-        .contacts-list {
-            list-style: none;
-            padding: 0;
-        }
-        .contacts-list li {
-            padding: var(--space-sm) 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-            color: var(--color-text-secondary);
-            font-size: 0.95rem;
-        }
-        .contacts-list li strong {
-            color: var(--color-text);
-            width: 110px;
-            display: inline-block;
-        }
-        .contacts-list li a {
-            color: var(--color-primary);
+        @media (min-width: 600px) {
+            .categories {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
         }
 
-        .messenger-links {
-            display: flex;
-            gap: var(--space-sm);
-            flex-wrap: wrap;
-            margin-top: var(--space-sm);
-        }
-        .messenger-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            padding: 6px 16px;
-            border-radius: var(--radius-full);
-            color: #fff;
-            font-weight: 600;
-            font-size: 0.8rem;
-            transition: all 0.25s;
-        }
-        .messenger-links a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-        }
-        .btn-wa {
-            background: #25D366;
-        }
-        .btn-tg {
-            background: #0088cc;
-        }
-        .btn-ig {
-            background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f);
-        }
-        .btn-max {
-            background: linear-gradient(135deg, #1a1a2e, #6a0dad);
-        }
-
-        .map-container {
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            height: 200px;
-            width: 100%;
-            box-shadow: var(--shadow-sm);
-        }
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            display: block;
-        }
-
-        /* ============================================
-                   ЮРИДИЧЕСКАЯ
-                   ============================================ */
-        .legal-content {
+        .category-card {
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: var(--blur-bg);
             -webkit-backdrop-filter: var(--blur-bg);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: var(--radius-sm);
+            border-radius: var(--radius-md);
             padding: var(--space-lg);
-            margin-top: var(--space-md);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.35s;
             box-shadow: var(--shadow-sm);
         }
-        .legal-content h3 {
-            color: var(--color-primary);
-            font-size: 1.05rem;
-            margin: var(--space-lg) 0 var(--space-sm);
+        .category-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(139, 92, 246, 0.15);
+            box-shadow: var(--shadow-md);
+            background: rgba(255, 255, 255, 0.7);
         }
-        .legal-content h3:first-of-type {
-            margin-top: 0;
+        .category-card .icon {
+            font-size: 3.2rem;
+            display: block;
+            margin-bottom: var(--space-sm);
         }
-        .legal-content p,
-        .legal-content li {
-            color: var(--color-text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.7;
-        }
-        .legal-content ul {
-            padding-left: var(--space-lg);
-            margin: var(--space-sm) 0 var(--space-md);
-        }
-        .legal-content li {
-            margin-bottom: 4px;
-        }
-        .legal-content .highlight {
+        .category-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
             color: var(--color-text);
+        }
+        .category-card p {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+        .category-card .badge {
+            display: inline-block;
+            margin-top: var(--space-sm);
+            background: rgba(139, 92, 246, 0.06);
+            color: var(--color-primary);
+            padding: 3px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
             font-weight: 600;
         }
 
-        /* ============================================
-                   ПОДВАЛ
-                   ============================================ */
-        .footer {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: var(--blur-bg);
-            -webkit-backdrop-filter: var(--blur-bg);
-            border-top: 1px solid rgba(0, 0, 0, 0.04);
-            padding: var(--space-xl) var(--space-md) var(--space-lg);
-            margin-top: auto;
-            text-align: center;
-            color: var(--color-text-secondary);
-            font-size: 0.85rem;
-        }
-        .footer a {
-            color: var(--color-primary);
-        }
-        .footer a:hover {
-            color: var(--color-primary-dark);
-        }
-        .footer-divider {
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-            margin: var(--space-md) auto;
-            border-radius: 10px;
-        }
-        .footer-nav {
-            display: flex;
-            justify-content: center;
+        .gallery-grid {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
             gap: var(--space-md);
-            flex-wrap: wrap;
-            margin-bottom: var(--space-sm);
+            margin: var(--space-lg) 0;
         }
-        .footer-nav a {
-            color: var(--color-text-secondary);
-            font-size: 0.8rem;
+        .gallery-grid.active {
+            display: grid;
+        }
+
+        .gallery-item {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s;
             cursor: pointer;
-            transition: color 0.25s;
+            box-shadow: var(--shadow-sm);
         }
-        .footer-nav a:hover {
-            color: var(--color-text);
+        .gallery-item:hover {
+            transform: scale(1.03);
+            border-color: rgba(139, 92, 246, 0.15);
         }
-        .footer-legal {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-md);
-            flex-wrap: wrap;
-            font-size: 0.7rem;
-            margin: var(--space-sm) 0;
+        .gallery-item img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
         }
-        .footer-legal a {
+        .gallery-item .caption {
+            padding: var(--space-sm);
+            font-size: 0.75rem;
             color: var(--color-text-secondary);
-        }
-        .footer-legal a:hover {
-            color: var(--color-primary);
-        }
-        .footer-req {
-            font-size: 0.65rem;
-            color: var(--color-text-secondary);
-            opacity: 0.6;
-            margin-top: var(--space-sm);
+            text-align: center;
         }
 
         /* ============================================
-                   МОДАЛЬНОЕ ОКНО
+                   ВСПЛЫВАЮЩИЕ ОКНА (ПОПАПЫ)
                    ============================================ */
         .modal-overlay {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             z-index: 9999;
             justify-content: center;
             align-items: center;
@@ -1170,17 +1204,17 @@
             display: flex;
         }
         .modal {
-            background: rgba(255, 255, 255, 0.88);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: var(--blur-bg);
             -webkit-backdrop-filter: var(--blur-bg);
             border-radius: var(--radius-lg);
             padding: var(--space-xl);
-            max-width: 480px;
+            max-width: 520px;
             width: 100%;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-xl);
             position: relative;
-            max-height: 90vh;
+            max-height: 95vh;
             overflow-y: auto;
         }
         .modal-close {
@@ -1193,21 +1227,254 @@
             transition: all 0.25s;
             background: none;
             border: none;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
         }
         .modal-close:hover {
             color: var(--color-primary);
             transform: rotate(90deg);
+            background: rgba(139, 92, 246, 0.04);
         }
         .modal-title {
-            font-size: 1.3rem;
-            font-weight: 600;
+            font-size: 1.4rem;
+            font-weight: 700;
             margin-bottom: 4px;
             color: var(--color-text);
         }
         .modal-subtitle {
             color: var(--color-text-secondary);
             margin-bottom: var(--space-lg);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+        }
+
+        .modal .form-group {
+            margin-bottom: var(--space-md);
+        }
+        .modal .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--color-text);
+            margin-bottom: 4px;
+        }
+        .modal .form-group input,
+        .modal .form-group textarea,
+        .modal .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-family: var(--font-family);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: var(--color-text);
+            transition: all 0.25s;
+            outline: none;
+        }
+        .modal .form-group input:focus,
+        .modal .form-group textarea:focus,
+        .modal .form-group select:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.06);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .modal .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .modal .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            margin: var(--space-md) 0;
+        }
+        .modal .form-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            margin-top: 3px;
+            accent-color: var(--color-primary);
+            cursor: pointer;
+        }
+        .modal .form-checkbox label {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+        }
+
+        .modal .success-message {
+            display: none;
+            text-align: center;
+            padding: var(--space-lg);
+        }
+        .modal .success-message .check {
+            font-size: 3.5rem;
+            display: block;
+        }
+        .modal .success-message h3 {
+            color: #34C759;
+            margin: var(--space-sm) 0 4px;
+        }
+        .modal .success-message p {
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
+        /* ===== БАРАБАН (1 попытка) ===== */
+        .wheel-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+            padding: var(--space-md);
+        }
+        .wheel-overlay.active {
+            display: flex;
+        }
+        .wheel-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: fadeInModal 0.4s ease;
+            position: relative;
+        }
+        .wheel-content h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+        .wheel-content p {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-lg);
+        }
+
+        .wheel-spin {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 8px solid var(--color-primary);
+            margin: 0 auto var(--space-lg);
+            position: relative;
+            transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+        }
+        .wheel-spin::after {
+            content: '▼';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.8rem;
+            color: var(--color-primary);
+        }
+        .wheel-spin .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+        .wheel-spin .segment-label {
+            position: absolute;
+            font-size: 0.55rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        }
+        .wheel-result {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--color-accent);
+            margin: var(--space-md) 0;
+            min-height: 50px;
+        }
+
+        /* ИСТОРИЯ РОЗЫГРЫШЕЙ */
+        .wheel-history {
+            margin-top: var(--space-md);
+            padding: var(--space-md);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            max-height: 120px;
+            overflow-y: auto;
+        }
+        .wheel-history .history-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .wheel-history .history-item:last-child {
+            border-bottom: none;
+        }
+        .wheel-history .history-item .win {
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+        .wheel-history .history-item .lose {
+            color: var(--color-text-secondary);
+        }
+
+        .wheel-attempts {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-sm);
+        }
+        .wheel-attempts strong {
+            color: var(--color-primary);
+        }
+        .wheel-attempts .remaining {
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+
+        .btn-wheel {
+            padding: 12px 40px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-full);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
+        }
+        .btn-wheel:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
+        }
+        .btn-wheel:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
         }
 
         @keyframes fadeInModal {
@@ -1221,6 +1488,34 @@
             }
         }
 
+        /* Конфетти */
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 99999;
+            overflow: hidden;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            animation: confettiFall linear forwards;
+        }
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotate(720deg) scale(0.3);
+                opacity: 0;
+            }
+        }
+
         /* ============================================
                    ЛАЙТБОКС
                    ============================================ */
@@ -1229,8 +1524,8 @@
             position: fixed;
             inset: 0;
             background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             z-index: 9998;
             justify-content: center;
             align-items: center;
@@ -1272,41 +1567,6 @@
                 opacity: 1;
                 transform: scale(1);
             }
-        }
-
-        /* ============================================
-                   КНОПКА "НАВЕРХ"
-                   ============================================ */
-        .scroll-top {
-            position: fixed;
-            bottom: 80px;
-            left: 16px;
-            width: 44px;
-            height: 44px;
-            border-radius: var(--radius-full);
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: var(--blur-bg);
-            -webkit-backdrop-filter: var(--blur-bg);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: var(--color-primary);
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s;
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(16px);
-        }
-        .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        .scroll-top:hover {
-            transform: scale(1.08);
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: var(--shadow-md);
         }
 
         /* ============================================
@@ -1362,6 +1622,87 @@
         }
 
         /* ============================================
+                   КОНТАКТЫ
+                   ============================================ */
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            margin-top: var(--space-md);
+        }
+        @media (min-width: 600px) {
+            .contacts-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .contacts-list {
+            list-style: none;
+            padding: 0;
+        }
+        .contacts-list li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+        }
+        .contacts-list li strong {
+            color: var(--color-text);
+            width: 110px;
+            display: inline-block;
+        }
+        .contacts-list li a {
+            color: var(--color-primary);
+        }
+        .messenger-links {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+            margin-top: var(--space-sm);
+        }
+        .messenger-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.25s;
+        }
+        .messenger-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        .btn-wa {
+            background: #25D366;
+        }
+        .btn-tg {
+            background: #0088cc;
+        }
+        .btn-ig {
+            background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f);
+        }
+        .btn-max {
+            background: linear-gradient(135deg, #1a1a2e, #6a0dad);
+        }
+
+        .map-container {
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            height: 200px;
+            width: 100%;
+            box-shadow: var(--shadow-sm);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        /* ============================================
                    АНИМАЦИЯ ПРИ СКРОЛЛЕ
                    ============================================ */
         .animate-on-scroll {
@@ -1375,188 +1716,123 @@
         }
 
         /* ============================================
-                   ПОРТФОЛИО (ГАЛЕРЕЯ)
+                   ПОДВАЛ
                    ============================================ */
-        .category-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-md);
-            margin: var(--space-lg) 0;
+        .footer {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            padding: var(--space-2xl) var(--space-md) var(--space-lg);
+            margin-top: auto;
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
         }
-        .category-card {
+        .footer a {
+            color: var(--color-primary);
+        }
+        .footer-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            margin: var(--space-md) auto;
+            border-radius: 10px;
+        }
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            margin-bottom: var(--space-sm);
+        }
+        .footer-nav a {
+            color: var(--color-text-secondary);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: color 0.25s;
+        }
+        .footer-nav a:hover {
+            color: var(--color-text);
+        }
+        .footer-legal {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            font-size: 0.7rem;
+            margin: var(--space-sm) 0;
+        }
+        .footer-legal a {
+            color: var(--color-text-secondary);
+        }
+        .footer-legal a:hover {
+            color: var(--color-primary);
+        }
+        .footer-req {
+            font-size: 0.65rem;
+            color: var(--color-text-secondary);
+            opacity: 0.6;
+            margin-top: var(--space-sm);
+        }
+
+        /* ============================================
+                   КНОПКА НАВЕРХ
+                   ============================================ */
+        .scroll-top {
+            position: fixed;
+            bottom: 80px;
+            left: 16px;
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-full);
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: var(--blur-bg);
             -webkit-backdrop-filter: var(--blur-bg);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: var(--radius-md);
-            padding: var(--space-lg) var(--space-md);
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.35s;
-            box-shadow: var(--shadow-sm);
-        }
-        .category-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(0, 122, 255, 0.1);
-            box-shadow: var(--shadow-md);
-            background: rgba(255, 255, 255, 0.7);
-        }
-        .category-card .icon {
-            font-size: 2.8rem;
-            display: block;
-            margin-bottom: var(--space-sm);
-        }
-        .category-card h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--color-text);
-        }
-        .category-card p {
-            font-size: 0.8rem;
-            color: var(--color-text-secondary);
-            margin: 0;
-        }
-        .category-card .badge {
-            display: inline-block;
-            margin-top: var(--space-sm);
-            background: rgba(0, 122, 255, 0.06);
             color: var(--color-primary);
-            padding: 2px 12px;
-            border-radius: var(--radius-full);
-            font-size: 0.65rem;
-            font-weight: 600;
-        }
-
-        .gallery-grid {
-            display: none;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-        }
-        .gallery-grid.active {
-            display: grid;
-        }
-        .gallery-item {
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s;
+            font-size: 1.2rem;
             cursor: pointer;
             box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(16px);
         }
-        .gallery-item:hover {
-            transform: scale(1.03);
-            border-color: rgba(0, 122, 255, 0.15);
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
-        .gallery-item img {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-            display: block;
-        }
-        .gallery-item .caption {
-            padding: var(--space-sm);
-            font-size: 0.75rem;
-            color: var(--color-text-secondary);
-            text-align: center;
+        .scroll-top:hover {
+            transform: scale(1.08);
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: var(--shadow-md);
         }
 
         /* ============================================
-                   АДАПТАЦИЯ (ПЛАНШЕТЫ)
+                   АДАПТАЦИЯ
                    ============================================ */
-        @media (min-width: 600px) {
-            .grid-2 {
-                grid-template-columns: 1fr 1fr;
-            }
-            .grid-3 {
-                grid-template-columns: 1fr 1fr 1fr;
-            }
-            .pricing-grid {
-                grid-template-columns: 1fr 1fr 1fr;
-                max-width: 100%;
-            }
-            .scheme-grid {
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-            }
-            .why-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .quality-grid {
-                grid-template-columns: 1fr 1fr 1fr;
-            }
-            .reviews-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .category-grid {
-                grid-template-columns: 1fr 1fr 1fr;
-            }
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-            }
-            .contacts-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .hero-actions {
-                flex-direction: row;
-                max-width: 500px;
-            }
-            .btn {
-                width: auto;
-            }
-            .stats {
-                gap: var(--space-2xl);
-            }
-            .stat-number {
-                font-size: 2.8rem;
-            }
-        }
-
-        @media (min-width: 900px) {
-            .reviews-grid {
-                grid-template-columns: 1fr 1fr 1fr;
-            }
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            }
-            .floating-messengers .msg-btn .label {
-                display: inline;
-            }
-        }
-
         @media (max-width: 480px) {
             .logo {
-                font-size: 1rem;
-            }
-            .nav-link {
-                font-size: 0.75rem;
+                font-size: 0.95rem;
             }
             .page-title {
                 font-size: 1.6rem;
-                padding-left: var(--space-sm);
-                border-left-width: 3px;
             }
-            .page-subtitle {
-                font-size: 1.2rem;
+            .hero-title {
+                font-size: 1.8rem;
             }
             .hero {
                 padding: var(--space-xl) var(--space-md);
                 min-height: 50vh;
             }
-            .hero-title {
-                font-size: 1.8rem;
-            }
-            .hero-badge {
-                font-size: 0.7rem;
-                padding: 4px 12px;
-            }
             .stat-number {
                 font-size: 1.8rem;
             }
-            .category-card .icon {
-                font-size: 2.2rem;
+            .modal {
+                padding: var(--space-lg);
             }
             .floating-messengers .msg-btn {
                 padding: 6px 10px;
@@ -1565,26 +1841,69 @@
                 width: 18px;
                 height: 18px;
             }
-            .scroll-top {
-                width: 38px;
-                height: 38px;
-                font-size: 1rem;
-                bottom: 70px;
-                left: 10px;
-            }
-            .modal {
-                padding: var(--space-lg);
+            .floating-messengers .msg-btn .label {
+                display: none;
             }
             .contacts-list li strong {
                 width: 90px;
                 font-size: 0.85rem;
             }
-            .scheme-grid {
-                grid-template-columns: 1fr 1fr;
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
             }
-            .why-grid {
-                grid-template-columns: 1fr 1fr;
+            .gallery-item img {
+                height: 130px;
             }
+            .wheel-spin {
+                width: 140px;
+                height: 140px;
+            }
+            .quality-steps {
+                padding-left: 0;
+            }
+            .quality-steps::before {
+                left: 16px;
+            }
+            .process-item {
+                padding-left: 50px;
+            }
+            .process-marker .marker {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (min-width: 600px) {
+            .floating-messengers .msg-btn .label {
+                display: inline;
+            }
+        }
+
+        /* ============================================
+                   БОНУС: ЖИВЫЕ ЭМОДЗИ
+                   ============================================ */
+        .live-emoji {
+            display: inline-block;
+            animation: livePulse 2s ease-in-out infinite;
+        }
+        @keyframes livePulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .glow-text {
+            background: linear-gradient(135deg, var(--color-gold), var(--color-accent), var(--color-primary));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 3s ease-in-out infinite;
+            font-weight: 800;
         }
     </style>
 </head>
@@ -1596,11 +1915,11 @@
             <svg viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.069-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.149-.43.05-.197-.099-.832-.308-1.584-.984-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.445-1.076-.612-1.47-.16-.38-.323-.319-.445-.319-.114 0-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.711 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
             <span class="label">WhatsApp</span>
         </a>
-        <a href="https://t.me/+79776975580" target="_blank" class="msg-btn tg">
+        <a href="https://t.me/+79014030785" target="_blank" class="msg-btn tg">
             <svg viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.243 3.306-1.878 3.382-1.904.077-.026.178-.058.246.015.07.072.06.19-.022.34-.176.32-1.173 1.15-1.767 1.706-.15.14-.256.244-.258.27-.006.032.092.063.209.102.341.116.735.273 1.052.451.148.083.264.123.374.114.077-.006.174-.038.267-.14.244-.27 1.03-1.16 1.645-1.874.615-.714.793-1.178.808-1.356.006-.112-.015-.205-.1-.256-.124-.073-.36-.104-.518-.104-.32 0-.898.19-1.139.38z"/></svg>
             <span class="label">Telegram</span>
         </a>
-        <a href="https://max.ru/79014030785" target="_blank" class="msg-btn max">
+        <a href="https://max.ru/u/f9LHodD0cOKOzMr00gjNpvn1TdveNr4o3cTe6syxQuWTj9GVIAcSf0UIpc4" target="_blank" class="msg-btn max">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                 <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
                 <path d="M12 6v6l4 2"/>
@@ -1620,16 +1939,19 @@
         <div class="container header-inner">
             <div class="logo" onclick="navigateTo('home')">
                 <span class="logo-icon">✦</span>
-                <span class="logo-gradient">Вышивка Стиль</span>
+                <span class="logo-gradient">Стиль Вышивки</span>
             </div>
-            <div class="nav">
-                <ul class="nav-list">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Меню">☰</button>
+            <div class="nav" id="navMenu">
+                <ul class="nav-list" id="navList">
                     <li><a class="nav-link active" data-page="home">Главная</a></li>
+                    <li><a class="nav-link" data-page="services">Услуги</a></li>
+                    <li><a class="nav-link" data-page="process">Процесс</a></li>
+                    <li><a class="nav-link" data-page="quality">Качество</a></li>
                     <li><a class="nav-link" data-page="portfolio">Портфолио</a></li>
-                    <li><a class="nav-link" data-page="reviews">Отзывы</a></li>
-                    <li><a class="nav-link" data-page="about">О нас</a></li>
-                    <li><a class="nav-link" data-page="delivery">Доставка</a></li>
+                    <li><a class="nav-link" data-page="calculator">Калькулятор</a></li>
                     <li><a class="nav-link" data-page="contacts">Контакты</a></li>
+                    <li><a class="nav-link" data-page="legal">Юридическая</a></li>
                 </ul>
                 <div class="social-icons">
                     <a href="https://www.instagram.com/fancywork008/" target="_blank" class="ig">
@@ -1638,10 +1960,10 @@
                     <a href="https://wa.me/79014030785" target="_blank" class="wa">
                         <svg viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.069-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.149-.43.05-.197-.099-.832-.308-1.584-.984-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.445-1.076-.612-1.47-.16-.38-.323-.319-.445-.319-.114 0-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.711 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
                     </a>
-                    <a href="https://t.me/+79776975580" target="_blank" class="tg">
+                    <a href="https://t.me/+79014030785" target="_blank" class="tg">
                         <svg viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.243 3.306-1.878 3.382-1.904.077-.026.178-.058.246.015.07.072.06.19-.022.34-.176.32-1.173 1.15-1.767 1.706-.15.14-.256.244-.258.27-.006.032.092.063.209.102.341.116.735.273 1.052.451.148.083.264.123.374.114.077-.006.174-.038.267-.14.244-.27 1.03-1.16 1.645-1.874.615-.714.793-1.178.808-1.356.006-.112-.015-.205-.1-.256-.124-.073-.36-.104-.518-.104-.32 0-.898.19-1.139.38z"/></svg>
                     </a>
-                    <a href="https://max.ru/79014030785" target="_blank" class="max">
+                    <a href="https://max.ru/u/f9LHodD0cOKOzMr00gjNpvn1TdveNr4o3cTe6syxQuWTj9GVIAcSf0UIpc4" target="_blank" class="max">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
                             <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
                             <path d="M12 6v6l4 2"/>
@@ -1655,435 +1977,644 @@
     </header>
 
     <!-- ====== ОСНОВНОЙ КОНТЕНТ ====== -->
-    <main class="container" style="flex:1;">
+    <main>
 
-        <div class="breadcrumbs">
-            📍 <span id="breadcrumbText">Главная</span>
-        </div>
-
-        <!-- ===== ГЛАВНАЯ ===== -->
+        <!-- ==========================================
+        СТРАНИЦА: ГЛАВНАЯ
+        ========================================== -->
         <div class="page active" id="page-home">
+            <div class="container">
 
-            <section class="hero">
-                <div class="hero-content">
-                    <h1 class="hero-title">
-                        Вышивка на заказ <br />
-                        <span class="highlight">от 1 штуки с гарантией</span>
-                    </h1>
-                    <div class="hero-badges">
-                        <span class="hero-badge">✅ Трёхуровневый контроль</span>
-                        <span class="hero-badge gold">⏱ Вернём деньги при задержке</span>
-                        <span class="hero-badge purple">📄 Полный пакет документов</span>
+                <!-- ГЕРОЙ -->
+                <section class="hero">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            Создаём <span class="highlight">шедевры</span> вышивки<br />
+                            с душой и качеством
+                        </h1>
+                        <div class="hero-badges">
+                            <span class="hero-badge">✅ Трёхуровневый контроль</span>
+                            <span class="hero-badge gold">⏱ Соблюдаем сроки</span>
+                            <span class="hero-badge purple">📄 Работаем официально</span>
+                            <span class="hero-badge pink">🧵 От 1 штуки до опта</span>
+                        </div>
+                        <p class="hero-desc">
+                            <span class="live-emoji">🔥</span> <strong>С 2014 года</strong> создаём вышивку, которая радует.
+                            От шевронов до премиум-заказов — <span class="glow-text">качество гарантируем</span>.
+                            Бесплатный расчёт за 15 минут.
+                        </p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary-solid" onclick="openModal('order')">💬 Заказать вышивку</button>
+                            <button class="btn btn-secondary" onclick="navigateTo('portfolio')">Смотреть работы</button>
+                            <button class="btn btn-gold" onclick="openWheel()">🎰 Крутить барабан и выиграть скидку!</button>
+                        </div>
                     </div>
-                    <p class="hero-desc">Единичные заказы и опт. Бесплатный расчёт за 15 минут.</p>
-                    <div class="hero-actions">
-                        <button class="btn" onclick="openModal()">💬 Заказать вышивку</button>
-                        <button class="btn btn-secondary" onclick="navigateTo('portfolio')">Смотреть работы</button>
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <!-- СЧЁТЧИК -->
-            <div class="stats animate-on-scroll">
-                <div class="stat-item">
-                    <span class="stat-number" data-count="120">0</span>
-                    <span class="stat-label">Довольных клиентов</span>
+                <!-- СТАТИСТИКА -->
+                <div class="stats animate-on-scroll">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="120">0</span>
+                        <span class="stat-label">Довольных клиентов</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="350">0</span>
+                        <span class="stat-label">Выполненных заказов</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="98">0</span>
+                        <span class="stat-label">% положительных отзывов</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="12">0</span>
+                        <span class="stat-label">Лет в индустрии</span>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="350">0</span>
-                    <span class="stat-label">Выполненных заказов</span>
+
+                <!-- КРАТКИЙ ОБЗОР УСЛУГ -->
+                <h2 class="section-title">Что мы создаём</h2>
+                <p class="section-subtitle">От простых шевронов до сложных премиум-заказов</p>
+                <div class="grid-3 animate-on-scroll">
+                    <div class="card" onclick="navigateTo('services')" style="cursor:pointer;">
+                        <span class="card-icon">🛡️</span>
+                        <h3 class="card-title">Шевроны и нашивки</h3>
+                        <p class="card-text">Качественные нашивки для формы, бренда и команд</p>
+                    </div>
+                    <div class="card" onclick="navigateTo('services')" style="cursor:pointer;">
+                        <span class="card-icon">👕</span>
+                        <h3 class="card-title">Вышивка на одежде</h3>
+                        <p class="card-text">Логотипы, надписи, рисунки на футболках, худи, куртках</p>
+                    </div>
+                    <div class="card" onclick="navigateTo('services')" style="cursor:pointer;">
+                        <span class="card-icon">💎</span>
+                        <h3 class="card-title">Премиум заказы</h3>
+                        <p class="card-text">Сложные дизайны, фотореализм, эксклюзивные работы</p>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="98">0</span>
-                    <span class="stat-label">% положительных отзывов</span>
+
+                <!-- ПРИЗЫВ К ДЕЙСТВИЮ -->
+                <div style="background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(236,72,153,0.06)); border-radius: var(--radius-lg); padding: var(--space-2xl) var(--space-lg); text-align: center; margin: var(--space-xl) 0; border: 1px solid rgba(139,92,246,0.08);">
+                    <h3 style="font-size:1.6rem; font-weight:700; margin-bottom:var(--space-sm);">
+                        🎯 Готовы создать ваш шедевр?
+                    </h3>
+                    <p style="color:var(--color-text-secondary); max-width:600px; margin:0 auto var(--space-lg);">
+                        Оставьте заявку — мы сделаем бесплатный расчёт и предложим лучшие варианты
+                    </p>
+                    <button class="btn btn-gold" onclick="openModal('order')" style="max-width:300px; margin:0 auto;">
+                        🔥 Получить расчёт
+                    </button>
                 </div>
+
             </div>
+        </div>
 
-            <!-- WHY US -->
-            <div class="card animate-on-scroll" style="text-align:center; margin-bottom:var(--space-xl);">
-                <h2 class="page-subtitle">Почему клиенты выбирают нас</h2>
-                <div class="why-grid">
-                    <div class="why-item">
-                        <span class="icon">✅</span>
-                        <h4>Гарантия качества</h4>
-                        <p>Трёхуровневый контроль</p>
-                    </div>
-                    <div class="why-item">
-                        <span class="icon">⏱</span>
-                        <h4>Гарантия срока</h4>
-                        <p>Вернём деньги при задержке</p>
-                    </div>
-                    <div class="why-item">
-                        <span class="icon">💰</span>
-                        <h4>Гарантия цены</h4>
-                        <p>Фиксируем стоимость</p>
-                    </div>
-                    <div class="why-item">
-                        <span class="icon">🧵</span>
-                        <h4>Любой тираж</h4>
-                        <p>От 1 штуки до опта</p>
-                    </div>
-                </div>
-                <div class="quote-block">
-                    «Я лично контролирую каждый заказ. Если результат вас не устроит — <strong>переделаю за свой счёт</strong>.»<br />
-                    — Макс, основатель студии
-                </div>
-            </div>
+        <!-- ==========================================
+        СТРАНИЦА: УСЛУГИ
+        ========================================== -->
+        <div class="page" id="page-services">
+            <div class="container">
+                <h1 class="page-title">Наши <span class="highlight">услуги</span></h1>
+                <p class="page-subtitle">Выберите то, что вам нужно — от простых нашивок до сложных премиум-заказов</p>
 
-            <!-- СХЕМА РАБОТЫ -->
-            <div class="card animate-on-scroll" style="text-align:center; margin-bottom:var(--space-xl);">
-                <h2 class="page-subtitle">Как мы работаем</h2>
-                <p style="color:var(--color-text-secondary); margin-bottom:var(--space-lg);">4 простых шага</p>
-                <div class="scheme-grid">
-                    <div class="scheme-step">
-                        <span class="num">1</span>
-                        <span class="icon">📩</span>
-                        <h4>Заявка</h4>
-                        <p>Вы оставляете заявку</p>
-                    </div>
-                    <div class="scheme-step">
-                        <span class="num">2</span>
-                        <span class="icon">🤝</span>
-                        <h4>Детали и цена</h4>
-                        <p>Обсуждаем и фиксируем</p>
-                    </div>
-                    <div class="scheme-step">
-                        <span class="num">3</span>
-                        <span class="icon">🎨</span>
-                        <h4>Разработка</h4>
-                        <p>Готовим макет</p>
-                    </div>
-                    <div class="scheme-step">
-                        <span class="num">4</span>
-                        <span class="icon">🚀</span>
-                        <h4>Выполнение</h4>
-                        <p>Вышиваем и доставляем</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- КОНТРОЛЬ КАЧЕСТВА -->
-            <h2 class="page-subtitle">Трёхуровневый контроль качества</h2>
-            <p class="page-text">Проверяем каждый заказ на всех этапах.</p>
-            <div class="quality-grid animate-on-scroll">
-                <div class="quality-item">
-                    <span class="num">1</span>
-                    <h4>Входной контроль</h4>
-                    <p>Проверяем материалы и эскиз</p>
-                </div>
-                <div class="quality-item">
-                    <span class="num">2</span>
-                    <h4>Промежуточный контроль</h4>
-                    <p>Натяжение, плотность, цвета</p>
-                </div>
-                <div class="quality-item">
-                    <span class="num">3</span>
-                    <h4>Финальный контроль</h4>
-                    <p>Проверяем готовую работу</p>
-                </div>
-            </div>
-            <p style="text-align:center; margin:var(--space-md) 0; font-weight:600; color:var(--color-primary);">
-                ⭐ Итог: качественная вышивка без сюрпризов
-            </p>
-
-            <!-- ТАРИФЫ -->
-            <div class="pricing-block animate-on-scroll" style="margin:var(--space-xl) 0;">
-                <h2 class="page-subtitle" style="text-align:center;">Стоимость вышивки</h2>
-                <p style="text-align:center; color:var(--color-text-secondary); margin-bottom:var(--space-lg);">Выберите свой тип заказа</p>
-
-                <div class="pricing-grid">
-                    <div class="pricing-card" onclick="openPricingForm('individual')">
-                        <div class="pricing-name">Индивидуальная <span class="pricing-badge">⭐</span></div>
-                        <div class="pricing-price">от 1500 ₽</div>
-                        <ul class="pricing-features">
-                            <li>✅ Вышивка от 500 ₽</li>
-                            <li>✅ Разработка программы от 1000 ₽</li>
-                            <li>✅ Срок 1-2 дня</li>
+                <div class="services-grid">
+                    <!-- Шевроны и нашивки -->
+                    <div class="service-card animate-on-scroll" onclick="openModal('order')">
+                        <span class="service-tag basic">БАЗОВЫЙ</span>
+                        <span class="service-icon">🛡️</span>
+                        <h4>Шевроны и нашивки</h4>
+                        <div class="service-price">от 400 ₽ <span>/ шт</span></div>
+                        <p>Идеальное решение для формы, бренда, команд и мероприятий</p>
+                        <ul class="service-features">
+                            <li><span class="check">✅</span> Качественная вышивка на заказ</li>
+                            <li><span class="check">✅</span> Любые формы и размеры</li>
+                            <li><span class="check">✅</span> Срок от 2 дней</li>
+                            <li><span class="check">✅</span> Минимальный заказ — от 1 штуки</li>
                         </ul>
-                        <p class="pricing-desc">Для подарка или творческой идеи</p>
-                        <button class="btn btn-sm btn-block" onclick="event.stopPropagation(); openPricingForm('individual')">Заказать</button>
+                        <button class="btn btn-sm btn-primary-solid" onclick="event.stopPropagation(); openModal('order')">Заказать</button>
                     </div>
 
-                    <div class="pricing-card" onclick="openPricingForm('small')">
-                        <div class="pricing-name">Мелкий опт <span class="pricing-badge">⭐⭐</span></div>
-                        <div class="pricing-price">от 2500 ₽</div>
-                        <ul class="pricing-features">
-                            <li>✅ Вышивка от 1500 ₽</li>
-                            <li>✅ Разработка программы от 1000 ₽</li>
-                            <li>✅ Срок 1-3 дня</li>
+                    <!-- Вышивка на одежде -->
+                    <div class="service-card animate-on-scroll" onclick="openModal('order')">
+                        <span class="service-tag medium">ПРОДВИНУТЫЙ</span>
+                        <span class="service-icon">👕</span>
+                        <h4>Вышивка на одежде</h4>
+                        <div class="service-price">от 700 ₽ <span>/ шт</span></div>
+                        <p>Логотипы, надписи, рисунки на футболках, худи, куртках и аксессуарах</p>
+                        <ul class="service-features">
+                            <li><span class="check">✅</span> Любая одежда</li>
+                            <li><span class="check">✅</span> Трёхуровневый контроль качества</li>
+                            <li><span class="check">✅</span> Срок от 3 дней</li>
+                            <li><span class="check">✅</span> Разработка макета в подарок</li>
                         </ul>
-                        <p class="pricing-desc">Для корпоративов и промо</p>
-                        <button class="btn btn-sm btn-block" onclick="event.stopPropagation(); openPricingForm('small')">Заказать</button>
+                        <button class="btn btn-sm btn-primary-solid" onclick="event.stopPropagation(); openModal('order')">Заказать</button>
                     </div>
 
-                    <div class="pricing-card" onclick="openPricingForm('large')">
-                        <div class="pricing-name">Крупный опт <span class="pricing-badge">⭐⭐⭐</span></div>
-                        <div class="pricing-price">Договорная</div>
-                        <ul class="pricing-features">
-                            <li>✅ Партия от 13 изделий</li>
-                            <li>✅ Разработка программы от 1000 ₽</li>
-                            <li>✅ Гибкие условия</li>
+                    <!-- Премиум заказы -->
+                    <div class="service-card animate-on-scroll" onclick="openModal('order')">
+                        <span class="service-tag premium">ПРЕМИУМ</span>
+                        <span class="service-icon">💎</span>
+                        <h4>Премиум заказы</h4>
+                        <div class="service-price">от 2000 ₽ <span>/ шт</span></div>
+                        <p>Сложные дизайны, фотореализм, эксклюзивные работы для самых требовательных</p>
+                        <ul class="service-features">
+                            <li><span class="check">✅</span> Фотореалистичная вышивка</li>
+                            <li><span class="check">✅</span> Индивидуальный дизайн</li>
+                            <li><span class="check">✅</span> Элитные материалы и нити</li>
+                            <li><span class="check">✅</span> Приоритетная очередь</li>
+                            <li><span class="check">✅</span> Срочное изготовление</li>
                         </ul>
-                        <p class="pricing-desc">Для серьёзной работы</p>
-                        <button class="btn btn-sm btn-block" onclick="event.stopPropagation(); openPricingForm('large')">Заказать</button>
+                        <button class="btn btn-sm btn-gold" onclick="event.stopPropagation(); openModal('order')">Заказать</button>
                     </div>
                 </div>
-            </div>
 
-            <!-- ДОВЕРИЕ -->
-            <h2 class="page-subtitle">Почему нам доверяют</h2>
-            <div class="grid-3 animate-on-scroll">
-                <div class="card">
-                    <span class="card-icon">🧵</span>
-                    <h3 class="card-title">10+ лет опыта</h3>
-                    <p class="card-text">С 2014 года в вышивке</p>
-                </div>
-                <div class="card">
-                    <span class="card-icon">🏢</span>
-                    <h3 class="card-title">Новая студия</h3>
-                    <p class="card-text">Современное оборудование</p>
-                </div>
-                <div class="card">
-                    <span class="card-icon">🚀</span>
-                    <h3 class="card-title">Любой тираж</h3>
-                    <p class="card-text">От 1 до 1000+ заказов</p>
+                <!-- Блок "Почему мы" -->
+                <div style="margin-top: var(--space-2xl);">
+                    <h2 class="section-title">Почему выбирают нас</h2>
+                    <div class="grid-4 animate-on-scroll">
+                        <div class="card" style="text-align:center;">
+                            <span class="card-icon">🧵</span>
+                            <h4 class="card-title">Работаем с 2014 года</h4>
+                            <p class="card-text">Более 12 лет в индустрии</p>
+                        </div>
+                        <div class="card" style="text-align:center;">
+                            <span class="card-icon">✅</span>
+                            <h4 class="card-title">Трёхуровневый контроль</h4>
+                            <p class="card-text">Качество на всех этапах</p>
+                        </div>
+                        <div class="card" style="text-align:center;">
+                            <span class="card-icon">🚀</span>
+                            <h4 class="card-title">Любой тираж</h4>
+                            <p class="card-text">От 1 до 1000+ заказов</p>
+                        </div>
+                        <div class="card" style="text-align:center;">
+                            <span class="card-icon">📄</span>
+                            <h4 class="card-title">Работаем официально</h4>
+                            <p class="card-text">С чеками и договорами</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- ===== ПОРТФОЛИО ===== -->
+        <!-- ==========================================
+        СТРАНИЦА: ПРОЦЕСС СОЗДАНИЯ
+        ========================================== -->
+        <div class="page" id="page-process">
+            <div class="container">
+                <h1 class="page-title">Как мы создаём <span class="highlight">шедевры</span></h1>
+                <p class="page-subtitle">Полный цикл — от вашей идеи до готовой работы. Каждый этап под контролем</p>
+
+                <div class="process-timeline">
+
+                    <div class="process-item animate-on-scroll">
+                        <div class="process-marker">
+                            <div class="marker">1</div>
+                        </div>
+                        <div class="process-content">
+                            <h4><span class="process-icon">💬</span> Заявка и идея</h4>
+                            <p>Вы оставляете заявку — мы связываемся с вами в течение 15 минут. Обсуждаем вашу идею, цели и пожелания.</p>
+                            <span class="time-badge">⏱ 15 минут</span>
+                        </div>
+                    </div>
+
+                    <div class="process-item animate-on-scroll">
+                        <div class="process-marker">
+                            <div class="marker gold">2</div>
+                        </div>
+                        <div class="process-content">
+                            <h4><span class="process-icon">🎨</span> Разработка дизайна</h4>
+                            <p>Наши дизайнеры создают макет с учётом всех ваших пожеланий. Бесплатные правки — пока вы не скажете «да».</p>
+                            <span class="time-badge">⏱ 1-3 дня</span>
+                        </div>
+                    </div>
+
+                    <div class="process-item animate-on-scroll">
+                        <div class="process-marker">
+                            <div class="marker pink">3</div>
+                        </div>
+                        <div class="process-content">
+                            <h4><span class="process-icon">🔍</span> Входной контроль</h4>
+                            <p>Проверяем материалы, нити, эскиз — убеждаемся, что всё идеально подходит для вашего заказа.</p>
+                            <span class="time-badge">✅ Качество</span>
+                        </div>
+                    </div>
+
+                    <div class="process-item animate-on-scroll">
+                        <div class="process-marker">
+                            <div class="marker">4</div>
+                        </div>
+                        <div class="process-content">
+                            <h4><span class="process-icon">🧵</span> Вышивка</h4>
+                            <p>Мастера приступают к работе на современном оборудовании. Каждая строчка — с душой и вниманием к деталям.</p>
+                            <span class="time-badge">⏱ 1-5 дней</span>
+                        </div>
+                    </div>
+
+                    <div class="process-item animate-on-scroll">
+                        <div class="process-marker">
+                            <div class="marker gold">5</div>
+                        </div>
+                        <div class="process-content">
+                            <h4><span class="process-icon">🔎</span> Промежуточный контроль</h4>
+                            <p>Проверяем натяжение, плотность, цвета, соответствие макету. При необходимости — корректируем.</p>
+                            <span class="time-badge">✅ Качество</span>
+                        </div>
+                    </div>
+
+                    <div class="process-item animate-on-scroll">
+                        <div class="process-marker">
+                            <div class="marker pink">6</div>
+                        </div>
+                        <div class="process-content">
+                            <h4><span class="process-icon">✨</span> Финальный контроль</h4>
+                            <p>Готовую работу проверяем под разным освещением. Если есть недочёты — переделываем сразу за свой счёт.</p>
+                            <span class="time-badge">⭐ Идеально</span>
+                        </div>
+                    </div>
+
+                    <div class="process-item animate-on-scroll">
+                        <div class="process-marker">
+                            <div class="marker">7</div>
+                        </div>
+                        <div class="process-content">
+                            <h4><span class="process-icon">📦</span> Упаковка и доставка</h4>
+                            <p>Аккуратно упаковываем ваш заказ и отправляем удобным для вас способом — СДЭК, Почта России или Яндекс Доставка.</p>
+                            <span class="time-badge">🚚 1-3 дня</span>
+                        </div>
+                    </div>
+
+                    <div class="process-item animate-on-scroll">
+                        <div class="process-marker">
+                            <div class="marker gold">8</div>
+                        </div>
+                        <div class="process-content">
+                            <h4><span class="process-icon">❤️</span> Вы получаете шедевр!</h4>
+                            <p>Ваша идея воплощена в жизнь. Мы всегда на связи — если что-то не так, переделаем за свой счёт.</p>
+                            <span class="time-badge">🏆 100% гарантия</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Цитата основателя -->
+                <div style="background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(236,72,153,0.06)); border-radius: var(--radius-lg); padding: var(--space-xl); text-align: center; border: 1px solid rgba(139,92,246,0.08); margin-top: var(--space-xl);">
+                    <p style="font-size:1.2rem; font-style:italic; color:var(--color-text-secondary); max-width:700px; margin:0 auto;">
+                        «Каждый заказ мы контролируем лично. Если результат вас не устроит — 
+                        <strong style="color:var(--color-primary);">переделаем за свой счёт</strong>. 
+                        Мне важно, чтобы вы были счастливы.»
+                    </p>
+                    <p style="margin-top:var(--space-md); font-weight:600; color:var(--color-text);">— Макс, основатель Стиль Вышивки</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        СТРАНИЦА: КАЧЕСТВО
+        ========================================== -->
+        <div class="page" id="page-quality">
+            <div class="container">
+                <h1 class="page-title"><span class="highlight">Трёхуровневый</span> контроль качества</h1>
+                <p class="page-subtitle">Мы не просто проверяем — мы гарантируем идеальный результат</p>
+
+                <div class="quality-steps">
+                    <div class="quality-step animate-on-scroll">
+                        <div class="step-num">1</div>
+                        <span class="step-icon">📋</span>
+                        <h4>Входной контроль</h4>
+                        <p>Проверяем материалы, нити, эскиз до начала работы. Убеждаемся, что всё соответствует вашим ожиданиям.</p>
+                        <span class="step-badge">✅ Что проверяем</span>
+                        <ul style="list-style:none; padding:0; margin-top:var(--space-sm); text-align:left; font-size:0.85rem; color:var(--color-text-secondary);">
+                            <li style="padding:4px 0;">• Качество нитей</li>
+                            <li style="padding:4px 0;">• Соответствие макета</li>
+                            <li style="padding:4px 0;">• Тип и плотность ткани</li>
+                            <li style="padding:4px 0;">• Цветовая гамма</li>
+                        </ul>
+                    </div>
+
+                    <div class="quality-step animate-on-scroll">
+                        <div class="step-num">2</div>
+                        <span class="step-icon">🔎</span>
+                        <h4>Промежуточный контроль</h4>
+                        <p>Следим за процессом вышивки: натяжение, плотность, цветовая точность на каждом этапе.</p>
+                        <span class="step-badge">✅ Что проверяем</span>
+                        <ul style="list-style:none; padding:0; margin-top:var(--space-sm); text-align:left; font-size:0.85rem; color:var(--color-text-secondary);">
+                            <li style="padding:4px 0;">• Натяжение ткани</li>
+                            <li style="padding:4px 0;">• Плотность стежков</li>
+                            <li style="padding:4px 0;">• Точность цветов</li>
+                            <li style="padding:4px 0;">• Геометрия рисунка</li>
+                        </ul>
+                    </div>
+
+                    <div class="quality-step animate-on-scroll">
+                        <div class="step-num">3</div>
+                        <span class="step-icon">⭐</span>
+                        <h4>Финальный контроль</h4>
+                        <p>Проверяем готовую работу под разным светом. Если есть недочёты — переделываем сразу за свой счёт.</p>
+                        <span class="step-badge">✅ Что проверяем</span>
+                        <ul style="list-style:none; padding:0; margin-top:var(--space-sm); text-align:left; font-size:0.85rem; color:var(--color-text-secondary);">
+                            <li style="padding:4px 0;">• Внешний вид и качество</li>
+                            <li style="padding:4px 0;">• Стойкость цвета</li>
+                            <li style="padding:4px 0;">• Аккуратность краёв</li>
+                            <li style="padding:4px 0;">• Соответствие макету</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Гарантии -->
+                <div style="display:grid; grid-template-columns:1fr; gap:var(--space-md); margin-top:var(--space-xl);">
+                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:var(--space-md);">
+                        <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);">
+                            <span style="font-size:2.8rem;display:block;">✅</span>
+                            <h4 style="font-weight:700;">Гарантия качества</h4>
+                            <p style="font-size:0.85rem; color:var(--color-text-secondary);">Идеальный результат</p>
+                        </div>
+                        <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);">
+                            <span style="font-size:2.8rem;display:block;">⏱</span>
+                            <h4 style="font-weight:700;">Гарантия срока</h4>
+                            <p style="font-size:0.85rem; color:var(--color-text-secondary);">Вернём деньги при задержке</p>
+                        </div>
+                        <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);">
+                            <span style="font-size:2.8rem;display:block;">💰</span>
+                            <h4 style="font-weight:700;">Гарантия цены</h4>
+                            <p style="font-size:0.85rem; color:var(--color-text-secondary);">Фиксируем стоимость до начала</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center; margin-top:var(--space-xl);">
+                    <button class="btn btn-gold" onclick="openModal('order')" style="max-width:300px; margin:0 auto;">
+                        🔥 Заказать с гарантией
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        СТРАНИЦА: ПОРТФОЛИО
+        ========================================== -->
         <div class="page" id="page-portfolio">
-            <h1 class="page-title">Наши работы</h1>
-            <p class="page-text">Выберите категорию, чтобы посмотреть фото.</p>
+            <div class="container">
+                <h1 class="page-title">Наши <span class="highlight">работы</span></h1>
+                <p class="page-subtitle">Выберите категорию, чтобы посмотреть фото</p>
 
-            <div class="category-grid">
-                <div class="category-card" onclick="openCategory('hats')">
-                    <span class="icon">🧢</span>
-                    <h3>Кепки</h3>
-                    <p>Вышивка на кепках</p>
-                    <span class="badge">Открыть →</span>
+                <div class="categories">
+                    <div class="category-card" onclick="openCategory('hats')">
+                        <span class="icon">🧢</span>
+                        <h3>Кепки</h3>
+                        <p>Вышивка на кепках</p>
+                        <span class="badge">Открыть →</span>
+                    </div>
+                    <div class="category-card" onclick="openCategory('patches')">
+                        <span class="icon">🛡️</span>
+                        <h3>Нашивки</h3>
+                        <p>Шевроны, патчи, нашивки</p>
+                        <span class="badge">Открыть →</span>
+                    </div>
+                    <div class="category-card" onclick="openCategory('clothing')">
+                        <span class="icon">👕</span>
+                        <h3>Работа на изделиях заказчика</h3>
+                        <p>Худи, футболки, куртки</p>
+                        <span class="badge">Открыть →</span>
+                    </div>
                 </div>
-                <div class="category-card" onclick="openCategory('patches')">
-                    <span class="icon">🛡️</span>
-                    <h3>Нашивки</h3>
-                    <p>Шевроны, патчи</p>
-                    <span class="badge">Открыть →</span>
-                </div>
-                <div class="category-card" onclick="openCategory('clothing')">
-                    <span class="icon">👕</span>
-                    <h3>Бренд на одежде</h3>
-                    <p>Худи, футболки, куртки</p>
-                    <span class="badge">Открыть →</span>
-                </div>
+
+                <div id="gallery-hats" class="gallery-grid"></div>
+                <div id="gallery-patches" class="gallery-grid"></div>
+                <div id="gallery-clothing" class="gallery-grid"></div>
             </div>
-
-            <div id="gallery-hats" class="gallery-grid"></div>
-            <div id="gallery-patches" class="gallery-grid"></div>
-            <div id="gallery-clothing" class="gallery-grid"></div>
         </div>
 
-        <!-- ===== ОТЗЫВЫ ===== -->
-        <div class="page" id="page-reviews">
-            <h1 class="page-title">Отзывы клиентов</h1>
-            <p class="page-text">Мы только открыли студию, но уже получили первые отзывы.</p>
+        <!-- ==========================================
+        СТРАНИЦА: КАЛЬКУЛЯТОР
+        ========================================== -->
+        <div class="page" id="page-calculator">
+            <div class="container">
+                <h1 class="page-title"><span class="highlight">Калькулятор</span> стоимости</h1>
+                <p class="page-subtitle">Узнайте ориентировочную стоимость вашего заказа за 30 секунд</p>
 
-            <div class="reviews-grid" id="reviewsList">
-                <div class="review-card animate-on-scroll">
-                    <div class="review-header">
-                        <span class="review-avatar">👤</span>
+                <div class="calculator-wrap">
+                    <h3>📋 Параметры заказа</h3>
+                    <p class="calc-subtitle">Чем точнее данные, тем точнее цена</p>
+
+                    <div class="calc-grid">
                         <div>
-                            <div class="review-name">Анна К.</div>
-                            <div class="review-date">20 июня 2026</div>
-                        </div>
-                    </div>
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Заказывала вышивку на худи для всей семьи. Сделали всё быстро и очень аккуратно."</p>
-                    <span class="review-status">✓ Опубликовано</span>
-                </div>
-
-                <div class="review-card animate-on-scroll">
-                    <div class="review-header">
-                        <span class="review-avatar">👨‍💼</span>
-                        <div>
-                            <div class="review-name">Дмитрий П.</div>
-                            <div class="review-date">18 июня 2026</div>
-                        </div>
-                    </div>
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Партия шевронов для нашей команды. Отличное качество, держатся отлично."</p>
-                    <span class="review-status">✓ Опубликовано</span>
-                </div>
-
-                <div class="review-card animate-on-scroll">
-                    <div class="review-header">
-                        <span class="review-avatar">👩‍🎨</span>
-                        <div>
-                            <div class="review-name">Екатерина М.</div>
-                            <div class="review-date">15 июня 2026</div>
-                        </div>
-                    </div>
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Делали логотип для моего бренда одежды. Получилось лучше, чем я ожидала."</p>
-                    <span class="review-status">✓ Опубликовано</span>
-                </div>
-            </div>
-
-            <div class="form-container animate-on-scroll">
-                <h3>✍️ Оставьте свой отзыв</h3>
-                <p class="form-subtitle">Расскажите о своём опыте — после модерации он появится на сайте</p>
-                <form id="reviewForm">
-                    <div class="form-group">
-                        <label for="reviewName">Ваше имя</label>
-                        <input type="text" id="reviewName" placeholder="Например: Александр" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="reviewRating">Оценка</label>
-                        <select id="reviewRating" required>
-                            <option value="5">⭐⭐⭐⭐⭐ — Отлично</option>
-                            <option value="4">⭐⭐⭐⭐ — Хорошо</option>
-                            <option value="3">⭐⭐⭐ — Средне</option>
-                            <option value="2">⭐⭐ — Плохо</option>
-                            <option value="1">⭐ — Ужасно</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="reviewText">Ваш отзыв</label>
-                        <textarea id="reviewText" placeholder="Что вам понравилось?" rows="4" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="reviewPhoto">📸 Прикрепите фото (необязательно)</label>
-                        <input type="file" id="reviewPhoto" accept="image/*" multiple />
-                        <p style="font-size:0.75rem; color:var(--color-text-secondary); margin-top:4px;">До 5 фото</p>
-                    </div>
-                    <div class="form-checkbox">
-                        <input type="checkbox" id="reviewConsent" required />
-                        <label for="reviewConsent">Я даю согласие на <a href="#" onclick="navigateTo('legal'); return false;">обработку персональных данных</a></label>
-                    </div>
-                    <button type="submit" class="btn btn-block">Отправить на модерацию</button>
-                </form>
-                <div class="success-message" id="reviewSuccess">
-                    <span class="check">✅</span>
-                    <h3>Спасибо за отзыв!</h3>
-                    <p>Он отправлен на модерацию</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== О НАС ===== -->
-        <div class="page" id="page-about">
-            <h1 class="page-title">О студии</h1>
-            <p class="page-text"><strong>Мы открыли новую студию, но за плечами — более 10 лет работы с вышивкой.</strong> За это время мы выполнили сотни заказов: от маленьких патчей до крупных корпоративных тиражей.</p>
-            <p class="page-text">Решение открыть собственную студию пришло, чтобы <strong>предложить клиентам ещё более высокое качество, прозрачные цены и короткие сроки</strong>. Мы работаем на современном качественном оборудовании, используем только проверенные нити.</p>
-            <p class="page-text">Каждый заказ мы контролируем лично. <strong>Вы получаете не просто вещь с рисунком, а продуманный продукт.</strong></p>
-
-            <div class="about-features" style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-md); margin-top:var(--space-lg);">
-                <div class="card animate-on-scroll" style="text-align:center;">
-                    <span class="card-icon">📅</span>
-                    <h4 class="card-title">10+ лет опыта</h4>
-                    <p class="card-text">С 2014 года</p>
-                </div>
-                <div class="card animate-on-scroll" style="text-align:center;">
-                    <span class="card-icon">🔧</span>
-                    <h4 class="card-title">Современное оборудование</h4>
-                    <p class="card-text">Качественные машины</p>
-                </div>
-                <div class="card animate-on-scroll" style="text-align:center;">
-                    <span class="card-icon">🧶</span>
-                    <h4 class="card-title">Только качественные нити</h4>
-                    <p class="card-text">Не выгорают и не линяют</p>
-                </div>
-                <div class="card animate-on-scroll" style="text-align:center;">
-                    <span class="card-icon">⭐</span>
-                    <h4 class="card-title">Любой тираж</h4>
-                    <p class="card-text">От 1 до 1000+ заказов</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== ДОСТАВКА ===== -->
-        <div class="page" id="page-delivery">
-            <h1 class="page-title">Доставка и оплата</h1>
-            <h2 class="page-subtitle">🚚 Способы доставки</h2>
-            <div class="grid-3 animate-on-scroll">
-                <div class="card"><span class="card-icon">📦</span><h4 class="card-title">СДЭК</h4><p class="card-text">от 1 дня</p></div>
-                <div class="card"><span class="card-icon">🚛</span><h4 class="card-title">Яндекс Доставка</h4><p class="card-text">курьер до двери</p></div>
-                <div class="card"><span class="card-icon">📬</span><h4 class="card-title">Почта России</h4><p class="card-text">экономичная</p></div>
-            </div>
-
-            <h2 class="page-subtitle">💳 Оплата</h2>
-            <div class="card animate-on-scroll">
-                <span class="card-icon">🧾</span>
-                <h4 class="card-title">Официальная работа с юрлицами и физлицами</h4>
-                <p class="card-text" style="margin-top:var(--space-sm);">🤝 Работаю как самозанятый по закону № 422-ФЗ.</p>
-                <ul style="list-style:none; padding:0; margin:var(--space-sm) 0; color:var(--color-text-secondary); font-size:0.9rem;">
-                    <li style="padding:4px 0; border-bottom:1px solid rgba(0,0,0,0.04);">📄 <strong>Заключаем договор</strong> (ГПХ)</li>
-                    <li style="padding:4px 0; border-bottom:1px solid rgba(0,0,0,0.04);">💰 <strong>Выставляю счёт</strong> на оплату</li>
-                    <li style="padding:4px 0; border-bottom:1px solid rgba(0,0,0,0.04);">📆 <strong>Оплата</strong> безналичным переводом</li>
-                    <li style="padding:4px 0;">🧾 <strong>Предоставляю чек</strong> из «Мой налог»</li>
-                </ul>
-                <span class="btn btn-sm" style="margin-top:var(--space-sm); cursor:default; opacity:0.8;">Работаю официально</span>
-            </div>
-        </div>
-
-        <!-- ===== КОНТАКТЫ ===== -->
-        <div class="page" id="page-contacts">
-            <h1 class="page-title">Контакты</h1>
-            <p class="page-text">Свяжитесь с нами любым удобным способом — мы ответим в течение 15 минут.</p>
-
-            <div class="contacts-grid">
-                <div>
-                    <ul class="contacts-list">
-                        <li><strong>📞 Телефон</strong> <a href="tel:+79014030785">+7 (901) 403-07-85</a></li>
-                        <li><strong>✉️ Email</strong> <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a></li>
-                        <li><strong>🕐 Режим работы</strong> Пн–Пт, 9:00 – 18:00</li>
-                        <li><strong>📍 Адрес</strong> Москва, ул. Исаковского, д. 20</li>
-                        <li style="border-bottom:none;">
-                            <strong>💬 Мессенджеры</strong>
-                            <div class="messenger-links">
-                                <a href="https://wa.me/79014030785" target="_blank" class="btn-wa">WhatsApp</a>
-                                <a href="https://t.me/+79776975580" target="_blank" class="btn-tg">Telegram</a>
-                                <a href="https://www.instagram.com/fancywork008/" target="_blank" class="btn-ig">Instagram</a>
-                                <a href="https://max.ru/79014030785" target="_blank" class="btn-max">MAX</a>
+                            <div class="calc-group">
+                                <label>👕 Тип изделия</label>
+                                <select id="calcProduct">
+                                    <option value="Футболка">Футболка</option>
+                                    <option value="Худи / Свитшот" selected>Худи / Свитшот</option>
+                                    <option value="Кепка">Кепка</option>
+                                    <option value="Куртка">Куртка</option>
+                                    <option value="Сумка / Рюкзак">Сумка / Рюкзак</option>
+                                    <option value="Другое">Другое</option>
+                                </select>
                             </div>
-                        </li>
+
+                            <div class="calc-group">
+                                <label>📦 Количество</label>
+                                <select id="calcQuantity">
+                                    <option value="1">1 шт</option>
+                                    <option value="2">2 шт</option>
+                                    <option value="3">3 шт</option>
+                                    <option value="5">5 шт</option>
+                                    <option value="10" selected>10 шт</option>
+                                    <option value="20">20 шт</option>
+                                    <option value="50">50 шт</option>
+                                    <option value="100">100+ шт</option>
+                                </select>
+                            </div>
+
+                            <div class="calc-group">
+                                <label>🎨 Сложность вышивки</label>
+                                <select id="calcComplexity">
+                                    <option value="simple">Простая (текст, логотип)</option>
+                                    <option value="medium" selected>Средняя (рисунок, градиент)</option>
+                                    <option value="complex">Сложная (фотореализм, детали)</option>
+                                </select>
+                            </div>
+
+                            <button class="btn btn-primary-solid btn-block" onclick="calculatePrice()" style="max-width:100%;">
+                                ✨ Рассчитать стоимость
+                            </button>
+                        </div>
+
+                        <div class="calc-result-box" id="calcResultBox">
+                            <div class="result-placeholder" id="calcPlaceholder">
+                                <span class="big-icon">🧵</span>
+                                <p style="font-size:1.1rem;font-weight:600;color:var(--color-text);">Ждём ваш запрос</p>
+                                <p style="font-size:0.85rem;color:var(--color-text-secondary);">Выберите параметры и нажмите «Рассчитать»</p>
+                            </div>
+
+                            <div class="result-content" id="calcResultContent">
+                                <div class="result-price" id="calcResultPrice">0 ₽</div>
+                                <div class="result-label">ориентировочная стоимость</div>
+                                <div class="result-details" id="calcResultDetails">
+                                    <div>👕 <span id="calcResultProduct">Худи</span></div>
+                                    <div>📦 <span id="calcResultQty">10</span> шт</div>
+                                    <div>🎨 <span id="calcResultComplex">Средняя</span></div>
+                                </div>
+                                <button class="btn btn-sm btn-gold" onclick="openModal('order')" style="max-width:100%; margin-top:var(--space-md);">
+                                    🚀 Заказать сейчас
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Дополнительный блок -->
+                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:var(--space-md); margin-top:var(--space-xl);">
+                    <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-sm); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);">
+                        <span style="font-size:2rem;display:block;">⚡</span>
+                        <p style="font-size:0.85rem; color:var(--color-text-secondary);">Мгновенный расчёт</p>
+                    </div>
+                    <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-sm); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);">
+                        <span style="font-size:2rem;display:block;">🎯</span>
+                        <p style="font-size:0.85rem; color:var(--color-text-secondary);">Точность до копейки</p>
+                    </div>
+                    <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-sm); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);">
+                        <span style="font-size:2rem;display:block;">📊</span>
+                        <p style="font-size:0.85rem; color:var(--color-text-secondary);">С учётом всех параметров</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        СТРАНИЦА: КОНТАКТЫ
+        ========================================== -->
+        <div class="page" id="page-contacts">
+            <div class="container">
+                <h1 class="page-title">📞 <span class="highlight">Контакты</span></h1>
+                <p class="page-subtitle">Свяжитесь с нами любым удобным способом — ответим в течение 15 минут</p>
+
+                <div class="contacts-grid">
+                    <div>
+                        <ul class="contacts-list">
+                            <li><strong>📱 Телефон</strong> <a href="tel:+79014030785">+7 (901) 403-07-85</a></li>
+                            <li><strong>✉️ Email</strong> <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a></li>
+                            <li><strong>🕐 Режим работы</strong> Пн–Пт, 9:00 – 18:00</li>
+                            <li><strong>📍 Адрес</strong> Москва, ул. Исаковского, д. 20</li>
+                            <li style="border-bottom: none;">
+                                <strong>💬 Мессенджеры</strong>
+                                <div class="messenger-links">
+                                    <a href="https://wa.me/79014030785" target="_blank" class="btn-wa">WhatsApp</a>
+                                    <a href="https://t.me/+79014030785" target="_blank" class="btn-tg">Telegram</a>
+                                    <a href="https://www.instagram.com/fancywork008/" target="_blank" class="btn-ig">Instagram</a>
+                                    <a href="https://max.ru/u/f9LHodD0cOKOzMr00gjNpvn1TdveNr4o3cTe6syxQuWTj9GVIAcSf0UIpc4" target="_blank" class="btn-max">MAX</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="btn btn-gold" onclick="openModal('order')" style="max-width:100%; margin-top:var(--space-md);">
+                            🔥 Оставить заявку
+                        </button>
+                    </div>
+                    <div>
+                        <div class="map-container">
+                            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d&amp;source=constructor&amp;text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" allowfullscreen></iframe>
+                        </div>
+                        <p style="font-size: 0.7rem; color: var(--color-text-secondary); margin-top: 4px; text-align: right;">
+                            <a href="https://yandex.ru/maps/?text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" target="_blank" style="color: var(--color-text-secondary);">Открыть в Яндекс.Картах →</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        СТРАНИЦА: ЮРИДИЧЕСКАЯ
+        ========================================== -->
+        <div class="page" id="page-legal">
+            <div class="container">
+                <h1 class="page-title">📄 <span class="highlight">Юридическая информация</span></h1>
+                <p class="page-subtitle">Всё по закону — работаем официально с чеками и договорами</p>
+
+                <!-- БЛОК О ЧЕКЕ -->
+                <div style="background: linear-gradient(135deg, rgba(52,199,89,0.06), rgba(139,92,246,0.06)); border-radius: var(--radius-lg); padding: var(--space-xl); margin-bottom: var(--space-xl); border: 1px solid rgba(52,199,89,0.1);">
+                    <div style="display:flex; align-items:center; gap:var(--space-md); flex-wrap:wrap;">
+                        <span style="font-size:3rem;">🧾</span>
+                        <div>
+                            <h3 style="font-weight:700; color:var(--color-text);">Работаю официально — с чеком и договором</h3>
+                            <p style="color:var(--color-text-secondary); margin:0;">
+                                💳 После оплаты вы получаете официальный чек из приложения <strong>«Мой налог»</strong> (ФНС). 
+                                Для юрлиц и ИП заключаем договор ГПХ и выставляем счёт.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ -->
+                <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-xl); border:1px solid rgba(255,255,255,0.3); margin-bottom:var(--space-lg);">
+                    <h2 style="font-size:1.3rem; font-weight:700; color:var(--color-primary); margin-bottom:var(--space-md);">1. Политика конфиденциальности</h2>
+                    <p style="color:var(--color-text-secondary);">Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта <strong style="color:var(--color-text);">Стиль Вышивки</strong>.</p>
+
+                    <h4 style="font-weight:600; margin-top:var(--space-md); color:var(--color-text);">1.1. Какие данные мы собираем</h4>
+                    <p style="color:var(--color-text-secondary);">При заполнении форм на Сайте мы собираем: <strong style="color:var(--color-text);">имя, номер телефона и текст сообщения/отзыва</strong>. Также мы можем получать данные, которые вы передаёте в мессенджерах (WhatsApp, Telegram) при общении с нами.</p>
+
+                    <h4 style="font-weight:600; margin-top:var(--space-md); color:var(--color-text);">1.2. Цели обработки данных</h4>
+                    <p style="color:var(--color-text-secondary);">Ваши данные используются исключительно для:</p>
+                    <ul style="color:var(--color-text-secondary); padding-left:var(--space-lg);">
+                        <li>связи с вами для расчёта стоимости вышивки;</li>
+                        <li>уточнения деталей заказа;</li>
+                        <li>информирования о статусе выполнения заказа;</li>
+                        <li>публикации отзывов (с вашего согласия).</li>
+                    </ul>
+
+                    <h4 style="font-weight:600; margin-top:var(--space-md); color:var(--color-text);">1.3. Передача данных третьим лицам</h4>
+                    <p style="color:var(--color-text-secondary);">Мы <strong style="color:var(--color-text);">не передаём</strong> ваши персональные данные третьим лицам, за исключением случаев, предусмотренных законодательством РФ.</p>
+
+                    <h4 style="font-weight:600; margin-top:var(--space-md); color:var(--color-text);">1.4. Хранение и защита данных</h4>
+                    <p style="color:var(--color-text-secondary);">Ваши данные хранятся в защищённом виде в нашей внутренней системе и в мессенджерах, которые соответствуют требованиям безопасности.</p>
+
+                    <h4 style="font-weight:600; margin-top:var(--space-md); color:var(--color-text);">1.5. Ваши права</h4>
+                    <p style="color:var(--color-text-secondary);">Вы имеете право требовать удаления ваших данных из нашей системы, написав нам на email: <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a>.</p>
+
+                    <h4 style="font-weight:600; margin-top:var(--space-md); color:var(--color-text);">1.6. Изменения в политике</h4>
+                    <p style="color:var(--color-text-secondary);">Мы оставляем за собой право обновлять данную политику. Актуальная версия всегда опубликована на этом Сайте.</p>
+                </div>
+
+                <!-- ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ -->
+                <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-xl); border:1px solid rgba(255,255,255,0.3); margin-bottom:var(--space-lg);">
+                    <h2 style="font-size:1.3rem; font-weight:700; color:var(--color-primary); margin-bottom:var(--space-md);">2. Пользовательское соглашение</h2>
+
+                    <h4 style="font-weight:600; margin-top:var(--space-md); color:var(--color-text);">2.1. Использование Сайта</h4>
+                    <p style="color:var(--color-text-secondary);">Используя Сайт, вы соглашаетесь с условиями настоящего Соглашения. Если вы не согласны с условиями, пожалуйста, покиньте Сайт.</p>
+
+                    <h4 style="font-weight:600; margin-top:var(--space-md); color:var(--color-text);">2.2. Интеллектуальная собственность</h4>
+                    <p style="color:var(--color-text-secondary);">Все материалы Сайта (тексты, дизайн, изображения) являются объектами интеллектуальной собственности и защищены законодательством РФ. Копирование материалов без согласия правообладателя запрещено.</p>
+
+                    <h4 style="font-weight:600; margin-top:var(--space-md); color:var(--color-text);">2.3. Ответственность</h4>
+                    <p style="color:var(--color-text-secondary);">Администрация Сайта не несёт ответственности за убытки, возникшие в результате использования или невозможности использования Сайта.</p>
+
+                    <h4 style="font-weight:600; margin-top:var(--space-md); color:var(--color-text);">2.4. Изменения</h4>
+                    <p style="color:var(--color-text-secondary);">Администрация Сайта оставляет за собой право изменять условия Соглашения в любое время без предварительного уведомления. Актуальная версия всегда доступна на этом Сайте.</p>
+                </div>
+
+                <!-- СОГЛАСИЕ НА ОБРАБОТКУ ДАННЫХ -->
+                <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-xl); border:1px solid rgba(255,255,255,0.3); margin-bottom:var(--space-lg);">
+                    <h2 style="font-size:1.3rem; font-weight:700; color:var(--color-primary); margin-bottom:var(--space-md);">3. Согласие на обработку персональных данных</h2>
+                    <p style="color:var(--color-text-secondary);">Отправляя форму на Сайте, вы даёте своё <strong style="color:var(--color-text);">согласие на обработку персональных данных</strong> в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</p>
+                    <p style="color:var(--color-text-secondary); margin-top:var(--space-sm);">Вы подтверждаете, что:</p>
+                    <ul style="color:var(--color-text-secondary); padding-left:var(--space-lg);">
+                        <li>указанные вами данные являются достоверными;</li>
+                        <li>вы даёте согласие на обработку данных (сбор, систематизацию, накопление, хранение, уточнение, использование, обезличивание, блокирование, уничтожение);</li>
+                        <li>согласие даётся на срок, необходимый для достижения целей обработки, но не более 5 лет;</li>
+                        <li>вы можете отозвать согласие, направив письменное уведомление на email: <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a>.</li>
                     </ul>
                 </div>
-                <div>
-                    <div class="map-container">
-                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d&amp;source=constructor&amp;text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" allowfullscreen></iframe>
-                    </div>
-                    <p style="font-size:0.7rem; color:var(--color-text-secondary); margin-top:4px; text-align:right;">
-                        <a href="https://yandex.ru/maps/?text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" target="_blank" style="color:var(--color-text-secondary);">Открыть в Яндекс.Картах →</a>
-                    </p>
+
+                <!-- РЕКВИЗИТЫ -->
+                <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-xl); border:1px solid rgba(255,255,255,0.3);">
+                    <h2 style="font-size:1.3rem; font-weight:700; color:var(--color-primary); margin-bottom:var(--space-md);">4. Реквизиты самозанятого</h2>
+                    <ul style="color:var(--color-text-secondary); padding-left:var(--space-lg);">
+                        <li><strong style="color:var(--color-text);">Статус:</strong> Самозанятый (плательщик налога на профессиональный доход)</li>
+                        <li><strong style="color:var(--color-text);">ФИО:</strong> Ёлдашев Максим Джорагелдиевич</li>
+                        <li><strong style="color:var(--color-text);">ИНН:</strong> 130100811452</li>
+                        <li><strong style="color:var(--color-text);">Налоговый режим:</strong> Налог на профессиональный доход (НПД)</li>
+                        <li><strong style="color:var(--color-text);">Телефон:</strong> <a href="tel:+79014030785">+7 (901) 403-07-85</a></li>
+                        <li><strong style="color:var(--color-text);">Email:</strong> <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a></li>
+                    </ul>
+                    <p style="color:var(--color-text-secondary); margin-top:var(--space-md); font-size:0.85rem;">Дата публикации: 11 августа 2026 г.</p>
                 </div>
-            </div>
-        </div>
-
-        <!-- ===== ЮРИДИЧЕСКАЯ ===== -->
-        <div class="page" id="page-legal">
-            <h1 class="page-title">Юридическая информация</h1>
-            <div class="legal-content">
-                <h3>1. Политика конфиденциальности</h3>
-                <p>Настоящая Политика определяет порядок обработки персональных данных пользователей сайта <span class="highlight">Вышивка Стиль</span>.</p>
-                <p><strong>Какие данные мы собираем</strong><br />При заполнении форм мы собираем: имя, номер телефона и текст сообщения/отзыва.</p>
-                <p><strong>Цели обработки</strong><br />Связь, расчёт стоимости, уточнение деталей заказа, публикация отзывов.</p>
-                <p><strong>Ваши права</strong><br />Вы можете требовать удаления данных, написав на <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a>.</p>
-
-                <h3>2. Пользовательское соглашение</h3>
-                <p>Используя Сайт, вы соглашаетесь с условиями. Все материалы защищены законодательством РФ.</p>
-
-                <h3>3. Согласие на обработку данных</h3>
-                <p>Отправляя форму, вы даёте согласие на обработку персональных данных в соответствии с 152-ФЗ.</p>
-
-                <h3>4. Реквизиты самозанятого</h3>
-                <ul>
-                    <li><strong>Статус:</strong> Самозанятый (НПД)</li>
-                    <li><strong>ФИО:</strong> Ёлдашев Максим Джорагелдиевич</li>
-                    <li><strong>ИНН:</strong> 130100811452</li>
-                    <li><strong>Телефон:</strong> <a href="tel:+79014030785">+7 (901) 403-07-85</a></li>
-                    <li><strong>Email:</strong> <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a></li>
-                </ul>
-                <p style="margin-top:var(--space-md); color:var(--color-text-secondary); font-size:0.8rem;">Дата публикации: 06 августа 2026 г.</p>
             </div>
         </div>
 
@@ -2092,56 +2623,70 @@
     <!-- ====== ПОДВАЛ ====== -->
     <footer class="footer">
         <div class="container">
+            <p style="font-weight:700; color:var(--color-text); font-size:1.1rem;">✦ Стиль Вышивки</p>
+            <div class="footer-divider"></div>
             <div class="footer-nav">
                 <a onclick="navigateTo('home')">Главная</a>
+                <a onclick="navigateTo('services')">Услуги</a>
+                <a onclick="navigateTo('process')">Процесс</a>
+                <a onclick="navigateTo('quality')">Качество</a>
                 <a onclick="navigateTo('portfolio')">Портфолио</a>
-                <a onclick="navigateTo('reviews')">Отзывы</a>
-                <a onclick="navigateTo('about')">О нас</a>
-                <a onclick="navigateTo('delivery')">Доставка</a>
+                <a onclick="navigateTo('calculator')">Калькулятор</a>
                 <a onclick="navigateTo('contacts')">Контакты</a>
+                <a onclick="navigateTo('legal')">Юридическая</a>
             </div>
             <div class="footer-legal">
                 <a href="#" onclick="navigateTo('legal'); return false;">Политика конфиденциальности</a>
                 <a href="#" onclick="navigateTo('legal'); return false;">Пользовательское соглашение</a>
                 <a href="#" onclick="navigateTo('legal'); return false;">Согласие на обработку</a>
             </div>
-            <div class="footer-divider"></div>
-            <p>© 2026 Вышивка Стиль. Все права защищены.</p>
+            <p>© 2026 Стиль Вышивки. Все права защищены.</p>
             <p style="font-size:0.8rem; opacity:0.7; margin-top:4px;">
                 <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a> ·
                 <a href="tel:+79014030785">+7 (901) 403-07-85</a>
             </p>
-            <div class="footer-req">Самозанятый Ёлдашев Максим Джорагелдиевич · ИНН 130100811452</div>
+            <p class="footer-req">Самозанятый Ёлдашев Максим Джорагелдиевич · ИНН 130100811452</p>
         </div>
     </footer>
 
-    <!-- ====== КНОПКА "НАВЕРХ" ====== -->
+    <!-- ====== КНОПКА НАВЕРХ ====== -->
     <button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-    <!-- ====== МОДАЛЬНЫЕ ОКНА ====== -->
+    <!-- ==========================================
+    ВСПЛЫВАЮЩИЕ ОКНА (ПОПАПЫ)
+    ========================================== -->
 
-    <!-- Обычная форма -->
-    <div class="modal-overlay" id="contactModal">
+    <!-- ОСНОВНАЯ ФОРМА ЗАЯВКИ -->
+    <div class="modal-overlay" id="orderModal">
         <div class="modal">
-            <button class="modal-close" onclick="closeModal()">✕</button>
+            <button class="modal-close" onclick="closeModal('orderModal')">✕</button>
             <h2 class="modal-title">📩 Заказать вышивку</h2>
-            <p class="modal-subtitle">Оставьте телефон и описание — я свяжусь с вами.</p>
-            <form id="modalContactForm">
+            <p class="modal-subtitle">Оставьте телефон и описание — я свяжусь с вами в течение 15 минут</p>
+            <form id="orderForm">
                 <div class="form-group">
-                    <label for="modalPhone">📱 Номер телефона</label>
-                    <input type="tel" id="modalPhone" placeholder="+7 (___) ___-__-__" required />
+                    <label for="orderPhone">📱 Номер телефона</label>
+                    <input type="tel" id="orderPhone" placeholder="+7 (___) ___-__-__" required />
                 </div>
                 <div class="form-group">
-                    <label for="modalMessage">✏️ Что нужно сделать?</label>
-                    <textarea id="modalMessage" placeholder="Например: логотип на футболку, 10 шт." rows="2" required></textarea>
+                    <label for="orderMessage">✏️ Что нужно сделать?</label>
+                    <textarea id="orderMessage" placeholder="Например: логотип на футболку, 10 шт." rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="orderType">📂 Тип заказа</label>
+                    <select id="orderType">
+                        <option value="Шевроны / нашивки">Шевроны / нашивки</option>
+                        <option value="Вышивка на одежде" selected>Вышивка на одежде</option>
+                        <option value="Премиум заказ">Премиум заказ</option>
+                        <option value="Другое">Другое</option>
+                    </select>
                 </div>
                 <div class="form-checkbox">
-                    <input type="checkbox" id="modalConsent" required />
-                    <label for="modalConsent">Я даю согласие на <a href="#" onclick="navigateTo('legal'); return false;">обработку данных</a></label>
+                    <input type="checkbox" id="orderConsent" required />
+                    <label for="orderConsent">Я даю согласие на обработку персональных данных</label>
                 </div>
-                <button type="submit" class="btn btn-block">🚀 Отправить заявку</button>
+                <button type="submit" class="btn btn-primary-solid" style="width:100%;">🚀 Отправить заявку</button>
             </form>
-            <div class="success-message" id="modalSuccess">
+            <div class="success-message" id="orderSuccess">
                 <span class="check">✅</span>
                 <h3>Заявка отправлена!</h3>
                 <p>Я свяжусь с вами в ближайшее время</p>
@@ -2149,68 +2694,35 @@
         </div>
     </div>
 
-    <!-- Попап -->
-    <div class="modal-overlay" id="popupModal">
-        <div class="modal">
-            <button class="modal-close" onclick="closePopup()">✕</button>
-            <h2 class="modal-title">🎁 Бесплатный расчёт!</h2>
-            <p class="modal-subtitle">Оставьте телефон — я пришлю точную стоимость за 15 минут.</p>
-            <form id="popupForm">
-                <div class="form-group">
-                    <label for="popupPhone">📱 Ваш телефон</label>
-                    <input type="tel" id="popupPhone" placeholder="+7 (___) ___-__-__" required />
-                </div>
-                <button type="submit" class="btn btn-block">🚀 Получить расчёт</button>
-            </form>
-            <div class="success-message" id="popupSuccess">
-                <span class="check">✅</span>
-                <h3>Спасибо!</h3>
-                <p>Я свяжусь с вами в ближайшее время</p>
+    <!-- ПОПАП-РОЗЫГРЫШ (БАРАБАН — 1 попытка) -->
+    <div class="wheel-overlay" id="wheelOverlay">
+        <div class="wheel-content">
+            <button class="modal-close" onclick="closeWheel()" style="position:absolute;top:12px;right:16px;font-size:1.6rem;color:var(--color-text-secondary);background:none;border:none;cursor:pointer;">✕</button>
+            <h2>🎰 Крути барабан!</h2>
+            <p>Выиграй скидку или бонус к заказу <span class="live-emoji">🔥</span></p>
+
+            <div class="wheel-attempts" id="wheelAttempts">
+                🎯 У вас <span class="remaining">1</span> попытка
             </div>
+
+            <div class="wheel-spin" id="wheelSpin">
+                <div class="center"></div>
+            </div>
+
+            <div class="wheel-result" id="wheelResult">Нажми кнопку, чтобы крутить</div>
+
+            <button class="btn-wheel" id="wheelBtn">🌀 Крутить!</button>
+
+            <div class="wheel-history" id="wheelHistory">
+                <div style="color:var(--color-text-secondary);font-size:0.8rem;text-align:center;">История розыгрышей пуста</div>
+            </div>
+
+            <button class="btn-wheel" style="background:transparent;color:var(--color-text-secondary);box-shadow:none;margin-top:var(--space-sm);" onclick="closeWheel()">✕ Закрыть</button>
         </div>
     </div>
 
-    <!-- Форма из тарифов -->
-    <div class="modal-overlay" id="pricingModal">
-        <div class="modal">
-            <button class="modal-close" onclick="closePricingModal()">✕</button>
-            <h2 class="modal-title" id="pricingModalTitle">📩 Заказать вышивку</h2>
-            <p class="modal-subtitle" id="pricingModalSubtitle">Оставьте контакты, и я свяжусь с вами</p>
-            <form id="pricingForm">
-                <div class="form-group">
-                    <label for="pricingName">Ваше имя</label>
-                    <input type="text" id="pricingName" placeholder="Например: Анна" required />
-                </div>
-                <div class="form-group">
-                    <label for="pricingPhone">📱 Номер телефона</label>
-                    <input type="tel" id="pricingPhone" placeholder="+7 (___) ___-__-__" required />
-                </div>
-                <div class="form-group">
-                    <label for="pricingType">👕 Тип изделия</label>
-                    <select id="pricingType">
-                        <option value="Футболка">Футболка</option>
-                        <option value="Худи / Свитшот">Худи / Свитшот</option>
-                        <option value="Кепка">Кепка</option>
-                        <option value="Куртка">Куртка</option>
-                        <option value="Другое">Другое</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="pricingQuantity">📦 Количество</label>
-                    <input type="number" id="pricingQuantity" value="1" min="1" max="1000" required />
-                </div>
-                <div class="form-group">
-                    <label for="pricingMessage">✏️ Дополнительно</label>
-                    <textarea id="pricingMessage" placeholder="Например: логотип компании" rows="2"></textarea>
-                </div>
-                <div class="form-checkbox">
-                    <input type="checkbox" id="pricingConsent" required />
-                    <label for="pricingConsent">Я даю согласие на <a href="#" onclick="navigateTo('legal'); return false;">обработку данных</a></label>
-                </div>
-                <button type="submit" class="btn btn-block">🚀 Отправить заявку</button>
-            </form>
-        </div>
-    </div>
+    <!-- ====== КОНФЕТТИ ====== -->
+    <div class="confetti-container" id="confettiContainer"></div>
 
     <!-- ====== ЛАЙТБОКС ====== -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -2222,26 +2734,27 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
+            // ============================================================
+            // НАСТРОЙКИ TELEGRAM БОТА
+            // ============================================================
+            const BOT_TOKEN = '8496826797:AAE8IyR23dktdiED8oHPkZ564GHmoOZnOwE';
+            const CHAT_ID = '5632775119';
+
+            // ============================================================
+            // ОСТАЛЬНОЙ КОД
+            // ============================================================
+
             // ===== НАВИГАЦИЯ =====
             const navLinks = document.querySelectorAll('.nav-link');
             const pages = {
                 home: document.getElementById('page-home'),
+                services: document.getElementById('page-services'),
+                process: document.getElementById('page-process'),
+                quality: document.getElementById('page-quality'),
                 portfolio: document.getElementById('page-portfolio'),
-                reviews: document.getElementById('page-reviews'),
-                about: document.getElementById('page-about'),
-                delivery: document.getElementById('page-delivery'),
+                calculator: document.getElementById('page-calculator'),
                 contacts: document.getElementById('page-contacts'),
                 legal: document.getElementById('page-legal')
-            };
-            const breadcrumbText = document.getElementById('breadcrumbText');
-            const pageNames = {
-                home: 'Главная',
-                portfolio: 'Портфолио',
-                reviews: 'Отзывы',
-                about: 'О нас',
-                delivery: 'Доставка и оплата',
-                contacts: 'Контакты',
-                legal: 'Юридическая информация'
             };
 
             window.navigateTo = function(pageId) {
@@ -2252,10 +2765,8 @@
                 navLinks.forEach(link => {
                     link.classList.toggle('active', link.dataset.page === pageId);
                 });
-                if (breadcrumbText) {
-                    breadcrumbText.textContent = pageNames[pageId] || pageId;
-                }
                 window.scrollTo({ top: 0, behavior: 'smooth' });
+                document.getElementById('navList').classList.remove('open');
             };
 
             navLinks.forEach(link => {
@@ -2266,13 +2777,18 @@
                 });
             });
 
+            // ===== МОБИЛЬНОЕ МЕНЮ =====
+            document.getElementById('mobileToggle').addEventListener('click', function() {
+                document.getElementById('navList').classList.toggle('open');
+            });
+
             // ===== ШАПКА ПРИ СКРОЛЛЕ =====
             const header = document.getElementById('header');
             window.addEventListener('scroll', function() {
                 header.classList.toggle('scrolled', window.scrollY > 50);
             });
 
-            // ===== КНОПКА "НАВЕРХ" =====
+            // ===== КНОПКА НАВЕРХ =====
             const scrollBtn = document.getElementById('scrollTopBtn');
             window.addEventListener('scroll', function() {
                 scrollBtn.classList.toggle('visible', window.scrollY > 400);
@@ -2314,58 +2830,366 @@
             counters.forEach(el => counterObserver.observe(el));
 
             // ===== МОДАЛЬНЫЕ ОКНА =====
-            window.openModal = function() {
-                document.getElementById('contactModal').classList.add('active');
-                document.body.style.overflow = 'hidden';
-            };
-            window.closeModal = function() {
-                document.getElementById('contactModal').classList.remove('active');
-                document.body.style.overflow = '';
-            };
-            document.getElementById('contactModal').addEventListener('click', function(e) {
-                if (e.target === this) closeModal();
-            });
-
-            window.closePopup = function() {
-                document.getElementById('popupModal').classList.remove('active');
-                document.body.style.overflow = '';
-            };
-            document.getElementById('popupModal').addEventListener('click', function(e) {
-                if (e.target === this) closePopup();
-            });
-
-            // ===== ТАРИФЫ =====
-            let selectedTariff = '';
-            window.openPricingForm = function(tariff) {
-                selectedTariff = tariff;
-                const modal = document.getElementById('pricingModal');
-                const title = document.getElementById('pricingModalTitle');
-                const subtitle = document.getElementById('pricingModalSubtitle');
-                const tariffNames = {
-                    individual: 'Индивидуальная вышивка',
-                    small: 'Мелкий опт (2–12 шт)',
-                    large: 'Крупный опт (от 13 шт)'
-                };
-                title.textContent = `📩 Заказать: ${tariffNames[tariff]}`;
-                subtitle.textContent = 'Оставьте контакты, и я свяжусь с вами';
-                const q = document.getElementById('pricingQuantity');
-                if (tariff === 'individual') { q.value = 1;
-                    q.min = 1;
-                    q.max = 1; } else if (tariff === 'small') { q.value = 2;
-                    q.min = 2;
-                    q.max = 12; } else if (tariff === 'large') { q.value = 13;
-                    q.min = 13;
-                    q.max = 1000; }
+            window.openModal = function(type) {
+                const modal = document.getElementById('orderModal');
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             };
-            window.closePricingModal = function() {
-                document.getElementById('pricingModal').classList.remove('active');
+            window.closeModal = function(id) {
+                const modal = document.getElementById(id || 'orderModal');
+                modal.classList.remove('active');
                 document.body.style.overflow = '';
             };
-            document.getElementById('pricingModal').addEventListener('click', function(e) {
-                if (e.target === this) closePricingModal();
+            document.getElementById('orderModal').addEventListener('click', function(e) {
+                if (e.target === this) closeModal('orderModal');
             });
+
+            // ===== ФОРМА ЗАЯВКИ =====
+            const orderForm = document.getElementById('orderForm');
+            const orderPhone = document.getElementById('orderPhone');
+            const orderSuccess = document.getElementById('orderSuccess');
+
+            orderPhone.addEventListener('input', function() {
+                let val = this.value.replace(/\D/g, '');
+                if (val.length > 0) {
+                    let f = '+7 (';
+                    if (val.length > 1) {
+                        f += val.substring(1, 4);
+                        if (val.length >= 4) { f += ') ';
+                            f += val.substring(4, 7); }
+                        if (val.length >= 7) { f += '-';
+                            f += val.substring(7, 9); }
+                        if (val.length >= 9) { f += '-';
+                            f += val.substring(9, 11); }
+                    } else { f += val; }
+                    this.value = f;
+                } else { this.value = ''; }
+            });
+
+            function sendToTelegram(text) {
+                fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chat_id: CHAT_ID, text, parse_mode: 'Markdown' })
+                }).catch(() => console.log('Ошибка отправки в Telegram'));
+            }
+
+            orderForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (!document.getElementById('orderConsent').checked) {
+                    alert('Пожалуйста, дайте согласие на обработку данных');
+                    return;
+                }
+                const phone = orderPhone.value.trim();
+                if (phone.replace(/\D/g, '').length < 10) {
+                    alert('Введите корректный номер телефона');
+                    return;
+                }
+                const message = document.getElementById('orderMessage').value.trim();
+                const type = document.getElementById('orderType').value;
+
+                let wheelResultText = '❌ Не крутил барабан';
+                if (window.lastWheelResult) {
+                    wheelResultText = window.lastWheelResult;
+                    if (window.lastWheelPrize && window.lastWheelPrize.value > 0) {
+                        wheelResultText = `✅ ВЫИГРЫШ: ${window.lastWheelPrize.value}% скидка`;
+                    }
+                }
+
+                const text =
+                    `📩 *НОВАЯ ЗАЯВКА!*\n\n` +
+                    `📱 *Телефон:* ${phone}\n` +
+                    `📂 *Тип заказа:* ${type}\n` +
+                    `💬 *Описание:* ${message || '—'}\n` +
+                    `🎰 *Результат барабана:* ${wheelResultText}\n` +
+                    `🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
+
+                sendToTelegram(text);
+
+                orderForm.style.display = 'none';
+                orderSuccess.style.display = 'block';
+                setTimeout(() => {
+                    orderForm.style.display = 'block';
+                    orderSuccess.style.display = 'none';
+                    orderForm.reset();
+                    closeModal('orderModal');
+                }, 3000);
+            });
+
+            // ===== БАРАБАН (1 ПОПЫТКА) =====
+            const wheelOverlay = document.getElementById('wheelOverlay');
+            const wheelSpin = document.getElementById('wheelSpin');
+            const wheelResult = document.getElementById('wheelResult');
+            const wheelBtn = document.getElementById('wheelBtn');
+            let isSpinning = false;
+            let wheelAttempts = 0;
+            const MAX_ATTEMPTS = 1;
+            let wheelHistory = [];
+
+            const segments = [
+                { label: '10%', color: '#F59E0B', value: 10 },
+                { label: '15%', color: '#8B5CF6', value: 15 },
+                { label: '5%', color: '#EC4899', value: 5 },
+                { label: 'Беспл. макет', color: '#6D28D9', value: 0 },
+                { label: '20%', color: '#F59E0B', value: 20 },
+                { label: 'Повезёт в др. раз', color: '#9CA3AF', value: -1 },
+                { label: '7%', color: '#EC4899', value: 7 },
+                { label: '12%', color: '#8B5CF6', value: 12 },
+            ];
+
+            function buildWheel() {
+                const total = segments.length;
+                const angle = 360 / total;
+                wheelSpin.innerHTML = '<div class="center"></div>';
+                segments.forEach((seg, i) => {
+                    const rotation = i * angle;
+                    const label = document.createElement('div');
+                    label.className = 'segment-label';
+                    label.textContent = seg.label;
+                    label.style.transform = `rotate(${rotation + angle/2}deg) translateY(-60px)`;
+                    label.style.left = '50%';
+                    label.style.top = '50%';
+                    label.style.transformOrigin = '0 0';
+                    label.style.position = 'absolute';
+                    label.style.fontSize = window.innerWidth < 480 ? '0.45rem' : '0.55rem';
+                    wheelSpin.appendChild(label);
+                });
+                wheelSpin.style.background = `conic-gradient(${segments.map((s, i) => {
+                    const start = i * angle;
+                    const end = start + angle;
+                    return `${s.color} ${start}deg ${end}deg`;
+                }).join(', ')})`;
+            }
+            buildWheel();
+
+            function updateWheelUI() {
+                const remaining = MAX_ATTEMPTS - wheelAttempts;
+                const attemptsEl = document.getElementById('wheelAttempts');
+                if (attemptsEl) {
+                    attemptsEl.innerHTML = `
+                        🎯 У вас <span class="remaining">${remaining}</span> попытка
+                        ${remaining === 0 ? ' 🔒 Попытка использована' : ''}
+                    `;
+                }
+                if (remaining === 0) {
+                    wheelBtn.disabled = true;
+                    wheelBtn.textContent = '🔒 Попытка использована';
+                    wheelBtn.style.opacity = '0.5';
+                    wheelBtn.style.cursor = 'not-allowed';
+                } else {
+                    wheelBtn.disabled = false;
+                    wheelBtn.textContent = '🌀 Крутить!';
+                    wheelBtn.style.opacity = '1';
+                    wheelBtn.style.cursor = 'pointer';
+                }
+            }
+
+            function addHistory(prize) {
+                wheelHistory.push({
+                    date: new Date().toLocaleString('ru-RU'),
+                    prize: prize
+                });
+                renderHistory();
+            }
+
+            function renderHistory() {
+                const historyEl = document.getElementById('wheelHistory');
+                if (!historyEl) return;
+                if (wheelHistory.length === 0) {
+                    historyEl.innerHTML =
+                        '<div style="color:var(--color-text-secondary);font-size:0.8rem;text-align:center;">История розыгрышей пуста</div>';
+                    return;
+                }
+                historyEl.innerHTML = wheelHistory.map(item => {
+                    const isWin = item.prize.value > 0 || item.prize.label.includes('Беспл') || item.prize.label
+                        .includes('Доставка');
+                    let label = item.prize.label;
+                    if (item.prize.value > 0) label = item.prize.value + '% скидка';
+                    return `
+                        <div class="history-item">
+                            <span>${item.date}</span>
+                            <span class="${isWin ? 'win' : 'lose'}">
+                                ${isWin ? '🎉 ' + label : '😊 ' + label}
+                            </span>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            window.openWheel = function() {
+                if (wheelAttempts >= MAX_ATTEMPTS) {
+                    alert('🔒 Вы уже использовали свою попытку!');
+                    return;
+                }
+                wheelOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                wheelResult.textContent = 'Нажми кнопку, чтобы крутить';
+                wheelBtn.textContent = '🌀 Крутить!';
+                isSpinning = false;
+                updateWheelUI();
+            };
+
+            window.closeWheel = function() {
+                wheelOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            wheelBtn.addEventListener('click', function() {
+                if (isSpinning) return;
+                if (wheelAttempts >= MAX_ATTEMPTS) {
+                    alert('🔒 Вы уже использовали свою попытку!');
+                    return;
+                }
+
+                isSpinning = true;
+                wheelBtn.textContent = '🔄 Крутится...';
+                wheelResult.textContent = '🌀 ...';
+
+                const randomIndex = Math.floor(Math.random() * segments.length);
+                const totalRotation = 360 * 5 + randomIndex * (360 / segments.length) + Math.random() * 30;
+
+                wheelSpin.style.transform = `rotate(${totalRotation}deg)`;
+
+                setTimeout(() => {
+                    const prize = segments[randomIndex];
+                    let resultText = '';
+                    let winType = '';
+
+                    wheelAttempts++;
+                    addHistory(prize);
+
+                    if (prize.value > 0) {
+                        resultText = `🎉 Вы выиграли ${prize.value}% скидку!`;
+                        winType = `✅ ВЫИГРЫШ: ${prize.value}% скидка`;
+                        launchConfetti();
+                    } else if (prize.label === 'Беспл. макет') {
+                        resultText = '🎉 Бесплатная разработка макета!';
+                        winType = '✅ ВЫИГРЫШ: Бесплатный макет';
+                        launchConfetti();
+                    } else if (prize.label === 'Доставка') {
+                        resultText = '🎉 Бесплатная доставка!';
+                        winType = '✅ ВЫИГРЫШ: Бесплатная доставка';
+                        launchConfetti();
+                    } else if (prize.label === 'Повезёт в др. раз') {
+                        resultText = '😊 Повезёт в другой раз!';
+                        winType = '❌ НЕ ВЫИГРАЛ: Повезёт в другой раз';
+                    } else {
+                        resultText = `😊 Выпало: ${prize.label}`;
+                        winType = `❌ НЕ ВЫИГРАЛ: ${prize.label}`;
+                    }
+
+                    wheelResult.textContent = resultText;
+                    wheelBtn.textContent = '🌀 Крутить ещё';
+                    isSpinning = false;
+
+                    window.lastWheelResult = winType;
+                    window.lastWheelPrize = prize;
+
+                    updateWheelUI();
+
+                    if (wheelAttempts >= MAX_ATTEMPTS) {
+                        setTimeout(() => {
+                            wheelResult.textContent = '🔒 Попытка использована! Спасибо за игру!';
+                            wheelBtn.textContent = '🔒 Попытка использована';
+                            wheelBtn.disabled = true;
+                            wheelBtn.style.opacity = '0.5';
+                            wheelBtn.style.cursor = 'not-allowed';
+                        }, 1000);
+                    }
+                }, 4200);
+            });
+
+            // ===== КОНФЕТТИ =====
+            function launchConfetti() {
+                const container = document.getElementById('confettiContainer');
+                const colors = ['#F59E0B', '#8B5CF6', '#EC4899', '#6D28D9', '#34C759', '#FF6B6B', '#FECA57', '#6A0DAD'];
+                for (let i = 0; i < 80; i++) {
+                    const c = document.createElement('div');
+                    c.className = 'confetti';
+                    c.style.left = Math.random() * 100 + '%';
+                    c.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    c.style.width = (Math.random() * 8 + 4) + 'px';
+                    c.style.height = (Math.random() * 8 + 4) + 'px';
+                    c.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                    c.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
+                    c.style.animationDelay = (Math.random() * 0.5) + 's';
+                    container.appendChild(c);
+                    setTimeout(() => c.remove(), 4000);
+                }
+            }
+
+            // ===== КАЛЬКУЛЯТОР =====
+            window.calculatePrice = function() {
+                const product = document.getElementById('calcProduct').value;
+                const qty = parseInt(document.getElementById('calcQuantity').value);
+                const compl = document.getElementById('calcComplexity').value;
+
+                let basePrice = 500;
+                switch (product) {
+                    case 'Футболка':
+                        basePrice = 500;
+                        break;
+                    case 'Худи / Свитшот':
+                        basePrice = 700;
+                        break;
+                    case 'Кепка':
+                        basePrice = 400;
+                        break;
+                    case 'Куртка':
+                        basePrice = 1200;
+                        break;
+                    case 'Сумка / Рюкзак':
+                        basePrice = 900;
+                        break;
+                    default:
+                        basePrice = 600;
+                }
+
+                let complexityMultiplier = 1;
+                let complexityLabel = 'Средняя';
+                switch (compl) {
+                    case 'simple':
+                        complexityMultiplier = 0.7;
+                        complexityLabel = 'Простая';
+                        break;
+                    case 'medium':
+                        complexityMultiplier = 1;
+                        complexityLabel = 'Средняя';
+                        break;
+                    case 'complex':
+                        complexityMultiplier = 1.6;
+                        complexityLabel = 'Сложная';
+                        break;
+                }
+
+                let discount = 1;
+                if (qty >= 5) discount = 0.9;
+                if (qty >= 10) discount = 0.8;
+                if (qty >= 20) discount = 0.7;
+                if (qty >= 50) discount = 0.6;
+                if (qty >= 100) discount = 0.5;
+
+                const programCost = 1000;
+                let pricePerItem = basePrice * complexityMultiplier * discount;
+                let total = qty === 1 ? pricePerItem + programCost : pricePerItem * qty + programCost;
+                total = Math.round(total / 100) * 100;
+
+                document.getElementById('calcResultPrice').textContent = total.toLocaleString('ru-RU') + ' ₽';
+                document.getElementById('calcResultProduct').textContent = product;
+                document.getElementById('calcResultQty').textContent = qty;
+                document.getElementById('calcResultComplex').textContent = complexityLabel;
+
+                document.getElementById('calcPlaceholder').style.display = 'none';
+                document.getElementById('calcResultContent').classList.add('active');
+
+                document.getElementById('calcResultPrice').style.animation = 'none';
+                setTimeout(() => {
+                    document.getElementById('calcResultPrice').style.animation =
+                        'gradientMove 3s ease-in-out infinite';
+                }, 10);
+            };
+
+            setTimeout(() => calculatePrice(), 300);
 
             // ===== ЛАЙТБОКС =====
             window.openLightbox = function(src) {
@@ -2386,151 +3210,15 @@
             };
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
-                    closeModal();
-                    closePopup();
-                    closePricingModal();
+                    closeModal('orderModal');
+                    closeWheel();
                     closeLightbox();
                 }
             });
 
-            // ===== TELEGRAM БОТ =====
-            const BOT_TOKEN = '8313671080:AAGoXjlxoHPuDQ17DRn5IOthcaSNCPVloqw';
-            const CHAT_ID = '782451090';
+            // ===== ПОРТФОЛИО (ГАЛЕРЕИ) =====
 
-            function sendToTelegram(message) {
-                return fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ chat_id: CHAT_ID, text: message, parse_mode: 'Markdown' })
-                }).catch(() => {});
-            }
-
-            // ===== ФОРМЫ =====
-            // Модальная
-            const modalForm = document.getElementById('modalContactForm');
-            const modalPhone = document.getElementById('modalPhone');
-            const modalSuccess = document.getElementById('modalSuccess');
-            if (modalForm) {
-                modalPhone.addEventListener('input', function() {
-                    let val = this.value.replace(/\D/g, '');
-                    if (val.length > 0) {
-                        let f = '+7 (';
-                        if (val.length > 1) {
-                            f += val.substring(1, 4);
-                            if (val.length >= 4) { f += ') ';
-                                f += val.substring(4, 7); }
-                            if (val.length >= 7) { f += '-';
-                                f += val.substring(7, 9); }
-                            if (val.length >= 9) { f += '-';
-                                f += val.substring(9, 11); }
-                        } else { f += val; }
-                        this.value = f;
-                    } else { this.value = ''; }
-                });
-
-                modalForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    if (!document.getElementById('modalConsent').checked) {
-                        alert('Дайте согласие на обработку данных');
-                        return;
-                    }
-                    const phone = modalPhone.value.trim();
-                    if (phone.replace(/\D/g, '').length < 10) {
-                        alert('Введите корректный номер телефона');
-                        return;
-                    }
-                    const text =
-                        `📩 *Новая заявка с сайта!*\n\n📱 *Телефон:* ${phone}\n💬 *Описание:* ${document.getElementById('modalMessage').value.trim() || '—'}\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
-                    sendToTelegram(text);
-                    modalForm.style.display = 'none';
-                    modalSuccess.style.display = 'block';
-                    setTimeout(() => {
-                        modalForm.style.display = 'block';
-                        modalSuccess.style.display = 'none';
-                        modalForm.reset();
-                        closeModal();
-                    }, 3000);
-                });
-            }
-
-            // Попап
-            const popupForm = document.getElementById('popupForm');
-            const popupPhone = document.getElementById('popupPhone');
-            const popupSuccess = document.getElementById('popupSuccess');
-            if (popupForm) {
-                let popupShown = false;
-                setTimeout(() => {
-                    if (!popupShown) {
-                        document.getElementById('popupModal').classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                        popupShown = true;
-                    }
-                }, 15000);
-
-                popupPhone.addEventListener('input', function() {
-                    let val = this.value.replace(/\D/g, '');
-                    if (val.length > 0) {
-                        let f = '+7 (';
-                        if (val.length > 1) {
-                            f += val.substring(1, 4);
-                            if (val.length >= 4) { f += ') ';
-                                f += val.substring(4, 7); }
-                            if (val.length >= 7) { f += '-';
-                                f += val.substring(7, 9); }
-                            if (val.length >= 9) { f += '-';
-                                f += val.substring(9, 11); }
-                        } else { f += val; }
-                        this.value = f;
-                    } else { this.value = ''; }
-                });
-
-                popupForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const phone = popupPhone.value.trim();
-                    if (phone.replace(/\D/g, '').length < 10) {
-                        alert('Введите корректный номер телефона');
-                        return;
-                    }
-                    const text =
-                        `🎁 *Заявка с попапа!*\n\n📱 *Телефон:* ${phone}\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
-                    sendToTelegram(text);
-                    popupForm.style.display = 'none';
-                    popupSuccess.style.display = 'block';
-                    setTimeout(() => {
-                        popupForm.style.display = 'block';
-                        popupSuccess.style.display = 'none';
-                        popupForm.reset();
-                        closePopup();
-                    }, 3000);
-                });
-            }
-
-            // Тарифы
-            document.getElementById('pricingForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                if (!document.getElementById('pricingConsent').checked) {
-                    alert('Дайте согласие на обработку данных');
-                    return;
-                }
-                const phone = document.getElementById('pricingPhone').value.trim();
-                if (phone.replace(/\D/g, '').length < 10) {
-                    alert('Введите корректный номер телефона');
-                    return;
-                }
-                const tariffNames = {
-                    individual: 'Индивидуальная вышивка',
-                    small: 'Мелкий опт (2–12 шт)',
-                    large: 'Крупный опт (от 13 шт)'
-                };
-                const text =
-                    `📩 *Заявка с тарифа!*\n\n🏷️ *Тариф:* ${tariffNames[selectedTariff]}\n👤 *Имя:* ${document.getElementById('pricingName').value.trim() || 'Не указано'}\n📱 *Телефон:* ${phone}\n👕 *Тип:* ${document.getElementById('pricingType').value}\n📦 *Кол-во:* ${document.getElementById('pricingQuantity').value} шт.\n💬 *Доп:* ${document.getElementById('pricingMessage').value.trim() || '—'}\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
-                sendToTelegram(text);
-                alert('✅ Заявка отправлена!');
-                closePricingModal();
-                this.reset();
-            });
-
-            // ===== ПОРТФОЛИО =====
+            // КЕПКИ
             const hatImages = [
                 'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-12%20at%2012.10.11%20(1).jpeg',
                 'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-12%20at%2012.10.11.jpeg',
@@ -2575,6 +3263,7 @@
                 hg.appendChild(el);
             });
 
+            // НАШИВКИ
             const patchImages = [
                 'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0131.jpeg',
                 'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0127.jpeg',
@@ -2618,6 +3307,7 @@
                 pg.appendChild(el);
             });
 
+            // ОДЕЖДА
             const clothImages = [
                 'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0134.jpeg',
                 'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0133.jpeg',
@@ -2700,36 +3390,7 @@
                 if (target) target.classList.toggle('active');
             };
 
-            // ===== ФОРМА ОТЗЫВОВ =====
-            const reviewForm = document.getElementById('reviewForm');
-            const reviewSuccess = document.getElementById('reviewSuccess');
-            if (reviewForm) {
-                reviewForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    if (!document.getElementById('reviewConsent').checked) {
-                        alert('Дайте согласие на обработку данных');
-                        return;
-                    }
-                    const name = document.getElementById('reviewName').value.trim();
-                    const rating = document.getElementById('reviewRating').value;
-                    const text = document.getElementById('reviewText').value.trim();
-                    if (!name || !text) {
-                        alert('Заполните имя и текст отзыва');
-                        return;
-                    }
-                    const stars = '⭐'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
-                    const msg =
-                        `⭐ *Новый отзыв (модерация)!*\n\n👤 *Имя:* ${name}\n📊 *Оценка:* ${stars}\n💬 *Отзыв:* ${text}\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
-                    sendToTelegram(msg);
-                    reviewForm.style.display = 'none';
-                    reviewSuccess.style.display = 'block';
-                    setTimeout(() => {
-                        reviewForm.style.display = 'block';
-                        reviewSuccess.style.display = 'none';
-                        reviewForm.reset();
-                    }, 5000);
-                });
-            }
+            updateWheelUI();
 
         });
     </script>
