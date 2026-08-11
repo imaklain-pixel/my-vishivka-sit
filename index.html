@@ -3,10 +3,62 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Стиль Вышивки — Создаём шедевры с душой</title>
+
+    <!-- ========================================
+    SEO: МЕТА-ТЕГИ
+    ======================================== -->
+    <title>Стиль Вышивки — вышивка на заказ от 1 штуки в Москве</title>
+    <meta name="description" content="Вышивка на заказ от 1 штуки с гарантией качества. Шевроны, нашивки, логотипы на одежде. Бесплатный расчёт за 15 минут. Работаем официально с чеком." />
+    <meta name="keywords" content="вышивка на заказ, вышивка логотипов, шевроны, нашивки, вышивка на одежде, студия вышивки Москва" />
+    <link rel="canonical" href="https://stylevishivka.ru/" />
+
+    <!-- Open Graph (для соцсетей) -->
+    <meta property="og:title" content="Стиль Вышивки — вышивка на заказ от 1 штуки" />
+    <meta property="og:description" content="Шевроны, нашивки, логотипы на одежде. Бесплатный расчёт за 15 минут." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://stylevishivka.ru/" />
+    <meta property="og:image" content="https://cdn.qwenlm.ai/output/354ff112-5746-4472-8d60-8bcdbc594064/t2i/5644675d-0dfb-43b1-89a6-0d13fea0e632/1e140180c-8f86-4959-ae74-32379f734cc5.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZV91c2VyX2lkIjoiMzU0ZmYxMTItNTc0Ni00NDcyLThkNjAtOGJjZGJjNTk0MDY0IiwicmVzb3VyY2VfaWQiOiIxZTE0MDE4MGMtOGY4Ni00OTU5LWFlNzQtMzIzNzlmNzM0Y2M1IiwicmVzb3VyY2VfdHlwZSI6ImltYWdlX3Rvb2wifQ.8IGj1lZ7XW9g_-mJ8gTubTzwfDylTVNA8hlKiZexMYQ" />
+
+    <!-- ========================================
+    ЯНДЕКС МЕТРИКА
+    ======================================== -->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(ВАШ_ID_ЯНДЕКС_МЕТРИКИ, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/ВАШ_ID_ЯНДЕКС_МЕТРИКИ" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <!-- ========================================
+    GOOGLE ANALYTICS
+    ======================================== -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=ВАШ_ID_GOOGLE_ANALYTICS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'ВАШ_ID_GOOGLE_ANALYTICS');
+    </script>
+
+    <!-- ========================================
+    ШРИФТЫ
+    ======================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+
     <style>
         /* ============================================
                    CSS ПЕРЕМЕННЫЕ
@@ -111,22 +163,34 @@
             flex-wrap: wrap;
             gap: var(--space-sm);
         }
+
+        /* ===== ЛОГОТИП ===== */
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 1.1rem;
             font-weight: 800;
             letter-spacing: -0.5px;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 4px;
             color: var(--color-text);
         }
-        .logo-gradient {
+        .logo-img {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+        }
+        .logo-text {
             background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: gradientMove 4s ease-in-out infinite;
+        }
+        .logo-icon {
+            color: var(--color-primary);
+            -webkit-text-fill-color: var(--color-primary);
+            font-size: 0.9em;
         }
         @keyframes gradientMove {
             0%,
@@ -137,10 +201,14 @@
                 background-position: 100% 50%;
             }
         }
-        .logo-icon {
-            color: var(--color-primary);
-            -webkit-text-fill-color: var(--color-primary);
-            font-size: 0.9em;
+
+        @media (max-width: 480px) {
+            .logo-img {
+                height: 32px;
+            }
+            .logo-text {
+                font-size: 0.95rem;
+            }
         }
 
         .nav {
@@ -223,7 +291,6 @@
             fill: currentColor;
         }
 
-        /* Мобильное меню */
         .mobile-toggle {
             display: none;
             background: none;
@@ -844,7 +911,7 @@
         }
 
         /* ============================================
-                   УСЛУГИ (от шевронов до премиум)
+                   УСЛУГИ
                    ============================================ */
         .services-grid {
             display: grid;
@@ -1185,7 +1252,7 @@
         }
 
         /* ============================================
-                   ВСПЛЫВАЮЩИЕ ОКНА (ПОПАПЫ)
+                   ВСПЛЫВАЮЩИЕ ОКНА
                    ============================================ */
         .modal-overlay {
             display: none;
@@ -1327,7 +1394,7 @@
             margin: 0;
         }
 
-        /* ===== БАРАБАН (1 попытка) ===== */
+        /* ===== БАРАБАН ===== */
         .wheel-overlay {
             display: none;
             position: fixed;
@@ -1412,7 +1479,6 @@
             min-height: 50px;
         }
 
-        /* ИСТОРИЯ РОЗЫГРЫШЕЙ */
         .wheel-history {
             margin-top: var(--space-md);
             padding: var(--space-md);
@@ -1703,6 +1769,168 @@
         }
 
         /* ============================================
+                   ОТЗЫВЫ
+                   ============================================ */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+        @media (min-width: 600px) {
+            .reviews-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (min-width: 900px) {
+            .reviews-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            transition: all 0.35s;
+            box-shadow: var(--shadow-sm);
+        }
+        .review-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245, 158, 11, 0.15);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .review-card .review-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+        }
+        .review-card .review-avatar {
+            font-size: 2.4rem;
+        }
+        .review-card .review-name {
+            font-weight: 700;
+            color: var(--color-text);
+            font-size: 0.95rem;
+        }
+        .review-card .review-date {
+            font-size: 0.7rem;
+            color: var(--color-text-secondary);
+        }
+        .review-card .review-stars {
+            color: var(--color-gold);
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+        .review-card .review-text {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+            margin: var(--space-sm) 0;
+        }
+        .review-card .review-photo {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+            margin-top: var(--space-sm);
+        }
+        .review-card .review-photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin-top: var(--space-sm);
+        }
+        .review-card .review-photo-grid img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+        }
+        .review-card .review-status {
+            display: inline-block;
+            margin-top: var(--space-sm);
+            font-size: 0.65rem;
+            background: rgba(139, 92, 246, 0.06);
+            color: var(--color-primary);
+            padding: 2px 12px;
+            border-radius: var(--radius-full);
+            font-weight: 500;
+        }
+
+        /* ============================================
+                   БЛОГ
+                   ============================================ */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+        @media (min-width: 600px) {
+            .blog-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (min-width: 900px) {
+            .blog-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            transition: all 0.35s;
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+        }
+        .blog-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(139, 92, 246, 0.15);
+            box-shadow: var(--shadow-md);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .blog-card .blog-date {
+            font-size: 0.7rem;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .blog-card .blog-icon {
+            font-size: 2.6rem;
+            display: block;
+            margin: var(--space-sm) 0;
+        }
+        .blog-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+        .blog-card p {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin: var(--space-sm) 0;
+        }
+        .blog-card .blog-tag {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.65rem;
+            font-weight: 600;
+            background: rgba(139, 92, 246, 0.06);
+            color: var(--color-primary);
+        }
+
+        /* ============================================
                    АНИМАЦИЯ ПРИ СКРОЛЛЕ
                    ============================================ */
         .animate-on-scroll {
@@ -1776,9 +2004,6 @@
             margin-top: var(--space-sm);
         }
 
-        /* ============================================
-                   КНОПКА НАВЕРХ
-                   ============================================ */
         .scroll-top {
             position: fixed;
             bottom: 80px;
@@ -1880,9 +2105,6 @@
             }
         }
 
-        /* ============================================
-                   БОНУС: ЖИВЫЕ ЭМОДЗИ
-                   ============================================ */
         .live-emoji {
             display: inline-block;
             animation: livePulse 2s ease-in-out infinite;
@@ -1938,8 +2160,8 @@
     <header class="header" id="header">
         <div class="container header-inner">
             <div class="logo" onclick="navigateTo('home')">
-                <span class="logo-icon">✦</span>
-                <span class="logo-gradient">Стиль Вышивки</span>
+                <img src="https://cdn.qwenlm.ai/output/354ff112-5746-4472-8d60-8bcdbc594064/t2i/5644675d-0dfb-43b1-89a6-0d13fea0e632/1e140180c-8f86-4959-ae74-32379f734cc5.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZV91c2VyX2lkIjoiMzU0ZmYxMTItNTc0Ni00NDcyLThkNjAtOGJjZGJjNTk0MDY0IiwicmVzb3VyY2VfaWQiOiIxZTE0MDE4MGMtOGY4Ni00OTU5LWFlNzQtMzIzNzlmNzM0Y2M1IiwicmVzb3VyY2VfdHlwZSI6ImltYWdlX3Rvb2wifQ.8IGj1lZ7XW9g_-mJ8gTubTzwfDylTVNA8hlKiZexMYQ" alt="Стиль Вышивки" class="logo-img" />
+                <span class="logo-text">Стиль Вышивки</span>
             </div>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Меню">☰</button>
             <div class="nav" id="navMenu">
@@ -1950,6 +2172,8 @@
                     <li><a class="nav-link" data-page="quality">Качество</a></li>
                     <li><a class="nav-link" data-page="portfolio">Портфолио</a></li>
                     <li><a class="nav-link" data-page="calculator">Калькулятор</a></li>
+                    <li><a class="nav-link" data-page="reviews">Отзывы</a></li>
+                    <li><a class="nav-link" data-page="blog">Блог</a></li>
                     <li><a class="nav-link" data-page="contacts">Контакты</a></li>
                     <li><a class="nav-link" data-page="legal">Юридическая</a></li>
                 </ul>
@@ -1985,7 +2209,6 @@
         <div class="page active" id="page-home">
             <div class="container">
 
-                <!-- ГЕРОЙ -->
                 <section class="hero">
                     <div class="hero-content">
                         <h1 class="hero-title">
@@ -2011,7 +2234,6 @@
                     </div>
                 </section>
 
-                <!-- СТАТИСТИКА -->
                 <div class="stats animate-on-scroll">
                     <div class="stat-item">
                         <span class="stat-number" data-count="120">0</span>
@@ -2031,7 +2253,6 @@
                     </div>
                 </div>
 
-                <!-- КРАТКИЙ ОБЗОР УСЛУГ -->
                 <h2 class="section-title">Что мы создаём</h2>
                 <p class="section-subtitle">От простых шевронов до сложных премиум-заказов</p>
                 <div class="grid-3 animate-on-scroll">
@@ -2052,7 +2273,6 @@
                     </div>
                 </div>
 
-                <!-- ПРИЗЫВ К ДЕЙСТВИЮ -->
                 <div style="background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(236,72,153,0.06)); border-radius: var(--radius-lg); padding: var(--space-2xl) var(--space-lg); text-align: center; margin: var(--space-xl) 0; border: 1px solid rgba(139,92,246,0.08);">
                     <h3 style="font-size:1.6rem; font-weight:700; margin-bottom:var(--space-sm);">
                         🎯 Готовы создать ваш шедевр?
@@ -2077,7 +2297,6 @@
                 <p class="page-subtitle">Выберите то, что вам нужно — от простых нашивок до сложных премиум-заказов</p>
 
                 <div class="services-grid">
-                    <!-- Шевроны и нашивки -->
                     <div class="service-card animate-on-scroll" onclick="openModal('order')">
                         <span class="service-tag basic">БАЗОВЫЙ</span>
                         <span class="service-icon">🛡️</span>
@@ -2093,7 +2312,6 @@
                         <button class="btn btn-sm btn-primary-solid" onclick="event.stopPropagation(); openModal('order')">Заказать</button>
                     </div>
 
-                    <!-- Вышивка на одежде -->
                     <div class="service-card animate-on-scroll" onclick="openModal('order')">
                         <span class="service-tag medium">ПРОДВИНУТЫЙ</span>
                         <span class="service-icon">👕</span>
@@ -2109,7 +2327,6 @@
                         <button class="btn btn-sm btn-primary-solid" onclick="event.stopPropagation(); openModal('order')">Заказать</button>
                     </div>
 
-                    <!-- Премиум заказы -->
                     <div class="service-card animate-on-scroll" onclick="openModal('order')">
                         <span class="service-tag premium">ПРЕМИУМ</span>
                         <span class="service-icon">💎</span>
@@ -2127,7 +2344,6 @@
                     </div>
                 </div>
 
-                <!-- Блок "Почему мы" -->
                 <div style="margin-top: var(--space-2xl);">
                     <h2 class="section-title">Почему выбирают нас</h2>
                     <div class="grid-4 animate-on-scroll">
@@ -2256,7 +2472,6 @@
 
                 </div>
 
-                <!-- Цитата основателя -->
                 <div style="background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(236,72,153,0.06)); border-radius: var(--radius-lg); padding: var(--space-xl); text-align: center; border: 1px solid rgba(139,92,246,0.08); margin-top: var(--space-xl);">
                     <p style="font-size:1.2rem; font-style:italic; color:var(--color-text-secondary); max-width:700px; margin:0 auto;">
                         «Каждый заказ мы контролируем лично. Если результат вас не устроит — 
@@ -2320,7 +2535,6 @@
                     </div>
                 </div>
 
-                <!-- Гарантии -->
                 <div style="display:grid; grid-template-columns:1fr; gap:var(--space-md); margin-top:var(--space-xl);">
                     <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:var(--space-md);">
                         <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);">
@@ -2461,7 +2675,6 @@
                     </div>
                 </div>
 
-                <!-- Дополнительный блок -->
                 <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:var(--space-md); margin-top:var(--space-xl);">
                     <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-sm); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);">
                         <span style="font-size:2rem;display:block;">⚡</span>
@@ -2475,6 +2688,201 @@
                         <span style="font-size:2rem;display:block;">📊</span>
                         <p style="font-size:0.85rem; color:var(--color-text-secondary);">С учётом всех параметров</p>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        СТРАНИЦА: ОТЗЫВЫ
+        ========================================== -->
+        <div class="page" id="page-reviews">
+            <div class="container">
+                <h1 class="page-title">Отзывы <span class="highlight">наших клиентов</span></h1>
+                <p class="page-subtitle">Реальные отзывы людей, которые уже заказали вышивку у нас</p>
+
+                <div class="reviews-grid">
+                    <div class="review-card animate-on-scroll">
+                        <div class="review-header">
+                            <span class="review-avatar">👩</span>
+                            <div>
+                                <div class="review-name">Анна К.</div>
+                                <div class="review-date">20 июля 2026</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Заказывала вышивку логотипа на футболки для команды. Сделали идеально! Качество на высоте, все аккуратно, спасибо!"</p>
+                        <span class="review-status">✓ Подтверждённый заказ</span>
+                    </div>
+
+                    <div class="review-card animate-on-scroll">
+                        <div class="review-header">
+                            <span class="review-avatar">👨</span>
+                            <div>
+                                <div class="review-name">Дмитрий П.</div>
+                                <div class="review-date">15 июля 2026</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Партия шевронов для нашей компании. Очень качественно, держатся отлично. Будем заказывать ещё!"</p>
+                        <span class="review-status">✓ Подтверждённый заказ</span>
+                    </div>
+
+                    <div class="review-card animate-on-scroll">
+                        <div class="review-header">
+                            <span class="review-avatar">👩‍🎨</span>
+                            <div>
+                                <div class="review-name">Екатерина М.</div>
+                                <div class="review-date">10 июля 2026</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Делали вышивку на худи для всей семьи. Ребята, вы мастера! Всё красиво, аккуратно, теперь хотим ещё и кепки!"</p>
+                        <div class="review-photo-grid">
+                            <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0134.jpeg" alt="Фото к отзыву" />
+                            <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0133.jpeg" alt="Фото к отзыву" />
+                        </div>
+                        <span class="review-status">✓ Подтверждённый заказ</span>
+                    </div>
+
+                    <div class="review-card animate-on-scroll">
+                        <div class="review-header">
+                            <span class="review-avatar">👨‍💼</span>
+                            <div>
+                                <div class="review-name">Сергей Н.</div>
+                                <div class="review-date">5 июля 2026</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Сделали брендированные нашивки для нашего магазина. Качество отличное, цвета яркие, всё как хотели."</p>
+                        <span class="review-status">✓ Подтверждённый заказ</span>
+                    </div>
+
+                    <div class="review-card animate-on-scroll">
+                        <div class="review-header">
+                            <span class="review-avatar">👩</span>
+                            <div>
+                                <div class="review-name">Ольга В.</div>
+                                <div class="review-date">28 июня 2026</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Заказывала вышивку на куртку — очень сложный рисунок. Сделали просто идеально! Макс лично контролировал процесс."</p>
+                        <img class="review-photo" src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0067.jpeg" alt="Фото к отзыву" />
+                        <span class="review-status">✓ Подтверждённый заказ</span>
+                    </div>
+
+                    <div class="review-card animate-on-scroll">
+                        <div class="review-header">
+                            <span class="review-avatar">👨</span>
+                            <div>
+                                <div class="review-name">Максим Р.</div>
+                                <div class="review-date">20 июня 2026</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Срочно нужно было 50 нашивок за 2 дня. Справились! Спасибо за оперативность и качество. Рекомендую!"</p>
+                        <span class="review-status">✓ Подтверждённый заказ</span>
+                    </div>
+                </div>
+
+                <div class="form-container animate-on-scroll">
+                    <h3>✍️ Оставьте свой отзыв</h3>
+                    <p class="form-subtitle">Расскажите о своём опыте — после модерации он появится на сайте</p>
+                    <form id="reviewForm">
+                        <div class="form-group">
+                            <label for="reviewName">Ваше имя</label>
+                            <input type="text" id="reviewName" placeholder="Например: Александр" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewRating">Оценка</label>
+                            <select id="reviewRating" required>
+                                <option value="5">⭐⭐⭐⭐⭐ — Отлично</option>
+                                <option value="4">⭐⭐⭐⭐ — Хорошо</option>
+                                <option value="3">⭐⭐⭐ — Средне</option>
+                                <option value="2">⭐⭐ — Плохо</option>
+                                <option value="1">⭐ — Ужасно</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewText">Ваш отзыв</label>
+                            <textarea id="reviewText" placeholder="Что вам понравилось? Как прошёл заказ?" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewPhoto">📸 Прикрепите фото (необязательно)</label>
+                            <input type="file" id="reviewPhoto" accept="image/*" multiple />
+                            <p style="font-size:0.75rem; color:var(--color-text-secondary); margin-top:4px;">Вы можете загрузить до 5 фото</p>
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="reviewConsent" required />
+                            <label for="reviewConsent">Я даю согласие на <a href="#" onclick="navigateTo('legal'); return false;">обработку персональных данных</a></label>
+                        </div>
+                        <button type="submit" class="btn btn-primary-solid btn-block">Отправить на модерацию</button>
+                    </form>
+                    <div class="success-message" id="reviewSuccess">
+                        <span class="check">✅</span>
+                        <h3>Спасибо за отзыв!</h3>
+                        <p>Он отправлен на модерацию и скоро появится на сайте</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+        СТРАНИЦА: БЛОГ
+        ========================================== -->
+        <div class="page" id="page-blog">
+            <div class="container">
+                <h1 class="page-title">Блог о <span class="highlight">вышивке</span></h1>
+                <p class="page-subtitle">Полезные статьи, советы и вдохновение для ваших проектов</p>
+
+                <div class="blog-grid">
+                    <article class="blog-card animate-on-scroll">
+                        <span class="blog-date">12 августа 2026</span>
+                        <span class="blog-icon">🧵</span>
+                        <h4>Как выбрать нити для вышивки</h4>
+                        <p>Разбираемся в типах нитей: полиэстер, вискоза, хлопок. Что лучше для логотипов, а что для фотореализма?</p>
+                        <span class="blog-tag">#советы</span>
+                    </article>
+
+                    <article class="blog-card animate-on-scroll">
+                        <span class="blog-date">8 августа 2026</span>
+                        <span class="blog-icon">👕</span>
+                        <h4>На чём лучше вышивать: выбор ткани</h4>
+                        <p>Какая ткань лучше подходит для вышивки? Сравнение плотности, эластичности и рекомендации для разных задач.</p>
+                        <span class="blog-tag">#материалы</span>
+                    </article>
+
+                    <article class="blog-card animate-on-scroll">
+                        <span class="blog-date">1 августа 2026</span>
+                        <span class="blog-icon">🎨</span>
+                        <h4>Как подготовить макет для вышивки</h4>
+                        <p>Пошаговое руководство: от идеи до готового файла для станка. Советы по цветам, размерам и форматам.</p>
+                        <span class="blog-tag">#дизайн</span>
+                    </article>
+
+                    <article class="blog-card animate-on-scroll">
+                        <span class="blog-date">25 июля 2026</span>
+                        <span class="blog-icon">💰</span>
+                        <h4>Сколько стоит вышивка: полный разбор цен</h4>
+                        <p>Разбираем, из чего складывается цена: сложность, тираж, количество цветов, размер. Калькулятор внутри!</p>
+                        <span class="blog-tag">#цены</span>
+                    </article>
+
+                    <article class="blog-card animate-on-scroll">
+                        <span class="blog-date">18 июля 2026</span>
+                        <span class="blog-icon">🛡️</span>
+                        <h4>Шевроны и нашивки: история и применение</h4>
+                        <p>От древних времён до современного брендинга. Идеи использования нашивок в бизнесе и творчестве.</p>
+                        <span class="blog-tag">#история</span>
+                    </article>
+
+                    <article class="blog-card animate-on-scroll">
+                        <span class="blog-date">10 июля 2026</span>
+                        <span class="blog-icon">⭐</span>
+                        <h4>Как ухаживать за вышивкой: 5 правил</h4>
+                        <p>Как стирать, гладить и хранить вещи с вышивкой, чтобы они служили долго и не теряли цвет.</p>
+                        <span class="blog-tag">#уход</span>
+                    </article>
                 </div>
             </div>
         </div>
@@ -2528,7 +2936,6 @@
                 <h1 class="page-title">📄 <span class="highlight">Юридическая информация</span></h1>
                 <p class="page-subtitle">Всё по закону — работаем официально с чеками и договорами</p>
 
-                <!-- БЛОК О ЧЕКЕ -->
                 <div style="background: linear-gradient(135deg, rgba(52,199,89,0.06), rgba(139,92,246,0.06)); border-radius: var(--radius-lg); padding: var(--space-xl); margin-bottom: var(--space-xl); border: 1px solid rgba(52,199,89,0.1);">
                     <div style="display:flex; align-items:center; gap:var(--space-md); flex-wrap:wrap;">
                         <span style="font-size:3rem;">🧾</span>
@@ -2542,7 +2949,6 @@
                     </div>
                 </div>
 
-                <!-- ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ -->
                 <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-xl); border:1px solid rgba(255,255,255,0.3); margin-bottom:var(--space-lg);">
                     <h2 style="font-size:1.3rem; font-weight:700; color:var(--color-primary); margin-bottom:var(--space-md);">1. Политика конфиденциальности</h2>
                     <p style="color:var(--color-text-secondary);">Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта <strong style="color:var(--color-text);">Стиль Вышивки</strong>.</p>
@@ -2572,7 +2978,6 @@
                     <p style="color:var(--color-text-secondary);">Мы оставляем за собой право обновлять данную политику. Актуальная версия всегда опубликована на этом Сайте.</p>
                 </div>
 
-                <!-- ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ -->
                 <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-xl); border:1px solid rgba(255,255,255,0.3); margin-bottom:var(--space-lg);">
                     <h2 style="font-size:1.3rem; font-weight:700; color:var(--color-primary); margin-bottom:var(--space-md);">2. Пользовательское соглашение</h2>
 
@@ -2589,7 +2994,6 @@
                     <p style="color:var(--color-text-secondary);">Администрация Сайта оставляет за собой право изменять условия Соглашения в любое время без предварительного уведомления. Актуальная версия всегда доступна на этом Сайте.</p>
                 </div>
 
-                <!-- СОГЛАСИЕ НА ОБРАБОТКУ ДАННЫХ -->
                 <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-xl); border:1px solid rgba(255,255,255,0.3); margin-bottom:var(--space-lg);">
                     <h2 style="font-size:1.3rem; font-weight:700; color:var(--color-primary); margin-bottom:var(--space-md);">3. Согласие на обработку персональных данных</h2>
                     <p style="color:var(--color-text-secondary);">Отправляя форму на Сайте, вы даёте своё <strong style="color:var(--color-text);">согласие на обработку персональных данных</strong> в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</p>
@@ -2602,7 +3006,6 @@
                     </ul>
                 </div>
 
-                <!-- РЕКВИЗИТЫ -->
                 <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-xl); border:1px solid rgba(255,255,255,0.3);">
                     <h2 style="font-size:1.3rem; font-weight:700; color:var(--color-primary); margin-bottom:var(--space-md);">4. Реквизиты самозанятого</h2>
                     <ul style="color:var(--color-text-secondary); padding-left:var(--space-lg);">
@@ -2623,7 +3026,10 @@
     <!-- ====== ПОДВАЛ ====== -->
     <footer class="footer">
         <div class="container">
-            <p style="font-weight:700; color:var(--color-text); font-size:1.1rem;">✦ Стиль Вышивки</p>
+            <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:var(--space-md);">
+                <img src="https://cdn.qwenlm.ai/output/354ff112-5746-4472-8d60-8bcdbc594064/t2i/5644675d-0dfb-43b1-89a6-0d13fea0e632/1e140180c-8f86-4959-ae74-32379f734cc5.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZV91c2VyX2lkIjoiMzU0ZmYxMTItNTc0Ni00NDcyLThkNjAtOGJjZGJjNTk0MDY0IiwicmVzb3VyY2VfaWQiOiIxZTE0MDE4MGMtOGY4Ni00OTU5LWFlNzQtMzIzNzlmNzM0Y2M1IiwicmVzb3VyY2VfdHlwZSI6ImltYWdlX3Rvb2wifQ.8IGj1lZ7XW9g_-mJ8gTubTzwfDylTVNA8hlKiZexMYQ" alt="Стиль Вышивки" style="height:32px; width:auto;" />
+                <span style="font-weight:700; color:var(--color-text); font-size:1rem;">Стиль Вышивки</span>
+            </div>
             <div class="footer-divider"></div>
             <div class="footer-nav">
                 <a onclick="navigateTo('home')">Главная</a>
@@ -2632,6 +3038,8 @@
                 <a onclick="navigateTo('quality')">Качество</a>
                 <a onclick="navigateTo('portfolio')">Портфолио</a>
                 <a onclick="navigateTo('calculator')">Калькулятор</a>
+                <a onclick="navigateTo('reviews')">Отзывы</a>
+                <a onclick="navigateTo('blog')">Блог</a>
                 <a onclick="navigateTo('contacts')">Контакты</a>
                 <a onclick="navigateTo('legal')">Юридическая</a>
             </div>
@@ -2653,7 +3061,7 @@
     <button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
     <!-- ==========================================
-    ВСПЛЫВАЮЩИЕ ОКНА (ПОПАПЫ)
+    ВСПЛЫВАЮЩИЕ ОКНА
     ========================================== -->
 
     <!-- ОСНОВНАЯ ФОРМА ЗАЯВКИ -->
@@ -2694,7 +3102,7 @@
         </div>
     </div>
 
-    <!-- ПОПАП-РОЗЫГРЫШ (БАРАБАН — 1 попытка) -->
+    <!-- ПОПАП-РОЗЫГРЫШ (БАРАБАН) -->
     <div class="wheel-overlay" id="wheelOverlay">
         <div class="wheel-content">
             <button class="modal-close" onclick="closeWheel()" style="position:absolute;top:12px;right:16px;font-size:1.6rem;color:var(--color-text-secondary);background:none;border:none;cursor:pointer;">✕</button>
@@ -2744,7 +3152,6 @@
             // ОСТАЛЬНОЙ КОД
             // ============================================================
 
-            // ===== НАВИГАЦИЯ =====
             const navLinks = document.querySelectorAll('.nav-link');
             const pages = {
                 home: document.getElementById('page-home'),
@@ -2753,6 +3160,8 @@
                 quality: document.getElementById('page-quality'),
                 portfolio: document.getElementById('page-portfolio'),
                 calculator: document.getElementById('page-calculator'),
+                reviews: document.getElementById('page-reviews'),
+                blog: document.getElementById('page-blog'),
                 contacts: document.getElementById('page-contacts'),
                 legal: document.getElementById('page-legal')
             };
@@ -2777,24 +3186,20 @@
                 });
             });
 
-            // ===== МОБИЛЬНОЕ МЕНЮ =====
             document.getElementById('mobileToggle').addEventListener('click', function() {
                 document.getElementById('navList').classList.toggle('open');
             });
 
-            // ===== ШАПКА ПРИ СКРОЛЛЕ =====
             const header = document.getElementById('header');
             window.addEventListener('scroll', function() {
                 header.classList.toggle('scrolled', window.scrollY > 50);
             });
 
-            // ===== КНОПКА НАВЕРХ =====
             const scrollBtn = document.getElementById('scrollTopBtn');
             window.addEventListener('scroll', function() {
                 scrollBtn.classList.toggle('visible', window.scrollY > 400);
             });
 
-            // ===== АНИМАЦИЯ ПРИ СКРОЛЛЕ =====
             const animateElements = document.querySelectorAll('.animate-on-scroll');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -2806,7 +3211,6 @@
 
             animateElements.forEach(el => observer.observe(el));
 
-            // ===== СЧЁТЧИК =====
             const counters = document.querySelectorAll('.stat-number');
             const counterObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -2829,7 +3233,6 @@
 
             counters.forEach(el => counterObserver.observe(el));
 
-            // ===== МОДАЛЬНЫЕ ОКНА =====
             window.openModal = function(type) {
                 const modal = document.getElementById('orderModal');
                 modal.classList.add('active');
@@ -2844,7 +3247,6 @@
                 if (e.target === this) closeModal('orderModal');
             });
 
-            // ===== ФОРМА ЗАЯВКИ =====
             const orderForm = document.getElementById('orderForm');
             const orderPhone = document.getElementById('orderPhone');
             const orderSuccess = document.getElementById('orderSuccess');
@@ -2916,7 +3318,7 @@
                 }, 3000);
             });
 
-            // ===== БАРАБАН (1 ПОПЫТКА) =====
+            // ===== БАРАБАН =====
             const wheelOverlay = document.getElementById('wheelOverlay');
             const wheelSpin = document.getElementById('wheelSpin');
             const wheelResult = document.getElementById('wheelResult');
@@ -3099,7 +3501,6 @@
                 }, 4200);
             });
 
-            // ===== КОНФЕТТИ =====
             function launchConfetti() {
                 const container = document.getElementById('confettiContainer');
                 const colors = ['#F59E0B', '#8B5CF6', '#EC4899', '#6D28D9', '#34C759', '#FF6B6B', '#FECA57', '#6A0DAD'];
@@ -3118,7 +3519,6 @@
                 }
             }
 
-            // ===== КАЛЬКУЛЯТОР =====
             window.calculatePrice = function() {
                 const product = document.getElementById('calcProduct').value;
                 const qty = parseInt(document.getElementById('calcQuantity').value);
@@ -3191,7 +3591,6 @@
 
             setTimeout(() => calculatePrice(), 300);
 
-            // ===== ЛАЙТБОКС =====
             window.openLightbox = function(src) {
                 const lb = document.getElementById('lightbox');
                 const img = document.getElementById('lightboxImage');
@@ -3216,9 +3615,7 @@
                 }
             });
 
-            // ===== ПОРТФОЛИО (ГАЛЕРЕИ) =====
-
-            // КЕПКИ
+            // ===== ПОРТФОЛИО =====
             const hatImages = [
                 'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-12%20at%2012.10.11%20(1).jpeg',
                 'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-12%20at%2012.10.11.jpeg',
@@ -3263,7 +3660,6 @@
                 hg.appendChild(el);
             });
 
-            // НАШИВКИ
             const patchImages = [
                 'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0131.jpeg',
                 'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0127.jpeg',
@@ -3307,7 +3703,6 @@
                 pg.appendChild(el);
             });
 
-            // ОДЕЖДА
             const clothImages = [
                 'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0134.jpeg',
                 'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0133.jpeg',
@@ -3391,6 +3786,38 @@
             };
 
             updateWheelUI();
+
+            // ===== ФОРМА ОТЗЫВОВ =====
+            const reviewForm = document.getElementById('reviewForm');
+            const reviewSuccess = document.getElementById('reviewSuccess');
+
+            if (reviewForm) {
+                reviewForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (!document.getElementById('reviewConsent').checked) {
+                        alert('Пожалуйста, дайте согласие на обработку данных');
+                        return;
+                    }
+                    const name = document.getElementById('reviewName').value.trim();
+                    const rating = document.getElementById('reviewRating').value;
+                    const text = document.getElementById('reviewText').value.trim();
+                    if (!name || !text) {
+                        alert('Заполните имя и текст отзыва');
+                        return;
+                    }
+                    const stars = '⭐'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
+                    const msg =
+                        `⭐ *Новый отзыв (модерация)!*\n\n👤 *Имя:* ${name}\n📊 *Оценка:* ${stars}\n💬 *Отзыв:* ${text}\n🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
+                    sendToTelegram(msg);
+                    reviewForm.style.display = 'none';
+                    reviewSuccess.style.display = 'block';
+                    setTimeout(() => {
+                        reviewForm.style.display = 'block';
+                        reviewSuccess.style.display = 'none';
+                        reviewForm.reset();
+                    }, 5000);
+                });
+            }
 
         });
     </script>
