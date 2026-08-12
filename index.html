@@ -23,7 +23,7 @@
     <meta property="og:image" content="https://cdn.qwenlm.ai/output/354ff112-5746-4472-8d60-8bcdbc594064/t2i/5644675d-0dfb-43b1-89a6-0d13fea0e632/1e140180c-8f86-4959-ae74-32379f734cc5.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZV91c2VyX2lkIjoiMzU0ZmYxMTItNTc0Ni00NDcyLThkNjAtOGJjZGJjNTk0MDY0IiwicmVzb3VyY2VfaWQiOiIxZTE0MDE4MGMtOGY4Ni00OTU5LWFlNzQtMzIzNzlmNzM0Y2M1IiwicmVzb3VyY2VfdHlwZSI6ImltYWdlX3Rvb2wifQ.8IGj1lZ7XW9g_-mJ8gTubTzwfDylTVNA8hlKiZexMYQ" />
 
     <!-- ========================================
-    ЯНДЕКС МЕТРИКА (вставьте ваш ID)
+    ЯНДЕКС МЕТРИКА
     ======================================== -->
     <script type="text/javascript" >
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -42,7 +42,7 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/ВАШ_ID_ЯНДЕКС_МЕТРИКИ" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
     <!-- ========================================
-    GOOGLE ANALYTICS (вставьте ваш ID)
+    GOOGLE ANALYTICS
     ======================================== -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=ВАШ_ID_GOOGLE_ANALYTICS"></script>
     <script>
@@ -52,9 +52,6 @@
       gtag('config', 'ВАШ_ID_GOOGLE_ANALYTICS');
     </script>
 
-    <!-- ========================================
-    ШРИФТЫ
-    ======================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
@@ -1008,7 +1005,7 @@
         }
 
         /* ============================================
-                   КАЛЬКУЛЯТОР
+                   КАЛЬКУЛЯТОР (ОБНОВЛЁННЫЙ)
                    ============================================ */
         .calculator-wrap {
             background: rgba(255, 255, 255, 0.5);
@@ -2208,7 +2205,7 @@
                             <span class="hero-badge pink">🧵 От 1 штуки до опта</span>
                         </div>
                         <p class="hero-desc">
-                            <span class="live-emoji">🔥</span> <strong>С 2014 года</strong> создаём вышивку, которая радует.
+                            <span class="live-emoji">❤️</span> <strong>С любовью</strong> создаём вышивку, которая радует.
                             От шевронов до премиум-заказов — <span class="glow-text">качество гарантируем</span>.
                             Бесплатный расчёт за 15 минут.
                         </p>
@@ -2585,12 +2582,12 @@
         </div>
 
         <!-- ==========================================
-        СТРАНИЦА: КАЛЬКУЛЯТОР
+        СТРАНИЦА: КАЛЬКУЛЯТОР (ОБНОВЛЁННЫЙ)
         ========================================== -->
         <div class="page" id="page-calculator">
             <div class="container">
                 <h1 class="page-title"><span class="highlight">Калькулятор</span> стоимости</h1>
-                <p class="page-subtitle">Узнайте ориентировочную стоимость вашего заказа за 30 секунд</p>
+                <p class="page-subtitle">Узнайте стоимость вашей вышивки за 30 секунд</p>
 
                 <div class="calculator-wrap">
                     <h3>📋 Параметры заказа</h3>
@@ -2598,20 +2595,27 @@
 
                     <div class="calc-grid">
                         <div>
+                            <!-- Размер вышивки (в мм) -->
                             <div class="calc-group">
-                                <label>👕 Тип изделия</label>
-                                <select id="calcProduct">
-                                    <option value="Футболка">Футболка</option>
-                                    <option value="Худи / Свитшот" selected>Худи / Свитшот</option>
-                                    <option value="Кепка">Кепка</option>
-                                    <option value="Куртка">Куртка</option>
-                                    <option value="Сумка / Рюкзак">Сумка / Рюкзак</option>
-                                    <option value="Другое">Другое</option>
+                                <label>📏 Размер вышивки (в мм)</label>
+                                <input type="text" id="calcSize" placeholder="Например: 80×60 или 80x60 или 80*60" />
+                                <p style="font-size:0.7rem; color:var(--color-text-secondary); margin-top:4px;">Укажите размер через ×, x или * (ширина × высота)</p>
+                            </div>
+
+                            <!-- Плотность заполнения (проценты) -->
+                            <div class="calc-group">
+                                <label>🎨 Заполнение площади стежками</label>
+                                <select id="calcDensity">
+                                    <option value="100">100% — полностью заполнен (шеврон)</option>
+                                    <option value="70" selected>70% — художественная вышивка, портрет</option>
+                                    <option value="50">50% — логотип, текст (ширина линии >3мм)</option>
+                                    <option value="30">30% — логотип, текст (ширина линии <3мм)</option>
                                 </select>
                             </div>
 
+                            <!-- Тираж -->
                             <div class="calc-group">
-                                <label>📦 Количество</label>
+                                <label>📦 Количество (тираж)</label>
                                 <select id="calcQuantity">
                                     <option value="1">1 шт</option>
                                     <option value="2">2 шт</option>
@@ -2620,17 +2624,27 @@
                                     <option value="10" selected>10 шт</option>
                                     <option value="20">20 шт</option>
                                     <option value="50">50 шт</option>
-                                    <option value="100">100+ шт</option>
+                                    <option value="100">100 шт</option>
+                                    <option value="200">200 шт</option>
+                                    <option value="500">500 шт</option>
+                                    <option value="1000">1000 шт</option>
                                 </select>
                             </div>
 
+                            <!-- Дополнительные опции -->
                             <div class="calc-group">
-                                <label>🎨 Сложность вышивки</label>
-                                <select id="calcComplexity">
-                                    <option value="simple">Простая (текст, логотип)</option>
-                                    <option value="medium" selected>Средняя (рисунок, градиент)</option>
-                                    <option value="complex">Сложная (фотореализм, детали)</option>
-                                </select>
+                                <label>🧵 Дополнительные опции</label>
+                                <div style="display:flex; flex-direction:column; gap:6px; margin-top:6px;">
+                                    <label style="font-weight:400; font-size:0.85rem; display:flex; align-items:center; gap:8px; cursor:pointer;">
+                                        <input type="checkbox" id="calcThermo" /> Нашивка на термослое/липучке (+40 ₽)
+                                    </label>
+                                    <label style="font-weight:400; font-size:0.85rem; display:flex; align-items:center; gap:8px; cursor:pointer;">
+                                        <input type="checkbox" id="calcTerry" /> Махра, полотенце, халат (+40 ₽)
+                                    </label>
+                                    <label style="font-weight:400; font-size:0.85rem; display:flex; align-items:center; gap:8px; cursor:pointer;">
+                                        <input type="checkbox" id="calcComplex" /> Сложное расположение (рукав, карман, воротник, узкие места) (+20%)
+                                    </label>
+                                </div>
                             </div>
 
                             <button class="btn btn-primary-solid btn-block" onclick="calculatePrice()" style="max-width:100%;">
@@ -2642,17 +2656,28 @@
                             <div class="result-placeholder" id="calcPlaceholder">
                                 <span class="big-icon">🧵</span>
                                 <p style="font-size:1.1rem;font-weight:600;color:var(--color-text);">Ждём ваш запрос</p>
-                                <p style="font-size:0.85rem;color:var(--color-text-secondary);">Выберите параметры и нажмите «Рассчитать»</p>
+                                <p style="font-size:0.85rem;color:var(--color-text-secondary);">Укажите размер, плотность и тираж</p>
                             </div>
 
                             <div class="result-content" id="calcResultContent">
                                 <div class="result-price" id="calcResultPrice">0 ₽</div>
                                 <div class="result-label">ориентировочная стоимость</div>
-                                <div class="result-details" id="calcResultDetails">
-                                    <div>👕 <span id="calcResultProduct">Худи</span></div>
-                                    <div>📦 <span id="calcResultQty">10</span> шт</div>
-                                    <div>🎨 <span id="calcResultComplex">Средняя</span></div>
+
+                                <!-- Детали расчёта -->
+                                <div style="background: rgba(139,92,246,0.04); border-radius: var(--radius-sm); padding: var(--space-sm) var(--space-md); margin: var(--space-sm) 0; font-size: 0.75rem; color: var(--color-text-secondary); text-align:left; border: 1px solid rgba(139,92,246,0.06);">
+                                    <div id="calcDetails">
+                                        📏 Размер: <span id="calcDetailSize">—</span><br />
+                                        🎨 Заполнение: <span id="calcDetailDensity">—</span><br />
+                                        📦 Тираж: <span id="calcDetailQty">—</span> шт<br />
+                                        🧵 Стежков: <span id="calcDetailStitches">—</span><br />
+                                        ➕ Доп. опции: <span id="calcDetailOptions">—</span>
+                                    </div>
                                 </div>
+
+                                <div style="background: rgba(139,92,246,0.04); border-radius: var(--radius-sm); padding: var(--space-sm) var(--space-md); margin: var(--space-sm) 0; font-size: 0.8rem; color: var(--color-text-secondary); border: 1px dashed rgba(139,92,246,0.1);">
+                                    ⚠️ Это предварительная стоимость. Для точного расчёта по вашему макету — отправьте заявку.
+                                </div>
+
                                 <button class="btn btn-sm btn-gold" onclick="openModal('order')" style="max-width:100%; margin-top:var(--space-md);">
                                     🚀 Заказать сейчас
                                 </button>
@@ -2668,7 +2693,7 @@
                     </div>
                     <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-sm); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);">
                         <span style="font-size:2rem;display:block;">🎯</span>
-                        <p style="font-size:0.85rem; color:var(--color-text-secondary);">Точность до копейки</p>
+                        <p style="font-size:0.85rem; color:var(--color-text-secondary);">Точный подсчёт стежков</p>
                     </div>
                     <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-sm); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);">
                         <span style="font-size:2rem;display:block;">📊</span>
@@ -3074,6 +3099,11 @@
                         <option value="Другое">Другое</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="orderFile">📎 Прикрепите макет (необязательно)</label>
+                    <input type="file" id="orderFile" accept=".jpg,.jpeg,.png,.gif,.pdf,.ai,.eps,.cdr,.svg" />
+                    <p style="font-size:0.7rem; color:var(--color-text-secondary); margin-top:4px;">Поддерживаемые форматы: JPG, PNG, GIF, PDF, AI, EPS, CDR, SVG</p>
+                </div>
                 <div class="form-checkbox">
                     <input type="checkbox" id="orderConsent" required />
                     <label for="orderConsent">Я даю согласие на обработку персональных данных</label>
@@ -3135,7 +3165,135 @@
             const CHAT_ID = '5632775119';
 
             // ============================================================
-            // ОСТАЛЬНОЙ КОД
+            // КАЛЬКУЛЯТОР (НОВАЯ ФОРМУЛА)
+            // ============================================================
+            window.calculatePrice = function() {
+                // 1. Получаем размер
+                const sizeInput = document.getElementById('calcSize').value.trim();
+                let width = 0,
+                    height = 0;
+                // Парсим размер: 80×60, 80x60, 80*60
+                const match = sizeInput.match(/(\d+)\s*[×x*]\s*(\d+)/);
+                if (match) {
+                    width = parseInt(match[1]);
+                    height = parseInt(match[2]);
+                }
+
+                if (width === 0 || height === 0) {
+                    alert('Пожалуйста, укажите размер вышивки в формате: 80×60');
+                    return;
+                }
+
+                // 2. Плотность заполнения
+                const density = parseInt(document.getElementById('calcDensity').value);
+
+                // 3. Тираж
+                const qty = parseInt(document.getElementById('calcQuantity').value);
+
+                // 4. Дополнительные опции
+                const thermo = document.getElementById('calcThermo').checked;
+                const terry = document.getElementById('calcTerry').checked;
+                const complex = document.getElementById('calcComplex').checked;
+
+                // ===== РАСЧЁТ =====
+                // Площадь в кв.мм
+                const area = width * height;
+
+                // Количество стежков (приблизительно: 1 кв.см = 100 стежков при 100% заполнении)
+                // Плотность стежков: 100 стежков на 1 кв.см = 1 стежок на 0.01 кв.см = 100 стежков на 100 кв.мм
+                const stitchesPer100mm = 100; // 100 стежков на 100 кв.мм при 100% заполнении
+                let stitches = Math.round(area * (density / 100) * (stitchesPer100mm / 100));
+
+                // Минимальное количество стежков (для маленьких вышивок)
+                if (stitches < 100) stitches = 100;
+
+                // Стоимость за 1000 стежков = 17 ₽
+                const pricePer1000Stitches = 17;
+                let total = (stitches / 1000) * pricePer1000Stitches;
+
+                // Округление до копеек
+                total = Math.round(total * 100) / 100;
+
+                // Дополнительные опции
+                let extraCost = 0;
+                let extraText = [];
+                if (thermo) {
+                    extraCost += 40;
+                    extraText.push('Термослой/липучка +40₽');
+                }
+                if (terry) {
+                    extraCost += 40;
+                    extraText.push('Махра/халат +40₽');
+                }
+
+                // Сложное расположение (+20% к стоимости вышивки)
+                let complexMultiplier = 1;
+                if (complex) {
+                    complexMultiplier = 1.2;
+                    extraText.push('Сложное расположение +20%');
+                }
+
+                // Применяем скидку за тираж (оптовые скидки)
+                let discount = 1;
+                let discountText = '';
+                if (qty >= 5) discount = 0.95;
+                if (qty >= 10) discount = 0.90;
+                if (qty >= 20) discount = 0.85;
+                if (qty >= 50) discount = 0.80;
+                if (qty >= 100) discount = 0.75;
+                if (qty >= 200) discount = 0.70;
+                if (qty >= 500) discount = 0.65;
+                if (qty >= 1000) discount = 0.60;
+
+                if (discount < 1) {
+                    discountText = ` (скидка ${Math.round((1 - discount) * 100)}% за тираж)`;
+                }
+
+                // Итоговая цена с учётом всех коэффициентов
+                let finalPrice = total * complexMultiplier * discount;
+                finalPrice = Math.round(finalPrice * 100) / 100;
+
+                // Добавляем доп. опции (плюсуем после применения скидки)
+                finalPrice += extraCost;
+
+                // За один заказ добавляем стоимость программы (разработка макета) — 1000 ₽
+                const programCost = 1000;
+                let orderTotal = finalPrice + programCost;
+
+                // Округляем до целых рублей для отображения
+                orderTotal = Math.round(orderTotal);
+
+                // ===== ВЫВОД РЕЗУЛЬТАТА =====
+                document.getElementById('calcResultPrice').textContent = orderTotal.toLocaleString('ru-RU') + ' ₽';
+                document.getElementById('calcDetailSize').textContent = `${width}×${height} мм`;
+                document.getElementById('calcDetailDensity').textContent = `${density}%`;
+                document.getElementById('calcDetailQty').textContent = qty;
+                document.getElementById('calcDetailStitches').textContent = stitches.toLocaleString('ru-RU') + ' стежков';
+                document.getElementById('calcDetailOptions').textContent = extraText.length > 0 ? extraText.join(', ') :
+                    '—';
+
+                // Показываем результат
+                document.getElementById('calcPlaceholder').style.display = 'none';
+                document.getElementById('calcResultContent').classList.add('active');
+
+                // Анимация цены
+                document.getElementById('calcResultPrice').style.animation = 'none';
+                setTimeout(() => {
+                    document.getElementById('calcResultPrice').style.animation =
+                        'gradientMove 3s ease-in-out infinite';
+                }, 10);
+            };
+
+            // Авторасчёт при загрузке (показываем пример)
+            setTimeout(() => {
+                document.getElementById('calcSize').value = '80×60';
+                document.getElementById('calcDensity').value = '70';
+                document.getElementById('calcQuantity').value = '10';
+                calculatePrice();
+            }, 300);
+
+            // ============================================================
+            // ОСТАЛЬНЫЕ ФУНКЦИИ (навигация, барабан, форма и т.д.)
             // ============================================================
 
             const navLinks = document.querySelectorAll('.nav-link');
@@ -3275,6 +3433,8 @@
                 }
                 const message = document.getElementById('orderMessage').value.trim();
                 const type = document.getElementById('orderType').value;
+                const fileInput = document.getElementById('orderFile');
+                const file = fileInput.files[0];
 
                 let wheelResultText = '❌ Не крутил барабан';
                 if (window.lastWheelResult) {
@@ -3284,15 +3444,31 @@
                     }
                 }
 
+                let fileInfo = '📎 Файл не прикреплён';
+                if (file) {
+                    fileInfo = `📎 Файл: ${file.name} (${(file.size / 1024).toFixed(0)} КБ, ${file.type || 'неизвестный формат'})`;
+                }
+
                 const text =
                     `📩 *НОВАЯ ЗАЯВКА!*\n\n` +
                     `📱 *Телефон:* ${phone}\n` +
                     `📂 *Тип заказа:* ${type}\n` +
                     `💬 *Описание:* ${message || '—'}\n` +
+                    `${fileInfo}\n` +
                     `🎰 *Результат барабана:* ${wheelResultText}\n` +
                     `🕐 *Время:* ${new Date().toLocaleString('ru-RU')}`;
 
                 sendToTelegram(text);
+
+                if (file) {
+                    const formData = new FormData();
+                    formData.append('chat_id', CHAT_ID);
+                    formData.append('document', file);
+                    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendDocument`, {
+                        method: 'POST',
+                        body: formData
+                    }).catch(() => console.log('Файл не отправился в Telegram'));
+                }
 
                 orderForm.style.display = 'none';
                 orderSuccess.style.display = 'block';
@@ -3300,6 +3476,7 @@
                     orderForm.style.display = 'block';
                     orderSuccess.style.display = 'none';
                     orderForm.reset();
+                    document.getElementById('orderFile').value = '';
                     closeModal('orderModal');
                 }, 3000);
             });
@@ -3318,9 +3495,9 @@
                 { label: '10%', color: '#F59E0B', value: 10 },
                 { label: '15%', color: '#8B5CF6', value: 15 },
                 { label: '5%', color: '#EC4899', value: 5 },
-                { label: 'Беспл. макет', color: '#6D28D9', value: 0 },
+                { label: 'Не повезло', color: '#6D28D9', value: 0 },
                 { label: '20%', color: '#F59E0B', value: 20 },
-                { label: 'Повезёт в др. раз', color: '#9CA3AF', value: -1 },
+                { label: 'Не повезло', color: '#9CA3AF', value: -1 },
                 { label: '7%', color: '#EC4899', value: 7 },
                 { label: '12%', color: '#8B5CF6', value: 12 },
             ];
@@ -3504,78 +3681,6 @@
                     setTimeout(() => c.remove(), 4000);
                 }
             }
-
-            window.calculatePrice = function() {
-                const product = document.getElementById('calcProduct').value;
-                const qty = parseInt(document.getElementById('calcQuantity').value);
-                const compl = document.getElementById('calcComplexity').value;
-
-                let basePrice = 500;
-                switch (product) {
-                    case 'Футболка':
-                        basePrice = 500;
-                        break;
-                    case 'Худи / Свитшот':
-                        basePrice = 700;
-                        break;
-                    case 'Кепка':
-                        basePrice = 400;
-                        break;
-                    case 'Куртка':
-                        basePrice = 1200;
-                        break;
-                    case 'Сумка / Рюкзак':
-                        basePrice = 900;
-                        break;
-                    default:
-                        basePrice = 600;
-                }
-
-                let complexityMultiplier = 1;
-                let complexityLabel = 'Средняя';
-                switch (compl) {
-                    case 'simple':
-                        complexityMultiplier = 0.7;
-                        complexityLabel = 'Простая';
-                        break;
-                    case 'medium':
-                        complexityMultiplier = 1;
-                        complexityLabel = 'Средняя';
-                        break;
-                    case 'complex':
-                        complexityMultiplier = 1.6;
-                        complexityLabel = 'Сложная';
-                        break;
-                }
-
-                let discount = 1;
-                if (qty >= 5) discount = 0.9;
-                if (qty >= 10) discount = 0.8;
-                if (qty >= 20) discount = 0.7;
-                if (qty >= 50) discount = 0.6;
-                if (qty >= 100) discount = 0.5;
-
-                const programCost = 1000;
-                let pricePerItem = basePrice * complexityMultiplier * discount;
-                let total = qty === 1 ? pricePerItem + programCost : pricePerItem * qty + programCost;
-                total = Math.round(total / 100) * 100;
-
-                document.getElementById('calcResultPrice').textContent = total.toLocaleString('ru-RU') + ' ₽';
-                document.getElementById('calcResultProduct').textContent = product;
-                document.getElementById('calcResultQty').textContent = qty;
-                document.getElementById('calcResultComplex').textContent = complexityLabel;
-
-                document.getElementById('calcPlaceholder').style.display = 'none';
-                document.getElementById('calcResultContent').classList.add('active');
-
-                document.getElementById('calcResultPrice').style.animation = 'none';
-                setTimeout(() => {
-                    document.getElementById('calcResultPrice').style.animation =
-                        'gradientMove 3s ease-in-out infinite';
-                }, 10);
-            };
-
-            setTimeout(() => calculatePrice(), 300);
 
             window.openLightbox = function(src) {
                 const lb = document.getElementById('lightbox');
