@@ -1,1 +1,3477 @@
-убрал все
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="yandex-verification" content="5619f032338a5757" />
+    <meta name="google-site-verification" content="dtfAgkQpcuoJaOgDuVIosgrenSPvHeJ915q-UBKEIPU" />
+
+    <title>Вышивка Стиль — вышивка на заказ в Москве</title>
+    <meta name="description" content="Профессиональная вышивка на заказ. Шевроны, нашивки, логотипы на одежде. Работа официально с чеком." />
+    <meta name="keywords" content="вышивка на заказ, вышивка логотипов, шевроны, нашивки, вышивка на одежде" />
+    <link rel="canonical" href="https://stylevishivka.ru/" />
+
+    <meta property="og:title" content="Вышивка Стиль — вышивка на заказ" />
+    <meta property="og:description" content="Шевроны, нашивки, логотипы на одежде. Бесплатный расчёт за 15 минут." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://stylevishivka.ru/" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Вышивка Стиль",
+      "description": "Вышивка на заказ от 1 штуки. Шевроны, нашивки, логотипы на одежде.",
+      "url": "https://stylevishivka.ru/",
+      "telephone": "+79014030785",
+      "email": "vishivkavs@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Москва",
+        "streetAddress": "ул. Исаковского, д. 20"
+      },
+      "priceRange": "200–2000 ₽",
+      "openingHours": "Mo-Fr 09:00-18:00"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --color-primary: #8B5CF6;
+            --color-primary-light: #A78BFA;
+            --color-primary-dark: #7C3AED;
+            --color-secondary: #6D28D9;
+            --color-accent: #EC4899;
+            --color-gold: #F59E0B;
+            --color-bg: #F5F3FF;
+            --color-text: #1E1B4B;
+            --color-text-secondary: #6B7280;
+            --color-white: #FFFFFF;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
+            --shadow-xl: 0 30px 80px rgba(0, 0, 0, 0.12);
+            --blur-bg: blur(24px);
+            --radius-sm: 12px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --radius-full: 9999px;
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-2xl: 48px;
+            --space-3xl: 64px;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-family);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        a { color: var(--color-primary); text-decoration: none; }
+        a:hover { color: var(--color-primary-dark); }
+        img { max-width: 100%; display: block; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); width: 100%; }
+
+        /* HEADER */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            padding: var(--space-sm) 0;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-md);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--color-text);
+        }
+        .logo-gradient {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 4s ease-in-out infinite;
+        }
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .logo-icon {
+            color: var(--color-primary);
+            -webkit-text-fill-color: var(--color-primary);
+            font-size: 0.9em;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+        }
+        .nav-link {
+            color: var(--color-text-secondary);
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.25s;
+            cursor: pointer;
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after { width: 100%; }
+        .nav-link:hover,
+        .nav-link.active { color: var(--color-text); }
+
+        .social-icons {
+            display: flex;
+            gap: 4px;
+        }
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: var(--radius-full);
+            background: rgba(0, 0, 0, 0.03);
+            color: var(--color-text-secondary);
+            transition: all 0.25s;
+            border: 1px solid transparent;
+        }
+        .social-icons a:hover { color: #fff; transform: scale(1.08); border-color: transparent; }
+        .social-icons .ig:hover { background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f); }
+        .social-icons .wa:hover { background: #25D366; }
+        .social-icons .tg:hover { background: #0088cc; }
+        .social-icons .max:hover { background: linear-gradient(135deg, #1a1a2e, #6a0dad); }
+        .social-icons .vk:hover { background: #4C75A3; }
+        .social-icons svg { width: 16px; height: 16px; fill: currentColor; }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--color-text);
+            cursor: pointer;
+            padding: 4px;
+        }
+        @media (max-width: 768px) {
+            .mobile-toggle { display: block; }
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                padding: var(--space-md) 0;
+                gap: var(--space-sm);
+            }
+            .nav-list.open { display: flex; }
+            .nav {
+                flex-direction: column;
+                width: 100%;
+                align-items: stretch;
+            }
+            .social-icons { justify-content: center; padding: var(--space-sm) 0; }
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            padding: 14px 32px;
+            font-family: var(--font-family);
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-align: center;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            color: var(--color-primary);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 320px;
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.04), rgba(109, 40, 217, 0.04));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.1);
+            background: rgba(255, 255, 255, 0.6);
+            border-color: rgba(139, 92, 246, 0.15);
+        }
+        .btn:hover::before { opacity: 1; }
+        .btn:active { transform: scale(0.96); }
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .btn-secondary {
+            color: var(--color-text);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(0, 0, 0, 0.06);
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.5);
+            border-color: rgba(139, 92, 246, 0.1);
+        }
+
+        .btn-primary-solid {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: #fff !important;
+            border: none;
+            box-shadow: 0 4px 24px rgba(139, 92, 246, 0.25);
+        }
+        .btn-primary-solid:hover {
+            box-shadow: 0 8px 40px rgba(139, 92, 246, 0.35);
+            border: none;
+            transform: translateY(-3px) scale(1.02);
+            color: #fff !important;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--color-gold), #D97706);
+            color: #fff !important;
+            border: none;
+            box-shadow: 0 4px 24px rgba(245, 158, 11, 0.25);
+        }
+        .btn-gold:hover {
+            box-shadow: 0 8px 40px rgba(245, 158, 11, 0.35);
+            border: none;
+            transform: translateY(-3px) scale(1.02);
+            color: #fff !important;
+        }
+        .btn-sm { padding: 10px 20px; font-size: 0.85rem; }
+        .btn-block { width: 100%; max-width: 100%; }
+
+        /* PAGES */
+        .page {
+            display: none;
+            animation: fadeUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: var(--space-lg) 0;
+        }
+        .page.active { display: block; }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .page-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: var(--space-sm);
+            color: var(--color-text);
+        }
+        .page-title .highlight {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-xl);
+            max-width: 700px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            color: var(--color-text);
+            text-align: center;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-xl);
+            font-size: 1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* HERO */
+        .hero {
+            background: radial-gradient(ellipse at 20% 40%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 60%, rgba(109, 40, 217, 0.08) 0%, transparent 60%),
+                        radial-gradient(ellipse at 50% 100%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+                        var(--color-bg);
+            border-radius: var(--radius-xl);
+            padding: var(--space-3xl) var(--space-lg);
+            margin-bottom: var(--space-xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://i5.storeland.net/2/3710/137093170/afacdb/vyshivalnye-nitki-madeira-rayon-40-1000m.png') center/cover no-repeat;
+            opacity: 0.03;
+            mix-blend-mode: multiply;
+            animation: floatBg 25s ease-in-out infinite alternate;
+        }
+        @keyframes floatBg {
+            0% { transform: scale(1) rotate(-0.5deg); }
+            100% { transform: scale(1.05) rotate(0.5deg); }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        .hero-title {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
+            color: var(--color-text);
+        }
+        .hero-title .highlight {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 4s ease-in-out infinite;
+        }
+        .hero-desc {
+            font-size: clamp(1rem, 1.4vw, 1.25rem);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-lg);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+        }
+        .hero-badge {
+            padding: 6px 18px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: var(--radius-full);
+            border: 1px solid rgba(139, 92, 246, 0.08);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            transition: all 0.25s;
+        }
+        .hero-badge:hover {
+            border-color: var(--color-primary);
+            background: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+        }
+        .hero-badge.gold { border-color: rgba(245, 158, 11, 0.2); }
+        .hero-badge.purple { border-color: rgba(139, 92, 246, 0.15); }
+        .hero-badge.pink { border-color: rgba(236, 72, 153, 0.15); }
+
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* STATS */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            flex-wrap: wrap;
+            padding: var(--space-xl);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin: var(--space-lg) 0;
+            box-shadow: var(--shadow-sm);
+        }
+        .stat-item { text-align: center; }
+        .stat-number {
+            font-size: 2.6rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            line-height: 1.1;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            font-weight: 500;
+        }
+
+        /* CARDS */
+        .card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: var(--shadow-sm);
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(139, 92, 246, 0.1);
+        }
+        .card-icon { font-size: 2.8rem; display: block; margin-bottom: var(--space-sm); }
+        .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; color: var(--color-text); }
+        .card-text { font-size: 0.9rem; color: var(--color-text-secondary); margin: 0; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
+        .grid-3 { display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
+        .grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+        @media (min-width: 600px) {
+            .grid-2 { grid-template-columns: 1fr 1fr; }
+            .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+            .grid-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+            .hero-actions { flex-direction: row; max-width: 500px; }
+            .btn { width: auto; }
+        }
+
+        /* QUALITY */
+        .quality-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            margin: var(--space-xl) 0;
+            position: relative;
+        }
+        .quality-steps::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 60px;
+            bottom: 60px;
+            width: 3px;
+            background: linear-gradient(180deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+            opacity: 0.2;
+        }
+        @media (min-width: 768px) {
+            .quality-steps { grid-template-columns: 1fr 1fr 1fr; gap: var(--space-xl); }
+            .quality-steps::before { display: none; }
+        }
+
+        .quality-step {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-md);
+            padding: var(--space-xl);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+            transition: all 0.35s;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+        .quality-step:hover {
+            transform: translateY(-6px);
+            border-color: rgba(139, 92, 246, 0.15);
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: var(--shadow-md);
+        }
+        .quality-step .step-num {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 900;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            margin-bottom: var(--space-md);
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
+        }
+        .quality-step .step-icon { font-size: 2.8rem; display: block; margin-bottom: var(--space-sm); }
+        .quality-step h4 { font-size: 1.1rem; font-weight: 700; color: var(--color-text); }
+        .quality-step p { font-size: 0.9rem; color: var(--color-text-secondary); margin: var(--space-sm) 0 0; }
+
+        /* PROCESS */
+        .process-timeline {
+            position: relative;
+            padding: var(--space-lg) 0;
+        }
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-gold));
+            opacity: 0.15;
+        }
+        @media (min-width: 768px) {
+            .process-timeline::before { left: 50%; transform: translateX(-50%); }
+        }
+
+        .process-item {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+            position: relative;
+            padding-left: 60px;
+        }
+        @media (min-width: 768px) {
+            .process-item {
+                flex-direction: row;
+                align-items: flex-start;
+                padding-left: 0;
+            }
+            .process-item:nth-child(odd) { flex-direction: row-reverse; }
+            .process-item:nth-child(odd) .process-content { text-align: right; }
+            .process-item .process-content { width: 42%; padding: 0 var(--space-lg); }
+            .process-item .process-marker { width: 16%; display: flex; justify-content: center; align-items: center; }
+        }
+
+        .process-marker .marker {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
+            flex-shrink: 0;
+            z-index: 2;
+        }
+        .process-marker .marker.gold {
+            background: linear-gradient(135deg, var(--color-gold), #D97706);
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2);
+        }
+        .process-marker .marker.pink {
+            background: linear-gradient(135deg, var(--color-accent), #DB2777);
+            box-shadow: 0 4px 20px rgba(236, 72, 153, 0.2);
+        }
+
+        .process-content {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.35s;
+            flex: 1;
+        }
+        .process-content:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.1);
+            box-shadow: var(--shadow-md);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .process-content h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: var(--space-xs);
+        }
+        .process-content .process-icon { font-size: 1.8rem; margin-right: var(--space-sm); }
+        .process-content p { font-size: 0.9rem; color: var(--color-text-secondary); margin: 0; }
+        .process-content .time-badge {
+            display: inline-block;
+            margin-top: var(--space-sm);
+            padding: 2px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: rgba(139, 92, 246, 0.06);
+            color: var(--color-primary);
+        }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+        }
+        @media (min-width: 600px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+        @media (min-width: 900px) { .services-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-md);
+            padding: var(--space-xl);
+            text-align: center;
+            transition: all 0.35s;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(139, 92, 246, 0.15);
+            box-shadow: var(--shadow-lg);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .service-card .service-icon { font-size: 3.2rem; display: block; margin-bottom: var(--space-sm); }
+        .service-card .service-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--space-sm);
+        }
+        .service-card .service-tag.basic { background: rgba(139, 92, 246, 0.08); color: var(--color-primary); }
+        .service-card .service-tag.medium { background: rgba(245, 158, 11, 0.08); color: var(--color-gold); }
+        .service-card .service-tag.premium { background: rgba(236, 72, 153, 0.08); color: var(--color-accent); }
+        .service-card h4 { font-size: 1.15rem; font-weight: 700; color: var(--color-text); margin-bottom: 4px; }
+        .service-card .service-price {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin: var(--space-sm) 0;
+        }
+        .service-card .service-price span { font-size: 0.8rem; font-weight: 400; color: var(--color-text-secondary); }
+        .service-card p { font-size: 0.85rem; color: var(--color-text-secondary); margin: 0 0 var(--space-md); }
+        .service-card .service-features {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin: var(--space-sm) 0 var(--space-md);
+        }
+        .service-card .service-features li {
+            padding: 4px 0;
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .service-card .service-features li:last-child { border-bottom: none; }
+        .service-card .service-features li .check { color: var(--color-primary); font-weight: 700; }
+
+        /* CALCULATOR */
+        .calculator-wrap {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow-sm);
+            margin: var(--space-xl) 0;
+        }
+        .calculator-wrap h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; color: var(--color-text); }
+        .calculator-wrap .calc-subtitle { color: var(--color-text-secondary); margin-bottom: var(--space-lg); }
+
+        .calc-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
+        @media (min-width: 768px) { .calc-grid { grid-template-columns: 1fr 1fr; } }
+
+        .calc-group { margin-bottom: var(--space-md); }
+        .calc-group label { display: block; font-weight: 600; font-size: 0.85rem; color: var(--color-text); margin-bottom: 4px; }
+        .calc-group input, .calc-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-family: var(--font-family);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: var(--color-text);
+            transition: all 0.25s;
+            outline: none;
+        }
+        .calc-group input:focus, .calc-group select:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.06);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .calc-result-box {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-md);
+            padding: var(--space-xl);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .calc-result-box .result-placeholder { color: var(--color-text-secondary); }
+        .calc-result-box .result-placeholder .big-icon { font-size: 4rem; display: block; margin-bottom: var(--space-md); opacity: 0.3; }
+        .calc-result-box .result-content { display: none; width: 100%; animation: resultPop 0.6s ease; }
+        .calc-result-box .result-content.active { display: block; }
+        @keyframes resultPop {
+            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .calc-result-box .result-price {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+        .calc-result-box .result-label { font-size: 0.85rem; color: var(--color-text-secondary); }
+        .calc-result-box .result-details {
+            margin: var(--space-md) 0;
+            padding: var(--space-md);
+            background: rgba(139, 92, 246, 0.04);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+        .calc-result-box .result-details span { color: var(--color-text); font-weight: 600; }
+
+        /* PORTFOLIO */
+        .categories {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+        @media (min-width: 600px) { .categories { grid-template-columns: 1fr 1fr 1fr; } }
+
+        .category-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.35s;
+            box-shadow: var(--shadow-sm);
+        }
+        .category-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(139, 92, 246, 0.15);
+            box-shadow: var(--shadow-md);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .category-card .icon { font-size: 3.2rem; display: block; margin-bottom: var(--space-sm); }
+        .category-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--color-text); }
+        .category-card p { font-size: 0.85rem; color: var(--color-text-secondary); margin: 0; }
+        .category-card .badge {
+            display: inline-block;
+            margin-top: var(--space-sm);
+            background: rgba(139, 92, 246, 0.06);
+            color: var(--color-primary);
+            padding: 3px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .gallery-grid {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+        .gallery-grid.active { display: grid; }
+
+        .gallery-item {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+        }
+        .gallery-item:hover { transform: scale(1.03); border-color: rgba(139, 92, 246, 0.15); }
+        .gallery-item img { width: 100%; height: 160px; object-fit: cover; display: block; }
+        .gallery-item .caption { padding: var(--space-sm); font-size: 0.75rem; color: var(--color-text-secondary); text-align: center; }
+
+        /* MODAL */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: var(--space-md);
+            animation: fadeInModal 0.3s ease;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            max-width: 520px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            max-height: 95vh;
+            overflow-y: auto;
+        }
+        .modal-close {
+            position: absolute;
+            top: var(--space-md);
+            right: var(--space-md);
+            font-size: 1.6rem;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            transition: all 0.25s;
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .modal-close:hover {
+            color: var(--color-primary);
+            transform: rotate(90deg);
+            background: rgba(139, 92, 246, 0.04);
+        }
+        .modal-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; color: var(--color-text); }
+        .modal-subtitle { color: var(--color-text-secondary); margin-bottom: var(--space-lg); font-size: 0.95rem; }
+
+        .modal .form-group { margin-bottom: var(--space-md); }
+        .modal .form-group label { display: block; font-weight: 600; font-size: 0.85rem; color: var(--color-text); margin-bottom: 4px; }
+        .modal .form-group input, .modal .form-group textarea, .modal .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-family: var(--font-family);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: var(--color-text);
+            transition: all 0.25s;
+            outline: none;
+        }
+        .modal .form-group input:focus, .modal .form-group textarea:focus, .modal .form-group select:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.06);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .modal .form-group textarea { resize: vertical; min-height: 80px; }
+
+        .modal .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            margin: var(--space-md) 0;
+        }
+        .modal .form-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            margin-top: 3px;
+            accent-color: var(--color-primary);
+            cursor: pointer;
+        }
+        .modal .form-checkbox label { font-size: 0.85rem; color: var(--color-text-secondary); cursor: pointer; }
+
+        .modal .success-message {
+            display: none;
+            text-align: center;
+            padding: var(--space-lg);
+        }
+        .modal .success-message .check { font-size: 3.5rem; display: block; }
+        .modal .success-message h3 { color: #34C759; margin: var(--space-sm) 0 4px; }
+        .modal .success-message p { color: var(--color-text-secondary); margin: 0; }
+
+        /* WHEEL */
+        .wheel-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+            padding: var(--space-md);
+        }
+        .wheel-overlay.active { display: flex; }
+        .wheel-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+            max-width: 580px;
+            width: 100%;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: fadeInModal 0.4s ease;
+            position: relative;
+        }
+        .wheel-content h2 { font-size: 1.6rem; font-weight: 700; color: var(--color-text); }
+        .wheel-content p { color: var(--color-text-secondary); margin-bottom: var(--space-lg); font-size: 1rem; }
+
+        .wheel-spin {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            border: 10px solid var(--color-primary);
+            margin: 0 auto var(--space-lg);
+            position: relative;
+            transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+        }
+        .wheel-spin::after {
+            content: '▼';
+            position: absolute;
+            top: -28px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.4rem;
+            color: var(--color-primary);
+        }
+        .wheel-spin .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border: 2px solid rgba(139, 92, 246, 0.2);
+        }
+        .wheel-spin .segment-label {
+            position: absolute;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+        }
+        .wheel-result {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--color-accent);
+            margin: var(--space-md) 0;
+            min-height: 60px;
+        }
+
+        .wheel-history {
+            margin-top: var(--space-md);
+            padding: var(--space-md);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            max-height: 130px;
+            overflow-y: auto;
+        }
+        .wheel-history .history-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .wheel-history .history-item:last-child { border-bottom: none; }
+        .wheel-history .history-item .win { color: var(--color-accent); font-weight: 700; }
+        .wheel-history .history-item .lose { color: var(--color-text-secondary); }
+
+        .wheel-attempts {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-sm);
+        }
+        .wheel-attempts strong { color: var(--color-primary); }
+        .wheel-attempts .remaining { color: var(--color-accent); font-weight: 700; }
+
+        .btn-wheel {
+            padding: 16px 50px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-full);
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 24px rgba(139, 92, 246, 0.25);
+            min-width: 200px;
+        }
+        .btn-wheel:hover { transform: translateY(-3px); box-shadow: 0 8px 40px rgba(139, 92, 246, 0.35); }
+        .btn-wheel:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        @keyframes fadeInModal {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* CONFETTI */
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 99999;
+            overflow: hidden;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            animation: confettiFall linear forwards;
+        }
+        @keyframes confettiFall {
+            0% { transform: translateY(-10vh) rotate(0deg) scale(1); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(720deg) scale(0.3); opacity: 0; }
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            z-index: 9998;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            padding: var(--space-md);
+            animation: fadeInLightbox 0.3s ease;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 95%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: var(--space-lg);
+            right: var(--space-lg);
+            font-size: 2.4rem;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.25s;
+            background: none;
+            border: none;
+        }
+        .lightbox-close:hover { color: var(--color-primary); transform: rotate(90deg); }
+        @keyframes fadeInLightbox {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* COOKIE BANNER */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 16px 24px;
+            box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.08);
+            z-index: 99998;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .cookie-banner.active { display: flex; }
+        .cookie-banner p {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin: 0;
+            flex: 1;
+            min-width: 200px;
+        }
+        .cookie-banner .cookie-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+        .cookie-banner .cookie-btn {
+            padding: 8px 24px;
+            border: none;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+        .cookie-banner .cookie-btn.accept { background: var(--color-primary); color: #fff; }
+        .cookie-banner .cookie-btn.accept:hover { background: var(--color-primary-dark); transform: translateY(-2px); }
+        .cookie-banner .cookie-btn.reject { background: rgba(0, 0, 0, 0.04); color: var(--color-text-secondary); }
+        .cookie-banner .cookie-btn.reject:hover { background: rgba(0, 0, 0, 0.08); }
+
+        /* FLOATING MESSENGERS */
+        .floating-messengers {
+            position: fixed;
+            bottom: 20px;
+            right: 16px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            align-items: flex-end;
+        }
+        .floating-messengers .msg-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #fff;
+            padding: 8px 14px 8px 10px;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.75rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.25s;
+            border: none;
+            cursor: pointer;
+        }
+        .floating-messengers .msg-btn:hover { transform: scale(1.05); }
+        .floating-messengers .msg-btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .floating-messengers .msg-btn .label { font-size: 0.7rem; }
+        .floating-messengers .wa { background: #25D366; }
+        .floating-messengers .tg { background: #0088cc; }
+        .floating-messengers .ig { background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f); }
+        .floating-messengers .max { background: linear-gradient(135deg, #1a1a2e, #6a0dad); }
+        .floating-messengers .vk { background: #4C75A3; }
+
+        /* CONTACTS */
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            margin-top: var(--space-md);
+        }
+        @media (min-width: 600px) { .contacts-grid { grid-template-columns: 1fr 1fr; } }
+        .contacts-list { list-style: none; padding: 0; }
+        .contacts-list li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+        }
+        .contacts-list li strong { color: var(--color-text); width: 110px; display: inline-block; }
+        .contacts-list li a { color: var(--color-primary); }
+        .messenger-links {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+            margin-top: var(--space-sm);
+        }
+        .messenger-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.25s;
+        }
+        .messenger-links a:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
+        .btn-wa { background: #25D366; }
+        .btn-tg { background: #0088cc; }
+        .btn-ig { background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f); }
+        .btn-max { background: linear-gradient(135deg, #1a1a2e, #6a0dad); }
+        .btn-vk { background: #4C75A3; }
+
+        .map-container {
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            height: 200px;
+            width: 100%;
+            box-shadow: var(--shadow-sm);
+        }
+        .map-container iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+        /* REVIEWS */
+        .review-empty {
+            text-align: center;
+            padding: var(--space-2xl) var(--space-lg);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .review-empty .empty-icon { font-size: 4rem; display: block; margin-bottom: var(--space-md); opacity: 0.5; }
+        .review-empty h3 { font-size: 1.2rem; font-weight: 700; color: var(--color-text); }
+        .review-empty p { color: var(--color-text-secondary); }
+
+        .review-form-container {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-md);
+            padding: var(--space-xl);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin-top: var(--space-xl);
+        }
+        .review-form-container h3 { font-size: 1.2rem; font-weight: 700; color: var(--color-text); margin-bottom: 4px; }
+        .review-form-container .form-subtitle { color: var(--color-text-secondary); margin-bottom: var(--space-lg); }
+        .review-form-container .form-group { margin-bottom: var(--space-md); }
+        .review-form-container .form-group label { display: block; font-weight: 600; font-size: 0.85rem; color: var(--color-text); margin-bottom: 4px; }
+        .review-form-container .form-group input,
+        .review-form-container .form-group textarea,
+        .review-form-container .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-family: var(--font-family);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: var(--color-text);
+            transition: all 0.25s;
+            outline: none;
+        }
+        .review-form-container .form-group input:focus,
+        .review-form-container .form-group textarea:focus,
+        .review-form-container .form-group select:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.06);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .review-form-container .form-group textarea { resize: vertical; min-height: 100px; }
+
+        .review-form-container .form-file-group { margin-bottom: var(--space-md); }
+        .review-form-container .form-file-group label { display: block; font-weight: 600; font-size: 0.85rem; color: var(--color-text); margin-bottom: 4px; }
+        .review-form-container .form-file-group input[type="file"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-family: var(--font-family);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: var(--color-text);
+            transition: all 0.25s;
+            outline: none;
+            cursor: pointer;
+        }
+        .review-form-container .form-file-group input[type="file"]:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.06);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .review-form-container .form-file-group .file-hint { font-size: 0.75rem; color: var(--color-text-secondary); margin-top: 4px; }
+        .review-form-container .form-file-group .file-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: var(--space-sm);
+        }
+        .review-form-container .form-file-group .file-preview img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .review-form-container .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            margin: var(--space-md) 0;
+        }
+        .review-form-container .form-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            margin-top: 3px;
+            accent-color: var(--color-primary);
+            cursor: pointer;
+        }
+        .review-form-container .form-checkbox label { font-size: 0.85rem; color: var(--color-text-secondary); cursor: pointer; }
+
+        .review-form-container .success-message {
+            display: none;
+            text-align: center;
+            padding: var(--space-lg);
+        }
+        .review-form-container .success-message .check { font-size: 3rem; display: block; }
+        .review-form-container .success-message h3 { color: #34C759; margin: var(--space-sm) 0 4px; }
+        .review-form-container .success-message p { color: var(--color-text-secondary); margin: 0; }
+
+        /* BLOG */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+        @media (min-width: 600px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+        @media (min-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            transition: all 0.35s;
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+        .blog-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(139, 92, 246, 0.15);
+            box-shadow: var(--shadow-md);
+            background: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            color: inherit;
+        }
+        .blog-card .blog-date { font-size: 0.7rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+        .blog-card .blog-icon { font-size: 2.2rem; display: block; margin: var(--space-sm) 0; color: var(--color-primary); font-weight: 300; }
+        .blog-card h4 { font-size: 1.1rem; font-weight: 700; color: var(--color-text); margin-bottom: var(--space-xs); }
+        .blog-card p { font-size: 0.85rem; color: var(--color-text-secondary); margin: var(--space-sm) 0; }
+        .blog-card .blog-tag {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.65rem;
+            font-weight: 600;
+            background: rgba(139, 92, 246, 0.06);
+            color: var(--color-primary);
+        }
+        .blog-card .blog-tag.gold { background: rgba(245, 158, 11, 0.08); color: var(--color-gold); }
+        .blog-card .blog-tag.pink { background: rgba(236, 72, 153, 0.08); color: var(--color-accent); }
+        .blog-card .blog-read-more {
+            display: inline-block;
+            margin-top: var(--space-sm);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+        .blog-card .blog-read-more::after {
+            content: ' →';
+            transition: transform 0.25s;
+            display: inline-block;
+        }
+        .blog-card:hover .blog-read-more::after { transform: translateX(4px); }
+
+        .blog-full-article { display: none; }
+        .blog-full-article.active { display: block; }
+
+        .blog-article-wrapper {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--space-xl);
+        }
+        .blog-article-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-sm);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
+        .blog-article-date { font-size: 0.8rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+        .blog-article-category {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            background: rgba(139, 92, 246, 0.06);
+            padding: 2px 14px;
+            border-radius: var(--radius-full);
+        }
+        .blog-article-title { font-size: 1.8rem; font-weight: 800; color: var(--color-text); margin-bottom: var(--space-md); line-height: 1.2; }
+        .blog-article-body { font-size: 1rem; line-height: 1.8; color: var(--color-text-secondary); }
+        .blog-article-body p { margin-bottom: var(--space-md); }
+        .blog-article-body h4 { font-weight: 700; margin-top: var(--space-lg); margin-bottom: var(--space-sm); color: var(--color-text); }
+        .blog-article-body ul { padding-left: var(--space-lg); margin-bottom: var(--space-md); }
+        .blog-article-body ul li { margin-bottom: var(--space-xs); }
+        .blog-article-body strong { color: var(--color-text); }
+        .blog-article-tip {
+            margin-top: var(--space-lg);
+            padding: var(--space-lg);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.06), rgba(245, 158, 11, 0.06));
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(139, 92, 246, 0.08);
+        }
+        .blog-article-tip p { font-size: 0.95rem; color: var(--color-text-secondary); font-style: italic; text-align: center; margin: 0; }
+        .blog-article-tip strong { color: var(--color-text); }
+        .blog-article-cta {
+            margin-top: var(--space-xl);
+            padding: var(--space-lg);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.06), rgba(236, 72, 153, 0.06));
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(139, 92, 246, 0.08);
+            text-align: center;
+        }
+        .blog-article-cta .cta-text { font-weight: 700; font-size: 1.1rem; color: var(--color-text); margin-bottom: var(--space-xs); }
+        .blog-article-cta .cta-subtext { color: var(--color-text-secondary); margin-bottom: var(--space-md); font-size: 0.95rem; }
+        .blog-article-tags {
+            margin-top: var(--space-md);
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+        }
+        .blog-article-tags .blog-tag {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: rgba(139, 92, 246, 0.06);
+            color: var(--color-primary);
+        }
+        .blog-article-tags .blog-tag.gold { background: rgba(245, 158, 11, 0.08); color: var(--color-gold); }
+        .blog-article-tags .blog-tag.pink { background: rgba(236, 72, 153, 0.08); color: var(--color-accent); }
+
+        /* ANIMATE */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+        /* FOOTER */
+        .footer {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            padding: var(--space-2xl) var(--space-md) var(--space-lg);
+            margin-top: auto;
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
+        }
+        .footer a { color: var(--color-primary); }
+        .footer-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            margin: var(--space-md) auto;
+            border-radius: 10px;
+        }
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            margin-bottom: var(--space-sm);
+        }
+        .footer-nav a { color: var(--color-text-secondary); font-size: 0.8rem; cursor: pointer; transition: color 0.25s; }
+        .footer-nav a:hover { color: var(--color-text); }
+        .footer-legal {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            font-size: 0.7rem;
+            margin: var(--space-sm) 0;
+        }
+        .footer-legal a { color: var(--color-text-secondary); }
+        .footer-legal a:hover { color: var(--color-primary); }
+        .footer-req { font-size: 0.65rem; color: var(--color-text-secondary); opacity: 0.6; margin-top: var(--space-sm); }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 80px;
+            left: 16px;
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-full);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--color-primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(16px);
+        }
+        .scroll-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+        .scroll-top:hover { transform: scale(1.08); background: rgba(255, 255, 255, 0.8); box-shadow: var(--shadow-md); }
+
+        .live-emoji { display: inline-block; animation: livePulse 2s ease-in-out infinite; }
+        @keyframes livePulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+
+        .glow-text {
+            background: linear-gradient(135deg, var(--color-gold), var(--color-accent), var(--color-primary));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 3s ease-in-out infinite;
+            font-weight: 800;
+        }
+
+        @media (max-width: 480px) {
+            .logo { font-size: 0.95rem; }
+            .page-title { font-size: 1.6rem; }
+            .hero-title { font-size: 1.8rem; }
+            .hero { padding: var(--space-xl) var(--space-md); min-height: 50vh; }
+            .stat-number { font-size: 1.8rem; }
+            .modal { padding: var(--space-lg); }
+            .floating-messengers .msg-btn { padding: 6px 10px; }
+            .floating-messengers .msg-btn svg { width: 18px; height: 18px; }
+            .floating-messengers .msg-btn .label { display: none; }
+            .contacts-list li strong { width: 90px; font-size: 0.85rem; }
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+            .gallery-item img { height: 130px; }
+            .quality-steps { padding-left: 0; }
+            .quality-steps::before { left: 16px; }
+            .process-item { padding-left: 50px; }
+            .process-marker .marker { width: 38px; height: 38px; font-size: 0.9rem; }
+            .cookie-banner { padding: 12px 16px; }
+            .cookie-banner p { font-size: 0.75rem; }
+            .review-card .review-avatar { width: 36px; height: 36px; font-size: 0.9rem; }
+            .blog-article-title { font-size: 1.4rem; }
+            .blog-article-wrapper { padding: var(--space-lg); }
+            .blog-article-header { flex-direction: column; align-items: flex-start; }
+        }
+
+        @media (min-width: 600px) { .floating-messengers .msg-btn .label { display: inline; } }
+    </style>
+</head>
+<body>
+
+<!-- ====== COOKIE БАННЕР ====== -->
+<div class="cookie-banner" id="cookieBanner">
+    <p>🍪 Я использую файлы cookie для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с этим. Вы можете <a href="#" onclick="navigateTo('legal'); return false;" style="color: var(--color-primary);">ознакомиться с политикой</a>.</p>
+    <div class="cookie-buttons">
+        <button class="cookie-btn accept" onclick="acceptCookies()">Принять</button>
+        <button class="cookie-btn reject" onclick="rejectCookies()">Отказаться</button>
+    </div>
+</div>
+
+<!-- ====== ПЛАВАЮЩИЕ МЕССЕНДЖЕРЫ ====== -->
+<div class="floating-messengers">
+    <a href="https://wa.me/79014030785" target="_blank" class="msg-btn wa">
+        <svg viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.069-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.149-.43.05-.197-.099-.832-.308-1.584-.984-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.445-1.076-.612-1.47-.16-.38-.323-.319-.445-.319-.114 0-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.711 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+        <span class="label">WhatsApp</span>
+    </a>
+    <a href="https://t.me/+79014030785" target="_blank" class="msg-btn tg">
+        <svg viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.243 3.306-1.878 3.382-1.904.077-.026.178-.058.246.015.07.072.06.19-.022.34-.176.32-1.173 1.15-1.767 1.706-.15.14-.256.244-.258.27-.006.032.092.063.209.102.341.116.735.273 1.052.451.148.083.264.123.374.114.077-.006.174-.038.267-.14.244-.27 1.03-1.16 1.645-1.874.615-.714.793-1.178.808-1.356.006-.112-.015-.205-.1-.256-.124-.073-.36-.104-.518-.104-.32 0-.898.19-1.139.38z"/></svg>
+        <span class="label">Telegram</span>
+    </a>
+    <a href="https://max.ru/u/f9LHodD0cOKOzMr00gjNpvn1TdveNr4o3cTe6syxQuWTj9GVIAcSf0UIpc4" target="_blank" class="msg-btn max">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+            <path d="M12 6v6l4 2"/>
+            <circle cx="8" cy="10" r="1.5"/>
+            <circle cx="16" cy="10" r="1.5"/>
+        </svg>
+        <span class="label">MAX</span>
+    </a>
+    <a href="https://www.instagram.com/fancywork008/" target="_blank" class="msg-btn ig">
+        <svg viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.703.01 5.556 0 5.829 0 8s.01 2.444.048 3.297c.04.853.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.943.372C5.556 15.99 5.829 16 8 16s2.444-.01 3.297-.048c.853-.04 1.433-.174 1.942-.372a3.9 3.9 0 0 0 1.417-.923c.445-.445.719-.89.923-1.417.198-.51.333-1.09.372-1.943C15.99 10.444 16 10.171 16 8s-.01-2.444-.048-3.297c-.04-.853-.174-1.433-.372-1.942a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.09-.333-1.943-.372C10.444.01 10.171 0 8 0zm0 1.441c2.136 0 2.39.008 3.233.047.78.036 1.203.166 1.485.276.374.146.645.318.92.593.275.275.447.546.593.92.11.282.24.705.276 1.485.039.843.047 1.097.047 3.233s-.008 2.39-.047 3.233c-.036.78-.166 1.203-.276 1.485-.146.374-.318.645-.593.92-.275.275-.546.447-.92.593-.282.11-.705.24-1.485.276-.843.039-1.097.047-3.233.047s-2.39-.008-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.593 2.5 2.5 0 0 1-.593-.92c-.11-.282-.24-.705-.276-1.485-.039-.843-.047-1.097-.047-3.233s.008-2.39.047-3.233c.036-.78.166-1.203.276-1.485.146-.374.318-.645.593-.92.275-.275.546-.447.92-.593.282-.11.705-.24 1.485-.276.843-.039 1.097-.047 3.233-.047zm0 2.452a3.497 3.497 0 1 0 0 6.994 3.497 3.497 0 0 0 0-6.994zm0 1.441a2.056 2.056 0 1 1 0 4.112 2.056 2.056 0 0 1 0-4.112zm4.058-.716a.817.817 0 1 1-1.634 0 .817.817 0 0 1 1.634 0z"/></svg>
+        <span class="label">Instagram</span>
+    </a>
+    <a href="https://vk.com/id1125599439" target="_blank" class="msg-btn vk">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M13.162 18.994c.609-.002 1.057-.346 1.348-.684.216-.251.32-.603.454-.934.32-.792.64-1.583.986-2.365.121-.274.264-.528.448-.77.258-.341.557-.433.934-.346.517.12.934.372 1.353.636.468.297.924.609 1.37.935.624.455 1.253.901 1.886 1.348.506.357 1.035.69 1.573.991.631.355 1.216.195 1.514-.416.228-.468.378-.981.52-1.488.277-1.009.548-2.02.804-3.035.505-2.004.993-4.012 1.463-6.024.102-.44.159-.892.222-1.339.088-.628.038-1.134-.412-1.471-.44-.329-1.053-.362-1.614-.314-.584.051-1.165.148-1.741.268-.927.193-1.849.397-2.772.599-.944.207-1.89.388-2.838.548-.717.122-1.434.24-2.153.347-1.059.157-2.128.307-3.19.467-.34.052-.681.102-1.022.148-.471.064-.93.002-1.373-.157-.388-.138-.785-.244-1.183-.344-.583-.145-1.171-.259-1.762-.343-.484-.069-1.037-.068-1.452.14-.397.199-.518.559-.58.954-.056.36-.081.727-.077 1.096.005.416.002.833.089 1.241.144.67.464 1.243.824 1.798.378.586.878 1.064 1.293 1.612.418.55.78 1.141 1.105 1.758.323.62.585 1.273.798 1.939.159.496.271 1.002.412 1.5.154.543.445 1.132 1.028 1.377.416.174.877.136 1.319.128.516-.009 1.029-.055 1.543-.089.44-.029.882-.039 1.322-.014.063.004.124.015.183.03.684.179 1.031.76 1.259 1.345.226.583.48 1.152.771 1.704.281.535.697.853 1.297.861z"/>
+        </svg>
+        <span class="label">VK</span>
+    </a>
+</div>
+
+<!-- ====== ШАПКА ====== -->
+<header class="header" id="header">
+    <div class="container header-inner">
+        <div class="logo" onclick="navigateTo('home')">
+            <span class="logo-icon">✦</span>
+            <span class="logo-gradient">Вышивка Стиль</span>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Меню">☰</button>
+        <div class="nav" id="navMenu">
+            <ul class="nav-list" id="navList">
+                <li><a class="nav-link active" data-page="home">Главная</a></li>
+                <li><a class="nav-link" data-page="services">Услуги</a></li>
+                <li><a class="nav-link" data-page="process">Процесс</a></li>
+                <li><a class="nav-link" data-page="quality">Качество</a></li>
+                <li><a class="nav-link" data-page="portfolio">Портфолио</a></li>
+                <li><a class="nav-link" data-page="calculator">Калькулятор</a></li>
+                <li><a class="nav-link" data-page="reviews">Отзывы</a></li>
+                <li><a class="nav-link" data-page="blog">Блог</a></li>
+                <li><a class="nav-link" data-page="contacts">Контакты</a></li>
+                <li><a class="nav-link" data-page="legal">Юридическая</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/fancywork008/" target="_blank" class="ig">
+                    <svg viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.703.01 5.556 0 5.829 0 8s.01 2.444.048 3.297c.04.853.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.943.372C5.556 15.99 5.829 16 8 16s2.444-.01 3.297-.048c.853-.04 1.433-.174 1.942-.372a3.9 3.9 0 0 0 1.417-.923c.445-.445.719-.89.923-1.417.198-.51.333-1.09.372-1.943C15.99 10.444 16 10.171 16 8s-.01-2.444-.048-3.297c-.04-.853-.174-1.433-.372-1.942a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.09-.333-1.943-.372C10.444.01 10.171 0 8 0zm0 1.441c2.136 0 2.39.008 3.233.047.78.036 1.203.166 1.485.276.374.146.645.318.92.593.275.275.447.546.593.92.11.282.24.705.276 1.485.039.843.047 1.097.047 3.233s-.008 2.39-.047 3.233c-.036.78-.166 1.203-.276 1.485-.146.374-.318.645-.593.92-.275.275-.546.447-.92.593-.282.11-.705.24-1.485.276-.843.039-1.097.047-3.233.047s-2.39-.008-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.593 2.5 2.5 0 0 1-.593-.92c-.11-.282-.24-.705-.276-1.485-.039-.843-.047-1.097-.047-3.233s.008-2.39.047-3.233c.036-.78.166-1.203.276-1.485.146-.374.318-.645.593-.92.275-.275.546-.447.92-.593.282-.11.705-.24 1.485-.276.843-.039 1.097-.047 3.233-.047zm0 2.452a3.497 3.497 0 1 0 0 6.994 3.497 3.497 0 0 0 0-6.994zm0 1.441a2.056 2.056 0 1 1 0 4.112 2.056 2.056 0 0 1 0-4.112zm4.058-.716a.817.817 0 1 1-1.634 0 .817.817 0 0 1 1.634 0z"/></svg>
+                </a>
+                <a href="https://wa.me/79014030785" target="_blank" class="wa">
+                    <svg viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.069-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.149-.43.05-.197-.099-.832-.308-1.584-.984-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.445-1.076-.612-1.47-.16-.38-.323-.319-.445-.319-.114 0-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.711 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                </a>
+                <a href="https://t.me/+79014030785" target="_blank" class="tg">
+                    <svg viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.243 3.306-1.878 3.382-1.904.077-.026.178-.058.246.015.07.072.06.19-.022.34-.176.32-1.173 1.15-1.767 1.706-.15.14-.256.244-.258.27-.006.032.092.063.209.102.341.116.735.273 1.052.451.148.083.264.123.374.114.077-.006.174-.038.267-.14.244-.27 1.03-1.16 1.645-1.874.615-.714.793-1.178.808-1.356.006-.112-.015-.205-.1-.256-.124-.073-.36-.104-.518-.104-.32 0-.898.19-1.139.38z"/></svg>
+                </a>
+                <a href="https://max.ru/u/f9LHodD0cOKOzMr00gjNpvn1TdveNr4o3cTe6syxQuWTj9GVIAcSf0UIpc4" target="_blank" class="max">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                        <path d="M12 6v6l4 2"/>
+                        <circle cx="8" cy="10" r="1.5"/>
+                        <circle cx="16" cy="10" r="1.5"/>
+                    </svg>
+                </a>
+                <a href="https://vk.com/id1125599439" target="_blank" class="vk">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path d="M13.162 18.994c.609-.002 1.057-.346 1.348-.684.216-.251.32-.603.454-.934.32-.792.64-1.583.986-2.365.121-.274.264-.528.448-.77.258-.341.557-.433.934-.346.517.12.934.372 1.353.636.468.297.924.609 1.37.935.624.455 1.253.901 1.886 1.348.506.357 1.035.69 1.573.991.631.355 1.216.195 1.514-.416.228-.468.378-.981.52-1.488.277-1.009.548-2.02.804-3.035.505-2.004.993-4.012 1.463-6.024.102-.44.159-.892.222-1.339.088-.628.038-1.134-.412-1.471-.44-.329-1.053-.362-1.614-.314-.584.051-1.165.148-1.741.268-.927.193-1.849.397-2.772.599-.944.207-1.89.388-2.838.548-.717.122-1.434.24-2.153.347-1.059.157-2.128.307-3.19.467-.34.052-.681.102-1.022.148-.471.064-.93.002-1.373-.157-.388-.138-.785-.244-1.183-.344-.583-.145-1.171-.259-1.762-.343-.484-.069-1.037-.068-1.452.14-.397.199-.518.559-.58.954-.056.36-.081.727-.077 1.096.005.416.002.833.089 1.241.144.67.464 1.243.824 1.798.378.586.878 1.064 1.293 1.612.418.55.78 1.141 1.105 1.758.323.62.585 1.273.798 1.939.159.496.271 1.002.412 1.5.154.543.445 1.132 1.028 1.377.416.174.877.136 1.319.128.516-.009 1.029-.055 1.543-.089.44-.029.882-.039 1.322-.014.063.004.124.015.183.03.684.179 1.031.76 1.259 1.345.226.583.48 1.152.771 1.704.281.535.697.853 1.297.861z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ====== ОСНОВНОЙ КОНТЕНТ ====== -->
+<main>
+
+    <!-- ===== ГЛАВНАЯ ===== -->
+    <div class="page active" id="page-home">
+        <div class="container">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Создаю <span class="highlight">шедевры</span> вышивки<br />
+                        с душой и качеством
+                    </h1>
+                    <div class="hero-badges">
+                        <span class="hero-badge">✅ Трёхуровневый контроль</span>
+                        <span class="hero-badge gold">⏱ Соблюдаю сроки</span>
+                        <span class="hero-badge purple">📄 Работаю официально</span>
+                        <span class="hero-badge pink">🧵 От 1 штуки до опта</span>
+                    </div>
+                    <p class="hero-desc">
+                        <span class="live-emoji">❤️</span> <strong>С любовью</strong> создаю вышивку, которая радует.
+                        От шевронов до премиум-заказов — <span class="glow-text">качество гарантирую</span>.
+                        Бесплатный расчёт за 15 минут.
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary-solid" onclick="openModal('order')">💬 Заказать вышивку</button>
+                        <button class="btn btn-secondary" onclick="navigateTo('portfolio')">Смотреть работы</button>
+                        <button class="btn btn-gold" onclick="openWheel()">🎰 Крутить барабан и выиграть скидку!</button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="stats animate-on-scroll">
+                <div class="stat-item"><span class="stat-number" data-count="120">0</span><span class="stat-label">Довольных клиентов</span></div>
+                <div class="stat-item"><span class="stat-number" data-count="350">0</span><span class="stat-label">Выполненных заказов</span></div>
+                <div class="stat-item"><span class="stat-number" data-count="98">0</span><span class="stat-label">% положительных отзывов</span></div>
+                <div class="stat-item"><span class="stat-number" data-count="12">0</span><span class="stat-label">Лет в индустрии</span></div>
+            </div>
+
+            <h2 class="section-title">Что я создаю</h2>
+            <p class="section-subtitle">От простых шевронов до сложных премиум-заказов</p>
+            <div class="grid-3 animate-on-scroll">
+                <div class="card" onclick="navigateTo('services')" style="cursor:pointer;">
+                    <span class="card-icon">🛡️</span>
+                    <h3 class="card-title">Шевроны и нашивки</h3>
+                    <p class="card-text">Изготовление нашивок на заказ</p>
+                </div>
+                <div class="card" onclick="navigateTo('services')" style="cursor:pointer;">
+                    <span class="card-icon">👕</span>
+                    <h3 class="card-title">Вышивка на одежде</h3>
+                    <p class="card-text">Услуга по вышивке на одежде заказчика</p>
+                </div>
+                <div class="card" onclick="navigateTo('services')" style="cursor:pointer;">
+                    <span class="card-icon">💎</span>
+                    <h3 class="card-title">Премиум заказы</h3>
+                    <p class="card-text">Сложные дизайны, фотореализм на заказ</p>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(236,72,153,0.06)); border-radius: var(--radius-lg); padding: var(--space-2xl) var(--space-lg); text-align: center; margin: var(--space-xl) 0; border: 1px solid rgba(139,92,246,0.08);">
+                <h3 style="font-size:1.6rem; font-weight:700; margin-bottom:var(--space-sm);">🎯 Готовы создать ваш шедевр?</h3>
+                <p style="color:var(--color-text-secondary); max-width:600px; margin:0 auto var(--space-lg);">Оставьте заявку — я сделаю бесплатный расчёт и предложу лучшие варианты</p>
+                <button class="btn btn-gold" onclick="openModal('order')" style="max-width:300px; margin:0 auto;">🔥 Получить расчёт</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== УСЛУГИ ===== -->
+    <div class="page" id="page-services">
+        <div class="container">
+            <h1 class="page-title">Мои <span class="highlight">услуги</span></h1>
+            <p class="page-subtitle">Выберите услугу — от простых нашивок до сложных премиум-заказов</p>
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll" onclick="openModal('order')">
+                    <span class="service-tag basic">БАЗОВЫЙ</span>
+                    <span class="service-icon">🛡️</span>
+                    <h4>Шевроны и нашивки</h4>
+                    <div class="service-price">от 200 ₽ <span>/ шт</span></div>
+                    <p>Изготовление нашивок, шевронов на заказ. Любые формы и размеры.</p>
+                    <ul class="service-features">
+                        <li><span class="check">✅</span> Изготовление на заказ от 1 штуки</li>
+                        <li><span class="check">✅</span> Любые формы и размеры</li>
+                        <li><span class="check">✅</span> Срок до 2 дней</li>
+                        <li><span class="check">✅</span> Работаю на изделиях заказчика</li>
+                    </ul>
+                    <button class="btn btn-sm btn-primary-solid" onclick="event.stopPropagation(); openModal('order')">Заказать услугу</button>
+                </div>
+                <div class="service-card animate-on-scroll" onclick="openModal('order')">
+                    <span class="service-tag medium">ПРОДВИНУТЫЙ</span>
+                    <span class="service-icon">👕</span>
+                    <h4>Вышивка на одежде</h4>
+                    <div class="service-price">от 500 ₽ <span>/ шт</span></div>
+                    <p>Услуга по нанесению вышивки на одежду заказчика.</p>
+                    <ul class="service-features">
+                        <li><span class="check">✅</span> Вышивка на одежде заказчика</li>
+                        <li><span class="check">✅</span> Трёхуровневый контроль качества</li>
+                        <li><span class="check">✅</span> Срок до 3 дней</li>
+                        <li><span class="check">✅</span> Разработка макета в подарок</li>
+                    </ul>
+                    <button class="btn btn-sm btn-primary-solid" onclick="event.stopPropagation(); openModal('order')">Заказать услугу</button>
+                </div>
+                <div class="service-card animate-on-scroll" onclick="openModal('order')">
+                    <span class="service-tag premium">ПРЕМИУМ</span>
+                    <span class="service-icon">💎</span>
+                    <h4>Премиум заказы</h4>
+                    <div class="service-price">от 2000 ₽ <span>/ шт</span></div>
+                    <p>Сложные дизайны, фотореализм, эксклюзивная вышивка на заказ.</p>
+                    <ul class="service-features">
+                        <li><span class="check">✅</span> Фотореалистичная вышивка</li>
+                        <li><span class="check">✅</span> Индивидуальный дизайн</li>
+                        <li><span class="check">✅</span> Элитные материалы и нити</li>
+                        <li><span class="check">✅</span> Приоритетная очередь</li>
+                        <li><span class="check">✅</span> Срочное изготовление</li>
+                    </ul>
+                    <button class="btn btn-sm btn-gold" onclick="event.stopPropagation(); openModal('order')">Заказать услугу</button>
+                </div>
+            </div>
+            <div style="margin-top: var(--space-2xl);">
+                <h2 class="section-title">Почему выбирают меня</h2>
+                <div class="grid-4 animate-on-scroll">
+                    <div class="card" style="text-align:center;"><span class="card-icon">🧵</span><h4 class="card-title">Я в профессии с 2014 года</h4><p class="card-text">и до сих пор люблю своё дело.</p></div>
+                    <div class="card" style="text-align:center;"><span class="card-icon">✅</span><h4 class="card-title">Трёхуровневый контроль</h4><p class="card-text">Качество на всех этапах</p></div>
+                    <div class="card" style="text-align:center;"><span class="card-icon">🚀</span><h4 class="card-title">Любой тираж</h4><p class="card-text">От 1 до 1000+ заказов</p></div>
+                    <div class="card" style="text-align:center;"><span class="card-icon">📄</span><h4 class="card-title">Работаю официально</h4><p class="card-text">С чеками и договорами</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ПРОЦЕСС ===== -->
+    <div class="page" id="page-process">
+        <div class="container">
+            <h1 class="page-title">Как я создаю <span class="highlight">шедевры</span></h1>
+            <p class="page-subtitle">Полный цикл — от вашей идеи до готовой работы</p>
+            <div class="process-timeline">
+                <div class="process-item animate-on-scroll"><div class="process-marker"><div class="marker">1</div></div><div class="process-content"><h4><span class="process-icon">💬</span> Заявка и идея</h4><p>Вы оставляете заявку — я связываюсь с вами в течение 15 минут.</p><span class="time-badge">⏱ 15 минут</span></div></div>
+                <div class="process-item animate-on-scroll"><div class="process-marker"><div class="marker gold">2</div></div><div class="process-content"><h4><span class="process-icon">🎨</span> Разработка дизайна</h4><p>Создаю макет с учётом всех ваших пожеланий. Бесплатные правки.</p><span class="time-badge">⏱ 1-3 дня</span></div></div>
+                <div class="process-item animate-on-scroll"><div class="process-marker"><div class="marker pink">3</div></div><div class="process-content"><h4><span class="process-icon">🔍</span> Входной контроль</h4><p>Проверяю материалы, нити, эскиз — убеждаюсь, что всё идеально.</p><span class="time-badge">✅ Качество</span></div></div>
+                <div class="process-item animate-on-scroll"><div class="process-marker"><div class="marker">4</div></div><div class="process-content"><h4><span class="process-icon">🧵</span> Вышивка</h4><p>Приступаю к работе на современном оборудовании. Каждая строчка — с душой.</p><span class="time-badge">⏱ 1-5 дней</span></div></div>
+                <div class="process-item animate-on-scroll"><div class="process-marker"><div class="marker gold">5</div></div><div class="process-content"><h4><span class="process-icon">🔎</span> Промежуточный контроль</h4><p>Проверяю натяжение, плотность, цвета, соответствие макету.</p><span class="time-badge">✅ Качество</span></div></div>
+                <div class="process-item animate-on-scroll"><div class="process-marker"><div class="marker pink">6</div></div><div class="process-content"><h4><span class="process-icon">✨</span> Финальный контроль</h4><p>Готовую работу проверяю под разным освещением.</p><span class="time-badge">⭐ Идеально</span></div></div>
+                <div class="process-item animate-on-scroll"><div class="process-marker"><div class="marker">7</div></div><div class="process-content"><h4><span class="process-icon">📦</span> Упаковка и доставка</h4><p>Аккуратно упаковываю и отправляю СДЭК, Почтой или Яндекс Доставкой.</p><span class="time-badge">🚚 1-3 дня</span></div></div>
+                <div class="process-item animate-on-scroll"><div class="process-marker"><div class="marker gold">8</div></div><div class="process-content"><h4><span class="process-icon">❤️</span> Вы получаете шедевр!</h4><p>Ваша идея воплощена в жизнь. Если что-то не так — переделаю за свой счёт.</p><span class="time-badge">🏆 100% гарантия</span></div></div>
+            </div>
+            <div style="background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(236,72,153,0.06)); border-radius: var(--radius-lg); padding: var(--space-xl); text-align: center; border: 1px solid rgba(139,92,246,0.08); margin-top: var(--space-xl);">
+                <p style="font-size:1.2rem; font-style:italic; color:var(--color-text-secondary); max-width:700px; margin:0 auto;">«Каждый заказ я контролирую лично. Если результат вас не устроит — <strong style="color:var(--color-primary);">переделаю за свой счёт</strong>. Мне важно, чтобы вы были счастливы.»</p>
+                <p style="margin-top:var(--space-md); font-weight:600; color:var(--color-text);">— Макс, основатель Вышивка Стиль</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== КАЧЕСТВО ===== -->
+    <div class="page" id="page-quality">
+        <div class="container">
+            <h1 class="page-title"><span class="highlight">Трёхуровневый</span> контроль качества</h1>
+            <p class="page-subtitle">Я не просто проверяю — я гарантирую идеальный результат</p>
+            <div class="quality-steps">
+                <div class="quality-step animate-on-scroll"><div class="step-num">1</div><span class="step-icon">📋</span><h4>Входной контроль</h4><p>Проверяю материалы, нити, эскиз до начала работы.</p></div>
+                <div class="quality-step animate-on-scroll"><div class="step-num">2</div><span class="step-icon">🔎</span><h4>Промежуточный контроль</h4><p>Слежу за процессом вышивки: натяжение, плотность, цветовая точность.</p></div>
+                <div class="quality-step animate-on-scroll"><div class="step-num">3</div><span class="step-icon">⭐</span><h4>Финальный контроль</h4><p>Проверяю готовую работу под разным светом. Если есть недочёты — переделываю.</p></div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr; gap:var(--space-md); margin-top:var(--space-xl);">
+                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:var(--space-md);">
+                    <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);"><span style="font-size:2.8rem;display:block;">✅</span><h4 style="font-weight:700;">Гарантия качества</h4><p style="font-size:0.85rem; color:var(--color-text-secondary);">Идеальный результат</p></div>
+                    <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);"><span style="font-size:2.8rem;display:block;">⏱</span><h4 style="font-weight:700;">Гарантия срока</h4><p style="font-size:0.85rem; color:var(--color-text-secondary);">Верну деньги при задержке</p></div>
+                    <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);"><span style="font-size:2.8rem;display:block;">💰</span><h4 style="font-weight:700;">Гарантия цены</h4><p style="font-size:0.85rem; color:var(--color-text-secondary);">Фиксирую стоимость до начала</p></div>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:var(--space-xl);">
+                <button class="btn btn-gold" onclick="openModal('order')" style="max-width:300px; margin:0 auto;">🔥 Заказать с гарантией</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ПОРТФОЛИО ===== -->
+    <div class="page" id="page-portfolio">
+        <div class="container">
+            <h1 class="page-title">Мои <span class="highlight">работы</span></h1>
+            <p class="page-subtitle">Выберите категорию, чтобы посмотреть фото</p>
+            <div class="categories">
+                <div class="category-card" onclick="openCategory('hats')"><span class="icon">🧢</span><h3>Кепки</h3><p>Вышивка на кепках</p><span class="badge">Открыть →</span></div>
+                <div class="category-card" onclick="openCategory('patches')"><span class="icon">🛡️</span><h3>Нашивки</h3><p>Шевроны, патчи, нашивки</p><span class="badge">Открыть →</span></div>
+                <div class="category-card" onclick="openCategory('clothing')"><span class="icon">👕</span><h3>Работа на изделиях заказчика</h3><p>Худи, футболки, куртки</p><span class="badge">Открыть →</span></div>
+            </div>
+            <div id="gallery-hats" class="gallery-grid"></div>
+            <div id="gallery-patches" class="gallery-grid"></div>
+            <div id="gallery-clothing" class="gallery-grid"></div>
+        </div>
+    </div>
+
+    <!-- ===== КАЛЬКУЛЯТОР ===== -->
+    <div class="page" id="page-calculator">
+        <div class="container">
+            <h1 class="page-title"><span class="highlight">Калькулятор</span> стоимости услуги</h1>
+            <p class="page-subtitle">Выберите параметры — стоимость рассчитается автоматически</p>
+            <div class="calculator-wrap">
+                <h3>📋 Параметры заказа</h3>
+                <p class="calc-subtitle">Измените любой параметр — цена пересчитается мгновенно</p>
+                <div class="calc-grid">
+                    <div>
+                        <div class="calc-group"><label>👕 Тип изделия</label>
+                            <select id="calcProduct">
+                                <option value="Футболка">Футболка</option>
+                                <option value="Худи / Свитшот" selected>Худи / Свитшот</option>
+                                <option value="Кепка">Кепка</option>
+                                <option value="Куртка">Куртка</option>
+                                <option value="Сумка / Рюкзак">Сумка / Рюкзак</option>
+                                <option value="Другое">Другое</option>
+                            </select>
+                        </div>
+                        <div class="calc-group"><label>📦 Количество</label>
+                            <select id="calcQuantity">
+                                <option value="1">1 шт</option><option value="2">2 шт</option><option value="3">3 шт</option>
+                                <option value="5">5 шт</option><option value="10" selected>10 шт</option>
+                                <option value="20">20 шт</option><option value="50">50 шт</option><option value="100">100+ шт</option>
+                            </select>
+                        </div>
+                        <div class="calc-group"><label>🎨 Сложность вышивки</label>
+                            <select id="calcComplexity">
+                                <option value="simple">Простая (текст, логотип)</option>
+                                <option value="medium" selected>Средняя (рисунок, градиент)</option>
+                                <option value="complex">Сложная (фотореализм, детали)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="calc-result-box" id="calcResultBox">
+                        <div class="result-placeholder" id="calcPlaceholder">
+                            <span class="big-icon">🧵</span>
+                            <p style="font-size:1.1rem;font-weight:600;color:var(--color-text);">Выберите параметры</p>
+                            <p style="font-size:0.85rem;color:var(--color-text-secondary);">Стоимость пересчитается автоматически</p>
+                        </div>
+                        <div class="result-content" id="calcResultContent">
+                            <div class="result-price" id="calcResultPrice">0 ₽</div>
+                            <div class="result-label">ориентировочная стоимость услуги</div>
+                            <div class="result-details" id="calcResultDetails">
+                                <div>👕 <span id="calcResultProduct">Худи</span></div>
+                                <div>📦 <span id="calcResultQty">10</span> шт</div>
+                                <div>🎨 <span id="calcResultComplex">Средняя</span></div>
+                            </div>
+                            <button class="btn btn-sm btn-gold" onclick="openModal('order')" style="max-width:100%; margin-top:var(--space-md);">🚀 Заказать услугу</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:var(--space-md); margin-top:var(--space-xl);">
+                <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-sm); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);"><span style="font-size:2rem;display:block;">⚡</span><p style="font-size:0.85rem; color:var(--color-text-secondary);">Мгновенный расчёт</p></div>
+                <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-sm); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);"><span style="font-size:2rem;display:block;">🎯</span><p style="font-size:0.85rem; color:var(--color-text-secondary);">Точность до копейки</p></div>
+                <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-sm); padding:var(--space-lg); text-align:center; border:1px solid rgba(255,255,255,0.3);"><span style="font-size:2rem;display:block;">📊</span><p style="font-size:0.85rem; color:var(--color-text-secondary);">С учётом всех параметров</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ОТЗЫВЫ ===== -->
+    <div class="page" id="page-reviews">
+        <div class="container">
+            <h1 class="page-title">Отзывы <span class="highlight">моих клиентов</span></h1>
+            <p class="page-subtitle">Реальные отзывы людей, которые уже заказали услуги вышивки</p>
+
+            <div class="review-empty animate-on-scroll">
+                <span class="empty-icon">📝</span>
+                <h3>Пока нет отзывов</h3>
+                <p>Будьте первым, кто оставит отзыв! Расскажите о своём опыте.</p>
+            </div>
+
+            <div class="review-form-container animate-on-scroll">
+                <h3>✍️ Оставьте свой отзыв</h3>
+                <p class="form-subtitle">Расскажите о своём опыте — после модерации он появится на сайте</p>
+                <form id="reviewForm">
+                    <input type="hidden" name="_csrf" id="reviewCsrf" />
+                    <div class="form-group"><label for="reviewName">Ваше имя</label><input type="text" id="reviewName" placeholder="Например: Александр" required /></div>
+                    <div class="form-group"><label for="reviewRating">Оценка</label>
+                        <select id="reviewRating" required>
+                            <option value="5">⭐⭐⭐⭐⭐ — Отлично</option>
+                            <option value="4">⭐⭐⭐⭐ — Хорошо</option>
+                            <option value="3">⭐⭐⭐ — Средне</option>
+                            <option value="2">⭐⭐ — Плохо</option>
+                            <option value="1">⭐ — Ужасно</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label for="reviewText">Ваш отзыв (до 1000 символов)</label>
+                        <textarea id="reviewText" placeholder="Что вам понравилось? Как прошёл заказ?" rows="4" maxlength="1000" required></textarea>
+                        <div style="font-size:0.7rem;color:var(--color-text-secondary);text-align:right;" id="reviewCounter">0 / 1000</div>
+                    </div>
+
+                    <div class="form-file-group">
+                        <label>📸 Прикрепите фото (необязательно, до 5 шт)</label>
+                        <input type="file" id="reviewPhoto" accept="image/*" multiple />
+                        <div class="file-hint">Поддерживаются JPG, PNG, WEBP. Максимальный размер каждого файла — 5 МБ.</div>
+                        <div class="file-preview" id="filePreview"></div>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="reviewConsent" required />
+                        <label for="reviewConsent">Я даю согласие на обработку персональных данных. <a href="#" onclick="navigateTo('legal'); return false;">Подробнее</a></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary-solid btn-block">Отправить на модерацию</button>
+                </form>
+                <div class="success-message" id="reviewSuccess"><span class="check">✅</span><h3>Спасибо за отзыв!</h3><p>Он отправлен на модерацию и скоро появится на сайте</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== БЛОГ ===== -->
+    <div class="page" id="page-blog">
+        <div class="container">
+            <h1 class="page-title">Блог о <span class="highlight">вышивке</span></h1>
+            <p class="page-subtitle">Полезные статьи, советы и вдохновение для ваших проектов</p>
+
+            <div class="blog-full-article active" id="blogArticle1">
+                <div class="blog-article-wrapper">
+                    <div class="blog-article-header"><span class="blog-article-date">15 августа 2026</span><span class="blog-article-category">Обзор</span></div>
+                    <h2 class="blog-article-title">Вышивка на одежде: преимущества и недостатки машинной вышивки</h2>
+                    <div class="blog-article-body">
+                        <p>Вышивка — это особый метод нанесения изображений на ткань, который стоит особняком от всех видов печати. В то время как краски со временем могут выцветать или трескаться, вышивка остаётся неизменной на протяжении десятилетий.</p>
+                        <p>Однако у этого благородного метода есть свои технологические нюансы. В этой статье я подробно разберу, как делается машинная вышивка, а также взвешу все её плюсы и минусы.</p>
+                        <h4>Как это работает?</h4>
+                        <p>Современная машинная вышивка — это компьютеризированный процесс. Дизайн загружается в программу, где переводится в машинный код (оцифровывается).</p>
+                        <h4>Преимущества вышивки</h4>
+                        <ul>
+                            <li><strong>Презентабельный и премиальный внешний вид.</strong> Вышивка выглядит дорого и солидно.</li>
+                            <li><strong>Абсолютная долговечность и износостойкость.</strong> Вышивку невозможно стереть, как краску.</li>
+                            <li><strong>Универсальность по материалам.</strong> Вышивка ложится на любые типы тканей.</li>
+                            <li><strong>Возможность создания объёма и фактуры.</strong> Используя разные техники.</li>
+                            <li><strong>Защита от подделок.</strong> Сложный дизайн трудно скопировать.</li>
+                            <li><strong>Экологичность и безопасность.</strong> Используются только нити.</li>
+                        </ul>
+                        <h4>Недостатки вышивки</h4>
+                        <ul>
+                            <li><strong>Высокая стоимость подготовки (малые тиражи).</strong> Экономически оправдана от 10–20 единиц.</li>
+                            <li><strong>Ограничения по детализации.</strong> Мелкий текст (кегль меньше 5–7 мм) нечитаем.</li>
+                            <li><strong>Толщина и вес.</strong> Вышивка утяжеляет ткань.</li>
+                            <li><strong>Длительность производства.</strong> Один сложный логотип вышивается 5–15 минут.</li>
+                        </ul>
+                        <h4>Итог</h4>
+                        <p><strong>Идеально подходит для:</strong> корпоративной формы, бейсболок, верхней одежды.</p>
+                        <p><strong>Не подходит, если:</strong> нужна всего одна футболка с мелким логотипом.</p>
+                    </div>
+                    <div class="blog-article-cta">
+                        <p class="cta-text">Хотите солидный и вечный логотип?</p>
+                        <p class="cta-subtext">Закажите профессиональную машинную вышивку. Работаю с любыми типами тканей.</p>
+                        <button class="btn btn-gold" onclick="openModal('order')">Получить расчёт</button>
+                    </div>
+                    <div class="blog-article-tags">
+                        <span class="blog-tag">#вышивка</span>
+                        <span class="blog-tag gold">#машинная_вышивка</span>
+                        <span class="blog-tag pink">#брендирование</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-full-article" id="blogArticle2">
+                <div class="blog-article-wrapper">
+                    <div class="blog-article-header"><span class="blog-article-date">12 августа 2026</span><span class="blog-article-category">Материалы</span></div>
+                    <h2 class="blog-article-title">Как выбрать нити для вышивки</h2>
+                    <div class="blog-article-body">
+                        <p>Выбор нитей для вышивания зависит от техники рукоделия, ткани и желаемого эффекта.</p>
+                        <p><strong>Хлопковое мулине</strong> — самый популярный выбор для ручной вышивки. Даёт матовый блеск, выдерживает много стирок.</p>
+                        <p><strong>Вискозные нити</strong> — для глянцевого блеска. Мягкие, пластичные, идеальны для машинной вышивки.</p>
+                        <p><strong>Полиэстеровые нити</strong> — лидер по прочности. Не выгорают, не садятся при стирке.</p>
+                        <p><strong>Шерстяные нити</strong> — для объёмного эффекта. Требуют бережного ухода.</p>
+                        <p><strong>Для машинной вышивки</strong> я рекомендую специализированные нити Madeira, Gütermann, Robison-Anton.</p>
+                    </div>
+                    <div class="blog-article-tip"><p>💡 <strong>Совет:</strong> Для логотипов я рекомендую полиэстер — он самый надёжный.</p></div>
+                    <div class="blog-article-tags">
+                        <span class="blog-tag">#нити</span>
+                        <span class="blog-tag gold">#материалы</span>
+                        <span class="blog-tag pink">#советы</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-full-article" id="blogArticle3">
+                <div class="blog-article-wrapper">
+                    <div class="blog-article-header"><span class="blog-article-date">8 августа 2026</span><span class="blog-article-category">Материалы</span></div>
+                    <h2 class="blog-article-title">На чём лучше вышивать: выбор ткани</h2>
+                    <div class="blog-article-body">
+                        <p>Успех вышивки на 50% зависит от правильного выбора ткани.</p>
+                        <p><strong>Плотные ткани (хлопок, лён, джинса)</strong> — идеальный выбор. Хорошо держат форму.</p>
+                        <p><strong>Тонкий трикотаж</strong> — требует стабилизатора. Выбирайте простые дизайны.</p>
+                        <p><strong>Эластичные ткани (стрейч)</strong> — сложны для вышивки, требуют специальных стабилизаторов.</p>
+                        <p><strong>Тонкие ткани (шёлк, шифон)</strong> — только лёгкая, разреженная вышивка.</p>
+                        <p><strong>Кожа и замша</strong> — премиальный материал, требует специальных игл.</p>
+                    </div>
+                    <div class="blog-article-tip"><p>💡 <strong>Совет:</strong> Присылайте фото ткани — я подберу правильный стабилизатор.</p></div>
+                    <div class="blog-article-tags">
+                        <span class="blog-tag">#ткани</span>
+                        <span class="blog-tag gold">#материалы</span>
+                        <span class="blog-tag pink">#советы</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-full-article" id="blogArticle4">
+                <div class="blog-article-wrapper">
+                    <div class="blog-article-header"><span class="blog-article-date">1 августа 2026</span><span class="blog-article-category">Дизайн</span></div>
+                    <h2 class="blog-article-title">Как подготовить макет для вышивки</h2>
+                    <div class="blog-article-body">
+                        <p>Правильная подготовка макета — залог качественной вышивки.</p>
+                        <p><strong>1. Используйте векторные форматы</strong> — AI, EPS, CDR, PDF.</p>
+                        <p><strong>2. Избегайте мелких деталей</strong> — минимальный размер текста 5–7 мм.</p>
+                        <p><strong>3. Ограничьте количество цветов</strong> — 2–4 цвета для логотипов.</p>
+                        <p><strong>4. Избегайте градиентов</strong> — в вышивке их нет.</p>
+                        <p><strong>5. Учитывайте направление нитей</strong> — влияет на читаемость.</p>
+                    </div>
+                    <div class="blog-article-tip"><p>💡 <strong>Совет:</strong> Пришлите макет — я проверю и предложу оптимальное решение.</p></div>
+                    <div class="blog-article-tags">
+                        <span class="blog-tag">#дизайн</span>
+                        <span class="blog-tag gold">#макет</span>
+                        <span class="blog-tag pink">#советы</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-full-article" id="blogArticle5">
+                <div class="blog-article-wrapper">
+                    <div class="blog-article-header"><span class="blog-article-date">25 июля 2026</span><span class="blog-article-category">Цены</span></div>
+                    <h2 class="blog-article-title">Сколько стоит вышивка: полный разбор цен</h2>
+                    <div class="blog-article-body">
+                        <p><strong>1. Оцифровка макета</strong> — от 500 до 3000 ₽ (разовый платёж).</p>
+                        <p><strong>2. Стоимость вышивки за единицу</strong> — от 200 ₽ (простые нашивки) до 2000 ₽ (премиум).</p>
+                        <p><strong>3. Скидки за объём</strong> — от 10 штук скидка 10–20%.</p>
+                        <p><strong>4. Дополнительные расходы</strong> — только вышивка, если вы приносите свою одежду.</p>
+                        <p><strong>5. Пример расчёта</strong> — 10 футболок с логотипом: оцифровка 1000 ₽ + 10 × 500 ₽ -20% = 4800 ₽.</p>
+                    </div>
+                    <div class="blog-article-tip"><p>💡 <strong>Совет:</strong> На сайте есть калькулятор — получите цену за 30 секунд.</p></div>
+                    <div class="blog-article-tags">
+                        <span class="blog-tag">#цены</span>
+                        <span class="blog-tag gold">#экономия</span>
+                        <span class="blog-tag pink">#советы</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-full-article" id="blogArticle6">
+                <div class="blog-article-wrapper">
+                    <div class="blog-article-header"><span class="blog-article-date">18 июля 2026</span><span class="blog-article-category">История</span></div>
+                    <h2 class="blog-article-title">Шевроны и нашивки: история и применение</h2>
+                    <div class="blog-article-body">
+                        <p>Шевроны и нашивки — мощный инструмент идентификации и брендинга.</p>
+                        <p><strong>История</strong> — изначально использовались в военной форме для обозначения звания.</p>
+                        <p><strong>Современное применение:</strong></p>
+                        <ul>
+                            <li>Корпоративный брендинг</li>
+                            <li>Спортивные клубы и команды</li>
+                            <li>Мероприятия и фестивали</li>
+                            <li>Кастомизация одежды</li>
+                        </ul>
+                        <p><strong>Какие бывают нашивки</strong> — вышитые, тканые, термонаклейки.</p>
+                        <p><strong>Как заказать</strong> — минимальный заказ от 1 штуки. Срок до 2 дней.</p>
+                    </div>
+                    <div class="blog-article-tip"><p>💡 <strong>Совет:</strong> Хотите уникальные нашивки? Напишите мне — я помогу!</p></div>
+                    <div class="blog-article-tags">
+                        <span class="blog-tag">#история</span>
+                        <span class="blog-tag gold">#шевроны</span>
+                        <span class="blog-tag pink">#нашивки</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-full-article" id="blogArticle7">
+                <div class="blog-article-wrapper">
+                    <div class="blog-article-header"><span class="blog-article-date">10 июля 2026</span><span class="blog-article-category">Уход</span></div>
+                    <h2 class="blog-article-title">Как ухаживать за вышивкой: 5 правил</h2>
+                    <div class="blog-article-body">
+                        <p><strong>1. Стирайте вывернув наизнанку</strong> — защищает нити от трения.</p>
+                        <p><strong>2. Используйте деликатный режим стирки</strong> — 30–40°C, без сильного отжима.</p>
+                        <p><strong>3. Не используйте отбеливатели</strong> — разрушают структуру нитей.</p>
+                        <p><strong>4. Гладьте с изнаночной стороны</strong> — сохраняет объём и фактуру.</p>
+                        <p><strong>5. Храните в сухом месте</strong> — вышивка не любит влажность.</p>
+                    </div>
+                    <div class="blog-article-tip"><p>💡 <strong>Совет:</strong> Сомневаетесь в режиме стирки? Напишите мне — подскажу!</p></div>
+                    <div class="blog-article-tags">
+                        <span class="blog-tag">#уход</span>
+                        <span class="blog-tag gold">#советы</span>
+                        <span class="blog-tag pink">#долговечность</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-grid">
+                <div class="blog-card animate-on-scroll" onclick="openBlogArticle('blogArticle1')">
+                    <span class="blog-date">15 августа 2026</span>
+                    <span class="blog-icon">#</span>
+                    <h4>Вышивка на одежде: преимущества и недостатки</h4>
+                    <p>Разбираем, почему вышивка считается премиальным методом нанесения.</p>
+                    <span class="blog-tag">#советы</span>
+                    <span class="blog-read-more">Читать статью</span>
+                </div>
+                <div class="blog-card animate-on-scroll" onclick="openBlogArticle('blogArticle2')">
+                    <span class="blog-date">12 августа 2026</span>
+                    <span class="blog-icon">#</span>
+                    <h4>Как выбрать нити для вышивки</h4>
+                    <p>Разбираемся в типах нитей: полиэстер, вискоза, хлопок.</p>
+                    <span class="blog-tag">#советы</span>
+                    <span class="blog-read-more">Читать статью</span>
+                </div>
+                <div class="blog-card animate-on-scroll" onclick="openBlogArticle('blogArticle3')">
+                    <span class="blog-date">8 августа 2026</span>
+                    <span class="blog-icon">#</span>
+                    <h4>На чём лучше вышивать: выбор ткани</h4>
+                    <p>Сравнение плотности, эластичности и рекомендации по тканям.</p>
+                    <span class="blog-tag">#материалы</span>
+                    <span class="blog-read-more">Читать статью</span>
+                </div>
+                <div class="blog-card animate-on-scroll" onclick="openBlogArticle('blogArticle4')">
+                    <span class="blog-date">1 августа 2026</span>
+                    <span class="blog-icon">#</span>
+                    <h4>Как подготовить макет для вышивки</h4>
+                    <p>Пошаговое руководство: от идеи до готового файла для станка.</p>
+                    <span class="blog-tag">#дизайн</span>
+                    <span class="blog-read-more">Читать статью</span>
+                </div>
+                <div class="blog-card animate-on-scroll" onclick="openBlogArticle('blogArticle5')">
+                    <span class="blog-date">25 июля 2026</span>
+                    <span class="blog-icon">#</span>
+                    <h4>Сколько стоит вышивка: полный разбор цен</h4>
+                    <p>Разбираю, из чего складывается цена: сложность, тираж, размер.</p>
+                    <span class="blog-tag">#цены</span>
+                    <span class="blog-read-more">Читать статью</span>
+                </div>
+                <div class="blog-card animate-on-scroll" onclick="openBlogArticle('blogArticle6')">
+                    <span class="blog-date">18 июля 2026</span>
+                    <span class="blog-icon">#</span>
+                    <h4>Шевроны и нашивки: история и применение</h4>
+                    <p>От древних времён до современного брендинга.</p>
+                    <span class="blog-tag">#история</span>
+                    <span class="blog-read-more">Читать статью</span>
+                </div>
+                <div class="blog-card animate-on-scroll" onclick="openBlogArticle('blogArticle7')">
+                    <span class="blog-date">10 июля 2026</span>
+                    <span class="blog-icon">#</span>
+                    <h4>Как ухаживать за вышивкой: 5 правил</h4>
+                    <p>Как стирать, гладить и хранить вещи с вышивкой.</p>
+                    <span class="blog-tag">#уход</span>
+                    <span class="blog-read-more">Читать статью</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== КОНТАКТЫ ===== -->
+    <div class="page" id="page-contacts">
+        <div class="container">
+            <h1 class="page-title">Контакты</h1>
+            <p class="page-subtitle">Свяжитесь со мной любым удобным способом — отвечу в течение 15 минут</p>
+            <div class="contacts-grid">
+                <div>
+                    <ul class="contacts-list">
+                        <li><strong>Телефон</strong> <a href="tel:+79014030785">+7 (901) 403-07-85</a></li>
+                        <li><strong>Email</strong> <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a></li>
+                        <li><strong>Режим работы</strong> Пн–Пт, 9:00 – 18:00</li>
+                        <li><strong>Адрес</strong> Москва, ул. Исаковского, д. 20</li>
+                        <li style="border-bottom: none;"><strong>Связаться со мной</strong>
+                            <div class="messenger-links">
+                                <a href="https://wa.me/79014030785" target="_blank" class="btn-wa">WhatsApp</a>
+                                <a href="https://t.me/+79014030785" target="_blank" class="btn-tg">Telegram</a>
+                                <a href="https://www.instagram.com/fancywork008/" target="_blank" class="btn-ig">Instagram</a>
+                                <a href="https://max.ru/u/f9LHodD0cOKOzMr00gjNpvn1TdveNr4o3cTe6syxQuWTj9GVIAcSf0UIpc4" target="_blank" class="btn-max">MAX</a>
+                                <a href="https://vk.com/id1125599439" target="_blank" class="btn-vk">VK</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="btn btn-gold" onclick="openModal('order')" style="max-width:100%; margin-top:var(--space-md);">Оставить заявку</button>
+                </div>
+                <div>
+                    <div class="map-container">
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d&amp;source=constructor&amp;text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" allowfullscreen></iframe>
+                    </div>
+                    <p style="font-size: 0.7rem; color: var(--color-text-secondary); margin-top: 4px; text-align: right;"><a href="https://yandex.ru/maps/?text=Москва%2C%20ул.%20Исаковского%2C%20д.%2020" target="_blank" style="color: var(--color-text-secondary);">Открыть в Яндекс.Картах →</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ЮРИДИЧЕСКАЯ ===== -->
+    <div class="page" id="page-legal">
+        <div class="container">
+            <h1 class="page-title">Юридическая информация</h1>
+            <p class="page-subtitle">Всё по закону — работаю официально как самозанятый с чеками</p>
+            <div style="background: linear-gradient(135deg, rgba(52,199,89,0.06), rgba(139,92,246,0.06)); border-radius: var(--radius-lg); padding: var(--space-xl); margin-bottom: var(--space-xl); border: 1px solid rgba(52,199,89,0.1);">
+                <div style="display:flex; align-items:center; gap:var(--space-md); flex-wrap:wrap;">
+                    <span style="font-size:3rem;">🧾</span>
+                    <div><h3 style="font-weight:700; color:var(--color-text);">Работаю официально — с чеком и договором</h3>
+                    <p style="color:var(--color-text-secondary); margin:0;">💳 Я оказываю <strong>услуги по вышивке</strong> на изделиях заказчика. После оплаты вы получаете официальный чек из приложения <strong>«Мой налог»</strong> (ФНС). Для юрлиц и ИП заключаю договор ГПХ и выставляю счёт.</p></div>
+                </div>
+            </div>
+            <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-xl); border:1px solid rgba(255,255,255,0.3); margin-bottom:var(--space-lg);">
+                <h2 style="font-size:1.3rem; font-weight:700; color:var(--color-primary); margin-bottom:var(--space-md);">1. Политика конфиденциальности</h2>
+                <p style="color:var(--color-text-secondary);">Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта <strong style="color:var(--color-text);">Вышивка Стиль</strong>.</p>
+                <h4 style="font-weight:600; margin-top:var(--space-md); color:var(--color-text);">1.1. Какие данные я собираю</h4>
+                <p style="color:var(--color-text-secondary);">При заполнении форм на Сайте я собираю: <strong style="color:var(--color-text);">имя, номер телефона и текст сообщения/отзыва</strong>.</p>
+                <h4 style="font-weight:600; margin-top:var(--space-md); color:var(--color-text);">1.2. Цели обработки данных</h4>
+                <p style="color:var(--color-text-secondary);">Ваши данные используются исключительно для связи с вами, уточнения деталей заказа, информирования о статусе выполнения заказа и публикации отзывов (с вашего согласия).</p>
+                <h4 style="font-weight:600; margin-top:var(--space-md); color:var(--color-text);">1.3. Передача данных третьим лицам</h4>
+                <p style="color:var(--color-text-secondary);">Я <strong style="color:var(--color-text);">не передаю</strong> ваши персональные данные третьим лицам.</p>
+                <h4 style="font-weight:600; margin-top:var(--space-md); color:var(--color-text);">1.4. Срок хранения данных</h4>
+                <p style="color:var(--color-text-secondary);">Ваши персональные данные хранятся <strong style="color:var(--color-text);">3 года</strong> с момента последней коммуникации.</p>
+                <h4 style="font-weight:600; margin-top:var(--space-md); color:var(--color-text);">1.5. Ваши права</h4>
+                <p style="color:var(--color-text-secondary);">Вы имеете право требовать удаления ваших данных из моей системы, написав мне на email: <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a>.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-xl); border:1px solid rgba(255,255,255,0.3); margin-bottom:var(--space-lg);">
+                <h2 style="font-size:1.3rem; font-weight:700; color:var(--color-primary); margin-bottom:var(--space-md);">2. Пользовательское соглашение</h2>
+                <p style="color:var(--color-text-secondary);">Используя Сайт, вы соглашаетесь с условиями настоящего Соглашения. Все материалы Сайта защищены законодательством РФ. Копирование без согласия правообладателя запрещено.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-xl); border:1px solid rgba(255,255,255,0.3); margin-bottom:var(--space-lg);">
+                <h2 style="font-size:1.3rem; font-weight:700; color:var(--color-primary); margin-bottom:var(--space-md);">3. Согласие на обработку персональных данных</h2>
+                <p style="color:var(--color-text-secondary);">Отправляя форму на Сайте, вы даёте своё <strong style="color:var(--color-text);">согласие на обработку персональных данных</strong> в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</p>
+                <p style="color:var(--color-text-secondary); margin-top:var(--space-sm);">Вы можете отозвать согласие, направив уведомление на email: <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a>.</p>
+                <p style="color:var(--color-text-secondary); margin-top:var(--space-sm); font-size:0.9rem;"><strong>Важно:</strong> отказ от согласия не препятствует обработке данных, необходимых для исполнения договора (п. 5 ч. 1 ст. 6 152-ФЗ).</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.5); backdrop-filter:var(--blur-bg); border-radius:var(--radius-md); padding:var(--space-xl); border:1px solid rgba(255,255,255,0.3);">
+                <h2 style="font-size:1.3rem; font-weight:700; color:var(--color-primary); margin-bottom:var(--space-md);">4. Реквизиты самозанятого</h2>
+                <ul style="color:var(--color-text-secondary); padding-left:var(--space-lg);">
+                    <li><strong style="color:var(--color-text);">Статус:</strong> Самозанятый (плательщик налога на профессиональный доход)</li>
+                    <li><strong style="color:var(--color-text);">ФИО:</strong> Ёлдашев Максим Джорагелдиевич</li>
+                    <li><strong style="color:var(--color-text);">ИНН:</strong> 130100811452</li>
+                    <li><strong style="color:var(--color-text);">Налоговый режим:</strong> Налог на профессиональный доход (НПД)</li>
+                    <li><strong style="color:var(--color-text);">Телефон:</strong> <a href="tel:+79014030785">+7 (901) 403-07-85</a></li>
+                    <li><strong style="color:var(--color-text);">Email:</strong> <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a></li>
+                </ul>
+                <p style="color:var(--color-text-secondary); margin-top:var(--space-md); font-size:0.85rem;">Дата публикации: 15 августа 2026 г.</p>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!-- ====== ПОДВАЛ ====== -->
+<footer class="footer">
+    <div class="container">
+        <p style="font-weight:700; color:var(--color-text); font-size:1.1rem;">✦ Вышивка Стиль</p>
+        <div class="footer-divider"></div>
+        <div class="footer-nav">
+            <a onclick="navigateTo('home')">Главная</a>
+            <a onclick="navigateTo('services')">Услуги</a>
+            <a onclick="navigateTo('process')">Процесс</a>
+            <a onclick="navigateTo('quality')">Качество</a>
+            <a onclick="navigateTo('portfolio')">Портфолио</a>
+            <a onclick="navigateTo('calculator')">Калькулятор</a>
+            <a onclick="navigateTo('reviews')">Отзывы</a>
+            <a onclick="navigateTo('blog')">Блог</a>
+            <a onclick="navigateTo('contacts')">Контакты</a>
+            <a onclick="navigateTo('legal')">Юридическая</a>
+        </div>
+        <div class="footer-legal">
+            <a href="#" onclick="navigateTo('legal'); return false;">Политика конфиденциальности</a>
+            <a href="#" onclick="navigateTo('legal'); return false;">Пользовательское соглашение</a>
+            <a href="#" onclick="navigateTo('legal'); return false;">Согласие на обработку</a>
+        </div>
+        <p>© 2026 Вышивка Стиль. Все права защищены.</p>
+        <p style="font-size:0.8rem; opacity:0.7; margin-top:4px;"><a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a> · <a href="tel:+79014030785">+7 (901) 403-07-85</a></p>
+        <p class="footer-req">Самозанятый Ёлдашев Максим Джорагелдиевич · ИНН 130100811452</p>
+    </div>
+</footer>
+
+<!-- ====== КНОПКА НАВЕРХ ====== -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ====== ВСПЛЫВАЮЩИЕ ОКНА ====== -->
+
+<!-- ФОРМА ЗАЯВКИ -->
+<div class="modal-overlay" id="orderModal">
+    <div class="modal">
+        <button class="modal-close" onclick="closeModal('orderModal')">✕</button>
+        <h2 class="modal-title">📩 Заказать услугу вышивки</h2>
+        <p class="modal-subtitle">Оставьте телефон и описание — я свяжусь с вами в течение 15 минут</p>
+        <form id="orderForm">
+            <input type="hidden" name="_csrf" id="orderCsrf" />
+            <div class="form-group"><label for="orderPhone">📱 Номер телефона</label><input type="tel" id="orderPhone" placeholder="+7 (___) ___-__-__" required /></div>
+            <div class="form-group"><label for="orderMessage">✏️ Что нужно сделать?</label><textarea id="orderMessage" placeholder="Например: логотип на футболку, 10 шт." rows="3" required></textarea></div>
+            <div class="form-group"><label for="orderType">📂 Тип услуги</label>
+                <select id="orderType">
+                    <option value="Шевроны / нашивки">Шевроны / нашивки</option>
+                    <option value="Вышивка на одежде" selected>Вышивка на одежде</option>
+                    <option value="Премиум заказ">Премиум заказ</option>
+                    <option value="Другое">Другое</option>
+                </select>
+            </div>
+            <div class="form-checkbox">
+                <input type="checkbox" id="orderConsent" required />
+                <label for="orderConsent">Я даю согласие на обработку персональных данных. <strong>Без согласия заявка не будет отправлена.</strong> <a href="#" onclick="navigateTo('legal'); return false;">Подробнее</a></label>
+            </div>
+            <button type="submit" class="btn btn-primary-solid" style="width:100%;">🚀 Отправить заявку</button>
+        </form>
+        <div class="success-message" id="orderSuccess"><span class="check">✅</span><h3>Заявка отправлена!</h3><p>Я свяжусь с вами в ближайшее время</p></div>
+    </div>
+</div>
+
+<!-- БАРАБАН -->
+<div class="wheel-overlay" id="wheelOverlay">
+    <div class="wheel-content">
+        <!-- Крестик закрытия сверху -->
+        <button class="modal-close" onclick="closeWheel()" style="position:absolute;top:12px;right:16px;font-size:1.6rem;color:var(--color-text-secondary);background:none;border:none;cursor:pointer;z-index:10;">✕</button>
+        
+        <h2 style="margin-top: 8px; font-size: 1.3rem;">🎰 Крути барабан!</h2>
+        <p style="font-size: 0.9rem; margin-bottom: 8px;">Выиграй скидку или бонус к заказу <span class="live-emoji">🔥</span></p>
+        
+        <!-- Блок с попытками (JS будет менять текст внутри) -->
+        <div class="wheel-attempts" id="wheelAttempts" style="margin-bottom: 12px; font-size: 0.9rem;">🎯 У вас <span class="remaining">1</span> попытка</div>
+        
+        <!-- Сам барабан (остается в том же размере) -->
+        <div class="wheel-spin" id="wheelSpin"><div class="center"></div></div>
+        
+        <!-- Текст результата -->
+        <div class="wheel-result" id="wheelResult" style="min-height: 40px; margin: 12px 0 10px;">Нажми кнопку, чтобы крутить</div>
+        
+        <!-- Кнопка крутить -->
+        <button class="btn-wheel" id="wheelBtn">🌀 Крутить!</button>
+        
+        <!-- История (компактная) -->
+        <div class="wheel-history" id="wheelHistory" style="margin-top: 12px; max-height: 80px;">
+            <div style="color:var(--color-text-secondary);font-size:0.75rem;text-align:center;">История розыгрышей пуста</div>
+        </div>
+        
+        <!-- Кнопка "Закрыть" внизу (сделана минималистичной) -->
+        <button class="btn-wheel" style="background:transparent;color:var(--color-text-secondary);box-shadow:none;margin-top:var(--space-sm);padding: 6px 16px; font-size: 0.8rem;" onclick="closeWheel()">✕ Закрыть</button>
+    </div>
+</div>
+
+<!-- КОНФЕТТИ -->
+<div class="confetti-container" id="confettiContainer"></div>
+
+<!-- ЛАЙТБОКС -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightboxImage" src="" alt="Увеличенное фото" />
+</div>
+
+<!-- ====== СКРИПТЫ ====== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    // ============================================================
+    // НАСТРОЙКИ
+    // ============================================================
+    var WORKER_URL = 'https://solitary-star-55d0.imaklain.workers.dev';
+
+    // ============================================================
+    // CSRF (защита от подделки запросов)
+    // ============================================================
+    function generateCSRFToken() {
+        var token = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        sessionStorage.setItem('csrfToken', token);
+        return token;
+    }
+
+    function addCSRFTokenToForms() {
+        var tokenInputs = document.querySelectorAll('input[name="_csrf"]');
+        var token = generateCSRFToken();
+        tokenInputs.forEach(function(input) {
+            input.value = token;
+        });
+    }
+
+    // ============================================================
+    // ЗАЩИТА ОТ XSS (внедрение вредоносного кода)
+    // ============================================================
+    /**
+     * Очистка ввода от HTML-тегов и опасных символов
+     * @param {string} text - текст для очистки
+     * @returns {string} - очищенный текст
+     */
+    function sanitizeInput(text) {
+        if (!text) return '';
+        var sanitized = text.replace(/<[^>]*>/g, '');
+        sanitized = sanitized.replace(/[`*_{}[\]()#+\-.!]/g, '');
+        if (sanitized.length > 1000) {
+            sanitized = sanitized.substring(0, 1000) + '...';
+        }
+        return sanitized;
+    }
+
+    /**
+     * Экранирование Markdown-символов для Telegram
+     * @param {string} text - текст для экранирования
+     * @returns {string} - экранированный текст
+     */
+    function escapeMarkdown(text) {
+        if (!text) return '';
+        var specialChars = ['_', '*', '[', ']', '(', ')', '~', '`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!'];
+        var escaped = text;
+        specialChars.forEach(function(char) {
+            escaped = escaped.replace(new RegExp('\\' + char, 'g'), '\\' + char);
+        });
+        return escaped;
+    }
+
+    // ============================================================
+    // ЗАЩИТА ОТ СПАМА (ограничение частоты отправки)
+    // ============================================================
+    var lastSubmitTime = 0;
+    var MIN_SUBMIT_INTERVAL = 5000;
+
+    function canSubmit() {
+        var now = Date.now();
+        if (now - lastSubmitTime < MIN_SUBMIT_INTERVAL) {
+            alert('Пожалуйста, подождите 5 секунд перед отправкой.');
+            return false;
+        }
+        lastSubmitTime = now;
+        return true;
+    }
+
+    // ============================================================
+    // ВАЛИДАЦИЯ НОМЕРА ТЕЛЕФОНА
+    // ============================================================
+    function validatePhone(phone) {
+        var digits = phone.replace(/\D/g, '');
+        if (digits.length < 10 || digits.length > 12) {
+            return false;
+        }
+        // Проверяем, что номер начинается с 7 или 8
+        if (digits[0] !== '7' && digits[0] !== '8') {
+            return false;
+        }
+        return true;
+    }
+
+    // ============================================================
+    // ВАЛИДАЦИЯ ФАЙЛОВ (изображения, размер, количество)
+    // ============================================================
+    function validateFiles(files) {
+        if (files.length > 5) {
+            alert('Можно загрузить не более 5 фото');
+            return false;
+        }
+        for (var i = 0; i < files.length; i++) {
+            if (!files[i].type.startsWith('image/')) {
+                alert('Можно загружать только изображения');
+                return false;
+            }
+            if (files[i].size > 5 * 1024 * 1024) {
+                alert('Файл "' + files[i].name + '" превышает 5 МБ');
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // ============================================================
+    // COOKIE
+    // ============================================================
+    var cookieBanner = document.getElementById('cookieBanner');
+    if (localStorage.getItem('cookiesAccepted') === null && localStorage.getItem('cookiesRejected') === null) {
+        cookieBanner.classList.add('active');
+    }
+
+    window.acceptCookies = function() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        cookieBanner.classList.remove('active');
+    };
+
+    window.rejectCookies = function() {
+        localStorage.setItem('cookiesRejected', 'true');
+        cookieBanner.classList.remove('active');
+    };
+
+    // ============================================================
+    // НАВИГАЦИЯ
+    // ============================================================
+    var navLinks = document.querySelectorAll('.nav-link');
+    var pages = {
+        home: document.getElementById('page-home'),
+        services: document.getElementById('page-services'),
+        process: document.getElementById('page-process'),
+        quality: document.getElementById('page-quality'),
+        portfolio: document.getElementById('page-portfolio'),
+        calculator: document.getElementById('page-calculator'),
+        reviews: document.getElementById('page-reviews'),
+        blog: document.getElementById('page-blog'),
+        contacts: document.getElementById('page-contacts'),
+        legal: document.getElementById('page-legal')
+    };
+
+        window.navigateTo = function(pageId) {
+        for (var key in pages) {
+            if (pages[key]) pages[key].classList.remove('active');
+        }
+        if (pages[pageId]) pages[pageId].classList.add('active');
+        navLinks.forEach(function(link) {
+            link.classList.toggle('active', link.dataset.page === pageId);
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.getElementById('navList').classList.remove('open');
+    };
+
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var pageId = this.dataset.page;
+            if (pageId) navigateTo(pageId);
+        });
+    });
+
+    // ============================================================
+    // МОБИЛЬНОЕ МЕНЮ
+    // ============================================================
+    document.getElementById('mobileToggle').addEventListener('click', function() {
+        document.getElementById('navList').classList.toggle('open');
+    });
+
+    // ============================================================
+    // ШАПКА ПРИ СКРОЛЛЕ
+    // ============================================================
+    var header = document.getElementById('header');
+    window.addEventListener('scroll', function() {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ============================================================
+    // КНОПКА НАВЕРХ
+    // ============================================================
+    var scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', function() {
+        scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+
+    // ============================================================
+    // АНИМАЦИЯ ПРИ СКРОЛЛЕ
+    // ============================================================
+    var animateElements = document.querySelectorAll('.animate-on-scroll');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.08 });
+
+    animateElements.forEach(function(el) { observer.observe(el); });
+
+    // ============================================================
+    // СЧЁТЧИК
+    // ============================================================
+    var counters = document.querySelectorAll('.stat-number');
+    var counterObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                var target = parseInt(entry.target.dataset.count);
+                var current = 0;
+                var increment = Math.ceil(target / 50);
+                var timer = setInterval(function() {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    entry.target.textContent = current;
+                }, 18);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(function(el) { counterObserver.observe(el); });
+
+    // ============================================================
+    // МОДАЛЬНЫЕ ОКНА
+    // ============================================================
+    window.openModal = function() {
+        document.getElementById('orderModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+    window.closeModal = function(id = 'orderModal') {
+    document.getElementById(id).classList.remove('active');
+    document.body.style.overflow = '';
+    };
+    document.getElementById('orderModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal('orderModal');
+    });
+
+    // ============================================================
+    // ОТПРАВКА В TELEGRAM (с защитой)
+    // ============================================================
+    /**
+     * Отправляет сообщение в Telegram через Cloudflare Worker
+     * @param {string} text - текст сообщения
+     * @returns {void}
+     */
+    function sendToTelegram(text) {
+        if (!canSubmit()) return;
+
+        var btns = document.querySelectorAll('button[type="submit"]');
+        btns.forEach(function(btn) {
+            btn.disabled = true;
+            btn.textContent = '⏳ Отправка...';
+        });
+
+        fetch(WORKER_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: text })
+        })
+        .then(function(response) { return response.json(); })
+        .then(function(data) {
+            if (data.success) {
+                console.log('✅ Сообщение отправлено через Worker');
+            } else {
+                console.error('❌ Ошибка Worker:', data);
+                alert('⚠️ Ошибка отправки. Попробуйте позже.');
+            }
+        })
+        .catch(function(error) {
+            console.error('❌ Ошибка соединения:', error);
+            alert('⚠️ Ошибка соединения. Проверьте интернет.');
+        })
+        .finally(function() {
+            btns.forEach(function(btn) {
+                btn.disabled = false;
+                btn.textContent = '🚀 Отправить заявку';
+            });
+        });
+    }
+
+    // ============================================================
+    // ФОРМА ЗАЯВКИ (с полной валидацией)
+    // ============================================================
+    var orderForm = document.getElementById('orderForm');
+    var orderPhone = document.getElementById('orderPhone');
+    var orderSuccess = document.getElementById('orderSuccess');
+
+    addCSRFTokenToForms();
+
+    // Автоматическое форматирование телефона
+    orderPhone.addEventListener('input', function() {
+        var val = this.value.replace(/\D/g, '');
+        if (val.length > 0) {
+            var f = '+7 (';
+            if (val.length > 1) {
+                f += val.substring(1, 4);
+                if (val.length >= 4) { f += ') ';
+                    f += val.substring(4, 7); }
+                if (val.length >= 7) { f += '-';
+                    f += val.substring(7, 9); }
+                if (val.length >= 9) { f += '-';
+                    f += val.substring(9, 11); }
+            } else { f += val; }
+            this.value = f;
+        } else { this.value = ''; }
+    });
+
+    orderForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Проверка CSRF
+        var csrfToken = document.getElementById('orderCsrf').value;
+        var storedToken = sessionStorage.getItem('csrfToken');
+        if (!storedToken || csrfToken !== storedToken) {
+            alert('⚠️ Ошибка безопасности. Обновите страницу.');
+            return;
+        }
+
+        // Проверка согласия на обработку ПД
+        if (!document.getElementById('orderConsent').checked) {
+            alert('⚠️ Необходимо дать согласие на обработку персональных данных.');
+            return;
+        }
+
+        // Валидация телефона
+        var phone = orderPhone.value.trim();
+        if (!validatePhone(phone)) {
+            alert('⚠️ Введите корректный номер телефона (от 11 до 12 цифр, начинается с 7 или 8).');
+            return;
+        }
+
+        // Санитизация сообщения
+        var message = sanitizeInput(document.getElementById('orderMessage').value.trim());
+        if (!message) {
+            alert('⚠️ Опишите, что нужно сделать.');
+            return;
+        }
+
+        // Санитизация типа услуги
+        var type = sanitizeInput(document.getElementById('orderType').value);
+
+        // Результат барабана
+        var wheelResultText = '❌ Не крутил барабан';
+        if (window.lastWheelResult) {
+            wheelResultText = window.lastWheelResult;
+            if (window.lastWheelPrize && window.lastWheelPrize.value > 0) {
+                wheelResultText = '✅ ВЫИГРЫШ: ' + window.lastWheelPrize.value + '% скидка';
+            }
+        }
+
+        // Формирование сообщения
+        var text =
+            '📩 *НОВАЯ ЗАЯВКА НА УСЛУГУ!*\n\n' +
+            '📱 *Телефон:* ' + escapeMarkdown(phone) + '\n' +
+            '📂 *Тип услуги:* ' + escapeMarkdown(type) + '\n' +
+            '💬 *Описание:* ' + escapeMarkdown(message) + '\n' +
+            '🎰 *Результат барабана:* ' + escapeMarkdown(wheelResultText) + '\n' +
+            '📋 *Согласие на ПД:* ✅ Да\n' +
+            '🕐 *Время:* ' + new Date().toLocaleString('ru-RU');
+
+        sendToTelegram(text);
+
+        // Показываем успех
+        orderForm.style.display = 'none';
+        orderSuccess.style.display = 'block';
+        setTimeout(function() {
+            orderForm.style.display = 'block';
+            orderSuccess.style.display = 'none';
+            orderForm.reset();
+            addCSRFTokenToForms();
+            closeModal('orderModal');
+        }, 3000);
+    });
+
+    // ============================================================
+    // БЛОГ
+    // ============================================================
+    /**
+     * Открывает статью блога
+     * @param {string} articleId - ID статьи
+     */
+    window.openBlogArticle = function(articleId) {
+        document.querySelectorAll('.blog-full-article').forEach(function(el) {
+            el.classList.remove('active');
+        });
+        var target = document.getElementById(articleId);
+        if (target) {
+            target.classList.add('active');
+            setTimeout(function() {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 150);
+        }
+    };
+
+    // ============================================================
+    // БАРАБАН
+    // ============================================================
+    var wheelOverlay = document.getElementById('wheelOverlay');
+    var wheelSpin = document.getElementById('wheelSpin');
+    var wheelResult = document.getElementById('wheelResult');
+    var wheelBtn = document.getElementById('wheelBtn');
+    var isSpinning = false;
+    var wheelAttempts = 0;
+    var MAX_ATTEMPTS = 1;
+    var wheelHistory = [];
+
+    var segments = [
+        { label: '22%', color: '#F59E0B', value: 22 },
+        { label: '15%', color: '#8B5CF6', value: 15 },
+        { label: '10%', color: '#F59E0B', value: 10 },
+        { label: '5%', color: '#6D28D9', value: 5 },
+        { label: '7%', color: '#F59E0B', value: 7 },
+        { label: 'Увы', color: '#9CA3AF', value: -1 },
+        { label: '13%', color: '#F59E0B', value: 13 },
+        { label: '12%', color: '#8B5CF6', value: 12 },
+    ];
+
+    function buildWheel() {
+        var total = segments.length;
+        var angle = 360 / total;
+        wheelSpin.innerHTML = '<div class="center"></div>';
+        segments.forEach(function(seg, i) {
+            var rotation = i * angle;
+            var label = document.createElement('div');
+            label.className = 'segment-label';
+            label.textContent = seg.label;
+            label.style.transform = 'rotate(' + (rotation + angle/2) + 'deg) translateY(-75px)';
+            label.style.left = '50%';
+            label.style.top = '50%';
+            label.style.transformOrigin = '0 0';
+            label.style.position = 'absolute';
+            label.style.fontSize = window.innerWidth < 480 ? '0.6rem' : '0.75rem';
+            label.style.fontWeight = '700';
+            label.style.color = '#fff';
+            label.style.textShadow = '0 1px 6px rgba(0,0,0,0.4)';
+            wheelSpin.appendChild(label);
+        });
+        var gradientParts = segments.map(function(s, i) {
+            var start = i * angle;
+            var end = start + angle;
+            return s.color + ' ' + start + 'deg ' + end + 'deg';
+        });
+        wheelSpin.style.background = 'conic-gradient(' + gradientParts.join(', ') + ')';
+    }
+    buildWheel();
+
+    function updateWheelUI() {
+        var remaining = MAX_ATTEMPTS - wheelAttempts;
+        var attemptsEl = document.getElementById('wheelAttempts');
+        if (attemptsEl) {
+            attemptsEl.innerHTML = '🎯 У вас <span class="remaining">' + remaining + '</span> попытка ' + (remaining === 0 ? ' 🔒 Попытка использована' : '');
+        }
+        if (remaining === 0) {
+            wheelBtn.disabled = true;
+            wheelBtn.textContent = '🔒 Попытка использована';
+            wheelBtn.style.opacity = '0.5';
+            wheelBtn.style.cursor = 'not-allowed';
+        } else {
+            wheelBtn.disabled = false;
+            wheelBtn.textContent = '🌀 Крутить!';
+            wheelBtn.style.opacity = '1';
+            wheelBtn.style.cursor = 'pointer';
+        }
+    }
+
+    /**
+     * Добавляет запись в историю
+     * @param {Object} prize - объект с призом
+     */
+    function addHistory(prize) {
+        wheelHistory.push({ date: new Date().toLocaleString('ru-RU'), prize: prize });
+        renderHistory();
+    }
+
+    function renderHistory() {
+        var historyEl = document.getElementById('wheelHistory');
+        if (!historyEl) return;
+        if (wheelHistory.length === 0) {
+            historyEl.innerHTML = '<div style="color:var(--color-text-secondary);font-size:0.8rem;text-align:center;">История розыгрышей пуста</div>';
+            return;
+        }
+        var html = '';
+        wheelHistory.forEach(function(item) {
+            var isWin = item.prize.value > 0;
+            var label = item.prize.label;
+            if (item.prize.value > 0) label = item.prize.value + '% скидка';
+            html += '<div class="history-item"><span>' + item.date + '</span><span class="' + (isWin ? 'win' : 'lose') + '">' + (isWin ? '🎉 ' + label : '😊 ' + label) + '</span></div>';
+        });
+        historyEl.innerHTML = html;
+    }
+
+    window.openWheel = function() {
+        if (wheelAttempts >= MAX_ATTEMPTS) {
+            alert('🔒 Вы уже использовали свою попытку!');
+            return;
+        }
+        wheelOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        wheelResult.textContent = 'Нажми кнопку, чтобы крутить';
+        wheelBtn.textContent = '🌀 Крутить!';
+        isSpinning = false;
+        updateWheelUI();
+    };
+
+    window.closeWheel = function() {
+        wheelOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    wheelBtn.addEventListener('click', function() {
+        if (isSpinning) return;
+        if (wheelAttempts >= MAX_ATTEMPTS) {
+            alert('🔒 Вы уже использовали свою попытку!');
+            return;
+        }
+
+        isSpinning = true;
+        wheelBtn.textContent = '🔄 Крутится...';
+        wheelResult.textContent = '🌀 ...';
+
+        var randomIndex = Math.floor(Math.random() * segments.length);
+        var totalRotation = 360 * 5 + randomIndex * (360 / segments.length) + Math.random() * 30;
+
+        wheelSpin.style.transform = 'rotate(' + totalRotation + 'deg)';
+
+        setTimeout(function() {
+            var prize = segments[randomIndex];
+            var resultText = '';
+            var winType = '';
+
+            wheelAttempts++;
+            addHistory(prize);
+
+            if (prize.value > 0) {
+                resultText = '🎉 Вы выиграли ' + prize.value + '% скидку!';
+                winType = '✅ ВЫИГРЫШ: ' + prize.value + '% скидка';
+                launchConfetti();
+            } else {
+                resultText = '🥵 Увы!';
+                winType = '❌ НЕ ВЫИГРАЛ: Повезёт в другой раз';
+            }
+
+            wheelResult.textContent = resultText;
+            wheelBtn.textContent = '🌀 Крутить ещё';
+            isSpinning = false;
+
+            window.lastWheelResult = winType;
+            window.lastWheelPrize = prize;
+
+            updateWheelUI();
+
+            if (wheelAttempts >= MAX_ATTEMPTS) {
+                setTimeout(function() {
+                    wheelResult.textContent = '🔒 Спасибо за игру!';
+                    wheelBtn.textContent = '🔒 Попытка использована';
+                    wheelBtn.disabled = true;
+                    wheelBtn.style.opacity = '0.5';
+                    wheelBtn.style.cursor = 'not-allowed';
+                }, 1000);
+            }
+        }, 4200);
+    });
+
+    // ============================================================
+    // КОНФЕТТИ (с защитой от ошибки removeChild)
+    // ============================================================
+    function launchConfetti() {
+        var container = document.getElementById('confettiContainer');
+        var colors = ['#F59E0B', '#8B5CF6', '#EC4899', '#6D28D9', '#34C759', '#FF6B6B', '#FECA57', '#6A0DAD'];
+        for (var i = 0; i < 80; i++) {
+            var c = document.createElement('div');
+            c.className = 'confetti';
+            c.style.left = Math.random() * 100 + '%';
+            c.style.background = colors[Math.floor(Math.random() * colors.length)];
+            c.style.width = (Math.random() * 8 + 4) + 'px';
+            c.style.height = (Math.random() * 8 + 4) + 'px';
+            c.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+            c.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
+            c.style.animationDelay = (Math.random() * 0.5) + 's';
+            container.appendChild(c);
+            (function(el) {
+                setTimeout(function() {
+                    if (el.parentNode) {
+                        el.parentNode.removeChild(el);
+                    }
+                }, 4000);
+            })(c);
+        }
+    }
+
+    // ============================================================
+    // КАЛЬКУЛЯТОР
+    // ============================================================
+    function calculatePrice() {
+        var product = document.getElementById('calcProduct').value;
+        var qty = parseInt(document.getElementById('calcQuantity').value);
+        var compl = document.getElementById('calcComplexity').value;
+
+        var basePrice = 500;
+        switch (product) {
+            case 'Футболка': basePrice = 300; break;
+            case 'Худи / Свитшот': basePrice = 700; break;
+            case 'Кепка': basePrice = 400; break;
+            case 'Куртка': basePrice = 1200; break;
+            case 'Сумка / Рюкзак': basePrice = 900; break;
+            default: basePrice = 600;
+        }
+
+        var complexityMultiplier = 1;
+        var complexityLabel = 'Средняя';
+        switch (compl) {
+            case 'simple': complexityMultiplier = 0.7; complexityLabel = 'Простая'; break;
+            case 'medium': complexityMultiplier = 1; complexityLabel = 'Средняя'; break;
+            case 'complex': complexityMultiplier = 1.6; complexityLabel = 'Сложная'; break;
+        }
+
+        var discount = 1;
+        if (qty >= 5) discount = 0.9;
+        if (qty >= 10) discount = 0.8;
+        if (qty >= 20) discount = 0.7;
+        if (qty >= 50) discount = 0.6;
+        if (qty >= 100) discount = 0.5;
+
+        var programCost = 1000;
+        var pricePerItem = basePrice * complexityMultiplier * discount;
+        var total = qty === 1 ? pricePerItem + programCost : pricePerItem * qty + programCost;
+        total = Math.round(total / 100) * 100;
+
+        document.getElementById('calcResultPrice').textContent = total.toLocaleString('ru-RU') + ' ₽';
+        document.getElementById('calcResultProduct').textContent = product;
+        document.getElementById('calcResultQty').textContent = qty;
+        document.getElementById('calcResultComplex').textContent = complexityLabel;
+
+        document.getElementById('calcPlaceholder').style.display = 'none';
+        document.getElementById('calcResultContent').classList.add('active');
+    }
+
+    document.getElementById('calcProduct').addEventListener('change', calculatePrice);
+    document.getElementById('calcQuantity').addEventListener('change', calculatePrice);
+    document.getElementById('calcComplexity').addEventListener('change', calculatePrice);
+    setTimeout(calculatePrice, 100);
+
+    // ============================================================
+    // ЛАЙТБОКС
+    // ============================================================
+    /**
+     * Открывает лайтбокс с изображением
+     * @param {string} src - URL изображения
+     */
+    window.openLightbox = function(src) {
+        var lb = document.getElementById('lightbox');
+        var img = document.getElementById('lightboxImage');
+        if (lb && img) {
+            img.src = src;
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    };
+    window.closeLightbox = function() {
+        var lb = document.getElementById('lightbox');
+        if (lb) {
+            lb.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    };
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeModal('orderModal');
+            closeWheel();
+            closeLightbox();
+        }
+    });
+
+    // ============================================================
+    // ПОРТФОЛИО
+    // ============================================================
+    var hatImages = [
+        'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-12%20at%2012.10.11%20(1).jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-12%20at%2012.10.11.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0001.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0002.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0004.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0005.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0006.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0010.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0014.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0015.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0016.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0018.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0019.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0020.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0024.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0067.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0068.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0096.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0097.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0102.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0106.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0107.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0108.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0109.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0110.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0113.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0115.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0116.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0118.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0120.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0121.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0128.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0130.jpeg'
+    ];
+    var hg = document.getElementById('gallery-hats');
+    hatImages.forEach(function(src) {
+        var el = document.createElement('div');
+        el.className = 'gallery-item';
+        el.innerHTML = '<img src="' + src + '" alt="Кепка" onclick="openLightbox(\'' + src + '\')"><div class="caption">Кепка с вышивкой</div>';
+        hg.appendChild(el);
+    });
+
+    var patchImages = [
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0131.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0127.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0111.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0093.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0079.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0069.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0064.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0049.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0030.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0023.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0022.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0017.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0013.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0012.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0011.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0009.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0008.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0007.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/e94fa25f-8004-45fb-aaab-092526e9bf08.jpg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/df8dbaca-ba7d-4ca5-b14d-58136bd3d6d8.jpg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/cd394e9f-5cb3-4296-bed4-d14f420e1970%20(2).jpg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/c202f2f6-b360-41c6-8f21-75d89e03e36f.jpg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/b202d3bc-53b2-4482-8f7a-e9e4774f16b3.jpg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-14%20at%2015.59.35.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/IMG_4328.JPG',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/IMG_2059%20(1).JPG',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/IMG_20250928_174737677_HDR.jpg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/IMG_1018%20(2).JPG',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/9df882d5-a68a-42b2-8f47-57604a454539.jpg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/8d68ce95-16ce-4c82-a154-06acebea1836.jpg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/70da5507-fc93-4a47-9572-5a95024f5576.jpg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/00882fc1-9a8e-42fd-a657-48974bfbf71c%20(1).jpg'
+    ];
+    var pg = document.getElementById('gallery-patches');
+    patchImages.forEach(function(src) {
+        var el = document.createElement('div');
+        el.className = 'gallery-item';
+        el.innerHTML = '<img src="' + src + '" alt="Нашивка" onclick="openLightbox(\'' + src + '\')"><div class="caption">Нашивка / шеврон</div>';
+        pg.appendChild(el);
+    });
+
+    var clothImages = [
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0134.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0133.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0132.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0131.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0123.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0122.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0114.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0105.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0104.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0103.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0100.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0099.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0098.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0092.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0091.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0089.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0088.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0087.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0086.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0085.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0082.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0080.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0077.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0076.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0075.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0074.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0073.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0072.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0071.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0070.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0065.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0063.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0062.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0061.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0060.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0059.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0058.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0057.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0056.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0055.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0052.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0051.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0050.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0048.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0046.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0045.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0044.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0042.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0041.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0040.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0039.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0037.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0036.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0035.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0034.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0032.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0029.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0028.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0026.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-15%20at%2016.58.31.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-15%20at%2016.58.31%20(2).jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-15%20at%2016.58.31%20(1).jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-14%20at%2015.59.34.jpeg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/IMG_20250928_125525389.jpg',
+        'https://imaklain-pixel.github.io/my-vishivka-sit/IMG_20250908_181348753.jpg'
+    ];
+    var cg = document.getElementById('gallery-clothing');
+    clothImages.forEach(function(src) {
+        var el = document.createElement('div');
+        el.className = 'gallery-item';
+        el.innerHTML = '<img src="' + src + '" alt="Бренд на одежде" onclick="openLightbox(\'' + src + '\')"><div class="caption">Вышивка на одежде</div>';
+        cg.appendChild(el);
+    });
+
+    /**
+     * Открывает категорию портфолио
+     * @param {string} category - название категории (hats, patches, clothing)
+     */
+    window.openCategory = function(category) {
+        document.querySelectorAll('.gallery-grid').forEach(function(el) { el.classList.remove('active'); });
+        var target = document.getElementById('gallery-' + category);
+        if (target) {
+            target.classList.add('active');
+            setTimeout(function() {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 150);
+        }
+    };
+
+    // ============================================================
+    // ФОРМА ОТЗЫВОВ (с полной валидацией)
+    // ============================================================
+    var reviewForm = document.getElementById('reviewForm');
+    var reviewSuccess = document.getElementById('reviewSuccess');
+    var fileInput = document.getElementById('reviewPhoto');
+    var filePreview = document.getElementById('filePreview');
+    var reviewText = document.getElementById('reviewText');
+    var reviewCounter = document.getElementById('reviewCounter');
+
+    if (reviewText && reviewCounter) {
+        reviewText.addEventListener('input', function() {
+            var len = this.value.length;
+            reviewCounter.textContent = len + ' / 1000';
+            if (len > 900) {
+                reviewCounter.style.color = '#EC4899';
+            } else {
+                reviewCounter.style.color = 'var(--color-text-secondary)';
+            }
+        });
+    }
+
+    if (fileInput) {
+        fileInput.addEventListener('change', function() {
+            filePreview.innerHTML = '';
+            var files = Array.from(this.files);
+            
+            // Валидация файлов
+            if (!validateFiles(files)) {
+                this.value = '';
+                return;
+            }
+
+            files.forEach(function(file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var img = document.createElement('img');
+                    img.src = e.target.result;
+                    filePreview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+    }
+
+    if (reviewForm) {
+        reviewForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Проверка CSRF
+            var csrfToken = document.getElementById('reviewCsrf').value;
+            var storedToken = sessionStorage.getItem('csrfToken');
+            if (!storedToken || csrfToken !== storedToken) {
+                alert('⚠️ Ошибка безопасности. Обновите страницу.');
+                return;
+            }
+
+            // Проверка согласия
+            if (!document.getElementById('reviewConsent').checked) {
+                alert('⚠️ Для отправки отзыва необходимо дать согласие на обработку персональных данных.');
+                return;
+            }
+
+            var name = sanitizeInput(document.getElementById('reviewName').value.trim());
+            var rating = document.getElementById('reviewRating').value;
+            var text = sanitizeInput(document.getElementById('reviewText').value.trim());
+
+            if (!name || !text) {
+                alert('Заполните имя и текст отзыва');
+                return;
+            }
+
+            var stars = '⭐'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
+            var files = fileInput.files;
+            var photoCount = files.length;
+
+            var msg =
+                '⭐ *НОВЫЙ ОТЗЫВ (МОДЕРАЦИЯ)!*\n\n' +
+                '👤 *Имя:* ' + escapeMarkdown(name) + '\n' +
+                '📊 *Оценка:* ' + escapeMarkdown(stars) + '\n' +
+                '💬 *Отзыв:* ' + escapeMarkdown(text) + '\n' +
+                '📸 *Фото:* ' + (photoCount > 0 ? photoCount + ' шт' : 'нет') + '\n' +
+                '📋 *Согласие на ПД:* ✅ Да\n' +
+                '🕐 *Время:* ' + new Date().toLocaleString('ru-RU');
+
+            sendToTelegram(msg);
+
+            reviewForm.style.display = 'none';
+            reviewSuccess.style.display = 'block';
+            setTimeout(function() {
+                reviewForm.style.display = 'block';
+                reviewSuccess.style.display = 'none';
+                reviewForm.reset();
+                filePreview.innerHTML = '';
+                addCSRFTokenToForms();
+            }, 5000);
+        });
+    }
+
+    // ============================================================
+    // ИНИЦИАЛИЗАЦИЯ
+    // ============================================================
+    addCSRFTokenToForms();
+    updateWheelUI();
+
+    console.log('✅ Сайт загружен! Worker URL:', WORKER_URL);
+    console.log('🛡️ Защита активирована: CSRF, XSS, валидация телефона, анти-спам');
+
+});
+</script>
+</body>
+</html>
