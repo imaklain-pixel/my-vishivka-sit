@@ -3473,5 +3473,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 </script>
+var WORKER_URL = 'https://solitary-star-55d0.imaklain.workers.dev';
+
+function loadReviews() {
+    fetch(WORKER_URL + '/api/reviews')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            if (data.success && data.reviews) {
+                localStorage.setItem('publishedReviews', JSON.stringify(data.reviews));
+                if (typeof renderReviews === 'function') renderReviews();
+                console.log('✅ Загружено ' + data.reviews.length + ' отзывов');
+            }
+        })
+        .catch(function(e) { console.error('❌ Ошибка:', e); });
+}
+
+function saveReviewToServer(name, rating, text, photos) {
+    var review = {
+        id: 'review_' + Date.now(),
+        name: name,
+        rating: rating,
+        text: text,
+        photos: photos || [],
+        publishedAt: new Date().toISOString()
+    };
+    
+    fetch(WORKER_URL + '/api/reviews', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ review: review })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) {
+            var published = JSON.parse(localStorage.getItem('publishedReviews') || '[]');
+            published.push(review);
+            localStorage.setItem('publishedReviews', JSON.stringify(published));
+            if (typeof renderReviews === 'function') renderReviews();
+            alert('✅ Отзыв опубликован! Теперь его видят все!');
+        } else {
+            alert('❌ Ошибка: ' + (data.error || 'Неизвестная ошибка'));
+        }
+    })
+    .catch(function(e) { alert('❌ Ошибка: ' + e.message); });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadReviews();
+});
+
+console.log('✅ Система отзывов с Cloudflare KV загружена!');
+</script>
 </body>
 </html>
