@@ -3570,7 +3570,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     selectedFiles = [];
                     filePreview.innerHTML = '';
                     addCSRFTokenToForms();
-                    renderReviews();
+                
                 }, 5000);
             }
         });
@@ -3646,7 +3646,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('publishedReviews', JSON.stringify(published));
         delete pending[reviewId];
         localStorage.setItem('pendingReviews', JSON.stringify(pending));
-        renderReviews();
+
         alert('✅ Отзыв опубликован!');
     };
 
@@ -3656,7 +3656,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (pending[reviewId]) {
             delete pending[reviewId];
             localStorage.setItem('pendingReviews', JSON.stringify(pending));
-            renderReviews();
+        
             alert('❌ Отзыв отклонён');
         }
     };
