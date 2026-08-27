@@ -3661,76 +3661,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // --- Отрисовка отзывов ---
-    function renderReviews() {
-        var container = document.getElementById('reviewsContainer');
-        if (!container) return;
 
-        var published = JSON.parse(localStorage.getItem('publishedReviews') || '[]');
-        var pending = JSON.parse(localStorage.getItem('pendingReviews') || '{}');
-        var pendingCount = Object.keys(pending).length;
-
-        if (published.length === 0 && pendingCount === 0) {
-            container.innerHTML = `
-                <span class="empty-icon">📝</span>
-                <h3>Пока нет отзывов</h3>
-                <p>Будьте первым, кто оставит отзыв! Расскажите о своём опыте.</p>
-            `;
-            return;
-        }
-
-        var html = '';
-        
-        if (pendingCount > 0) {
-            html += `
-                <div style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:var(--radius-md);padding:var(--space-md);margin-bottom:var(--space-lg);">
-                    <p style="font-weight:600;color:var(--color-gold);margin:0;">
-                        ⏳ На модерации: ${pendingCount} отзыв${pendingCount > 1 ? 'ов' : ''}
-                    </p>
-                    <p style="font-size:0.8rem;color:var(--color-text-secondary);margin:4px 0 0;">
-                        Одобренные отзывы появятся здесь после проверки
-                    </p>
-                </div>
-            `;
-        }
-
-        if (published.length > 0) {
-            html += '<div class="reviews-list">';
-            published.forEach(function(r) {
-                var stars = '⭐'.repeat(parseInt(r.rating)) + '☆'.repeat(5 - parseInt(r.rating));
-                var date = new Date(r.publishedAt || r.date).toLocaleDateString('ru-RU', {
-                    day: '2-digit', month: '2-digit', year: 'numeric'
-                });
-                
-                html += `
-                    <div class="review-card" style="background:rgba(255,255,255,0.6);border-radius:var(--radius-md);padding:var(--space-lg);margin-bottom:var(--space-md);border:1px solid rgba(255,255,255,0.3);box-shadow:var(--shadow-sm);">
-                        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-sm);">
-                            <strong style="font-size:1.1rem;">${escapeMarkdown(r.name)}</strong>
-                            <span style="font-size:0.85rem;color:var(--color-text-secondary);">${date}</span>
-                        </div>
-                        <div style="margin:4px 0 8px;font-size:1.1rem;">${stars}</div>
-                        <p style="color:var(--color-text-secondary);margin:0 0 12px 0;line-height:1.6;">${escapeMarkdown(r.text)}</p>
-                `;
-                
-                if (r.photos && r.photos.length > 0) {
-                    html += `<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">`;
-                    r.photos.forEach(function(photo) {
-                        html += `
-                            <div style="cursor:pointer;border-radius:8px;overflow:hidden;border:1px solid rgba(0,0,0,0.06);width:80px;height:80px;" onclick="openLightbox('${photo}')">
-                                <img src="${photo}" alt="Фото отзыва" style="width:100%;height:100%;object-fit:cover;">
-                            </div>
-                        `;
-                    });
-                    html += `</div>`;
-                }
-                
-                html += `</div>`;
-            });
-            html += '</div>';
-        }
-        
-        container.innerHTML = html;
-    }
 // ============================================================
 // ЗАГРУЗКА ОТЗЫВОВ ИЗ JSON
 // ============================================================
