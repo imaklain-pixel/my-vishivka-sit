@@ -225,7 +225,7 @@
         .logo-icon {
             color: var(--color-primary);
             -webkit-text-fill-color: var(--color-primary);
-            font-size: 0.9em;
+            font-size: 1.em;
         }
 
         .nav {
@@ -1847,9 +1847,11 @@
 <header class="header" id="header">
     <div class="container header-inner">
         <!-- ЛОГОТИП ИЗ РЕПОЗИТОРИЯ -->
-        <div class="logo" onclick="navigateTo('home')">
-            <img src="https://raw.githubusercontent.com/imaklain-pixel/Vishivka_Stile_/main/logo.png" alt="Вышивка Стиль" />
-        </div>
+       <!-- ЛОГОТИП ИЗ РЕПОЗИТОРИЯ + НАДПИСЬ -->
+<div class="logo" onclick="navigateTo('home')">
+    <img src="https://raw.githubusercontent.com/imaklain-pixel/Vishivka_Stile_/main/logo.png" alt="Вышивка Стиль" />
+    <span class="logo-gradient" style="font-size: 1.3rem; font-weight: 800;">Вышивка Стиль</span>
+</div>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Меню">☰</button>
         <div class="nav" id="navMenu">
             <ul class="nav-list" id="navList">
