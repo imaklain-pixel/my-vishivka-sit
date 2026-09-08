@@ -7,19 +7,21 @@
     <meta name="yandex-verification" content="5619f032338a5757" />
     <meta name="google-site-verification" content="dtfAgkQpcuoJaOgDuVIosgrenSPvHeJ915q-UBKEIPU" />
 
-    <!-- ===== УНИКАЛЬНЫЙ TITLE ДЛЯ ГЛАВНОЙ ===== -->
     <title>Брендирование одежды и шевроны на заказ — Вышивка Стиль</title>
     <meta name="description" content="Профессиональное нанесение логотипов, шевронов и нашивок на одежду. Работаю с 2014 года. Бесплатный макет, официальные чеки. От 1 штуки." />
     <link rel="canonical" href="https://stylevishivka.ru/" />
 
-    <!-- ===== OG ДЛЯ СОЦСЕТЕЙ ===== -->
     <meta property="og:title" content="Брендирование одежды и шевроны на заказ" />
     <meta property="og:description" content="Шевроны, логотипы, нашивки на одежду. Бесплатный расчёт за 15 минут." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://stylevishivka.ru/" />
     <meta property="og:image" content="https://raw.githubusercontent.com/imaklain-pixel/Vishivka_Stile_/main/logo.png" />
 
-    <!-- ===== ЕДИНЫЙ КОРРЕКТНЫЙ JSON-LD (LocalBusiness) ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Брендирование одежды и шевроны на заказ — Вышивка Стиль" />
+    <meta name="twitter:description" content="Шевроны, логотипы, нашивки на одежду. Бесплатный расчёт за 15 минут." />
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/imaklain-pixel/Vishivka_Stile_/main/logo.png" />
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -50,7 +52,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
 
     <style>
-        /* ===== ВЕСЬ CSS ОСТАЛСЯ БЕЗ ИЗМЕНЕНИЙ ===== */
         :root {
             --color-primary: #8B5CF6;
             --color-primary-light: #A78BFA;
@@ -101,7 +102,6 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); width: 100%; }
 
-        /* HEADER */
         .header {
             position: sticky;
             top: 0;
@@ -147,11 +147,6 @@
         @keyframes gradientMove {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
-        }
-        .logo-icon {
-            color: var(--color-primary);
-            -webkit-text-fill-color: var(--color-primary);
-            font-size: 0.9em;
         }
 
         .nav {
@@ -206,6 +201,18 @@
             color: var(--color-text-secondary);
             transition: all 0.25s;
             border: 1px solid transparent;
+            position: relative;
+        }
+        .social-icons a .online-dot {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 10px;
+            height: 10px;
+            background: #34C759;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            display: block;
         }
         .social-icons a:hover { color: #fff; transform: scale(1.08); border-color: transparent; }
         .social-icons .ig:hover { background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f); }
@@ -242,7 +249,6 @@
             .social-icons { justify-content: center; padding: var(--space-sm) 0; }
         }
 
-        /* BUTTONS */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -327,7 +333,6 @@
         .btn-sm { padding: 10px 20px; font-size: 0.85rem; }
         .btn-block { width: 100%; max-width: 100%; }
 
-        /* PAGES */
         .page {
             display: none;
             animation: fadeUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -376,7 +381,6 @@
             margin-right: auto;
         }
 
-        /* HERO */
         .hero {
             background: radial-gradient(ellipse at 20% 40%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
                         radial-gradient(ellipse at 80% 60%, rgba(109, 40, 217, 0.08) 0%, transparent 60%),
@@ -402,6 +406,20 @@
             opacity: 0.03;
             mix-blend-mode: multiply;
             animation: floatBg 25s ease-in-out infinite alternate;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(139, 92, 246, 0.03) 0%, transparent 70%),
+                        radial-gradient(circle at 70% 60%, rgba(236, 72, 153, 0.03) 0%, transparent 70%);
+            animation: parallaxGlow 15s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+        @keyframes parallaxGlow {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(2%, 1%) scale(1.02); }
+            100% { transform: translate(-1%, -2%) scale(0.98); }
         }
         @keyframes floatBg {
             0% { transform: scale(1) rotate(-0.5deg); }
@@ -474,7 +492,6 @@
             margin: 0 auto;
         }
 
-        /* STATS */
         .stats {
             display: flex;
             justify-content: center;
@@ -506,7 +523,6 @@
             font-weight: 500;
         }
 
-        /* CARDS */
         .card {
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: var(--blur-bg);
@@ -538,7 +554,6 @@
             .btn { width: auto; }
         }
 
-        /* QUALITY */
         .quality-steps {
             display: grid;
             grid-template-columns: 1fr;
@@ -596,7 +611,6 @@
         .quality-step h4 { font-size: 1.1rem; font-weight: 700; color: var(--color-text); }
         .quality-step p { font-size: 0.9rem; color: var(--color-text-secondary); margin: var(--space-sm) 0 0; }
 
-        /* PROCESS */
         .process-timeline {
             position: relative;
             padding: var(--space-lg) 0;
@@ -695,7 +709,6 @@
             color: var(--color-primary);
         }
 
-        /* SERVICES */
         .services-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -765,7 +778,6 @@
         .service-card .service-features li:last-child { border-bottom: none; }
         .service-card .service-features li .check { color: var(--color-primary); font-weight: 700; }
 
-        /* CALCULATOR */
         .calculator-wrap {
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: var(--blur-bg);
@@ -846,7 +858,6 @@
         }
         .calc-result-box .result-details span { color: var(--color-text); font-weight: 600; }
 
-        /* PORTFOLIO */
         .categories {
             display: grid;
             grid-template-columns: 1fr;
@@ -910,7 +921,6 @@
         .gallery-item img { width: 100%; height: 160px; object-fit: cover; display: block; }
         .gallery-item .caption { padding: var(--space-sm); font-size: 0.75rem; color: var(--color-text-secondary); text-align: center; }
 
-        /* MODAL */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -1012,7 +1022,6 @@
         .modal .success-message h3 { color: #34C759; margin: var(--space-sm) 0 4px; }
         .modal .success-message p { color: var(--color-text-secondary); margin: 0; }
 
-        /* WHEEL */
         .wheel-overlay {
             display: none;
             position: fixed;
@@ -1144,7 +1153,6 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        /* CONFETTI */
         .confetti-container {
             position: fixed;
             top: 0;
@@ -1166,7 +1174,6 @@
             100% { transform: translateY(110vh) rotate(720deg) scale(0.3); opacity: 0; }
         }
 
-        /* LIGHTBOX */
         .lightbox {
             display: none;
             position: fixed;
@@ -1206,7 +1213,6 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        /* COOKIE BANNER */
         .cookie-banner {
             position: fixed;
             bottom: 0;
@@ -1248,7 +1254,6 @@
         .cookie-banner .cookie-btn.reject { background: rgba(0, 0, 0, 0.04); color: var(--color-text-secondary); }
         .cookie-banner .cookie-btn.reject:hover { background: rgba(0, 0, 0, 0.08); }
 
-        /* FLOATING MESSENGERS */
         .floating-messengers {
             position: fixed;
             bottom: 20px;
@@ -1273,6 +1278,23 @@
             transition: all 0.25s;
             border: none;
             cursor: pointer;
+            position: relative;
+        }
+        .floating-messengers .msg-btn .online-dot {
+            position: absolute;
+            top: -3px;
+            right: -3px;
+            width: 12px;
+            height: 12px;
+            background: #34C759;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            display: block;
+            animation: pulseDot 2s ease-in-out infinite;
+        }
+        @keyframes pulseDot {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
         }
         .floating-messengers .msg-btn:hover { transform: scale(1.05); }
         .floating-messengers .msg-btn svg { width: 20px; height: 20px; fill: currentColor; }
@@ -1283,7 +1305,6 @@
         .floating-messengers .max { background: linear-gradient(135deg, #1a1a2e, #6a0dad); }
         .floating-messengers .vk { background: #4C75A3; }
 
-        /* CONTACTS */
         .contacts-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -1334,7 +1355,6 @@
         }
         .map-container iframe { width: 100%; height: 100%; border: 0; display: block; }
 
-        /* REVIEWS */
         .reviews-list .review-card {
             transition: all 0.3s;
         }
@@ -1477,15 +1497,35 @@
         .review-form-container .success-message h3 { color: #34C759; margin: var(--space-sm) 0 4px; }
         .review-form-container .success-message p { color: var(--color-text-secondary); margin: 0; }
 
-        /* BLOG */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-md);
-            margin: var(--space-lg) 0;
+        /* ===== БЛОГ — исправление отступов ===== */
+        #blogArticlesContainer {
+            margin: 0;
+            padding: 0;
         }
-        @media (min-width: 600px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
-        @media (min-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+        .blog-full-article:first-of-type {
+            margin-top: 0;
+        }
+
+        .blog-article-wrapper {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--space-xl);
+        }
+
+        .page#page-blog .page-subtitle {
+            margin-bottom: var(--space-md);
+        }
+
+        .blog-grid {
+            margin-top: 0;
+            padding-top: 0;
+        }
 
         .blog-card {
             background: rgba(255, 255, 255, 0.5);
@@ -1541,16 +1581,6 @@
         .blog-full-article { display: none; }
         .blog-full-article.active { display: block; }
 
-        .blog-article-wrapper {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: var(--blur-bg);
-            -webkit-backdrop-filter: var(--blur-bg);
-            border-radius: var(--radius-lg);
-            padding: var(--space-xl);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: var(--shadow-sm);
-            margin-bottom: var(--space-xl);
-        }
         .blog-article-header {
             display: flex;
             justify-content: space-between;
@@ -1614,7 +1644,15 @@
         .blog-article-tags .blog-tag.gold { background: rgba(245, 158, 11, 0.08); color: var(--color-gold); }
         .blog-article-tags .blog-tag.pink { background: rgba(236, 72, 153, 0.08); color: var(--color-accent); }
 
-        /* ANIMATE */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+        @media (min-width: 600px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+        @media (min-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -1622,7 +1660,6 @@
         }
         .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
 
-        /* FOOTER */
         .footer {
             background: rgba(255, 255, 255, 0.6);
             backdrop-filter: var(--blur-bg);
@@ -1666,7 +1703,7 @@
         .scroll-top {
             position: fixed;
             bottom: 80px;
-            left: 16px;
+            right: 16px;
             width: 44px;
             height: 44px;
             border-radius: var(--radius-full);
@@ -1741,14 +1778,17 @@
 <!-- ====== ПЛАВАЮЩИЕ МЕССЕНДЖЕРЫ ====== -->
 <div class="floating-messengers">
     <a href="https://wa.me/79014030785" target="_blank" class="msg-btn wa">
+        <span class="online-dot"></span>
         <svg viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.069-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.149-.43.05-.197-.099-.832-.308-1.584-.984-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.445-1.076-.612-1.47-.16-.38-.323-.319-.445-.319-.114 0-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.711 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
         <span class="label">WhatsApp</span>
     </a>
     <a href="https://t.me/+79014030785" target="_blank" class="msg-btn tg">
+        <span class="online-dot"></span>
         <svg viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.243 3.306-1.878 3.382-1.904.077-.026.178-.058.246.015.07.072.06.19-.022.34-.176.32-1.173 1.15-1.767 1.706-.15.14-.256.244-.258.27-.006.032.092.063.209.102.341.116.735.273 1.052.451.148.083.264.123.374.114.077-.006.174-.038.267-.14.244-.27 1.03-1.16 1.645-1.874.615-.714.793-1.178.808-1.356.006-.112-.015-.205-.1-.256-.124-.073-.36-.104-.518-.104-.32 0-.898.19-1.139.38z"/></svg>
         <span class="label">Telegram</span>
     </a>
     <a href="https://max.ru/u/f9LHodD0cOKOzMr00gjNpvn1TdveNr4o3cTe6syxQuWTj9GVIAcSf0UIpc4" target="_blank" class="msg-btn max">
+        <span class="online-dot"></span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
             <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
             <path d="M12 6v6l4 2"/>
@@ -1758,10 +1798,12 @@
         <span class="label">MAX</span>
     </a>
     <a href="https://www.instagram.com/fancywork008/" target="_blank" class="msg-btn ig">
+        <span class="online-dot"></span>
         <svg viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.703.01 5.556 0 5.829 0 8s.01 2.444.048 3.297c.04.853.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.943.372C5.556 15.99 5.829 16 8 16s2.444-.01 3.297-.048c.853-.04 1.433-.174 1.942-.372a3.9 3.9 0 0 0 1.417-.923c.445-.445.719-.89.923-1.417.198-.51.333-1.09.372-1.943C15.99 10.444 16 10.171 16 8s-.01-2.444-.048-3.297c-.04-.853-.174-1.433-.372-1.942a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.09-.333-1.943-.372C10.444.01 10.171 0 8 0zm0 1.441c2.136 0 2.39.008 3.233.047.78.036 1.203.166 1.485.276.374.146.645.318.92.593.275.275.447.546.593.92.11.282.24.705.276 1.485.039.843.047 1.097.047 3.233s-.008 2.39-.047 3.233c-.036.78-.166 1.203-.276 1.485-.146.374-.318.645-.593.92-.275.275-.546.447-.92.593-.282.11-.705.24-1.485.276-.843.039-1.097.047-3.233.047s-2.39-.008-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.593 2.5 2.5 0 0 1-.593-.92c-.11-.282-.24-.705-.276-1.485-.039-.843-.047-1.097-.047-3.233s.008-2.39.047-3.233c.036-.78.166-1.203.276-1.485.146-.374.318-.645.593-.92.275-.275.546-.447.92-.593.282-.11.705-.24 1.485-.276.843-.039 1.097-.047 3.233-.047zm0 2.452a3.497 3.497 0 1 0 0 6.994 3.497 3.497 0 0 0 0-6.994zm0 1.441a2.056 2.056 0 1 1 0 4.112 2.056 2.056 0 0 1 0-4.112zm4.058-.716a.817.817 0 1 1-1.634 0 .817.817 0 0 1 1.634 0z"/></svg>
         <span class="label">Instagram</span>
     </a>
     <a href="https://vk.com/id1125599439" target="_blank" class="msg-btn vk">
+        <span class="online-dot"></span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
             <path d="M13.162 18.994c.609-.002 1.057-.346 1.348-.684.216-.251.32-.603.454-.934.32-.792.64-1.583.986-2.365.121-.274.264-.528.448-.77.258-.341.557-.433.934-.346.517.12.934.372 1.353.636.468.297.924.609 1.37.935.624.455 1.253.901 1.886 1.348.506.357 1.035.69 1.573.991.631.355 1.216.195 1.514-.416.228-.468.378-.981.52-1.488.277-1.009.548-2.02.804-3.035.505-2.004.993-4.012 1.463-6.024.102-.44.159-.892.222-1.339.088-.628.038-1.134-.412-1.471-.44-.329-1.053-.362-1.614-.314-.584.051-1.165.148-1.741.268-.927.193-1.849.397-2.772.599-.944.207-1.89.388-2.838.548-.717.122-1.434.24-2.153.347-1.059.157-2.128.307-3.19.467-.34.052-.681.102-1.022.148-.471.064-.93.002-1.373-.157-.388-.138-.785-.244-1.183-.344-.583-.145-1.171-.259-1.762-.343-.484-.069-1.037-.068-1.452.14-.397.199-.518.559-.58.954-.056.36-.081.727-.077 1.096.005.416.002.833.089 1.241.144.67.464 1.243.824 1.798.378.586.878 1.064 1.293 1.612.418.55.78 1.141 1.105 1.758.323.62.585 1.273.798 1.939.159.496.271 1.002.412 1.5.154.543.445 1.132 1.028 1.377.416.174.877.136 1.319.128.516-.009 1.029-.055 1.543-.089.44-.029.882-.039 1.322-.014.063.004.124.015.183.03.684.179 1.031.76 1.259 1.345.226.583.48 1.152.771 1.704.281.535.697.853 1.297.861z"/>
         </svg>
@@ -1773,7 +1815,7 @@
 <header class="header" id="header">
     <div class="container header-inner">
         <div class="logo" onclick="navigateTo('home')">
-            <img src="https://raw.githubusercontent.com/imaklain-pixel/Vishivka_Stile_/main/logo.png" alt="Логотип Вышивка Стиль" />
+            <img src="https://raw.githubusercontent.com/imaklain-pixel/Vishivka_Stile_/main/logo.png" alt="Логотип Вышивка Стиль" loading="lazy" />
             <span class="logo-gradient">Вышивка Стиль</span>
         </div>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Меню">☰</button>
@@ -1792,15 +1834,19 @@
             </ul>
             <div class="social-icons">
                 <a href="https://www.instagram.com/fancywork008/" target="_blank" class="ig">
+                    <span class="online-dot"></span>
                     <svg viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.703.01 5.556 0 5.829 0 8s.01 2.444.048 3.297c.04.853.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.943.372C5.556 15.99 5.829 16 8 16s2.444-.01 3.297-.048c.853-.04 1.433-.174 1.942-.372a3.9 3.9 0 0 0 1.417-.923c.445-.445.719-.89.923-1.417.198-.51.333-1.09.372-1.943C15.99 10.444 16 10.171 16 8s-.01-2.444-.048-3.297c-.04-.853-.174-1.433-.372-1.942a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.09-.333-1.943-.372C10.444.01 10.171 0 8 0zm0 1.441c2.136 0 2.39.008 3.233.047.78.036 1.203.166 1.485.276.374.146.645.318.92.593.275.275.447.546.593.92.11.282.24.705.276 1.485.039.843.047 1.097.047 3.233s-.008 2.39-.047 3.233c-.036.78-.166 1.203-.276 1.485-.146.374-.318.645-.593.92-.275.275-.546.447-.92.593-.282.11-.705.24-1.485.276-.843.039-1.097.047-3.233.047s-2.39-.008-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.593 2.5 2.5 0 0 1-.593-.92c-.11-.282-.24-.705-.276-1.485-.039-.843-.047-1.097-.047-3.233s.008-2.39.047-3.233c.036-.78.166-1.203.276-1.485.146-.374.318-.645.593-.92.275-.275.546-.447.92-.593.282-.11.705-.24 1.485-.276.843-.039 1.097-.047 3.233-.047zm0 2.452a3.497 3.497 0 1 0 0 6.994 3.497 3.497 0 0 0 0-6.994zm0 1.441a2.056 2.056 0 1 1 0 4.112 2.056 2.056 0 0 1 0-4.112zm4.058-.716a.817.817 0 1 1-1.634 0 .817.817 0 0 1 1.634 0z"/></svg>
                 </a>
                 <a href="https://wa.me/79014030785" target="_blank" class="wa">
+                    <span class="online-dot"></span>
                     <svg viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.069-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.149-.43.05-.197-.099-.832-.308-1.584-.984-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.445-1.076-.612-1.47-.16-.38-.323-.319-.445-.319-.114 0-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.711 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
                 </a>
                 <a href="https://t.me/+79014030785" target="_blank" class="tg">
+                    <span class="online-dot"></span>
                     <svg viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.243 3.306-1.878 3.382-1.904.077-.026.178-.058.246.015.07.072.06.19-.022.34-.176.32-1.173 1.15-1.767 1.706-.15.14-.256.244-.258.27-.006.032.092.063.209.102.341.116.735.273 1.052.451.148.083.264.123.374.114.077-.006.174-.038.267-.14.244-.27 1.03-1.16 1.645-1.874.615-.714.793-1.178.808-1.356.006-.112-.015-.205-.1-.256-.124-.073-.36-.104-.518-.104-.32 0-.898.19-1.139.38z"/></svg>
                 </a>
                 <a href="https://max.ru/u/f9LHodD0cOKOzMr00gjNpvn1TdveNr4o3cTe6syxQuWTj9GVIAcSf0UIpc4" target="_blank" class="max">
+                    <span class="online-dot"></span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
                         <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
                         <path d="M12 6v6l4 2"/>
@@ -1809,6 +1855,7 @@
                     </svg>
                 </a>
                 <a href="https://vk.com/id1125599439" target="_blank" class="vk">
+                    <span class="online-dot"></span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
                         <path d="M13.162 18.994c.609-.002 1.057-.346 1.348-.684.216-.251.32-.603.454-.934.32-.792.64-1.583.986-2.365.121-.274.264-.528.448-.77.258-.341.557-.433.934-.346.517.12.934.372 1.353.636.468.297.924.609 1.37.935.624.455 1.253.901 1.886 1.348.506.357 1.035.69 1.573.991.631.355 1.216.195 1.514-.416.228-.468.378-.981.52-1.488.277-1.009.548-2.02.804-3.035.505-2.004.993-4.012 1.463-6.024.102-.44.159-.892.222-1.339.088-.628.038-1.134-.412-1.471-.44-.329-1.053-.362-1.614-.314-.584.051-1.165.148-1.741.268-.927.193-1.849.397-2.772.599-.944.207-1.89.388-2.838.548-.717.122-1.434.24-2.153.347-1.059.157-2.128.307-3.19.467-.34.052-.681.102-1.022.148-.471.064-.93.002-1.373-.157-.388-.138-.785-.244-1.183-.344-.583-.145-1.171-.259-1.762-.343-.484-.069-1.037-.068-1.452.14-.397.199-.518.559-.58.954-.056.36-.081.727-.077 1.096.005.416.002.833.089 1.241.144.67.464 1.243.824 1.798.378.586.878 1.064 1.293 1.612.418.55.78 1.141 1.105 1.758.323.62.585 1.273.798 1.939.159.496.271 1.002.412 1.5.154.543.445 1.132 1.028 1.377.416.174.877.136 1.319.128.516-.009 1.029-.055 1.543-.089.44-.029.882-.039 1.322-.014.063.004.124.015.183.03.684.179 1.031.76 1.259 1.345.226.583.48 1.152.771 1.704.281.535.697.853 1.297.861z"/>
                     </svg>
@@ -2121,234 +2168,8 @@
             <h1 class="page-title">Блог о <span class="highlight">мастерстве</span></h1>
             <p class="page-subtitle">Полезные статьи, советы и вдохновение для ваших проектов</p>
 
-            <div class="blog-full-article active" id="blogArticle1">
-                <div class="blog-article-wrapper">
-                    <div class="blog-article-header"><span class="blog-article-date">15 августа 2026</span><span class="blog-article-category">Обзор</span></div>
-                    <h2 class="blog-article-title">Брендирование одежды: преимущества и недостатки</h2>
-                    <div class="blog-article-body">
-                        <p>Нанесение логотипов на одежду — это особый метод, который стоит особняком от всех видов печати. В то время как краски со временем могут выцветать или трескаться, изделия остаются неизменными на протяжении десятилетий.</p>
-                        <p>Однако у этого благородного метода есть свои технологические нюансы. В этой статье я подробно разберу, как происходит процесс, а также взвешу все его плюсы и минусы.</p>
-                        <h4>Как это работает?</h4>
-                        <p>Современное оборудование — это компьютеризированный процесс. Дизайн загружается в программу, где переводится в машинный код (оцифровывается).</p>
-                        <h4>Преимущества метода</h4>
-                        <ul>
-                            <li><strong>Презентабельный и премиальный внешний вид.</strong> Изделия выглядят дорого и солидно.</li>
-                            <li><strong>Абсолютная долговечность и износостойкость.</strong> Рисунок невозможно стереть.</li>
-                            <li><strong>Универсальность по материалам.</strong> Метод подходит для любых типов тканей.</li>
-                            <li><strong>Возможность создания объёма и фактуры.</strong> Используя разные техники.</li>
-                            <li><strong>Защита от подделок.</strong> Сложный дизайн трудно скопировать.</li>
-                            <li><strong>Экологичность и безопасность.</strong> Используются только сертифицированные нити.</li>
-                        </ul>
-                        <h4>Недостатки</h4>
-                        <ul>
-                            <li><strong>Высокая стоимость подготовки (малые тиражи).</strong> Экономически оправдана от 10–20 единиц.</li>
-                            <li><strong>Ограничения по детализации.</strong> Мелкий текст (кегль меньше 5–7 мм) нечитаем.</li>
-                            <li><strong>Толщина и вес.</strong> Утяжеляет ткань.</li>
-                            <li><strong>Длительность производства.</strong> Один сложный логотип занимает 5–15 минут.</li>
-                        </ul>
-                        <h4>Итог</h4>
-                        <p><strong>Идеально подходит для:</strong> корпоративной формы, бейсболок, верхней одежды.</p>
-                        <p><strong>Не подходит, если:</strong> нужна всего одна футболка с мелким логотипом.</p>
-                    </div>
-                    <div class="blog-article-cta">
-                        <p class="cta-text">Хотите солидный и вечный логотип?</p>
-                        <p class="cta-subtext">Закажите профессиональное нанесение. Работаю с любыми типами тканей.</p>
-                        <button class="btn btn-gold" onclick="openModal('order')">Получить расчёт</button>
-                    </div>
-                    <div class="blog-article-tags">
-                        <span class="blog-tag">#брендирование</span>
-                        <span class="blog-tag gold">#логотипы</span>
-                        <span class="blog-tag pink">#одежда</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="blog-full-article" id="blogArticle2">
-                <div class="blog-article-wrapper">
-                    <div class="blog-article-header"><span class="blog-article-date">12 августа 2026</span><span class="blog-article-category">Материалы</span></div>
-                    <h2 class="blog-article-title">Как выбрать нити для работы</h2>
-                    <div class="blog-article-body">
-                        <p>Выбор нитей зависит от техники, ткани и желаемого эффекта.</p>
-                        <p><strong>Хлопковое мулине</strong> — самый популярный выбор для ручных работ. Даёт матовый блеск, выдерживает много стирок.</p>
-                        <p><strong>Вискозные нити</strong> — для глянцевого блеска. Мягкие, пластичные, идеальны для машинных работ.</p>
-                        <p><strong>Полиэстеровые нити</strong> — лидер по прочности. Не выгорают, не садятся при стирке.</p>
-                        <p><strong>Шерстяные нити</strong> — для объёмного эффекта. Требуют бережного ухода.</p>
-                        <p><strong>Для машинных работ</strong> я рекомендую специализированные нити Madeira, Gütermann, Robison-Anton.</p>
-                    </div>
-                    <div class="blog-article-tip"><p>💡 <strong>Совет:</strong> Для логотипов я рекомендую полиэстер — он самый надёжный.</p></div>
-                    <div class="blog-article-tags">
-                        <span class="blog-tag">#нити</span>
-                        <span class="blog-tag gold">#материалы</span>
-                        <span class="blog-tag pink">#советы</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="blog-full-article" id="blogArticle3">
-                <div class="blog-article-wrapper">
-                    <div class="blog-article-header"><span class="blog-article-date">8 августа 2026</span><span class="blog-article-category">Материалы</span></div>
-                    <h2 class="blog-article-title">На чём лучше делать: выбор ткани</h2>
-                    <div class="blog-article-body">
-                        <p>Успех работы на 50% зависит от правильного выбора ткани.</p>
-                        <p><strong>Плотные ткани (хлопок, лён, джинса)</strong> — идеальный выбор. Хорошо держат форму.</p>
-                        <p><strong>Тонкий трикотаж</strong> — требует стабилизатора. Выбирайте простые дизайны.</p>
-                        <p><strong>Эластичные ткани (стрейч)</strong> — сложны, требуют специальных стабилизаторов.</p>
-                        <p><strong>Тонкие ткани (шёлк, шифон)</strong> — только лёгкая, разреженная работа.</p>
-                        <p><strong>Кожа и замша</strong> — премиальный материал, требует специальных игл.</p>
-                    </div>
-                    <div class="blog-article-tip"><p>💡 <strong>Совет:</strong> Присылайте фото ткани — я подберу правильный стабилизатор.</p></div>
-                    <div class="blog-article-tags">
-                        <span class="blog-tag">#ткани</span>
-                        <span class="blog-tag gold">#материалы</span>
-                        <span class="blog-tag pink">#советы</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="blog-full-article" id="blogArticle4">
-                <div class="blog-article-wrapper">
-                    <div class="blog-article-header"><span class="blog-article-date">1 августа 2026</span><span class="blog-article-category">Дизайн</span></div>
-                    <h2 class="blog-article-title">Как подготовить макет для работы</h2>
-                    <div class="blog-article-body">
-                        <p>Правильная подготовка макета — залог качественного результата.</p>
-                        <p><strong>1. Используйте векторные форматы</strong> — AI, EPS, CDR, PDF.</p>
-                        <p><strong>2. Избегайте мелких деталей</strong> — минимальный размер текста 5–7 мм.</p>
-                        <p><strong>3. Ограничьте количество цветов</strong> — 2–4 цвета для логотипов.</p>
-                        <p><strong>4. Избегайте градиентов</strong> — в данном методе их нет.</p>
-                        <p><strong>5. Учитывайте направление нитей</strong> — влияет на читаемость.</p>
-                    </div>
-                    <div class="blog-article-tip"><p>💡 <strong>Совет:</strong> Пришлите макет — я проверю и предложу оптимальное решение.</p></div>
-                    <div class="blog-article-tags">
-                        <span class="blog-tag">#дизайн</span>
-                        <span class="blog-tag gold">#макет</span>
-                        <span class="blog-tag pink">#советы</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="blog-full-article" id="blogArticle5">
-                <div class="blog-article-wrapper">
-                    <div class="blog-article-header"><span class="blog-article-date">25 июля 2026</span><span class="blog-article-category">Цены</span></div>
-                    <h2 class="blog-article-title">Сколько стоит работа: полный разбор цен</h2>
-                    <div class="blog-article-body">
-                        <p><strong>1. Оцифровка макета</strong> — от 500 до 3000 ₽ (разовый платёж).</p>
-                        <p><strong>2. Стоимость за единицу</strong> — от 200 ₽ (простые нашивки) до 2000 ₽ (премиум).</p>
-                        <p><strong>3. Скидки за объём</strong> — от 10 штук скидка 10–20%.</p>
-                        <p><strong>4. Дополнительные расходы</strong> — только работа, если вы приносите свою одежду.</p>
-                        <p><strong>5. Пример расчёта</strong> — 10 футболок с логотипом: оцифровка 1000 ₽ + 10 × 500 ₽ -20% = 4800 ₽.</p>
-                    </div>
-                    <div class="blog-article-tip"><p>💡 <strong>Совет:</strong> На сайте есть калькулятор — получите цену за 30 секунд.</p></div>
-                    <div class="blog-article-tags">
-                        <span class="blog-tag">#цены</span>
-                        <span class="blog-tag gold">#экономия</span>
-                        <span class="blog-tag pink">#советы</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="blog-full-article" id="blogArticle6">
-                <div class="blog-article-wrapper">
-                    <div class="blog-article-header"><span class="blog-article-date">18 июля 2026</span><span class="blog-article-category">История</span></div>
-                    <h2 class="blog-article-title">Шевроны и нашивки: история и применение</h2>
-                    <div class="blog-article-body">
-                        <p>Шевроны и нашивки — мощный инструмент идентификации и брендинга.</p>
-                        <p><strong>История</strong> — изначально использовались в военной форме для обозначения звания.</p>
-                        <p><strong>Современное применение:</strong></p>
-                        <ul>
-                            <li>Корпоративный брендинг</li>
-                            <li>Спортивные клубы и команды</li>
-                            <li>Мероприятия и фестивали</li>
-                            <li>Кастомизация одежды</li>
-                        </ul>
-                        <p><strong>Какие бывают нашивки</strong> — вышитые, тканые, термонаклейки.</p>
-                        <p><strong>Как заказать</strong> — минимальный заказ от 1 штуки. Срок до 2 дней.</p>
-                    </div>
-                    <div class="blog-article-tip"><p>💡 <strong>Совет:</strong> Хотите уникальные нашивки? Напишите мне — я помогу!</p></div>
-                    <div class="blog-article-tags">
-                        <span class="blog-tag">#история</span>
-                        <span class="blog-tag gold">#шевроны</span>
-                        <span class="blog-tag pink">#нашивки</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="blog-full-article" id="blogArticle7">
-                <div class="blog-article-wrapper">
-                    <div class="blog-article-header"><span class="blog-article-date">10 июля 2026</span><span class="blog-article-category">Уход</span></div>
-                    <h2 class="blog-article-title">Как ухаживать за изделиями: 5 правил</h2>
-                    <div class="blog-article-body">
-                        <p><strong>1. Стирайте вывернув наизнанку</strong> — защищает нити от трения.</p>
-                        <p><strong>2. Используйте деликатный режим стирки</strong> — 30–40°C, без сильного отжима.</p>
-                        <p><strong>3. Не используйте отбеливатели</strong> — разрушают структуру нитей.</p>
-                        <p><strong>4. Гладьте с изнаночной стороны</strong> — сохраняет объём и фактуру.</p>
-                        <p><strong>5. Храните в сухом месте</strong> — изделия не любят влажность.</p>
-                    </div>
-                    <div class="blog-article-tip"><p>💡 <strong>Совет:</strong> Сомневаетесь в режиме стирки? Напишите мне — подскажу!</p></div>
-                    <div class="blog-article-tags">
-                        <span class="blog-tag">#уход</span>
-                        <span class="blog-tag gold">#советы</span>
-                        <span class="blog-tag pink">#долговечность</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="blog-grid">
-                <div class="blog-card animate-on-scroll" onclick="openBlogArticle('blogArticle1')">
-                    <span class="blog-date">15 августа 2026</span>
-                    <span class="blog-icon">#</span>
-                    <h4>Брендирование одежды: преимущества и недостатки</h4>
-                    <p>Разбираем, почему этот метод считается премиальным.</p>
-                    <span class="blog-tag">#советы</span>
-                    <span class="blog-read-more">Читать статью</span>
-                </div>
-                <div class="blog-card animate-on-scroll" onclick="openBlogArticle('blogArticle2')">
-                    <span class="blog-date">12 августа 2026</span>
-                    <span class="blog-icon">#</span>
-                    <h4>Как выбрать нити для работы</h4>
-                    <p>Разбираемся в типах нитей: полиэстер, вискоза, хлопок.</p>
-                    <span class="blog-tag">#советы</span>
-                    <span class="blog-read-more">Читать статью</span>
-                </div>
-                <div class="blog-card animate-on-scroll" onclick="openBlogArticle('blogArticle3')">
-                    <span class="blog-date">8 августа 2026</span>
-                    <span class="blog-icon">#</span>
-                    <h4>На чём лучше делать: выбор ткани</h4>
-                    <p>Сравнение плотности, эластичности и рекомендации.</p>
-                    <span class="blog-tag">#материалы</span>
-                    <span class="blog-read-more">Читать статью</span>
-                </div>
-                <div class="blog-card animate-on-scroll" onclick="openBlogArticle('blogArticle4')">
-                    <span class="blog-date">1 августа 2026</span>
-                    <span class="blog-icon">#</span>
-                    <h4>Как подготовить макет для работы</h4>
-                    <p>Пошаговое руководство: от идеи до готового файла.</p>
-                    <span class="blog-tag">#дизайн</span>
-                    <span class="blog-read-more">Читать статью</span>
-                </div>
-                <div class="blog-card animate-on-scroll" onclick="openBlogArticle('blogArticle5')">
-                    <span class="blog-date">25 июля 2026</span>
-                    <span class="blog-icon">#</span>
-                    <h4>Сколько стоит работа: полный разбор цен</h4>
-                    <p>Разбираю, из чего складывается цена: сложность, тираж, размер.</p>
-                    <span class="blog-tag">#цены</span>
-                    <span class="blog-read-more">Читать статью</span>
-                </div>
-                <div class="blog-card animate-on-scroll" onclick="openBlogArticle('blogArticle6')">
-                    <span class="blog-date">18 июля 2026</span>
-                    <span class="blog-icon">#</span>
-                    <h4>Шевроны и нашивки: история и применение</h4>
-                    <p>От древних времён до современного брендинга.</p>
-                    <span class="blog-tag">#история</span>
-                    <span class="blog-read-more">Читать статью</span>
-                </div>
-                <div class="blog-card animate-on-scroll" onclick="openBlogArticle('blogArticle7')">
-                    <span class="blog-date">10 июля 2026</span>
-                    <span class="blog-icon">#</span>
-                    <h4>Как ухаживать за изделиями: 5 правил</h4>
-                    <p>Как стирать, гладить и хранить вещи с рисунком.</p>
-                    <span class="blog-tag">#уход</span>
-                    <span class="blog-read-more">Читать статью</span>
-                </div>
+            <div id="blogArticlesContainer">
+                <!-- Динамически загружаемый контент блога -->
             </div>
         </div>
     </div>
@@ -2444,7 +2265,7 @@
 <footer class="footer">
     <div class="container">
         <div style="display: flex; justify-content: center; margin-bottom: 10px;">
-            <img src="https://raw.githubusercontent.com/imaklain-pixel/Vishivka_Stile_/main/logo.png" alt="Логотип Вышивка Стиль" style="height: 90px; width: auto;" />
+            <img src="https://raw.githubusercontent.com/imaklain-pixel/Vishivka_Stile_/main/logo.png" alt="Логотип Вышивка Стиль" style="height: 90px; width: auto;" loading="lazy" />
         </div>
         <div class="footer-divider"></div>
         <div class="footer-nav">
@@ -2529,7 +2350,7 @@
     <img id="lightboxImage" src="" alt="Увеличенное фото" />
 </div>
 
-<!-- ====== СКРИПТЫ (БЕЗ ИЗМЕНЕНИЙ) ====== -->
+<!-- ====== СКРИПТЫ ====== -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -2589,6 +2410,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
     }
 
+    // Cookie
     var cookieBanner = document.getElementById('cookieBanner');
     if (localStorage.getItem('cookiesAccepted') === null && localStorage.getItem('cookiesRejected') === null) {
         cookieBanner.classList.add('active');
@@ -2604,6 +2426,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cookieBanner.classList.remove('active');
     };
 
+    // SPA Navigation with History API
     var navLinks = document.querySelectorAll('.nav-link');
     var pages = {
         home: document.getElementById('page-home'),
@@ -2618,14 +2441,25 @@ document.addEventListener('DOMContentLoaded', function() {
         legal: document.getElementById('page-legal')
     };
 
-    window.navigateTo = function(pageId) {
+    window.navigateTo = function(pageId, pushState) {
         for (var key in pages) {
             if (pages[key]) pages[key].classList.remove('active');
         }
         if (pages[pageId]) pages[pageId].classList.add('active');
+
         navLinks.forEach(function(link) {
             link.classList.toggle('active', link.dataset.page === pageId);
         });
+
+        if (pushState !== false) {
+            var baseUrl = window.location.href.split('#')[0].split('?')[0];
+            if (pageId === 'home') {
+                window.history.pushState({ page: pageId }, '', baseUrl);
+            } else {
+                window.history.pushState({ page: pageId }, '', baseUrl + '#' + pageId);
+            }
+        }
+
         window.scrollTo({ top: 0, behavior: 'smooth' });
         document.getElementById('navList').classList.remove('open');
     };
@@ -2637,6 +2471,26 @@ document.addEventListener('DOMContentLoaded', function() {
             if (pageId) navigateTo(pageId);
         });
     });
+
+    window.addEventListener('popstate', function(e) {
+        var pageId = e.state ? e.state.page : 'home';
+        if (pageId && pages[pageId]) {
+            for (var key in pages) {
+                if (pages[key]) pages[key].classList.remove('active');
+            }
+            pages[pageId].classList.add('active');
+            navLinks.forEach(function(link) {
+                link.classList.toggle('active', link.dataset.page === pageId);
+            });
+        }
+    });
+
+    var hash = window.location.hash.replace('#', '');
+    if (hash && pages[hash]) {
+        setTimeout(function() {
+            navigateTo(hash, false);
+        }, 50);
+    }
 
     document.getElementById('mobileToggle').addEventListener('click', function() {
         document.getElementById('navList').classList.toggle('open');
@@ -2814,6 +2668,221 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     });
 
+    // ===== БЛОГ =====
+    var blogArticles = [
+        {
+            id: 'blogArticle1',
+            date: '15 августа 2026',
+            category: 'Обзор',
+            title: 'Брендирование одежды: преимущества и недостатки',
+            tags: ['#советы', '#брендирование', '#логотипы'],
+            content: `
+                <p>Нанесение логотипов на одежду — это особый метод, который стоит особняком от всех видов печати. В то время как краски со временем могут выцветать или трескаться, изделия остаются неизменными на протяжении десятилетий.</p>
+                <p>Однако у этого благородного метода есть свои технологические нюансы. В этой статье я подробно разберу, как происходит процесс, а также взвешу все его плюсы и минусы.</p>
+                <h4>Как это работает?</h4>
+                <p>Современное оборудование — это компьютеризированный процесс. Дизайн загружается в программу, где переводится в машинный код (оцифровывается).</p>
+                <h4>Преимущества метода</h4>
+                <ul>
+                    <li><strong>Презентабельный и премиальный внешний вид.</strong> Изделия выглядят дорого и солидно.</li>
+                    <li><strong>Абсолютная долговечность и износостойкость.</strong> Рисунок невозможно стереть.</li>
+                    <li><strong>Универсальность по материалам.</strong> Метод подходит для любых типов тканей.</li>
+                    <li><strong>Возможность создания объёма и фактуры.</strong> Используя разные техники.</li>
+                    <li><strong>Защита от подделок.</strong> Сложный дизайн трудно скопировать.</li>
+                    <li><strong>Экологичность и безопасность.</strong> Используются только сертифицированные нити.</li>
+                </ul>
+                <h4>Недостатки</h4>
+                <ul>
+                    <li><strong>Высокая стоимость подготовки (малые тиражи).</strong> Экономически оправдана от 10–20 единиц.</li>
+                    <li><strong>Ограничения по детализации.</strong> Мелкий текст (кегль меньше 5–7 мм) нечитаем.</li>
+                    <li><strong>Толщина и вес.</strong> Утяжеляет ткань.</li>
+                    <li><strong>Длительность производства.</strong> Один сложный логотип занимает 5–15 минут.</li>
+                </ul>
+                <h4>Итог</h4>
+                <p><strong>Идеально подходит для:</strong> корпоративной формы, бейсболок, верхней одежды.</p>
+                <p><strong>Не подходит, если:</strong> нужна всего одна футболка с мелким логотипом.</p>
+            `
+        },
+        {
+            id: 'blogArticle2',
+            date: '12 августа 2026',
+            category: 'Материалы',
+            title: 'Как выбрать нити для работы',
+            tags: ['#нити', '#материалы', '#советы'],
+            content: `
+                <p>Выбор нитей зависит от техники, ткани и желаемого эффекта.</p>
+                <p><strong>Хлопковое мулине</strong> — самый популярный выбор для ручных работ. Даёт матовый блеск, выдерживает много стирок.</p>
+                <p><strong>Вискозные нити</strong> — для глянцевого блеска. Мягкие, пластичные, идеальны для машинных работ.</p>
+                <p><strong>Полиэстеровые нити</strong> — лидер по прочности. Не выгорают, не садятся при стирке.</p>
+                <p><strong>Шерстяные нити</strong> — для объёмного эффекта. Требуют бережного ухода.</p>
+                <p><strong>Для машинных работ</strong> я рекомендую специализированные нити Madeira, Gütermann, Robison-Anton.</p>
+            `
+        },
+        {
+            id: 'blogArticle3',
+            date: '8 августа 2026',
+            category: 'Материалы',
+            title: 'На чём лучше делать: выбор ткани',
+            tags: ['#ткани', '#материалы', '#советы'],
+            content: `
+                <p>Успех работы на 50% зависит от правильного выбора ткани.</p>
+                <p><strong>Плотные ткани (хлопок, лён, джинса)</strong> — идеальный выбор. Хорошо держат форму.</p>
+                <p><strong>Тонкий трикотаж</strong> — требует стабилизатора. Выбирайте простые дизайны.</p>
+                <p><strong>Эластичные ткани (стрейч)</strong> — сложны, требуют специальных стабилизаторов.</p>
+                <p><strong>Тонкие ткани (шёлк, шифон)</strong> — только лёгкая, разреженная работа.</p>
+                <p><strong>Кожа и замша</strong> — премиальный материал, требует специальных игл.</p>
+            `
+        },
+        {
+            id: 'blogArticle4',
+            date: '1 августа 2026',
+            category: 'Дизайн',
+            title: 'Как подготовить макет для работы',
+            tags: ['#дизайн', '#макет', '#советы'],
+            content: `
+                <p>Правильная подготовка макета — залог качественного результата.</p>
+                <p><strong>1. Используйте векторные форматы</strong> — AI, EPS, CDR, PDF.</p>
+                <p><strong>2. Избегайте мелких деталей</strong> — минимальный размер текста 5–7 мм.</p>
+                <p><strong>3. Ограничьте количество цветов</strong> — 2–4 цвета для логотипов.</p>
+                <p><strong>4. Избегайте градиентов</strong> — в данном методе их нет.</p>
+                <p><strong>5. Учитывайте направление нитей</strong> — влияет на читаемость.</p>
+            `
+        },
+        {
+            id: 'blogArticle5',
+            date: '25 июля 2026',
+            category: 'Цены',
+            title: 'Сколько стоит работа: полный разбор цен',
+            tags: ['#цены', '#экономия', '#советы'],
+            content: `
+                <p><strong>1. Оцифровка макета</strong> — от 500 до 3000 ₽ (разовый платёж).</p>
+                <p><strong>2. Стоимость за единицу</strong> — от 200 ₽ (простые нашивки) до 2000 ₽ (премиум).</p>
+                <p><strong>3. Скидки за объём</strong> — от 10 штук скидка 10–20%.</p>
+                <p><strong>4. Дополнительные расходы</strong> — только работа, если вы приносите свою одежду.</p>
+                <p><strong>5. Пример расчёта</strong> — 10 футболок с логотипом: оцифровка 1000 ₽ + 10 × 500 ₽ -20% = 4800 ₽.</p>
+            `
+        },
+        {
+            id: 'blogArticle6',
+            date: '18 июля 2026',
+            category: 'История',
+            title: 'Шевроны и нашивки: история и применение',
+            tags: ['#история', '#шевроны', '#нашивки'],
+            content: `
+                <p>Шевроны и нашивки — мощный инструмент идентификации и брендинга.</p>
+                <p><strong>История</strong> — изначально использовались в военной форме для обозначения звания.</p>
+                <p><strong>Современное применение:</strong></p>
+                <ul>
+                    <li>Корпоративный брендинг</li>
+                    <li>Спортивные клубы и команды</li>
+                    <li>Мероприятия и фестивали</li>
+                    <li>Кастомизация одежды</li>
+                </ul>
+                <p><strong>Какие бывают нашивки</strong> — вышитые, тканые, термонаклейки.</p>
+                <p><strong>Как заказать</strong> — минимальный заказ от 1 штуки. Срок до 2 дней.</p>
+            `
+        },
+        {
+            id: 'blogArticle7',
+            date: '10 июля 2026',
+            category: 'Уход',
+            title: 'Как ухаживать за изделиями: 5 правил',
+            tags: ['#уход', '#советы', '#долговечность'],
+            content: `
+                <p><strong>1. Стирайте вывернув наизнанку</strong> — защищает нити от трения.</p>
+                <p><strong>2. Используйте деликатный режим стирки</strong> — 30–40°C, без сильного отжима.</p>
+                <p><strong>3. Не используйте отбеливатели</strong> — разрушают структуру нитей.</p>
+                <p><strong>4. Гладьте с изнаночной стороны</strong> — сохраняет объём и фактуру.</p>
+                <p><strong>5. Храните в сухом месте</strong> — изделия не любят влажность.</p>
+            `
+        }
+    ];
+
+    function renderBlog() {
+        var container = document.getElementById('blogArticlesContainer');
+        if (!container) return;
+
+        container.innerHTML = '';
+
+        var html = '';
+
+        html += '<div class="blog-grid">';
+        blogArticles.forEach(function(article) {
+            var tagClass = article.tags[0] === '#советы' ? '' :
+                          article.tags[0] === '#материалы' ? ' gold' :
+                          article.tags[0] === '#цены' ? ' gold' :
+                          article.tags[0] === '#дизайн' ? ' pink' :
+                          article.tags[0] === '#история' ? ' gold' :
+                          article.tags[0] === '#уход' ? ' pink' : '';
+
+            var tagDisplay = article.tags[0] || '#статья';
+
+            html += `
+                <div class="blog-card animate-on-scroll" onclick="openBlogArticle('${article.id}')">
+                    <span class="blog-date">${article.date}</span>
+                    <span class="blog-icon">#</span>
+                    <h4>${article.title}</h4>
+                    <p>${article.content.replace(/<[^>]*>/g, '').substring(0, 120)}...</p>
+                    <span class="blog-tag${tagClass}">${tagDisplay}</span>
+                    <span class="blog-read-more">Читать статью</span>
+                </div>
+            `;
+        });
+        html += '</div>';
+
+        html += '<div id="blogFullArticles" style="margin-top: 24px;">';
+        blogArticles.forEach(function(article) {
+            html += `
+                <div class="blog-full-article" id="${article.id}">
+                    <div class="blog-article-wrapper">
+                        <div class="blog-article-header">
+                            <span class="blog-article-date">${article.date}</span>
+                            <span class="blog-article-category">${article.category}</span>
+                        </div>
+                        <h2 class="blog-article-title">${article.title}</h2>
+                        <div class="blog-article-body">
+                            ${article.content}
+                            <div class="blog-article-tip">
+                                <p>💡 <strong>Совет:</strong> Хотите обсудить ваш проект? Напишите мне — помогу с выбором!</p>
+                            </div>
+                            <div class="blog-article-cta">
+                                <p class="cta-text">🚀 Готовы заказать?</p>
+                                <p class="cta-subtext">Получите бесплатный расчёт за 15 минут</p>
+                                <button class="btn btn-gold" onclick="openModal('order')">Получить расчёт</button>
+                            </div>
+                            <div class="blog-article-tags">
+                                ${article.tags.map(function(t) {
+                                    var cls = t === '#советы' ? '' :
+                                             t === '#материалы' ? ' gold' :
+                                             t === '#цены' ? ' gold' :
+                                             t === '#дизайн' ? ' pink' :
+                                             t === '#история' ? ' gold' :
+                                             t === '#уход' ? ' pink' : '';
+                                    return `<span class="blog-tag${cls}">${t}</span>`;
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        html += '</div>';
+
+        container.innerHTML = html;
+
+        var firstArticle = document.getElementById(blogArticles[0].id);
+        if (firstArticle) firstArticle.classList.add('active');
+
+        var newAnimateElements = container.querySelectorAll('.animate-on-scroll');
+        var blogObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.08 });
+        newAnimateElements.forEach(function(el) { blogObserver.observe(el); });
+    }
+
     window.openBlogArticle = function(articleId) {
         document.querySelectorAll('.blog-full-article').forEach(function(el) {
             el.classList.remove('active');
@@ -2827,6 +2896,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    renderBlog();
+
+    // ===== WHEEL =====
     var wheelOverlay = document.getElementById('wheelOverlay');
     var wheelSpin = document.getElementById('wheelSpin');
     var wheelResult = document.getElementById('wheelResult');
@@ -3013,6 +3085,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // ===== CALCULATOR =====
     function calculatePrice() {
         var product = document.getElementById('calcProduct').value;
         var qty = parseInt(document.getElementById('calcQuantity').value);
@@ -3062,6 +3135,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('calcComplexity').addEventListener('change', calculatePrice);
     setTimeout(calculatePrice, 100);
 
+    // ===== LIGHTBOX =====
     window.openLightbox = function(src) {
         var lb = document.getElementById('lightbox');
         var img = document.getElementById('lightboxImage');
@@ -3086,6 +3160,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // ===== PORTFOLIO =====
     var hatImages = [
         'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-12%20at%2012.10.11%20(1).jpeg',
         'https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-12%20at%2012.10.11.jpeg',
@@ -3125,7 +3200,7 @@ document.addEventListener('DOMContentLoaded', function() {
     hatImages.forEach(function(src) {
         var el = document.createElement('div');
         el.className = 'gallery-item';
-        el.innerHTML = '<img src="' + src + '" alt="Кепка с логотипом" onclick="openLightbox(\'' + src + '\')"><div class="caption">Кепка с логотипом</div>';
+        el.innerHTML = '<img src="' + src + '" alt="Кепка с логотипом" loading="lazy" onclick="openLightbox(\'' + src + '\')"><div class="caption">Кепка с логотипом</div>';
         hg.appendChild(el);
     });
 
@@ -3167,7 +3242,7 @@ document.addEventListener('DOMContentLoaded', function() {
     patchImages.forEach(function(src) {
         var el = document.createElement('div');
         el.className = 'gallery-item';
-        el.innerHTML = '<img src="' + src + '" alt="Нашивка на заказ" onclick="openLightbox(\'' + src + '\')"><div class="caption">Нашивка / шеврон</div>';
+        el.innerHTML = '<img src="' + src + '" alt="Нашивка на заказ" loading="lazy" onclick="openLightbox(\'' + src + '\')"><div class="caption">Нашивка / шеврон</div>';
         pg.appendChild(el);
     });
 
@@ -3242,7 +3317,7 @@ document.addEventListener('DOMContentLoaded', function() {
     clothImages.forEach(function(src) {
         var el = document.createElement('div');
         el.className = 'gallery-item';
-        el.innerHTML = '<img src="' + src + '" alt="Логотип на одежде" onclick="openLightbox(\'' + src + '\')"><div class="caption">Брендирование одежды</div>';
+        el.innerHTML = '<img src="' + src + '" alt="Логотип на одежде" loading="lazy" onclick="openLightbox(\'' + src + '\')"><div class="caption">Брендирование одежды</div>';
         cg.appendChild(el);
     });
 
@@ -3257,6 +3332,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    // ===== REVIEWS =====
     var reviewForm = document.getElementById('reviewForm');
     var reviewSuccess = document.getElementById('reviewSuccess');
     var fileInput = document.getElementById('reviewPhoto');
@@ -3521,7 +3597,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         photoHtml = `
                             <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
                                 <div style="cursor:pointer;border-radius:8px;overflow:hidden;border:1px solid rgba(0,0,0,0.06);width:80px;height:80px;" onclick="openLightbox('${r.photo}')">
-                                    <img src="${r.photo}" alt="Фото отзыва" style="width:100%;height:100%;object-fit:cover;">
+                                    <img src="${r.photo}" alt="Фото отзыва" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
                                 </div>
                             </div>`;
                     }
@@ -3550,12 +3626,16 @@ document.addEventListener('DOMContentLoaded', function() {
     addCSRFTokenToForms();
     updateWheelUI();
 
-    console.log('✅ Сайт загружен! Worker URL:', WORKER_URL);
-    console.log('🛡️ Защита активирована: CSRF, XSS, валидация телефона, анти-спам');
-    console.log('📸 Система отзывов с фото и модерацией через Telegram');
+    console.log('✅ Сайт загружен!');
+    console.log('🛡️ Защита активирована');
+    console.log('📸 Система отзывов с фото и модерацией');
+    console.log('📝 Блог загружен динамически — ' + blogArticles.length + ' статей');
+    console.log('📍 SPA с History API');
+    console.log('🟢 Онлайн-статус в мессенджерах');
 
 });
 
+// ===== ЗАЩИТА =====
 (function() {
     'use strict';
 
@@ -3707,14 +3787,7 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.setAttribute('data-original-text', btn.textContent);
         });
 
-        console.log('🛡️ ВСЕ ЗАЩИТЫ АКТИВИРОВАНЫ:');
-        console.log('   ✅ Honeypot (2 шт)');
-        console.log('   ✅ Тайминг заполнения (>= 5 сек)');
-        console.log('   ✅ Анти-флуд (10 сек между заявками)');
-        console.log('   ✅ Блокировка ботов по User-Agent');
-        console.log('   ✅ Экранирование спецсимволов');
-        console.log('   ✅ Проверка Referer');
-        console.log('   ✅ Защита от дубликатов');
+        console.log('🛡️ ВСЕ ЗАЩИТЫ АКТИВИРОВАНЫ');
     }
 
 })();
