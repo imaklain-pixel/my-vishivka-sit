@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги и цены — вышивка логотипов, шевроны, нашивки | Вышивка Стиль</title>
+    <meta name="description" content="Услуги машинной вышивки: логотипы на одежде, шевроны, нашивки, вышивка на спецодежде. Цены от 200 ₽. От 1 штуки. Работаю официально с чеком.">
+    <meta name="keywords" content="вышивка на одежде, вышивка логотипов, шевроны на заказ, нашивки с логотипом, вышивка на спецодежде">
+    <link rel="canonical" href="https://stylevishivka.ru/services.html">
+    <meta property="og:title" content="Услуги и цены — Вышивка Стиль">
+    <meta property="og:description" content="Машинная вышивка на заказ в Москве. Логотипы, шевроны, нашивки. От 1 штуки.">
+    <meta property="og:url" content="https://stylevishivka.ru/services.html">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #8B5CF6;
+            --color-secondary: #6D28D9;
+            --color-accent: #EC4899;
+            --color-gold: #F59E0B;
+            --color-bg: #F5F3FF;
+
+            --color-text: #1E1B4B;
+            --color-text-secondary: #6B7280;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.06);
+            --blur-bg: blur(24px);
+            --radius-sm: 12px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-full: 9999px;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-family);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 900px; margin: 0 auto; width: 100%; }
+        a { color: var(--color-primary); text-decoration: none; }
+        a:hover { color: var(--color-secondary); }
+        
+        /* HEADER */
+        .header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,0.04);
+            margin-bottom: 32px; flex-wrap: wrap; gap: 8px;
+        }
+        .logo { display: flex; align-items: center; gap: 8px; font-size: 1.2rem; font-weight: 800; color: var(--color-text); }
+        .logo img { height: 45px; }
+        .logo-gradient {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .nav { display: flex; gap: 16px; flex-wrap: wrap; }
+        .nav a {
+            color: var(--color-text-secondary); font-size: 0.85rem; font-weight: 500;
+            transition: color 0.25s;
+        }
+        .nav a:hover, .nav a.active { color: var(--color-primary); }
+        .header-phone { font-weight: 600; color: var(--color-primary); font-size: 1rem; }
+        
+        /* TITLE */
+        .page-title { font-size: 2rem; font-weight: 800; margin-bottom: 8px; }
+        .page-title .highlight {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .page-subtitle { font-size: 1.1rem; color: var(--color-text-secondary); margin-bottom: 32px; }
+        
+        /* SERVICE CARD */
+        .service-card {
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: var(--blur-bg);
+            -webkit-backdrop-filter: var(--blur-bg);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 24px;
+            transition: all 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(139, 92, 246, 0.1);
+        }
+        .service-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+        .service-icon { font-size: 2.5rem; }
+        .service-title { font-size: 1.3rem; font-weight: 700; }
+        .service-price {
+            font-size: 1.1rem; font-weight: 800;
+            color: var(--color-primary);
+            margin-left: auto;
+        }
+        .service-text { color: var(--color-text-secondary); font-size: 0.95rem; margin-bottom: 16px; }
+        .service-features { list-style: none; padding: 0; margin-bottom: 20px; }
+        .service-features li {
+            padding: 6px 0; font-size: 0.9rem; color: var(--color-text-secondary);
+            display: flex; align-items: flex-start; gap: 8px;
+        }
+        .service-features li::before { content: '✅'; flex-shrink: 0; }
+        
+        /* BUTTONS */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            gap: 8px; padding: 14px 32px; font-family: var(--font-family);
+            font-size: 0.95rem; font-weight: 600; border: none;
+            border-radius: var(--radius-full); cursor: pointer;
+            transition: all 0.3s; text-align: center;
+            max-width: 320px; box-shadow: var(--shadow-sm);
+        }
+        .btn:hover { transform: translateY(-3px) scale(1.02); }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: #fff !important;
+            box-shadow: 0 4px 24px rgba(139, 92, 246, 0.25);
+        }
+        .btn-gold {
+            background: linear-gradient(135deg, var(--color-gold), #D97706);
+            color: #fff !important;
+            box-shadow: 0 4px 24px rgba(245, 158, 11, 0.25);
+        }
+        .btn-block { width: 100%; max-width: 100%; }
+        
+        /* PRICE TABLE */
+        .price-table {
+            width: 100%; border-collapse: collapse;
+            background: rgba(255,255,255,0.6);
+            border-radius: var(--radius-md); overflow: hidden;
+            margin-bottom: 32px;
+        }
+        .price-table th {
+            background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(236,72,153,0.1));
+            padding: 14px 16px; text-align: left;
+            font-size: 0.9rem; font-weight: 700;
+        }
+        .price-table td {
+            padding: 14px 16px; font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+        .price-table tr:last-child td { border-bottom: none; }
+        .price-table td:last-child {
+            font-weight: 700; color: var(--color-primary); text-align: right;
+        }
+        
+        /* CTA */
+        .cta-block {
+            background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(236,72,153,0.06));
+            border-radius: var(--radius-lg); padding: 48px 24px;
+            text-align: center; margin: 32px 0;
+            border: 1px solid rgba(139,92,246,0.08);
+        }
+        .cta-block h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+        .cta-block p { color: var(--color-text-secondary); margin-bottom: 24px; }
+        
+        /* FOOTER */
+        .footer {
+            text-align: center; padding: 32px 16px;
+            color: var(--color-text-secondary); font-size: 0.8rem;
+            border-top: 1px solid rgba(0,0,0,0.04); margin-top: 48px;
+        }
+        .footer-nav { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
+        .footer-nav a { color: var(--color-text-secondary); font-size: 0.8rem; }
+        .footer-nav a:hover { color: var(--color-primary); }
+        
+        /* FLOATING MESSENGERS */
+        .floating-messengers {
+            position: fixed; bottom: 24px; right: 16px;
+            z-index: 9999; display: flex; flex-direction: column;
+            gap: 8px; align-items: flex-end;
+        }
+        .floating-messengers .msg-btn {
+            display: flex; align-items: center; gap: 6px;
+            color: #fff; padding: 8px 14px 8px 10px;
+            border-radius: var(--radius-full); text-decoration: none;
+            font-weight: 600; font-size: 0.75rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.25s;
+        }
+        .floating-messengers .msg-btn:hover { transform: scale(1.05); }
+        .floating-messengers .msg-btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .floating-messengers .wa { background: #25D366; }
+        .floating-messengers .tg { background: #0088cc; }
+        
+        @media (max-width: 480px) {
+            .nav { display: none; }
+            .floating-messengers .msg-btn .label { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="/" class="logo">
+            <img src="https://raw.githubusercontent.com/imaklain-pixel/Vishivka_Stile_/main/logo.png" alt="Вышивка Стиль">
+            <span class="logo-gradient">Вышивка Стиль</span>
+        </a>
+        <nav class="nav">
+            <a href="/">Главная</a>
+            <a href="/services.html" class="active">Услуги</a>
+            <a href="/calculator.html">Калькулятор</a>
+            <a href="/portfolio.html">Портфолио</a>
+            <a href="/contacts.html">Контакты</a>
+        </nav>
+        <a href="tel:+79014030785" class="header-phone">+7 (901) 403-07-85</a>
+    </header>
+
+    <!-- TITLE -->
+    <h1 class="page-title">Мои <span class="highlight">услуги</span></h1>
+    <p class="page-subtitle">Машинная вышивка на заказ в Москве. От 1 штуки. Работаю официально с чеком.</p>
+
+    <!-- УСЛУГА 1 -->
+    <div class="service-card">
+        <div class="service-header">
+            <span class="service-icon">👕</span>
+            <h2 class="service-title">Вышивка логотипов на одежде</h2>
+            <span class="service-price">от 300 ₽</span>
+        </div>
+        <p class="service-text">Наношу вышивку на вашу одежду: худи, футболки, рубашки, куртки, свитшоты. Разрабатываю макет бесплатно.</p>
+        <ul class="service-features">
+            <li>Работаю с любыми тканями: хлопок, трикотаж, синтетика</li>
+            <li>Вышивка логотипа до 15 000 стежков</li>
+            <li>Трёхуровневый контроль качества</li>
+            <li>Срок изготовления от 1 дня</li>
+            <li>От 1 штуки — без минимального заказа</li>
+        </ul>
+        <a href="/calculator.html" class="btn btn-primary">Рассчитать стоимость</a>
+    </div>
+
+    <!-- УСЛУГА 2 -->
+    <div class="service-card">
+        <div class="service-header">
+            <span class="service-icon">🛡️</span>
+            <h2 class="service-title">Шевроны и нашивки</h2>
+            <span class="service-price">от 200 ₽</span>
+        </div>
+        <p class="service-text">Изготавливаю шевроны и нашивки на заказ для компаний, спортивных команд, охранных организаций, военных структур.</p>
+        <ul class="service-features">
+            <li>Любые формы и размеры</li>
+            <li>Термонаклейка, пришивная основа или липучка</li>
+            <li>Вышивка золотыми и серебряными нитями</li>
+            <li>3D-эффект с объёмной подложкой</li>
+            <li>Макет в подарок при заказе от 20 штук</li>
+        </ul>
+        <a href="/calculator.html" class="btn btn-primary">Рассчитать стоимость</a>
+    </div>
+
+    <!-- УСЛУГА 3 -->
+    <div class="service-card">
+        <div class="service-header">
+            <span class="service-icon">🧢</span>
+            <h2 class="service-title">Вышивка на кепках и шапках</h2>
+            <span class="service-price">от 350 ₽</span>
+        </div>
+        <p class="service-text">Вышивка на кепках, бейсболках, шапках, панамах. Работаю с готовыми изделиями заказчика.</p>
+        <ul class="service-features">
+            <li>Вышивка на изогнутых поверхностях</li>
+            <li>Специальное оборудование для головных уборов</li>
+            <li>Логотипы, эмблемы, буквы</li>
+            <li>Срок от 2 дней</li>
+            <li>Идеально для корпоративного стиля</li>
+        </ul>
+        <a href="/calculator.html" class="btn btn-primary">Рассчитать стоимость</a>
+    </div>
+
+    <!-- УСЛУГА 4 -->
+    <div class="service-card">
+        <div class="service-header">
+            <span class="service-icon">👔</span>
+            <h2 class="service-title">Вышивка на спецодежде</h2>
+            <span class="service-price">от 400 ₽</span>
+        </div>
+        <p class="service-text">Вышивка на спецодежде для сотрудников: логотипы компании, названия должностей, имена.</p>
+        <ul class="service-features">
+            <li>Работа с плотными тканями</li>
+            <li>Износостойкая вышивка — выдержит любые стирки</li>
+            <li>Большие тиражи от 50 штук</li>
+            <li>Скидки при опте от 10 штук</li>
+            <li>Работа с юридическими лицами по договору</li>
+        </ul>
+        <a href="/calculator.html" class="btn btn-primary">Рассчитать стоимость</a>
+    </div>
+
+    <!-- ТАБЛИЦА ЦЕН -->
+    <h2 class="page-title" style="font-size: 1.5rem; margin-top: 48px;">💰 Базовые цены</h2>
+    <p class="page-subtitle" style="font-size: 0.95rem;">Точная стоимость зависит от размера вышивки и тиража</p>
+
+    <table class="price-table">
+        <thead>
+            <tr>
+                <th>Услуга</th>
+                <th>Цена</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Вышивка на футболке</td><td>от 300 ₽</td></tr>
+            <tr><td>Вышивка на худи / свитшоте</td><td>от 500 ₽</td></tr>
+            <tr><td>Вышивка на кепке</td><td>от 350 ₽</td></tr>
+            <tr><td>Вышивка на куртке</td><td>от 800 ₽</td></tr>
+            <tr><td>Вышивка на рубашке</td><td>от 350 ₽</td></tr>
+            <tr><td>Вышивка на спецодежде</td><td>от 400 ₽</td></tr>
+            <tr><td>Изготовление шеврона / нашивки</td><td>от 200 ₽</td></tr>
+            <tr><td>Разработка макета (оцифровка)</td><td>от 400 ₽</td></tr>
+        </tbody>
+    </table>
+
+    <p style="text-align: center; color: var(--color-text-secondary); font-size: 0.9rem; margin-bottom: 32px;">
+        💡 <strong>Скидки при заказе от 10 штук</strong> — до 30% от базовой цены
+    </p>
+
+    <!-- CTA -->
+    <div class="cta-block">
+        <h3>🎯 Не знаете, сколько будет стоить?</h3>
+        <p>Воспользуйтесь калькулятором — рассчитает за 30 секунд</p>
+        <a href="/calculator.html" class="btn btn-gold">🧮 Рассчитать стоимость</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-nav">
+            <a href="/">Главная</a>
+            <a href="/services.html">Услуги</a>
+            <a href="/calculator.html">Калькулятор</a>
+            <a href="/portfolio.html">Портфолио</a>
+            <a href="/contacts.html">Контакты</a>
+            <a href="/legal.html">Юридическая</a>
+        </div>
+        <p>© 2026 Вышивка Стиль · <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a> · <a href="tel:+79014030785">+7 (901) 403-07-85</a></p>
+        <p style="font-size:0.7rem; opacity:0.6; margin-top:4px;">Самозанятый Ёлдашев Максим Джорагелдиевич · ИНН 130100811452</p>
+    </footer>
+</div>
+
+<!-- FLOATING MESSENGERS -->
+<div class="floating-messengers">
+    <a href="https://wa.me/79014030785" target="_blank" class="msg-btn wa">
+        <svg viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.069-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.149-.43.05-.197-.099-.832-.308-1.584-.984-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.445-1.076-.612-1.47-.16-.38-.323-.319-.445-.319-.114 0-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.711 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path></svg>
+        <span class="label">WhatsApp</span>
+    </a>
+    <a href="https://t.me/+79014030785" target="_blank" class="msg-btn tg">
+        <svg viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.243 3.306-1.878 3.382-1.904.077-.026.178-.058.246.015.07.072.06.19-.022.34-.176.32-1.173 1.15-1.767 1.706-.15.14-.256.244-.258.27-.006.032.092.063.209.102.341.116.735.273 1.052.451.148.083.264.123.374.114.077-.006.174-.038.267-.14.244-.27 1.03-1.16 1.645-1.874.615-.714.793-1.178.808-1.356.006-.112-.015-.205-.1-.256-.124-.073-.36-.104-.518-.104-.32 0-.898.19-1.139.38z"></path></svg>
+        <span class="label">Telegram</span>
+    </a>
+</div>
+
+</body>
+</html>
