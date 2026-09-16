@@ -25,7 +25,6 @@
             --color-text-secondary: #6B7280;
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
             --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
             --blur-bg: blur(24px);
             --radius-sm: 12px;
             --radius-md: 16px;
@@ -44,7 +43,7 @@
             padding: 16px;
             -webkit-font-smoothing: antialiased;
         }
-        .container { max-width: 900px; margin: 0 auto; width: 100%; }
+        .container { max-width: 1000px; margin: 0 auto; width: 100%; }
         a { color: var(--color-primary); text-decoration: none; }
         a:hover { color: var(--color-secondary); }
         img { max-width: 100%; display: block; }
@@ -74,46 +73,39 @@
         }
         .page-subtitle { font-size: 1.1rem; color: var(--color-text-secondary); margin-bottom: 32px; }
         
-        /* CATEGORIES */
-        .categories {
+        /* STATS */
+        .stats-row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-bottom: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px; margin-bottom: 32px;
         }
-        .category-card {
+        .stat-box {
             background: rgba(255,255,255,0.6);
             backdrop-filter: var(--blur-bg);
-            -webkit-backdrop-filter: var(--blur-bg);
             border-radius: var(--radius-md);
-            padding: 24px;
+            padding: 20px;
             text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
             border: 1px solid rgba(255,255,255,0.3);
             box-shadow: var(--shadow-sm);
         }
-        .category-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-md);
-            border-color: rgba(139, 92, 246, 0.15);
+        .stat-box .number {
+            font-size: 1.8rem; font-weight: 900;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .category-card .icon { font-size: 3rem; display: block; margin-bottom: 8px; }
-        .category-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
-        .category-card p { font-size: 0.85rem; color: var(--color-text-secondary); margin: 0; }
-        .category-card .badge {
-            display: inline-block; margin-top: 8px;
-            padding: 3px 14px; border-radius: var(--radius-full);
-            font-size: 0.7rem; font-weight: 600;
-            background: rgba(139, 92, 246, 0.08);
-            color: var(--color-primary);
-        }
+        .stat-box .label { font-size: 0.8rem; color: var(--color-text-secondary); }
         
         /* GALLERY */
-        .gallery-section { margin-bottom: 32px; }
+        .gallery-section { margin-bottom: 40px; }
         .gallery-section h2 {
             font-size: 1.4rem; font-weight: 700;
             margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        .gallery-section h2 .count {
+            font-size: 0.8rem; font-weight: 500;
+            color: var(--color-text-secondary);
+            background: rgba(139, 92, 246, 0.08);
+            padding: 2px 12px; border-radius: var(--radius-full);
         }
         .gallery-grid {
             display: grid;
@@ -128,6 +120,7 @@
             transition: all 0.3s;
             cursor: pointer;
             box-shadow: var(--shadow-sm);
+            aspect-ratio: 1 / 1;
         }
         .gallery-item:hover {
             transform: scale(1.03);
@@ -135,7 +128,7 @@
             box-shadow: var(--shadow-md);
         }
         .gallery-item img {
-            width: 100%; height: 160px;
+            width: 100%; height: 100%;
             object-fit: cover; display: block;
         }
         
@@ -183,11 +176,6 @@
             color: #fff !important;
             box-shadow: 0 4px 24px rgba(245, 158, 11, 0.25);
         }
-        .btn-primary {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            color: #fff !important;
-            box-shadow: 0 4px 24px rgba(139, 92, 246, 0.25);
-        }
         
         /* FOOTER */
         .footer {
@@ -221,7 +209,6 @@
         @media (max-width: 480px) {
             .nav { display: none; }
             .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
-            .gallery-item img { height: 130px; }
             .floating-messengers .msg-btn .label { display: none; }
         }
     </style>
@@ -250,136 +237,137 @@
     <h1 class="page-title">Мои <span class="highlight">работы</span></h1>
     <p class="page-subtitle">Более 350 выполненных заказов с 2014 года. Нажмите на фото, чтобы увеличить.</p>
 
-    <!-- КАТЕГОРИИ -->
-    <div class="categories">
-        <a href="#hats" class="category-card">
-            <span class="icon">🧢</span>
-            <h3>Кепки</h3>
-            <p>Вышивка на головных уборах</p>
-            <span class="badge">Смотреть →</span>
-        </a>
-        <a href="#patches" class="category-card">
-            <span class="icon">🛡️</span>
-            <h3>Шевроны</h3>
-            <p>Нашивки, патчи, эмблемы</p>
-            <span class="badge">Смотреть →</span>
-        </a>
-        <a href="#clothing" class="category-card">
-            <span class="icon">👕</span>
-            <h3>Одежда</h3>
-            <p>Худи, футболки, куртки</p>
-            <span class="badge">Смотреть →</span>
-        </a>
+    <!-- STATS -->
+    <div class="stats-row">
+        <div class="stat-box"><div class="number">350+</div><div class="label">выполненных заказов</div></div>
+        <div class="stat-box"><div class="number">120+</div><div class="label">довольных клиентов</div></div>
+        <div class="stat-box"><div class="number">12 лет</div><div class="label">на рынке</div></div>
+        <div class="stat-box"><div class="number">98%</div><div class="label">положительных отзывов</div></div>
     </div>
 
     <!-- КЕПКИ -->
-    <section class="gallery-section" id="hats">
-        <h2>🧢 Вышивка на кепках</h2>
+    <section class="gallery-section">
+        <h2>🧢 Вышивка на кепках <span class="count">24 работы</span></h2>
         <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0001.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0001.jpeg" alt="Вышивка на кепке 1" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0002.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0002.jpeg" alt="Вышивка на кепке 2" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0004.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0004.jpeg" alt="Вышивка на кепке 3" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0005.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0005.jpeg" alt="Вышивка на кепке 4" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0006.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0006.jpeg" alt="Вышивка на кепке 5" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0010.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0010.jpeg" alt="Вышивка на кепке 6" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0014.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0014.jpeg" alt="Вышивка на кепке 7" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0015.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0015.jpeg" alt="Вышивка на кепке 8" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0016.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0016.jpeg" alt="Вышивка на кепке 9" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0018.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0018.jpeg" alt="Вышивка на кепке 10" loading="lazy">
-            </div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0001.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0001.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0002.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0002.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0004.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0004.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0005.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0005.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0006.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0006.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0010.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0010.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0014.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0014.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0015.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0015.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0016.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0016.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0018.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0018.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0019.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0019.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0020.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0020.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0024.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0024.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0067.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0067.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0068.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0068.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0096.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0096.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0097.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0097.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0102.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0102.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0106.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0106.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0107.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0107.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0108.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0108.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0109.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0109.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0110.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0110.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0113.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0113.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0115.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0115.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0116.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0116.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0118.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0118.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0120.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0120.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0121.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0121.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0128.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0128.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0130.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0130.jpeg" alt="Вышивка на кепке" loading="lazy"></div>
         </div>
     </section>
 
     <!-- ШЕВРОНЫ -->
-    <section class="gallery-section" id="patches">
-        <h2>🛡️ Шевроны и нашивки</h2>
+    <section class="gallery-section">
+        <h2>🛡️ Шевроны и нашивки <span class="count">30 работ</span></h2>
         <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0131.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0131.jpeg" alt="Шеврон 1" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0127.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0127.jpeg" alt="Шеврон 2" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0111.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0111.jpeg" alt="Шеврон 3" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0093.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0093.jpeg" alt="Шеврон 4" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0079.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0079.jpeg" alt="Шеврон 5" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0069.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0069.jpeg" alt="Шеврон 6" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0064.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0064.jpeg" alt="Шеврон 7" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0049.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0049.jpeg" alt="Шеврон 8" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0030.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0030.jpeg" alt="Шеврон 9" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0023.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0023.jpeg" alt="Шеврон 10" loading="lazy">
-            </div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0131.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0131.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0127.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0127.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0111.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0111.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0093.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0093.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0079.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0079.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0069.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0069.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0064.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0064.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0049.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0049.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0030.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0030.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0023.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0023.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0022.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0022.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0017.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0017.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0013.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0013.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0012.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0012.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0011.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0011.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0009.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0009.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0008.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0008.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0007.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0007.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/e94fa25f-8004-45fb-aaab-092526e9bf08.jpg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/e94fa25f-8004-45fb-aaab-092526e9bf08.jpg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/df8dbaca-ba7d-4ca5-b14d-58136bd3d6d8.jpg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/df8dbaca-ba7d-4ca5-b14d-58136bd3d6d8.jpg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/cd394e9f-5cb3-4296-bed4-d14f420e1970%20(2).jpg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/cd394e9f-5cb3-4296-bed4-d14f420e1970%20(2).jpg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/c202f2f6-b360-41c6-8f21-75d89e03e36f.jpg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/c202f2f6-b360-41c6-8f21-75d89e03e36f.jpg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/b202d3bc-53b2-4482-8f7a-e9e4774f16b3.jpg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/b202d3bc-53b2-4482-8f7a-e9e4774f16b3.jpg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-14%20at%2015.59.35.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-14%20at%2015.59.35.jpeg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/IMG_4328.JPG')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/IMG_4328.JPG" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/IMG_2059%20(1).JPG')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/IMG_2059%20(1).JPG" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/IMG_20250928_174737677_HDR.jpg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/IMG_20250928_174737677_HDR.jpg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/IMG_1018%20(2).JPG')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/IMG_1018%20(2).JPG" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/9df882d5-a68a-42b2-8f47-57604a454539.jpg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/9df882d5-a68a-42b2-8f47-57604a454539.jpg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/8d68ce95-16ce-4c82-a154-06acebea1836.jpg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/8d68ce95-16ce-4c82-a154-06acebea1836.jpg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/70da5507-fc93-4a47-9572-5a95024f5576.jpg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/70da5507-fc93-4a47-9572-5a95024f5576.jpg" alt="Шеврон" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/00882fc1-9a8e-42fd-a657-48974bfbf71c%20(1).jpg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/00882fc1-9a8e-42fd-a657-48974bfbf71c%20(1).jpg" alt="Шеврон" loading="lazy"></div>
         </div>
     </section>
 
     <!-- ОДЕЖДА -->
-    <section class="gallery-section" id="clothing">
-        <h2>👕 Вышивка на одежде</h2>
+    <section class="gallery-section">
+        <h2>👕 Вышивка на одежде <span class="count">35 работ</span></h2>
         <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0052.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0052.jpeg" alt="Вышивка на одежде 1" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0133.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0133.jpeg" alt="Вышивка на одежде 2" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0123.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0123.jpeg" alt="Вышивка на одежде 3" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0114.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0114.jpeg" alt="Вышивка на одежде 4" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0105.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0105.jpeg" alt="Вышивка на одежде 5" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0100.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0100.jpeg" alt="Вышивка на одежде 6" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0092.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0092.jpeg" alt="Вышивка на одежде 7" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0085.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0085.jpeg" alt="Вышивка на одежде 8" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0077.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0077.jpeg" alt="Вышивка на одежде 9" loading="lazy">
-            </div>
-            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0070.jpeg')">
-                <img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0070.jpeg" alt="Вышивка на одежде 10" loading="lazy">
-            </div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0052.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0052.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0133.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0133.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0123.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0123.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0122.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0122.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0114.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0114.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0105.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0105.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0104.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0104.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0103.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0103.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0100.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0100.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0099.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0099.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0098.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0098.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0092.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0092.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0091.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0091.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0089.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0089.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0088.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0088.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0087.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0087.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0086.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0086.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0085.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0085.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0082.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0082.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0080.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0080.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0077.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0077.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0076.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0076.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0075.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0075.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0074.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0074.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0073.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0073.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0072.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0072.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0071.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0071.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0070.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0070.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0065.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0065.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0063.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0063.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0062.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0062.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0061.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0061.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0060.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0060.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0059.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0059.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0058.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0058.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0057.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0057.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0056.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0056.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0055.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0055.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0052.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/fancywork008-07082026-0052.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-15%20at%2016.58.31.jpeg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/WhatsApp%20Image%202024-11-15%20at%2016.58.31.jpeg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/IMG_20250928_125525389.jpg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/IMG_20250928_125525389.jpg" alt="Вышивка на одежде" loading="lazy"></div>
+            <div class="gallery-item" onclick="openLightbox('https://imaklain-pixel.github.io/my-vishivka-sit/IMG_20250908_181348753.jpg')"><img src="https://imaklain-pixel.github.io/my-vishivka-sit/IMG_20250908_181348753.jpg" alt="Вышивка на одежде" loading="lazy"></div>
         </div>
     </section>
 
@@ -400,7 +388,7 @@
             <a href="/contacts.html">Контакты</a>
             <a href="/legal.html">Юридическая</a>
         </div>
-        <p>© 2026 Вышивка Стиль · <a href="mailto:vishivkavs@gmail.com">vishivkavs@gmail.com</a> · <a href="tel:+79014030785">+7 (901) 403-07-85</a></p>
+        <p>© 2026 Вышивка Стиль · <a href="mailto:svysivka@gmail.com">svysivka@gmail.com</a> · <a href="tel:+79014030785">+7 (901) 403-07-85</a></p>
         <p style="font-size:0.7rem; opacity:0.6; margin-top:4px;">Самозанятый Ёлдашев Максим Джорагелдиевич · ИНН 130100811452</p>
     </footer>
 </div>
